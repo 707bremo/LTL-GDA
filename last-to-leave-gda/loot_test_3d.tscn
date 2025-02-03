@@ -1,8 +1,17 @@
-[gd_scene format=3 uid="uid://vtm7nkbfl7da"]
+[gd_scene load_steps=4 format=3 uid="uid://vtm7nkbfl7da"]
+
+[ext_resource type="Script" path="res://loot_test_3d.gd" id="1_k1o3q"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5rh2h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x7coa"]
+size = Vector3(5, 1, 5)
 
 [node name="LootTest3D" type="Node3D"]
+script = ExtResource("1_k1o3q")
 
 [node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.79071, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0574769, 0.998347, 0, -0.998347, -0.0574769, 0, 8.59818, 0)
@@ -21,5 +30,68 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 text = "Generate Loot"
 
+[node name="LootSizeSlider" type="HSlider" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -176.0
+offset_top = 40.0
+offset_right = 168.0
+offset_bottom = 72.0
+grow_horizontal = 2
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+
+[node name="LootSizeLabel" type="Label" parent="CanvasLayer/LootSizeSlider"]
+offset_left = -400.0
+offset_top = -40.0
+offset_right = -360.0
+offset_bottom = -17.0
+
+[node name="MinRaritySlider" type="HSlider" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -176.0
+offset_top = 80.0
+offset_right = 168.0
+offset_bottom = 112.0
+grow_horizontal = 2
+max_value = 10.0
+
+[node name="MinRLabel" type="Label" parent="CanvasLayer/MinRaritySlider"]
+offset_left = -400.0
+offset_top = -80.0
+offset_right = -360.0
+offset_bottom = -57.0
+
+[node name="MaxRaritySlider" type="HSlider" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -176.0
+offset_top = 120.0
+offset_right = 168.0
+offset_bottom = 152.0
+grow_horizontal = 2
+max_value = 10.0
+
+[node name="MaxRLabel" type="Label" parent="CanvasLayer/MaxRaritySlider"]
+offset_left = -400.0
+offset_top = -120.0
+offset_right = -360.0
+offset_bottom = -97.0
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.95347, 0.301488, 0, -0.301488, 0.95347, 0, 5.25246, 5.41256)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("PlaneMesh_5rh2h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.52525, 0)
+shape = SubResource("BoxShape3D_x7coa")

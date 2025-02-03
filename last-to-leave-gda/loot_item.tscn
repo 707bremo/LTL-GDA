@@ -1,14 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqitkakht8nke"]
+[gd_scene load_steps=3 format=3 uid="uid://cqitkakht8nke"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tr3dj"]
 
-[node name="LootItem" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_soica"]
+
+[node name="LootItem" type="RigidBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("BoxMesh_tr3dj")
 
 [node name="Label3D" type="Label3D" parent="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0222378, 0.504546)
 modulate = Color(0.333333, 0.364706, 0.419608, 1)
 outline_modulate = Color(0.356018, 0.392771, 0.445859, 1)
-font_size = 50
+font_size = 35
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_soica")

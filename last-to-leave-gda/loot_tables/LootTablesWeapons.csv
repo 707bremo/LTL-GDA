@@ -1,4 +1,4 @@
-ID,Name,Spawn Rate (%),Weight (kg),Ammo,Tier
+ID,Name,Spawn Rate,Weight,Ammo,Tier
 ar_jak12,JAK-15,35,3,5.56mm,B
 ar_ak12,AK12,40,3.5,7.62mm,B
 ar_m4a1,M4A1,40,3.46,5.56mm,B
@@ -11,8 +11,8 @@ shg_nova,NOVA,40,3.66,12-Gauge,B
 sni_mars2k,MARS-2K,15,6.95,.300 Win,A
 sni_tikkat3,Tikka T3,60,3.44,.300 Win,C
 sni_kar98k,Kar98K,30,3.7,7.62mm,B
-pis_glock,Glock,Starter / 75,0.785,9mm,F/D
-pis_p2,P2,Starter / 75,0.8,9mm,F/D
+pis_glock,Glock,Starter / 75,0.785,9mm,F
+pis_p2,P2,Starter / 75,0.8,9mm,F
 pis_fsb,FS-B,30,0.61,5.7x28,B
 pis_usp45,USP-45,45,0.78,.45 ACP,B
 lukas50,Lukas 50,2,2.04,50 AE,S
