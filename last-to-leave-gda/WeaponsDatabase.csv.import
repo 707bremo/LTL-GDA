@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dekj1eebckx01"
+
+[deps]
+
+files=["res://WeaponsDatabase.JAK.translation", "res://WeaponsDatabase.35.translation", "res://WeaponsDatabase.3.translation", "res://WeaponsDatabase.5.56mm.translation", "res://WeaponsDatabase.From the coasts of America and now in Finnish hands, this semi.translation", "res://WeaponsDatabase.Weapon.translation"]
+
+source_file="res://WeaponsDatabase.csv"
+dest_files=["res://WeaponsDatabase.JAK.translation", "res://WeaponsDatabase.35.translation", "res://WeaponsDatabase.3.translation", "res://WeaponsDatabase.5.56mm.translation", "res://WeaponsDatabase.From the coasts of America and now in Finnish hands, this semi.translation", "res://WeaponsDatabase.Weapon.translation"]
+
+[params]
+
+compress=true
+delimiter=0
