@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bv823s5bmw3eu"
+
+[deps]
+
+files=["res://loot_tables/LootTablesWeapons.Name.translation", "res://loot_tables/LootTablesWeapons.Spawn Rate (%).translation", "res://loot_tables/LootTablesWeapons.Weight (kg).translation", "res://loot_tables/LootTablesWeapons.Ammo.translation", "res://loot_tables/LootTablesWeapons.Tier.translation"]
+
+source_file="res://loot_tables/LootTablesWeapons.csv"
+dest_files=["res://loot_tables/LootTablesWeapons.Name.translation", "res://loot_tables/LootTablesWeapons.Spawn Rate (%).translation", "res://loot_tables/LootTablesWeapons.Weight (kg).translation", "res://loot_tables/LootTablesWeapons.Ammo.translation", "res://loot_tables/LootTablesWeapons.Tier.translation"]
+
+[params]
+
+compress=true
+delimiter=0
