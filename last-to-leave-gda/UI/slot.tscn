@@ -4,10 +4,10 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k25e5"]
 bg_color = Color(0.133333, 0.133333, 0.133333, 0.588235)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
 [node name="Control" type="Control"]
@@ -17,5 +17,14 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Slot" type="Panel" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1112.0
+offset_bottom = -608.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_k25e5")
 script = ExtResource("1_oblyg")
