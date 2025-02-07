@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyy5wt47q25yl"]
+
+[ext_resource type="Script" path="res://slot.gd" id="1_oblyg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k25e5"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 0.588235)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot" type="Panel" parent="."]
+theme_override_styles/panel = SubResource("StyleBoxFlat_k25e5")
+script = ExtResource("1_oblyg")
