@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://piy7l6qbal3q"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_yiwgp"]
+
+[node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8123, 0)
+script = ExtResource("1_yiwgp")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.2812, 0)
+size = Vector3(30, 3, 30)
