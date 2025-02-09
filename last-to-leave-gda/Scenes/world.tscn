@@ -39,6 +39,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.0935, 0)
 
 [node name="inventory_item" parent="." instance=ExtResource("3_wgr5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6222, -16.2472, 0)
+item_name = "MARS-2K"
+item_type = "Weapon"
+item_description = "Despite its lack of mobility, this longshot is great in tactical encounters and fits best with passive assasins and is very deadly in grassy terrain."
 
 [node name="inventory_item2" parent="." instance=ExtResource("3_wgr5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6222, -16.2472, 1.89484)

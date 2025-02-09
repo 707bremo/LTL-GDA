@@ -8,6 +8,10 @@ signal inventory_updated
 
 
 var player_node: Node = null
+@onready var inventory_slot_scene = preload("res://Scenes/inventory_slot.tscn")
+
+
+
 
 func _ready():
 	inventory.resize(30)

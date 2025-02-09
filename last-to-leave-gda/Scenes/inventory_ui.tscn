@@ -22,14 +22,14 @@ columns = 6
 [node name="InventoryContainer" type="GridContainer" parent="."]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -400.0
+anchors_preset = -1
+anchor_left = 0.653
+anchor_right = 0.653
+offset_left = -0.256042
 offset_top = 24.0
+offset_right = 399.744
 offset_bottom = 600.0
-grow_horizontal = 0
-columns = 6
+columns = 4
 
 [node name="CharacterContainer" type="GridContainer" parent="."]
 custom_minimum_size = Vector2(200, 0)
