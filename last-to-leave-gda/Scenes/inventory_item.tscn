@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cluya5t46npci"]
+[gd_scene load_steps=5 format=3 uid="uid://cluya5t46npci"]
 
-[ext_resource type="Script" path="res://Scripts/inventory_item.gd" id="1_ghry8"]
+[ext_resource type="Script" path="res://Scripts/inventory_item.gd" id="1_7s05o"]
+[ext_resource type="FontFile" uid="uid://ckxuqg6tbldv3" path="res://UI/font/Esperanto SmallCaps Regular.ttf" id="2_32jc5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gqgro"]
 
@@ -8,7 +9,7 @@
 
 [node name="inventory_item" type="Node3D" groups=["items"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07677, 0)
-script = ExtResource("1_ghry8")
+script = ExtResource("1_7s05o")
 
 [node name="Area3D" type="Area3D" parent="."]
 
@@ -19,3 +20,14 @@ shape = SubResource("BoxShape3D_gqgro")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_icylc")
+
+[node name="Pickup_label" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.443734, 0)
+visible = false
+text = "Press E to pickup"
+font = ExtResource("2_32jc5")
+outline_size = 0
+uppercase = true
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
