@@ -8,6 +8,7 @@ extends Node3D
 @export var item_description = ""
 
 
+
 @onready var pickup_label: Label3D = $Pickup_label
 var scene_path: String = "res://Scenes/inventory_item.tscn"
 var player_in_range = false
@@ -23,6 +24,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if player_in_range and Input.is_action_just_pressed("ui_add"):
 		pickup_item()
+
 
 
 
