@@ -18,6 +18,9 @@ const FOV_CHANGE = 1.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
 
+
+
+@onready var inventory_ui: CanvasLayer = $InventoryUI
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
@@ -80,3 +83,9 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+
+func _input(event):
+	if event.is_action_pressed("open_inv"):
+		inventory_ui.visible = !inventory_ui.visible
+		get_tree().paused = !get_tree().paused

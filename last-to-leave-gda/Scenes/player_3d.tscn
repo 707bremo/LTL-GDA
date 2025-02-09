@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dccohyghqjgk4"]
+[gd_scene load_steps=6 format=3 uid="uid://dccohyghqjgk4"]
 
 [ext_resource type="Script" path="res://Scripts/player_3d.gd" id="1_eqx85"]
+[ext_resource type="FontFile" uid="uid://ckxuqg6tbldv3" path="res://UI/font/Esperanto SmallCaps Regular.ttf" id="2_5fmas"]
+[ext_resource type="PackedScene" uid="uid://c73yc7va7vfpr" path="res://Scenes/inventory_ui.tscn" id="3_1wvwb"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_g0rnu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6lk2u"]
 
 [node name="Player3D" type="CharacterBody3D" groups=["Player"]]
+process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.868103, 0)
 script = ExtResource("1_eqx85")
 
@@ -22,3 +25,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.538805, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 fov = 121.6
+
+[node name="InventoryUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="InventoryUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.411765)
+
+[node name="Label" type="Label" parent="InventoryUI/ColorRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -304.0
+offset_top = 16.0
+offset_right = -139.0
+offset_bottom = 60.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_5fmas")
+theme_override_font_sizes/font_size = 15
+text = "Inventory"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="InventoryUI/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 16.0
+offset_right = 85.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_5fmas")
+theme_override_font_sizes/font_size = 15
+text = "CHARACTER"
+horizontal_alignment = 1
+
+[node name="Inventory_UI" parent="InventoryUI/ColorRect" instance=ExtResource("3_1wvwb")]
+layout_mode = 1

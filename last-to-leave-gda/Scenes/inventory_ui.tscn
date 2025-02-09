@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://c73yc7va7vfpr"]
+[gd_scene load_steps=2 format=3 uid="uid://c73yc7va7vfpr"]
+
+[ext_resource type="Script" path="res://Scripts/inventory_ui.gd" id="1_v0n0e"]
 
 [node name="Inventory_UI" type="Control"]
 layout_mode = 3
@@ -7,3 +9,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_v0n0e")
+
+[node name="SourceContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+offset_top = 24.0
+offset_right = 400.0
+offset_bottom = 600.0
+columns = 6
+
+[node name="InventoryContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_top = 24.0
+offset_bottom = 600.0
+grow_horizontal = 0
+columns = 6
+
+[node name="CharacterContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 24.0
+offset_right = 100.0
+offset_bottom = 600.0
+grow_horizontal = 2
+columns = 2
