@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_shape.gd" id="10_0rcel"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="11_rpkof"]
 
-[sub_resource type="Resource" id="Resource_tiio7"]
+[sub_resource type="Resource" id="Resource_2urwu"]
 script = ExtResource("5_pu7m0")
 amount = 75
 enabled = true
@@ -21,7 +21,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_i8ceh"]
+[sub_resource type="Resource" id="Resource_j8wfp"]
 script = ExtResource("6_6noio")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
@@ -32,7 +32,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_js5x2"]
+[sub_resource type="Resource" id="Resource_i8s0j"]
 script = ExtResource("7_31cen")
 iterations = 3
 offset_step = 0.2
@@ -44,7 +44,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_o1ico"]
+[sub_resource type="Resource" id="Resource_1d6o8"]
 script = ExtResource("8_cwikm")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -60,9 +60,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_uqtyb"]
+[sub_resource type="Resource" id="Resource_orvhs"]
 script = ExtResource("3_06pb1")
-stack = Array[ExtResource("4_lkyyb")]([SubResource("Resource_tiio7"), SubResource("Resource_i8ceh"), SubResource("Resource_js5x2"), SubResource("Resource_o1ico")])
+stack = Array[ExtResource("4_lkyyb")]([SubResource("Resource_2urwu"), SubResource("Resource_j8wfp"), SubResource("Resource_i8s0j"), SubResource("Resource_1d6o8")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("11_rpkof")
@@ -74,7 +74,7 @@ radius = 2.0
 
 [node name="ProtonScatter" type="Node3D" parent="."]
 script = ExtResource("2_hd38r")
-modifier_stack = SubResource("Resource_uqtyb")
+modifier_stack = SubResource("Resource_orvhs")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
