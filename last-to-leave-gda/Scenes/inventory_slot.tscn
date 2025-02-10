@@ -8,6 +8,7 @@
 
 [node name="Inventory_Slot" type="Control"]
 layout_mode = 3
+anchors_preset = 0
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 90.0
