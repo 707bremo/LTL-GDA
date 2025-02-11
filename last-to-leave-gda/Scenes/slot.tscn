@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://brrsxeri8c04e"]
+
+[ext_resource type="Texture2D" uid="uid://cqrmjdpxajt5q" path="res://slotborderpng.png" id="1_slifb"]
+[ext_resource type="Script" path="res://Scripts/slot.gd" id="2_0i8pu"]
+
+[node name="Slot" type="TextureRect"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 48.0
+offset_bottom = 48.0
+texture = ExtResource("1_slifb")
+script = ExtResource("2_0i8pu")
+
+[node name="StatusFilter" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)

@@ -1,0 +1,146 @@
+{
+  "ar_jak12": {
+    "Name": "JAK-15",
+    "Spawn Rate": 35,
+    "Weight": 3,
+    "Ammo": "5.56mm",
+    "Tier": "B",
+    "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1"
+  },
+  "ar_ak12": {
+    "Name": "AK12",
+    "Spawn Rate": 40,
+    "Weight": 3.5,
+    "Ammo": "7.62mm",
+    "Tier": "B",
+    "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1"
+  },
+  "ar_m4a1": {
+    "Name": "M4A1",
+    "Spawn Rate": 40,
+    "Weight": 3.46,
+    "Ammo": "5.56mm",
+    "Tier": "B",
+    "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1"
+  },
+  "ar_a3raker": {
+    "Name": "A3 Raker",
+    "Spawn Rate": 25,
+    "Weight": 3.6,
+    "Ammo": "5.56mm",
+    "Tier": "B",
+    "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1"
+  },
+  "smg_tel6": {
+    "Name": "TEL-6",
+    "Spawn Rate": 65,
+    "Weight": 2.5,
+    "Ammo": "9mm",
+    "Tier": "C",
+    "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1"
+  },
+  "smg_saf45": {
+    "Name": "SAF 45",
+    "Spawn Rate": 50,
+    "Weight": 5,
+    "Ammo": ".45 ACP",
+    "Tier": "C",
+    "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1"
+  },
+  "smg_jotscqb": {
+    "Name": "JOTS CQB",
+    "Spawn Rate": 55,
+    "Weight": 4.2,
+    "Ammo": ".45 ACP",
+    "Tier": "C",
+    "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1"
+  },
+  "shg_regest12": {
+    "Name": "Regest-12",
+    "Spawn Rate": 30,
+    "Weight": 3.82,
+    "Ammo": "12-Gauge",
+    "Tier": "B",
+    "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1"
+  },
+  "shg_nova": {
+    "Name": "NOVA",
+    "Spawn Rate": 40,
+    "Weight": 3.66,
+    "Ammo": "12-Gauge",
+    "Tier": "B",
+    "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/3,0/4,0"
+  },
+  "sni_mars2k": {
+    "Name": "MARS-2K",
+    "Spawn Rate": 15,
+    "Weight": 6.95,
+    "Ammo": ".300 Win",
+    "Tier": "A",
+    "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1/3,0/3,1"
+  },
+  "sni_tikkat3": {
+    "Name": "Tikka T3",
+    "Spawn Rate": 60,
+    "Weight": 3.44,
+    "Ammo": ".300 Win",
+    "Tier": "C",
+    "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1/3,0/3,1"
+  },
+  "sni_kar98k": {
+    "Name": "Kar98K",
+    "Spawn Rate": 30,
+    "Weight": 3.7,
+    "Ammo": "7.62mm",
+    "Tier": "B",
+    "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1/3,0/3,1"
+  },
+  "pis_glock": {
+    "Name": "Glock",
+    "Spawn Rate": "Starter / 75",
+    "Weight": 0.785,
+    "Ammo": "9mm",
+    "Tier": "F",
+    "Grid": "0,0/0,1/-1,0/-1,1"
+  },
+  "pis_p2": {
+    "Name": "P2",
+    "Spawn Rate": "Starter / 75",
+    "Weight": 0.8,
+    "Ammo": "9mm",
+    "Tier": "F",
+    "Grid": "0,0/0,1/-1,0/-1,1"
+  },
+  "pis_fsb": {
+    "Name": "FS-B",
+    "Spawn Rate": 30,
+    "Weight": 0.61,
+    "Ammo": "5.7x28",
+    "Tier": "B",
+    "Grid": "0,0/0,1/-1,0/-1,1"
+  },
+  "pis_usp45": {
+    "Name": "USP-45",
+    "Spawn Rate": 45,
+    "Weight": 0.78,
+    "Ammo": ".45 ACP",
+    "Tier": "B",
+    "Grid": "0,0/0,1/-1,0/-1,1"
+  },
+  "lukas50": {
+    "Name": "Lukas 50",
+    "Spawn Rate": 2,
+    "Weight": 2.04,
+    "Ammo": "50 AE",
+    "Tier": "S",
+    "Grid": "0,0/0,1/-1,0/-1,1"
+  },
+  "lmg_detrov1": {
+    "Name": "LMG-1 Detrov",
+    "Spawn Rate": 20,
+    "Weight": 8.7,
+    "Ammo": "7.62mm",
+    "Tier": "A",
+    "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1/3,0/3,1"
+  }
+}

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://k82p23qw3f2"]
 
 [ext_resource type="Texture2D" uid="uid://d0gx1bpj7rnhw" path="res://invexample.webp" id="1_4u52t"]
-[ext_resource type="PackedScene" uid="uid://brrsxeri8c04e" path="res://slot.tscn" id="1_ffitv"]
+[ext_resource type="Script" path="res://Scripts/inventory.gd" id="1_gt72u"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -10,13 +10,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gt72u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4u52t")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
-offset_left = 816.0
-offset_top = 154.0
-offset_right = 1104.0
-offset_bottom = 490.0
+offset_left = 1358.0
+offset_top = 255.0
+offset_right = 1838.0
+offset_bottom = 815.0
 color = Color(0.140447, 0.140447, 0.140447, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
@@ -39,16 +49,3 @@ layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 6
-
-[node name="Slot" parent="ColorRect/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_ffitv")]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_4u52t")
-metadata/_edit_lock_ = true
