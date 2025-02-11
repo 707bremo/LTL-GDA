@@ -22,6 +22,7 @@ grow_vertical = 2
 texture = ExtResource("1_4u52t")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 offset_left = 1358.0
 offset_top = 255.0

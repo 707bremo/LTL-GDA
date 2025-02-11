@@ -1,5 +1,5 @@
 {
-  "ar_jak12": {
+  "1": {
     "Name": "JAK-15",
     "Spawn Rate": 35,
     "Weight": 3,
@@ -7,7 +7,7 @@
     "Tier": "B",
     "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1"
   },
-  "ar_ak12": {
+  "2": {
     "Name": "AK12",
     "Spawn Rate": 40,
     "Weight": 3.5,
@@ -15,7 +15,7 @@
     "Tier": "B",
     "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1"
   },
-  "ar_m4a1": {
+  "3": {
     "Name": "M4A1",
     "Spawn Rate": 40,
     "Weight": 3.46,
@@ -23,7 +23,7 @@
     "Tier": "B",
     "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1"
   },
-  "ar_a3raker": {
+  "4": {
     "Name": "A3 Raker",
     "Spawn Rate": 25,
     "Weight": 3.6,
@@ -31,7 +31,7 @@
     "Tier": "B",
     "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1"
   },
-  "smg_tel6": {
+  "5": {
     "Name": "TEL-6",
     "Spawn Rate": 65,
     "Weight": 2.5,
@@ -39,7 +39,7 @@
     "Tier": "C",
     "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1"
   },
-  "smg_saf45": {
+  "6": {
     "Name": "SAF 45",
     "Spawn Rate": 50,
     "Weight": 5,
@@ -47,7 +47,7 @@
     "Tier": "C",
     "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1"
   },
-  "smg_jotscqb": {
+  "7": {
     "Name": "JOTS CQB",
     "Spawn Rate": 55,
     "Weight": 4.2,
@@ -55,7 +55,7 @@
     "Tier": "C",
     "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1"
   },
-  "shg_regest12": {
+  "8": {
     "Name": "Regest-12",
     "Spawn Rate": 30,
     "Weight": 3.82,
@@ -63,7 +63,7 @@
     "Tier": "B",
     "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1"
   },
-  "shg_nova": {
+  "9": {
     "Name": "NOVA",
     "Spawn Rate": 40,
     "Weight": 3.66,
@@ -71,7 +71,7 @@
     "Tier": "B",
     "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/3,0/4,0"
   },
-  "sni_mars2k": {
+  "10": {
     "Name": "MARS-2K",
     "Spawn Rate": 15,
     "Weight": 6.95,
@@ -79,7 +79,7 @@
     "Tier": "A",
     "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1/3,0/3,1"
   },
-  "sni_tikkat3": {
+  "11": {
     "Name": "Tikka T3",
     "Spawn Rate": 60,
     "Weight": 3.44,
@@ -87,7 +87,7 @@
     "Tier": "C",
     "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1/3,0/3,1"
   },
-  "sni_kar98k": {
+  "12": {
     "Name": "Kar98K",
     "Spawn Rate": 30,
     "Weight": 3.7,
@@ -95,7 +95,7 @@
     "Tier": "B",
     "Grid": "0,0/0,1/-1,0/-1,1/1,0/1,1/2,0/2,1/3,0/3,1"
   },
-  "pis_glock": {
+  "13": {
     "Name": "Glock",
     "Spawn Rate": "Starter / 75",
     "Weight": 0.785,
@@ -103,7 +103,7 @@
     "Tier": "F",
     "Grid": "0,0/0,1/-1,0/-1,1"
   },
-  "pis_p2": {
+  "14": {
     "Name": "P2",
     "Spawn Rate": "Starter / 75",
     "Weight": 0.8,
@@ -111,7 +111,7 @@
     "Tier": "F",
     "Grid": "0,0/0,1/-1,0/-1,1"
   },
-  "pis_fsb": {
+  "15": {
     "Name": "FS-B",
     "Spawn Rate": 30,
     "Weight": 0.61,
@@ -119,7 +119,7 @@
     "Tier": "B",
     "Grid": "0,0/0,1/-1,0/-1,1"
   },
-  "pis_usp45": {
+  "16": {
     "Name": "USP-45",
     "Spawn Rate": 45,
     "Weight": 0.78,
@@ -127,7 +127,7 @@
     "Tier": "B",
     "Grid": "0,0/0,1/-1,0/-1,1"
   },
-  "lukas50": {
+  "17": {
     "Name": "Lukas 50",
     "Spawn Rate": 2,
     "Weight": 2.04,
@@ -135,7 +135,7 @@
     "Tier": "S",
     "Grid": "0,0/0,1/-1,0/-1,1"
   },
-  "lmg_detrov1": {
+  "18": {
     "Name": "LMG-1 Detrov",
     "Spawn Rate": 20,
     "Weight": 8.7,
