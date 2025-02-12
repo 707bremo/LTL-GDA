@@ -22,7 +22,6 @@ grow_vertical = 2
 texture = ExtResource("1_4u52t")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 offset_left = 1358.0
 offset_top = 255.0
@@ -50,3 +49,15 @@ layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 6
+
+[node name="Spawn_item" type="Button" parent="ColorRect"]
+layout_mode = 2
+anchor_top = 1.032
+anchor_bottom = 1.032
+offset_top = 0.0799561
+offset_right = 480.0
+offset_bottom = 31.08
+grow_horizontal = 2
+text = "Spawn item"
+
+[connection signal="pressed" from="ColorRect/Spawn_item" to="." method="_on_spawn_item_pressed"]

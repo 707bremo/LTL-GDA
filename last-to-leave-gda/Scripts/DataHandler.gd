@@ -2,7 +2,7 @@ extends Node
 
 var item_data := {}
 var item_grid_data := {}
-@onready var item_data_path = "res://Data/LTL-DATASHEET - WEP-ITEM_DATA.json"
+@onready var item_data_path = "res://Data/LTL-DATASHEET - W_AR_ITEM_DATA.json"
 
 
 # Called when the node enters the scene tree for the first time.
