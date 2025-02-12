@@ -22,7 +22,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if item_held:
+		if Input.is_action_just_pressed("mouse_rightclick"):
+			rotate_item()
+		
+		if Input.is_action_just_pressed("mouse_leftclick"):
+			if scroll_container.get_global_rect().has_point(get_global_mouse_position()):
+				place_item()
+		
+	else:
+		if Input.is_action_just_pressed("mouse_leftclick"):
+			if scroll_container.get_global_rect().has_point(get_global_mouse_position()):
+				pick_item()
 
 func create_slot():
 	var new_slot = slot_scene.instantiate()
@@ -89,3 +100,42 @@ func _on_spawn_item_pressed() -> void:
 func clear_grid():
 	for grid in grid_array:
 		grid.set_color(grid.States.DEFAULT)
+
+func rotate_item():
+	item_held.rotate_item()
+	clear_grid()
+	if current_slot:
+		_on_slot_mouse_entered(current_slot)
+
+
+func place_item():
+	if not can_place or not current_slot:
+		return
+	var calculate_grid_id = current_slot.slot_ID + icon_anchor.x * col_count + icon_anchor.y
+	item_held._snap_to(grid_array[calculate_grid_id].global_position)
+	
+	item_held.grid_anchor = current_slot
+	for grid in item_held.item_grids:
+		var grid_to_check = current_slot.slot_ID + grid[0] + grid[1] * col_count
+		grid_array[grid_to_check].state = grid_array[grid_to_check].States.TAKEN
+		grid_array[grid_to_check].item_stored = item_held
+		
+	item_held = null
+	clear_grid()
+
+func pick_item():
+	if not current_slot or not current_slot.item_stored:
+		return
+	
+	item_held = current_slot.item_stored
+	item_held.selected = true
+	
+	for grid in item_held.item_grids:
+		var grid_to_check = item_held.grid_anchor.slot_ID + grid[0] + grid[1] * col_count
+		grid_array[grid_to_check].state = grid_array[grid_to_check].States.FREE
+		
+	check_slot_availability(current_slot)
+	set_grids.call_deferred(current_slot)
+	
+	
+	
