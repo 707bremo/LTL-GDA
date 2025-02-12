@@ -121,6 +121,7 @@ scene_file = ExtResource("9_d0jn0")
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_xmqbb"]
 name = "brown_mud_leaves_01_diff_4k"
+albedo_color = Color(0.625597, 0.625597, 0.625597, 1)
 albedo_texture = ExtResource("1_nyfxu")
 normal_texture = ExtResource("8_7nd0b")
 detiling = 1.0
