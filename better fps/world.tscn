@@ -10,8 +10,6 @@ albedo_texture = ExtResource("1_rq3lo")
 uv1_triplanar = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_oacf2"]
-dof_blur_far_enabled = true
-dof_blur_near_enabled = true
 
 [node name="world" type="Node3D"]
 
@@ -26,18 +24,18 @@ material_override = ExtResource("2_vm5i1")
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="arch"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.41748)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2.58252)
 use_collision = true
 size = Vector3(4, 4, 4.83496)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="arch"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01392, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.5, 0, 1.01392, 0)
 operation = 2
 use_collision = true
 size = Vector3(2, 1.97217, 4)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="arch"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, -1.09278e-07, -1, 0, 2.5, -4.37114e-08, 0, 2, 0)
 operation = 2
 radius = 1.0
 height = 4.0

@@ -16,15 +16,20 @@ shape = SubResource("CylinderShape3D_bintd")
 [node name="head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
-[node name="camera" type="Camera3D" parent="head"]
+[node name="Camera3D" type="Camera3D" parent="head"]
+cull_mask = 1048573
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="head/camera"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="head/Camera3D"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="head/camera/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="head/Camera3D/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
 
-[node name="view_ model_camera" parent="head/camera/SubViewportContainer/SubViewport" instance=ExtResource("2_ct83v")]
+[node name="view_ model_camera" parent="head/Camera3D/SubViewportContainer/SubViewport" instance=ExtResource("2_ct83v")]
+cull_mask = 1047554
