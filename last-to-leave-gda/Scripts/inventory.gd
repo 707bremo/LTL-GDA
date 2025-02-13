@@ -14,7 +14,6 @@ var current_slot = null # Should be null because no slot is selected before the 
 var can_place := false
 var icon_anchor : Vector2
 
-
 # When the scene plays, it should add 42 available slots in the grid.
 func _ready() -> void:
 	for i in range(42):
@@ -24,6 +23,16 @@ func _ready() -> void:
 # Left clicking = Pick up item / Place item
 # Right clicking = Rotate item
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("open_inv"):
+		if self.visible == false:
+			self.visible = true
+			can_place = false
+		elif self.visible == true and item_held:
+			pass
+		else:
+			self.visible = false
+	
+	
 	if item_held:
 		if Input.is_action_just_pressed("mouse_rightclick"):
 			rotate_item()

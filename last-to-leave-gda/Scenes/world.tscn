@@ -5,3 +5,11 @@
 [node name="World" type="Node3D"]
 
 [node name="Inventory" parent="." instance=ExtResource("1_uar5u")]
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.794749, 0)
+size = Vector3(30, 2, 30)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.874865, 0.484367, 0, -0.484367, 0.874865, 0, 9.11585, 16.3689)
