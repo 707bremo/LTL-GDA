@@ -40,4 +40,5 @@ mesh = SubResource("ArrayMesh_k0m5e")
 surface_material_override/0 = SubResource("StandardMaterial3D_hrkhp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("BoxShape3D_4usc0")

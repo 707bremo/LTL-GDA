@@ -149,7 +149,6 @@ process_mode = 1
 background_mode = 2
 sky = SubResource("Sky_jvt06")
 tonemap_mode = 3
-sdfgi_enabled = true
 sdfgi_energy = 0.5
 adjustment_enabled = true
 adjustment_brightness = 1.1

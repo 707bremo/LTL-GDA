@@ -24,6 +24,10 @@ window/size/viewport_width=1918
 window/size/viewport_height=1078
 window/size/mode=3
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 mouse_rightclick={
