@@ -1,18 +1,18 @@
-[gd_scene load_steps=39 format=3 uid="uid://c83ehswbyetui"]
+[gd_scene load_steps=41 format=3 uid="uid://c83ehswbyetui"]
 
 [ext_resource type="Texture2D" uid="uid://0vsc2b8f4muk" path="res://demo/assets/models/grass.png" id="1_46c6g"]
 [ext_resource type="Texture2D" uid="uid://dsweyvjigqxsg" path="res://addons/brown_mud_leaves_01_diff_4k.jpg" id="1_nyfxu"]
 [ext_resource type="Texture2D" uid="uid://i2isq7m72vms" path="res://demo/assets/models/Bush1_1.png" id="2_4s756"]
-[ext_resource type="PackedScene" uid="uid://sgr0iuc8h8of" path="res://demo/assets/models/smallDeadBranch.fbx" id="2_ncv3k"]
+[ext_resource type="PackedScene" uid="uid://bdxafxq3gmv0t" path="res://demo/assets/models/smallDeadTwig.fbx" id="3_mke20"]
 [ext_resource type="PackedScene" uid="uid://ccw80w6aei2i0" path="res://demo/assets/models/bigDeadBranch.fbx" id="3_nvarg"]
 [ext_resource type="PackedScene" uid="uid://ben23r8rhvkgo" path="res://demo/assets/models/Bush1.fbx" id="4_bj56c"]
 [ext_resource type="PackedScene" uid="uid://bwvtgwartxt0g" path="res://demo/assets/models/RockB.tscn" id="5_cbffl"]
-[ext_resource type="PackedScene" uid="uid://jib546bbort5" path="res://demo/assets/models/Tunnel.glb" id="6_3q31h"]
-[ext_resource type="PackedScene" uid="uid://bgayaopbvh0oe" path="res://demo/assets/models/pineTree1.fbx" id="7_bcywx"]
+[ext_resource type="PackedScene" uid="uid://bkj1covtu08mu" path="res://pine_tree_1.tscn" id="7_6tcd7"]
 [ext_resource type="Shader" path="res://water.gdshader" id="7_pa3jo"]
 [ext_resource type="Texture2D" uid="uid://clhri4hwvn8uv" path="res://addons/brown_mud_leaves_01_nor_gl_4k.png" id="8_7nd0b"]
-[ext_resource type="PackedScene" uid="uid://lx0emricwbgu" path="res://demo/assets/models/pineTree2.fbx" id="8_djjlt"]
-[ext_resource type="PackedScene" uid="uid://dny67vnfggcs0" path="res://demo/assets/models/pineTree3.fbx" id="9_d0jn0"]
+[ext_resource type="PackedScene" uid="uid://d2s67gyk5yo2i" path="res://pine_tree_2.tscn" id="8_h6amm"]
+[ext_resource type="PackedScene" uid="uid://bhgsw34dg3rrj" path="res://pine_tree_3.tscn" id="9_tqslt"]
+[ext_resource type="Texture2D" uid="uid://djwwdi8c5f23l" path="res://demo/assets/models/kloofendal_48d_partly_cloudy_puresky_4k.exr" id="12_tt1rn"]
 
 [sub_resource type="Gradient" id="Gradient_8rypa"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -52,11 +52,11 @@ _shader_parameters = {
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhlfv"]
 transparency = 2
-alpha_scissor_threshold = 0.5
+alpha_scissor_threshold = 0.95
 alpha_antialiasing_mode = 0
-albedo_color = Color(0.873298, 0.873298, 0.873298, 1)
 albedo_texture = ExtResource("1_46c6g")
-metallic_specular = 1.0
+metallic_specular = 0.0
+roughness = 0.0
 backlight_enabled = true
 backlight = Color(0.5, 0.5, 0.5, 1)
 distance_fade_mode = 1
@@ -67,20 +67,26 @@ distance_fade_max_distance = 75.0
 material_override = SubResource("StandardMaterial3D_dhlfv")
 generated_type = 1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1skd6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0uihe"]
+albedo_color = Color(0.619608, 0.619608, 0.619608, 1)
 albedo_texture = ExtResource("2_4s756")
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_swvtc"]
 name = "smallDeadBranch"
 id = 1
-scene_file = ExtResource("2_ncv3k")
-material_override = SubResource("StandardMaterial3D_1skd6")
+scene_file = ExtResource("3_mke20")
+material_override = SubResource("StandardMaterial3D_0uihe")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88lh6"]
+albedo_color = Color(0.621524, 0.621524, 0.621524, 1)
+albedo_texture = ExtResource("2_4s756")
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_o2j4t"]
 name = "bigDeadBranch"
 id = 2
 density = 0.084607
 scene_file = ExtResource("3_nvarg")
+material_override = SubResource("StandardMaterial3D_88lh6")
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_r8qgi"]
 name = "Bush1"
@@ -89,11 +95,20 @@ density = 0.0205127
 visibility_range = 4096.0
 scene_file = ExtResource("4_bj56c")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fn8e3"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 85.0
+distance_fade_max_distance = 75.0
+
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_w3ph5"]
-name = "bearTrap"
 id = 4
-density = 0.01
-scene_file = ExtResource("6_3q31h")
+material_override = SubResource("StandardMaterial3D_fn8e3")
+generated_type = 1
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_b44ap"]
 name = "RockB"
@@ -102,47 +117,52 @@ density = 0.029499
 scene_file = ExtResource("5_cbffl")
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_dk1ar"]
-name = "pineTree1"
+name = "pine_tree_1"
 id = 6
 density = 0.01
-scene_file = ExtResource("7_bcywx")
+scene_file = ExtResource("7_6tcd7")
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_vdrpm"]
-name = "tree"
+name = "pineTree2"
 id = 7
 density = 0.01
-scene_file = ExtResource("8_djjlt")
+scene_file = ExtResource("8_h6amm")
 
-[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_igcyy"]
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_m62gn"]
 name = "pineTree3"
 id = 8
 density = 0.01
-scene_file = ExtResource("9_d0jn0")
+scene_file = ExtResource("9_tqslt")
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_xmqbb"]
 name = "brown_mud_leaves_01_diff_4k"
-albedo_color = Color(0.625597, 0.625597, 0.625597, 1)
+albedo_color = Color(0.489622, 0.489622, 0.489622, 1)
 albedo_texture = ExtResource("1_nyfxu")
 normal_texture = ExtResource("8_7nd0b")
 detiling = 1.0
 
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_k3hev"]
-mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_dcgjv"), SubResource("Terrain3DMeshAsset_swvtc"), SubResource("Terrain3DMeshAsset_o2j4t"), SubResource("Terrain3DMeshAsset_r8qgi"), SubResource("Terrain3DMeshAsset_w3ph5"), SubResource("Terrain3DMeshAsset_b44ap"), SubResource("Terrain3DMeshAsset_dk1ar"), SubResource("Terrain3DMeshAsset_vdrpm"), SubResource("Terrain3DMeshAsset_igcyy")])
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_dcgjv"), SubResource("Terrain3DMeshAsset_swvtc"), SubResource("Terrain3DMeshAsset_o2j4t"), SubResource("Terrain3DMeshAsset_r8qgi"), SubResource("Terrain3DMeshAsset_w3ph5"), SubResource("Terrain3DMeshAsset_b44ap"), SubResource("Terrain3DMeshAsset_dk1ar"), SubResource("Terrain3DMeshAsset_vdrpm"), SubResource("Terrain3DMeshAsset_m62gn")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_xmqbb")])
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vxktr"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_man2q"]
+panorama = ExtResource("12_tt1rn")
+energy_multiplier = 0.5
 
-[sub_resource type="Sky" id="Sky_ic586"]
-sky_material = SubResource("ProceduralSkyMaterial_vxktr")
+[sub_resource type="Sky" id="Sky_jvt06"]
+sky_material = SubResource("PanoramaSkyMaterial_man2q")
+process_mode = 1
 
-[sub_resource type="Environment" id="Environment_fvp8b"]
+[sub_resource type="Environment" id="Environment_7nm4q"]
 background_mode = 2
-sky = SubResource("Sky_ic586")
-sky_custom_fov = 1.0
-tonemap_mode = 2
-glow_enabled = true
+sky = SubResource("Sky_jvt06")
+tonemap_mode = 3
+sdfgi_enabled = true
+sdfgi_energy = 0.5
+adjustment_enabled = true
+adjustment_brightness = 1.1
+adjustment_contrast = 1.1
+adjustment_saturation = 0.9
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h3h32"]
 noise_type = 2
@@ -171,13 +191,12 @@ process_mode = 1
 data_directory = "res://AllRegions"
 material = SubResource("Terrain3DMaterial_811t2")
 assets = SubResource("Terrain3DAssets_k3hev")
-mesh_lods = 10
 mesh_size = 8
 top_level = true
 metadata/_edit_lock_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_fvp8b")
+environment = SubResource("Environment_7nm4q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 125.946, -1.79978, 137.391)
