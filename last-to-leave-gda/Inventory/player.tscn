@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://bm1yeuhsjoasc"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_drj8l"]
+[ext_resource type="Script" path="res://Player/Interaction/PlayerInteractionHandler.gd" id="2_uixuy"]
+[ext_resource type="Script" path="res://Inventory/ItemData.gd" id="3_dtvgd"]
+[ext_resource type="PackedScene" uid="uid://jf1udn6te5vi" path="res://Inventory/TestCube.tscn" id="4_vgey4"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tgoex"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wruo2"]
+
+[sub_resource type="Resource" id="Resource_eu6gp"]
+script = ExtResource("3_dtvgd")
+ItemName = "Test Cube"
+ItemModelPrefab = ExtResource("4_vgey4")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dqx8a"]
+radius = 1.48792
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_drj8l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04436, 0)
+mesh = SubResource("CapsuleMesh_tgoex")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04681, 0)
+shape = SubResource("CapsuleShape3D_wruo2")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52247, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+fov = 113.1
+
+[node name="InteractionArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09407, 0)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_uixuy")
+ItemTypes = Array[ExtResource("3_dtvgd")]([SubResource("Resource_eu6gp")])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+shape = SubResource("SphereShape3D_dqx8a")
+
+[connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="OnObjectEnteredArea"]
+[connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="OnObjectExitedArea"]
