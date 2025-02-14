@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemWeapon" load_steps=6 format=3 uid="uid://n4ckp4hy8do7"]
+
+[ext_resource type="Texture2D" uid="uid://cidumvrrnn3xt" path="res://player/hand_fire_closed.png" id="1_5o41g"]
+[ext_resource type="Script" path="res://lessons_reference/02_extended/items/item_weapon.gd" id="1_gv70y"]
+[ext_resource type="AudioStream" uid="uid://ci3wqc5n054at" path="res://pickups/pickup_fire.wav" id="2_k5c3q"]
+[ext_resource type="Texture2D" uid="uid://bx2vl1vtg6633" path="res://pickups/pickup_fire.png" id="3_ffhr4"]
+[ext_resource type="PackedScene" uid="uid://djuupgygpn614" path="res://lessons_reference/02_extended/weapons/fire_spray.tscn" id="4_tb16b"]
+
+[resource]
+script = ExtResource("1_gv70y")
+weapon = ExtResource("4_tb16b")
+hand_texture = ExtResource("1_5o41g")
+display_name = "Fire spray"
+texture = ExtResource("3_ffhr4")
+sound_on_pickup = ExtResource("2_k5c3q")

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemWeapon" load_steps=6 format=3 uid="uid://cttoxdrguodqx"]
+
+[ext_resource type="Script" path="res://lessons_reference/02_extended/items/item_weapon.gd" id="1_3rgh4"]
+[ext_resource type="Texture2D" uid="uid://c3x625j6kshod" path="res://player/hand_lightning.png" id="1_p3kg6"]
+[ext_resource type="AudioStream" uid="uid://1tgeaijsn187" path="res://pickups/pickup_lightning.wav" id="2_m7ady"]
+[ext_resource type="Texture2D" uid="uid://chbh87fpra1ai" path="res://pickups/pickup_lightning.png" id="3_5g674"]
+[ext_resource type="PackedScene" uid="uid://7pt7hcq8vgf6" path="res://lessons_reference/02_extended/weapons/lightning_strike.tscn" id="4_2tp74"]
+
+[resource]
+script = ExtResource("1_3rgh4")
+weapon = ExtResource("4_2tp74")
+hand_texture = ExtResource("1_p3kg6")
+display_name = "Lightning strike"
+texture = ExtResource("3_5g674")
+sound_on_pickup = ExtResource("2_m7ady")
