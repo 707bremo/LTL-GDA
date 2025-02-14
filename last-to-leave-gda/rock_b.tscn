@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bwvtgwartxt0g" path="res://demo/assets/models/RockB.tscn" id="1_3mfd2"]
 
 [node name="RockB" instance=ExtResource("1_3mfd2")]
+
+[node name="Rock2" parent="." index="0"]
+layers = 2

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ccw80w6aei2i0" path="res://demo/assets/models/bigDeadBranch.fbx" id="3_nvarg"]
 [ext_resource type="PackedScene" uid="uid://ben23r8rhvkgo" path="res://demo/assets/models/Bush1.fbx" id="4_bj56c"]
 [ext_resource type="PackedScene" uid="uid://bwvtgwartxt0g" path="res://demo/assets/models/RockB.tscn" id="5_cbffl"]
+[ext_resource type="PackedScene" uid="uid://be6nrf0b8j4l0" path="res://demo/assets/models/RockA.tscn" id="6_rq30n"]
 [ext_resource type="PackedScene" uid="uid://bkj1covtu08mu" path="res://pine_tree_1.tscn" id="7_6tcd7"]
 [ext_resource type="Shader" path="res://water.gdshader" id="7_pa3jo"]
 [ext_resource type="Texture2D" uid="uid://clhri4hwvn8uv" path="res://addons/brown_mud_leaves_01_nor_gl_4k.png" id="8_7nd0b"]
@@ -95,20 +96,11 @@ density = 0.0205127
 visibility_range = 4096.0
 scene_file = ExtResource("4_bj56c")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fn8e3"]
-transparency = 4
-cull_mode = 2
-vertex_color_use_as_albedo = true
-backlight_enabled = true
-backlight = Color(0.5, 0.5, 0.5, 1)
-distance_fade_mode = 1
-distance_fade_min_distance = 85.0
-distance_fade_max_distance = 75.0
-
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_w3ph5"]
+name = "RockA"
 id = 4
-material_override = SubResource("StandardMaterial3D_fn8e3")
-generated_type = 1
+density = 0.0364415
+scene_file = ExtResource("6_rq30n")
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_b44ap"]
 name = "RockB"
@@ -203,9 +195,6 @@ transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 125.946, -1.79978, 137.
 material_override = SubResource("ShaderMaterial_4oxj6")
 transparency = 0.1
 mesh = SubResource("PlaneMesh_wuh33")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.355857, 0, -0.934541, 0, 1, 0, 0.934541, 0, 0.355857, 5.70735, 11.4654, 135.355)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 150, 200, 143.671)
