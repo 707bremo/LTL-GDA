@@ -1,18 +1,20 @@
-[gd_scene load_steps=41 format=3 uid="uid://c83ehswbyetui"]
+[gd_scene load_steps=51 format=3 uid="uid://c83ehswbyetui"]
 
 [ext_resource type="Texture2D" uid="uid://0vsc2b8f4muk" path="res://demo/assets/models/grass.png" id="1_46c6g"]
 [ext_resource type="Texture2D" uid="uid://dsweyvjigqxsg" path="res://addons/brown_mud_leaves_01_diff_4k.jpg" id="1_nyfxu"]
 [ext_resource type="Texture2D" uid="uid://i2isq7m72vms" path="res://demo/assets/models/Bush1_1.png" id="2_4s756"]
+[ext_resource type="PackedScene" uid="uid://018flajgtx7t" path="res://addons/proton_scatter/demos/assets/models/grass.glb" id="2_v4nvf"]
 [ext_resource type="PackedScene" uid="uid://bdxafxq3gmv0t" path="res://demo/assets/models/smallDeadTwig.fbx" id="3_mke20"]
 [ext_resource type="PackedScene" uid="uid://ccw80w6aei2i0" path="res://demo/assets/models/bigDeadBranch.fbx" id="3_nvarg"]
-[ext_resource type="PackedScene" uid="uid://ben23r8rhvkgo" path="res://demo/assets/models/Bush1.fbx" id="4_bj56c"]
 [ext_resource type="PackedScene" uid="uid://bwvtgwartxt0g" path="res://demo/assets/models/RockB.tscn" id="5_cbffl"]
+[ext_resource type="PackedScene" uid="uid://bep5xl5oyntdr" path="res://demo/assets/models/bush_1.tscn" id="6_d8w1u"]
 [ext_resource type="PackedScene" uid="uid://be6nrf0b8j4l0" path="res://demo/assets/models/RockA.tscn" id="6_rq30n"]
 [ext_resource type="PackedScene" uid="uid://bkj1covtu08mu" path="res://pine_tree_1.tscn" id="7_6tcd7"]
 [ext_resource type="Shader" path="res://water.gdshader" id="7_pa3jo"]
 [ext_resource type="Texture2D" uid="uid://clhri4hwvn8uv" path="res://addons/brown_mud_leaves_01_nor_gl_4k.png" id="8_7nd0b"]
 [ext_resource type="PackedScene" uid="uid://d2s67gyk5yo2i" path="res://pine_tree_2.tscn" id="8_h6amm"]
 [ext_resource type="PackedScene" uid="uid://bhgsw34dg3rrj" path="res://pine_tree_3.tscn" id="9_tqslt"]
+[ext_resource type="PackedScene" uid="uid://dpqt0rtkvo85l" path="res://demo/assets/models/log.fbx" id="12_ouykg"]
 [ext_resource type="Texture2D" uid="uid://djwwdi8c5f23l" path="res://demo/assets/models/kloofendal_48d_partly_cloudy_puresky_4k.exr" id="12_tt1rn"]
 
 [sub_resource type="Gradient" id="Gradient_8rypa"]
@@ -51,22 +53,18 @@ _shader_parameters = {
 "vertex_normals_distance": 128.0
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhlfv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxk3r"]
 transparency = 2
-alpha_scissor_threshold = 0.95
+alpha_scissor_threshold = 0.8
 alpha_antialiasing_mode = 0
+albedo_color = Color(0.620852, 0.712823, 0.246559, 1)
 albedo_texture = ExtResource("1_46c6g")
 metallic_specular = 0.0
-roughness = 0.0
-backlight_enabled = true
-backlight = Color(0.5, 0.5, 0.5, 1)
-distance_fade_mode = 1
-distance_fade_min_distance = 85.0
-distance_fade_max_distance = 75.0
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_dcgjv"]
-material_override = SubResource("StandardMaterial3D_dhlfv")
-generated_type = 1
+name = "grass"
+scene_file = ExtResource("2_v4nvf")
+material_override = SubResource("StandardMaterial3D_hxk3r")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0uihe"]
 albedo_color = Color(0.619608, 0.619608, 0.619608, 1)
@@ -94,7 +92,7 @@ name = "Bush1"
 id = 3
 density = 0.0205127
 visibility_range = 4096.0
-scene_file = ExtResource("4_bj56c")
+scene_file = ExtResource("6_d8w1u")
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_w3ph5"]
 name = "RockA"
@@ -126,6 +124,12 @@ id = 8
 density = 0.01
 scene_file = ExtResource("9_tqslt")
 
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_k603v"]
+name = "log"
+id = 9
+density = 0.21058
+scene_file = ExtResource("12_ouykg")
+
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_xmqbb"]
 name = "brown_mud_leaves_01_diff_4k"
 albedo_color = Color(0.489622, 0.489622, 0.489622, 1)
@@ -134,7 +138,7 @@ normal_texture = ExtResource("8_7nd0b")
 detiling = 1.0
 
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_k3hev"]
-mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_dcgjv"), SubResource("Terrain3DMeshAsset_swvtc"), SubResource("Terrain3DMeshAsset_o2j4t"), SubResource("Terrain3DMeshAsset_r8qgi"), SubResource("Terrain3DMeshAsset_w3ph5"), SubResource("Terrain3DMeshAsset_b44ap"), SubResource("Terrain3DMeshAsset_dk1ar"), SubResource("Terrain3DMeshAsset_vdrpm"), SubResource("Terrain3DMeshAsset_m62gn")])
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_dcgjv"), SubResource("Terrain3DMeshAsset_swvtc"), SubResource("Terrain3DMeshAsset_o2j4t"), SubResource("Terrain3DMeshAsset_r8qgi"), SubResource("Terrain3DMeshAsset_w3ph5"), SubResource("Terrain3DMeshAsset_b44ap"), SubResource("Terrain3DMeshAsset_dk1ar"), SubResource("Terrain3DMeshAsset_vdrpm"), SubResource("Terrain3DMeshAsset_m62gn"), SubResource("Terrain3DMeshAsset_k603v")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_xmqbb")])
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_man2q"]
@@ -149,12 +153,51 @@ process_mode = 1
 background_mode = 2
 sky = SubResource("Sky_jvt06")
 tonemap_mode = 3
+tonemap_white = 16.0
 sdfgi_enabled = true
-sdfgi_energy = 0.5
-adjustment_enabled = true
-adjustment_brightness = 1.1
-adjustment_contrast = 1.1
-adjustment_saturation = 0.9
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 1.25
+sdfgi_y_scale = 2
+sdfgi_energy = 15.0
+glow_intensity = 2.01
+
+[sub_resource type="Animation" id="Animation_lpi4q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:environment:background_energy_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_fcbvv"]
+resource_name = "SkyColor"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:environment:background_energy_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 9, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.25, 0.25, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3kgtc"]
+_data = {
+"RESET": SubResource("Animation_lpi4q"),
+"SkyColor": SubResource("Animation_fcbvv")
+}
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h3h32"]
 noise_type = 2
@@ -176,19 +219,54 @@ shader_parameter/water_normal_noise = SubResource("NoiseTexture2D_fibp8")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wuh33"]
 
-[sub_resource type="Sky" id="Sky_7lwxj"]
-process_mode = 1
+[sub_resource type="ArrayOccluder3D" id="ArrayOccluder3D_884q1"]
+vertices = PackedVector3Array(0, -32.9867, 0, 256, -22.8579, 256, 0, -32.6081, 256, 256, -22.8696, 0)
+indices = PackedInt32Array(0, 1, 2, 0, 3, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6hj4m"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 5.0
+initial_velocity_max = 0.25
+color = Color(0.52543, 0.542966, 0.65515, 0.788235)
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="Curve" id="Curve_vqfb2"]
+max_value = 0.1
+_data = [Vector2(0, 0.00264575), 0.0, 0.42383, 0, 0, Vector2(0.0685579, 0.0469507), 0.493184, 0.493184, 0, 0, Vector2(0.312057, 0.0766816), -0.11559, -0.11559, 0, 0, Vector2(0.619385, 0.0341256), -0.125193, -0.125193, 0, 0, Vector2(0.983451, 0.00847534), -0.0637738, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4v7yp"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_gp5mc"]
+material = SubResource("StandardMaterial3D_4v7yp")
+custom_aabb = AABB(-10, -20, -10, 20, 20, 20)
+curve = SubResource("Curve_vqfb2")
 
 [node name="Terrain3D" type="Terrain3D"]
 data_directory = "res://AllRegions"
 material = SubResource("Terrain3DMaterial_811t2")
 assets = SubResource("Terrain3DAssets_k3hev")
-mesh_size = 8
 top_level = true
 metadata/_edit_lock_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7nm4q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WorldEnvironment"]
+active = false
+libraries = {
+"": SubResource("AnimationLibrary_3kgtc")
+}
+autoplay = "SkyColor"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 125.946, -1.79978, 137.391)
@@ -196,13 +274,35 @@ material_override = SubResource("ShaderMaterial_4oxj6")
 transparency = 0.1
 mesh = SubResource("PlaneMesh_wuh33")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 150, 200, 143.671)
-light_energy = 2.0
-light_angular_distance = 55.0
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = SubResource("ArrayOccluder3D_884q1")
 
-[node name="LightmapGI" type="LightmapGI" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 115.874, 0)
-environment_mode = 2
-environment_custom_sky = SubResource("Sky_7lwxj")
-environment_custom_energy = 64.0
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(75, 0, 0, 0, 75, 0, 0, 0, 75, -39.4105, 7.25239, -166.486)
+material_override = SubResource("ShaderMaterial_4oxj6")
+transparency = 0.1
+mesh = SubResource("PlaneMesh_wuh33")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 75, 0, 0, 0, 100, 237.776, 3.92737, 305.351)
+material_override = SubResource("ShaderMaterial_4oxj6")
+transparency = 0.1
+mesh = SubResource("PlaneMesh_wuh33")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 75, 0, 0, 0, 150, -153.971, 8.57299, 479.415)
+material_override = SubResource("ShaderMaterial_4oxj6")
+transparency = 0.1
+mesh = SubResource("PlaneMesh_wuh33")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 128.808, 81.2613, 174.915)
+amount = 300000
+lifetime = 2.0
+randomness = 1.0
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_6hj4m")
+draw_pass_1 = SubResource("RibbonTrailMesh_gp5mc")
