@@ -17,7 +17,7 @@ var loot_tables = {
 func _ready() -> void:
 	load_items_from_csv(item_data_path)
 	populate_loot_tables()
-	print("Loot Tables: ", loot_tables)
+	#print("Loot Tables: ", loot_tables)
 	#set_grid_data()
 
 func load_items_from_csv(file_path: String):

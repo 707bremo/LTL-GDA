@@ -12,5 +12,4 @@
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 4.28717, 0)
 
 [node name="ItemSpawner" parent="." instance=ExtResource("3_nnh3y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15331, 17.3779, 37.9906)
-spawn_area = Vector3(-7.153, 17.378, 37.991)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7466, 25.1086, 54.8569)

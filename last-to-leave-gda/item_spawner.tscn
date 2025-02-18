@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cccutptgjy3wn" path="res://data_handler.tscn" id="3_t1uka"]
 
 [node name="ItemSpawner" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09721, 0)
 script = ExtResource("1_37mep")
 item_scene = ExtResource("2_egl5c")
 

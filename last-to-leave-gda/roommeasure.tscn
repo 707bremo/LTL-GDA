@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7tp07exy4yph"]
+
+[ext_resource type="Script" path="res://room.gd" id="1_lb165"]
+[ext_resource type="PackedScene" uid="uid://jf1udn6te5vi" path="res://Inventory/TestCube.tscn" id="2_laf7n"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gaxo4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lodaa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_apsyr"]
+
+[node name="Room" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07383, 0)
+script = ExtResource("1_lb165")
+item_scene = ExtResource("2_laf7n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["room_meshes"]]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("PlaneMesh_gaxo4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." groups=["room_meshes"]]
+transform = Transform3D(0.3, 0, 0, 0, 1, 0, 0, 0, 4, 1.84296, 0.500627, 0)
+mesh = SubResource("BoxMesh_lodaa")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." groups=["room_meshes"]]
+transform = Transform3D(0.3, 0, 0, 0, 1, 0, 0, 0, 4, -1.85224, 0.500627, 0)
+mesh = SubResource("BoxMesh_lodaa")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." groups=["room_meshes"]]
+transform = Transform3D(-1.31134e-08, 0, 3.4, 0, 1, 0, -0.3, 0, -1.48619e-07, -0.0144585, 0.500627, -1.84573)
+mesh = SubResource("BoxMesh_lodaa")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." groups=["room_meshes"]]
+transform = Transform3D(-1.31134e-08, 0, 3.4, 0, 1, 0, -0.3, 0, -1.48619e-07, -0.0144585, 0.500627, 1.84987)
+mesh = SubResource("BoxMesh_lodaa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_apsyr")
