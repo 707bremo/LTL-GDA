@@ -1,6 +1,7 @@
 # DataHandler.gd +++
 extends Node
 
+signal loot_tables_updated(loot_tables)
 var item_data := {}
 #var item_grid_data := {}
 
@@ -42,12 +43,12 @@ func load_items_from_csv(file_path: String):
 		print("Failed to open file: ", file_path)
 
 func populate_loot_tables():
-	for item in item_data:
+	for item in item_data.values():
 		if item["type"] == "Consumables" and item["rarity"] == "Common":
 			loot_tables["civilian_food"].append(item)
 		elif item["type"] == "Weapon":
 			loot_tables["military_gear"].append(item)
-
+	emit_signal("loot_tables_updated", loot_tables)
 
 
 

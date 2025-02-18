@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://piy7l6qbal3q"]
+[gd_scene load_steps=4 format=3 uid="uid://piy7l6qbal3q"]
 
 [ext_resource type="PackedScene" uid="uid://c83ehswbyetui" path="res://terrain_3d.tscn" id="1_apgil"]
 [ext_resource type="PackedScene" uid="uid://bm1yeuhsjoasc" path="res://Inventory/player.tscn" id="2_grt0v"]
+[ext_resource type="PackedScene" uid="uid://bk8maeh7h0lji" path="res://item_spawner.tscn" id="3_nnh3y"]
 
 [node name="World" type="Node3D"]
 
 [node name="Terrain3D" parent="." instance=ExtResource("1_apgil")]
 
 [node name="Player" parent="." instance=ExtResource("2_grt0v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.28717, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 4.28717, 0)
+
+[node name="ItemSpawner" parent="." instance=ExtResource("3_nnh3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15331, 17.3779, 37.9906)
+spawn_area = Vector3(-7.153, 17.378, 37.991)
