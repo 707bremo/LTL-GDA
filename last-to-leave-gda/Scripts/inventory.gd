@@ -23,16 +23,6 @@ func _ready() -> void:
 # Left clicking = Pick up item / Place item
 # Right clicking = Rotate item
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("open_inv"):
-		if self.visible == false:
-			self.visible = true
-			can_place = false
-		elif self.visible == true and item_held:
-			pass
-		else:
-			self.visible = false
-	
-	
 	if item_held:
 		if Input.is_action_just_pressed("mouse_rightclick"):
 			rotate_item()

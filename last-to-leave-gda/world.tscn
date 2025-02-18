@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://piy7l6qbal3q"]
+[gd_scene load_steps=3 format=3 uid="uid://piy7l6qbal3q"]
 
 [ext_resource type="PackedScene" uid="uid://c83ehswbyetui" path="res://terrain_3d.tscn" id="1_apgil"]
 [ext_resource type="PackedScene" uid="uid://bm1yeuhsjoasc" path="res://Inventory/player.tscn" id="2_grt0v"]
-[ext_resource type="PackedScene" uid="uid://jf1udn6te5vi" path="res://Inventory/TestCube.tscn" id="3_22wj5"]
 
 [node name="World" type="Node3D"]
 
@@ -10,39 +9,3 @@
 
 [node name="Player" parent="." instance=ExtResource("2_grt0v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.28717, 0)
-
-[node name="ItemTestCube" parent="." instance=ExtResource("3_22wj5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.374159, 9.63485, 10.3126)
-
-[node name="ItemTestCube2" parent="." instance=ExtResource("3_22wj5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.142, 9.63485, 15.287)
-
-[node name="ItemTestCube3" parent="." instance=ExtResource("3_22wj5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38771, 9.63485, 10.3126)
-
-[node name="ItemTestCube4" parent="." instance=ExtResource("3_22wj5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.63485, 5.95563)
-
-[node name="ItemTestCube5" parent="." instance=ExtResource("3_22wj5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3711, 9.63485, 15.7478)
-
-[node name="ItemTestCube6" parent="." instance=ExtResource("3_22wj5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.63485, 19.8581)
-
-[node name="ItemTestCube7" parent="." instance=ExtResource("3_22wj5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.67321, 10.5536, 10.3126)
-
-[node name="ItemTestCube8" parent="." instance=ExtResource("3_22wj5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15705, 10.5536, 15.287)
-
-[node name="ItemTestCube9" parent="." instance=ExtResource("3_22wj5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6868, 10.5536, 10.3126)
-
-[node name="ItemTestCube10" parent="." instance=ExtResource("3_22wj5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.29905, 10.5536, 5.95563)
-
-[node name="ItemTestCube11" parent="." instance=ExtResource("3_22wj5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6701, 10.5536, 15.7478)
-
-[node name="ItemTestCube12" parent="." instance=ExtResource("3_22wj5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.29905, 10.5536, 19.8581)

@@ -1,0 +1,18 @@
+ID,Name,Type,Description,Abbreviation,Weight,Volume,Rarity
+1,MRE,Consumables,Pack of food. Make sure you savor every bite.,MRE,1.1,3,Scarce
+2,Beef Stew,Consumables,Some soup in a can. Really packed with that beefy flavor.,b_stew,0.58,1.5,Depleted
+3,Lime Soda,Consumables,Greenie.,lime_soda,0.3,0.4,Common
+4,Berry Soda,Consumables,The fake sprite. Or 7up...or whatever this is.,berry_soda,0.53,0.4,Common
+5,Bottled Water,Consumables,It's just water. Nothing special.,bot_water,0.26,0.4,Scarce
+6,Juice,Consumables,Yeah just some ordinary juice. No artificail flavors are implanted.,juice,0.12,0.4,Common
+7,Beer,Consumables,There's a tall Ukranian guy waiting for this!,beer,1.25,0.5,Plentiful
+8,Bread,Consumables,Just a plain slice of white bread. It might rip into pieces if not carried properly., bread,0.1,0.25,Common
+9,Spam,Consumables,A lot of people here used to make masubis with this. Now they're all dead.,sam,0.34,0.75,Scarce
+10,Energy Bar,Consumables,Probably the most normal snack you'll every find in this place.,e_bar,0.05,0.25,Scarce
+11,Chicken Soup,Consumables,No not chicken noodle soup. Okay?,c_soup,0.3,1.5,Scarce
+12,Canned Peaches,Consumables,Peaches in a can. Provides explosive flavor coming from a tin can!,c_peach,0.5,1,Common
+13,Canned Tomatoes,Consumables,Unfortunately these tomatoes don't do as much as you would hope. It's just tomatoes.,c_tomat,0.5,1,Common
+14,Canned Pineapple,Consumables,"Spongebob, not under the sea, but in a can. Boom.",c_papple,0.565,1,Plentiful
+15,Canned Corn,Consumables,Does corn in a can actually taste good?,c_corn,0.45,1,Plentiful
+16,Chips,Consumables,Light and crispy. Not too filling but a great snack on the go.,cips,0.2,0.65,Plentiful
+17,Salted Crackers,Consumables,Pocket sized snack ready to go.,salt_crack,0.05,0.25,Common

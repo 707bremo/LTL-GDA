@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cj610kuwudlwp"
+
+[deps]
+
+files=["res://data/loot_table_food/LTL-DATASHEET - C_FOOD_ITEM_DATA.Name.translation", "res://data/loot_table_food/LTL-DATASHEET - C_FOOD_ITEM_DATA.Type.translation", "res://data/loot_table_food/LTL-DATASHEET - C_FOOD_ITEM_DATA.Description.translation", "res://data/loot_table_food/LTL-DATASHEET - C_FOOD_ITEM_DATA.Abbreviation.translation", "res://data/loot_table_food/LTL-DATASHEET - C_FOOD_ITEM_DATA.Weight.translation", "res://data/loot_table_food/LTL-DATASHEET - C_FOOD_ITEM_DATA.Volume.translation", "res://data/loot_table_food/LTL-DATASHEET - C_FOOD_ITEM_DATA.Rarity.translation"]
+
+source_file="res://data/loot_table_food/LTL-DATASHEET - C_FOOD_ITEM_DATA.csv"
+dest_files=["res://data/loot_table_food/LTL-DATASHEET - C_FOOD_ITEM_DATA.Name.translation", "res://data/loot_table_food/LTL-DATASHEET - C_FOOD_ITEM_DATA.Type.translation", "res://data/loot_table_food/LTL-DATASHEET - C_FOOD_ITEM_DATA.Description.translation", "res://data/loot_table_food/LTL-DATASHEET - C_FOOD_ITEM_DATA.Abbreviation.translation", "res://data/loot_table_food/LTL-DATASHEET - C_FOOD_ITEM_DATA.Weight.translation", "res://data/loot_table_food/LTL-DATASHEET - C_FOOD_ITEM_DATA.Volume.translation", "res://data/loot_table_food/LTL-DATASHEET - C_FOOD_ITEM_DATA.Rarity.translation"]
+
+[params]
+
+compress=true
+delimiter=0
