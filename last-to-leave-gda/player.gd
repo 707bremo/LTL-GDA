@@ -6,6 +6,8 @@ const SPRINT_SPEED = 8.0
 const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.004
 
+
+
 #bob variables
 const BOB_FREQ = 2.4
 const BOB_AMP = 0.08
@@ -20,6 +22,9 @@ var gravity = 9.8
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var ia_eyes = $IA_eyes
+@onready var interaction_area = $IA_eyes/InteractionArea
+@onready var hitbox = $CollisionShape3D
 
 
 func _ready():
@@ -31,7 +36,9 @@ func _unhandled_input(event):
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(60))
-
+		ia_eyes.rotate_y(-event.relative.x * SENSITIVITY)
+		interaction_area.rotate_x(-event.relative.y * SENSITIVITY)
+		interaction_area.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(60))
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -47,6 +54,8 @@ func _physics_process(delta):
 		speed = SPRINT_SPEED
 	else:
 		speed = WALK_SPEED
+
+
 
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("left", "right", "up", "down")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxoy5fwqcashf"]
+[gd_scene load_steps=6 format=3 uid="uid://bxoy5fwqcashf"]
 
 [ext_resource type="PackedScene" uid="uid://bk8maeh7h0lji" path="res://item_spawner.tscn" id="1_phda2"]
+[ext_resource type="PackedScene" uid="uid://bm1yeuhsjoasc" path="res://Inventory/player.tscn" id="2_887ug"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_siifo"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -24,14 +25,13 @@ environment = SubResource("Environment_mbq65")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443235, 3.70464, 22.8929)
-fov = 100.0
-
 [node name="ItemSpawner" parent="." instance=ExtResource("1_phda2")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 4.78422, 0)
 
 [node name="floor" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.451303, 0)
 use_collision = true
-size = Vector3(40, 1, 40)
+size = Vector3(100, 1, 100)
+
+[node name="Player" parent="." instance=ExtResource("2_887ug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.50818, 12.8653)

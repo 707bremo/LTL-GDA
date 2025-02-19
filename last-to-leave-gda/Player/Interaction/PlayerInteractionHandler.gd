@@ -1,12 +1,14 @@
 extends Area3D
 
 @export var ItemTypes : Array[ItemData] = []
+@onready var canvas_layer: CanvasLayer = $/root/TestRoom/Player/CanvasLayer
 
 var NearbyBodies : Array[InteractableItem]
 
 func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("Interact")):
 		PickupNearestItem()
+		canvas_layer.visible = false
 
 
 func PickupNearestItem():
@@ -23,7 +25,7 @@ func PickupNearestItem():
 		var itemPrefab = nearestItem.scene_file_path
 		for i in ItemTypes.size():
 			if (ItemTypes[i].ItemModelPrefab != null and ItemTypes[i].ItemModelPrefab.resource_path == itemPrefab):
-				print("ID:" + str(i) + " Name:" + ItemTypes[i].ItemName)
+				print("ID:" + str(i) + " Name: " + ItemTypes[i].ItemName)
 				return
 		
 		
@@ -31,10 +33,12 @@ func PickupNearestItem():
 
 func OnObjectEnteredArea(body: Node3D):
 	if (body is InteractableItem):
+		canvas_layer.visible = true
 		body.GainFocus()
 		NearbyBodies.append(body)
 
 func OnObjectExitedArea(body: Node3D):
 	if (body is InteractableItem and NearbyBodies.has(body)):
+		canvas_layer.visible = false
 		body.LoseFocus()
 		NearbyBodies.remove_at(NearbyBodies.find(body))

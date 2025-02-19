@@ -2,7 +2,7 @@ extends Node3D
 
 
 @export var item_scene: PackedScene  # Assign a PackedScene in the Inspector
-@export var spawn_area: Vector3 = Vector3()  # Define spawn area size
+@export var spawn_area: Vector3 = Vector3(0.4, 0.4, 0.4)  # Define spawn area size
 
 
 func spawn_items(item_count: int, loot_table: Array, force_magnitude: float = 30.0):
