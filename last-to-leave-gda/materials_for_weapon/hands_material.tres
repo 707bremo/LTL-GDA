@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dtddo0t3yrnbi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yf24b"]
+
+[resource]
+next_pass = SubResource("ShaderMaterial_yf24b")
+diffuse_mode = 3
+specular_mode = 1
