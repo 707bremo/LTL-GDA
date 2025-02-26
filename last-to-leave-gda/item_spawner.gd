@@ -1,17 +1,24 @@
 extends Node3D
 
 
-@export var item_scene: PackedScene  # Assign a PackedScene in the Inspector
+@export var item_scenes = {
+	"12": preload("res://canned_peaches.tscn"),
+	"17": preload("res://saltedcrackers.tscn"),
+}
 @export var spawn_area: Vector3 = Vector3(0.4, 0.4, 0.4)  # Define spawn area size
 
-
-func spawn_items(item_count: int, loot_table: Array, force_magnitude: float = 30.0):
+func spawn_items(item_count: int, loot_table: Array, force_magnitude: float = 10.0):
 	for i in range(item_count):
 		
 		# Randomly select an item from the loot_table
 		var random_item = loot_table[randi() % loot_table.size()]
 		
 		 # Spawn the item
+		var item_scene = item_scenes.get(random_item["id"], null)
+		if item_scene == null:
+			print("No scene found for item: ", random_item["id"])
+			continue
+			
 		var item = item_scene.instantiate()
 		item.position = Vector3(
 			randf_range(-spawn_area.x / 2, spawn_area.x / 2),
@@ -39,4 +46,4 @@ func spawn_items(item_count: int, loot_table: Array, force_magnitude: float = 30
 
 
 func _on_loot_tables_updated(loot_tables):
-	spawn_items(40, loot_tables["civilian_food"])  # Spawn 5 civilian food items
+	spawn_items(20, loot_tables["civilian_food"])  # Spawn 5 civilian food items

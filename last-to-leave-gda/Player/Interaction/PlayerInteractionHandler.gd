@@ -32,7 +32,7 @@ func PickupNearestItem():
 		printerr("No items Daga")
 
 func OnObjectEnteredArea(body: Node3D):
-	if (body is InteractableItem):
+	if (body is InteractableItem) and canvas_layer.visible == false:
 		canvas_layer.visible = true
 		body.GainFocus()
 		NearbyBodies.append(body)

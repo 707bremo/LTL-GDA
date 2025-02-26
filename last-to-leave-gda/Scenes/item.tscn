@@ -2,10 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/item.gd" id="1_ryre2"]
 
-[node name="Item" type="Node2D"]
-script = ExtResource("1_ryre2")
-
-[node name="Icon" type="TextureRect" parent="."]
+[node name="Icon" type="TextureRect"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -17,3 +14,4 @@ offset_right = 40.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ryre2")

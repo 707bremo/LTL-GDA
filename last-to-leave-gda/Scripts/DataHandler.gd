@@ -37,7 +37,7 @@ func load_items_from_csv(file_path: String):
 					"weight": float(line[6]),
 					"rarity": line[7],
 				}
-				item_data[line[0]] = item
+				item_data[str(line[0])] = item  # Use string ID as key
 		file.close()
 	else:
 		print("Failed to open file: ", file_path)

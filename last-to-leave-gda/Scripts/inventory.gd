@@ -18,7 +18,8 @@ var icon_anchor : Vector2
 func _ready() -> void:
 	for i in range(42):
 		create_slot()
-
+	await get_tree().process_frame
+	DataHandler.populate_loot_tables()
 
 # Left clicking = Pick up item / Place item
 # Right clicking = Rotate item
@@ -102,15 +103,30 @@ func set_grids(a_Slot):
 		else:
 			grid_array[grid_to_check].set_color(grid_array[grid_to_check].States.TAKEN)
 
-# Spawn an item when the button gets pressesd.
-func _on_spawn_item_pressed() -> void:
+# inventory.gd
+func add_item_to_inventory(item_data: Dictionary):
 	var new_item = item_scene.instantiate()
+	
+	# Configure item before adding to scene tree
+	new_item.load_item(item_data)
+	
+	# Add to inventory BEFORE positioning
 	add_child(new_item)
-	new_item.load_item(3)
-	new_item.selected = true
-	item_held = new_item
+	new_item.visible = false  # Hide until positioned
+	place_item_in_slot(new_item)
 
-
+func place_item_in_slot(item):
+	await get_tree().process_frame  # Wait for layout update
+	
+	for slot in grid_array:
+		if slot.state == slot.States.DEFAULT:
+			slot.state = slot.States.TAKEN
+			slot.item_stored = item
+			# Convert slot position to local coordinates
+			var target_pos = scroll_container.get_global_transform().affine_inverse() * slot.global_position
+			item._snap_to(target_pos)
+			item.visible = true
+			return
 
 # The grid should be at default (empty) when a space isn't occupied.
 # This only occurs when dragging and placing items.

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bm1yeuhsjoasc"]
+[gd_scene load_steps=11 format=3 uid="uid://bm1yeuhsjoasc"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_drj8l"]
 [ext_resource type="Script" path="res://Player/Interaction/PlayerInteractionHandler.gd" id="2_uixuy"]
 [ext_resource type="Script" path="res://Inventory/ItemData.gd" id="3_dtvgd"]
 [ext_resource type="PackedScene" uid="uid://jf1udn6te5vi" path="res://Inventory/TestCube.tscn" id="4_vgey4"]
 [ext_resource type="FontFile" uid="uid://cpv8gi8g06fgo" path="res://Esperanto SmallCaps Regular.ttf" id="5_270rb"]
+[ext_resource type="PackedScene" uid="uid://k82p23qw3f2" path="res://Scenes/inventory.tscn" id="6_epqec"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tgoex"]
 
@@ -68,6 +69,11 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_270rb")
 theme_override_font_sizes/font_size = 20
 text = "Store item (F)"
+
+[node name="PlayerUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Inventory" parent="PlayerUI" instance=ExtResource("6_epqec")]
 
 [connection signal="body_entered" from="IA_eyes/InteractionArea" to="IA_eyes/InteractionArea" method="OnObjectEnteredArea"]
 [connection signal="body_exited" from="IA_eyes/InteractionArea" to="IA_eyes/InteractionArea" method="OnObjectExitedArea"]

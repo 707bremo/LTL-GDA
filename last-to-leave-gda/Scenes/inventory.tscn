@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d0gx1bpj7rnhw" path="res://invexample.webp" id="1_4u52t"]
 [ext_resource type="Script" path="res://Scripts/inventory.gd" id="1_gt72u"]
 
-[node name="Inventory" type="Control"]
+[node name="Inventory" type="Control" groups=["inventory"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,15 +50,3 @@ layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 6
-
-[node name="Spawn_item" type="Button" parent="ColorRect"]
-layout_mode = 2
-anchor_top = 1.032
-anchor_bottom = 1.032
-offset_top = 0.0799561
-offset_right = 480.0
-offset_bottom = 31.08
-grow_horizontal = 2
-text = "Spawn item"
-
-[connection signal="pressed" from="ColorRect/Spawn_item" to="." method="_on_spawn_item_pressed"]

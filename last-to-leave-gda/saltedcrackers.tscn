@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ue3dldybi05d"]
+
+[ext_resource type="PackedScene" uid="uid://bp5h7axx1qiws" path="res://PracticeAssets/SaltedCrackers.fbx" id="1_l6rrc"]
+[ext_resource type="Script" path="res://Inventory/InteractableItem.gd" id="2_dgpp3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8myd"]
+albedo_color = Color(0.203922, 0.203922, 0.203922, 1)
+emission_enabled = true
+emission = Color(0, 0.486275, 0.0196078, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_24s3d"]
+size = Vector3(0.16, 0.05, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_srbnx"]
+size = Vector3(0.17, 0.09, 0.4)
+
+[node name="saltedcrackers" node_paths=PackedStringArray("ItemHighlightMesh") instance=ExtResource("1_l6rrc")]
+collision_layer = 2
+collision_mask = 3
+mass = 2.0
+script = ExtResource("2_dgpp3")
+ItemHighlightMesh = NodePath("Outline")
+
+[node name="Outline" type="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0218679, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_g8myd")
+mesh = SubResource("BoxMesh_24s3d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0170789, 0)
+shape = SubResource("BoxShape3D_srbnx")

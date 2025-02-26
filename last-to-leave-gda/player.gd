@@ -25,11 +25,12 @@ var gravity = 9.8
 @onready var ia_eyes = $IA_eyes
 @onready var interaction_area = $IA_eyes/InteractionArea
 @onready var hitbox = $CollisionShape3D
+@onready var player_ui: CanvasLayer = $PlayerUI
 
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
+	player_ui.visible = false
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -88,3 +89,7 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("open_inv"):
+		player_ui.visible = !player_ui.visible  # Toggles between true and false
