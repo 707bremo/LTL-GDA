@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://1eodplbl1tof"]
+
+[ext_resource type="PackedScene" uid="uid://lxwkf5dplkpi" path="res://demo/assets/models/campfire_wood_survival_warm_and_light.glb" id="1_g2lvu"]
+[ext_resource type="Texture2D" uid="uid://bvdkk8sjnabyf" path="res://demo/assets/models/campfire_wood_survival_warm_and_light_0.png" id="2_3geac"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tr1tu"]
+albedo_color = Color(0.605274, 0.605274, 0.605274, 1)
+albedo_texture = ExtResource("2_3geac")
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_g2lvu")]
+
+[node name="CampFireWood_CfWood_0" parent="Sketchfab_model/CfWood_fbx/RootNode/CampFireWood" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_tr1tu")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://qh46bds76vc"]
+
+[ext_resource type="PackedScene" uid="uid://5d5yrkecw237" path="res://demo/assets/models/tent.glb" id="1_ee7ox"]
+[ext_resource type="Texture2D" uid="uid://bs0ifbkdbwooa" path="res://demo/assets/models/tent_0.jpg" id="2_u2lfn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3r4ma"]
+albedo_color = Color(0.485558, 0.648761, 0.999999, 1)
+albedo_texture = ExtResource("2_u2lfn")
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_ee7ox")]
+
+[node name="defaultMaterial" parent="Sketchfab_model/Collada visual scene group/Cube" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_3r4ma")

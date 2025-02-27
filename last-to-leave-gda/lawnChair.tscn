@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c50rvk14mxacj"]
+
+[ext_resource type="PackedScene" uid="uid://bywbrh3iov7u1" path="res://demo/assets/models/chair_low-poly.glb" id="1_dp04i"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_dp04i")]

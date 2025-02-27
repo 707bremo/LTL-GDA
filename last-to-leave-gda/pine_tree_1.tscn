@@ -8,6 +8,7 @@ albedo_color = Color(0.439216, 0.505882, 0.160784, 1)
 albedo_texture = ExtResource("2_ni5rm")
 
 [node name="pineTree1" instance=ExtResource("1_iaqna")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="tree1_001" parent="." index="0"]
 surface_material_override/1 = SubResource("StandardMaterial3D_yj1ll")
