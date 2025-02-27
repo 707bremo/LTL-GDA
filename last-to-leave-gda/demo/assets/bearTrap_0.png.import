@@ -3,19 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0jccy1p7wtka"
-path.s3tc="res://.godot/imported/bearTrap_0.png-cd5eab14e89d8e92eee2d5d618c269c3.s3tc.ctex"
+path.s3tc="res://.godot/imported/bearTrap_0.png-ba130b5a4c94985c89e7adbf2154566a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "a5f11b7a69632e48736ee2cba5acfbaa"
+"md5": "5491e67407f56f3973afff30669cd293"
 }
 
 [deps]
 
-source_file="res://demo/assets/models/bearTrap_0.png"
-dest_files=["res://.godot/imported/bearTrap_0.png-cd5eab14e89d8e92eee2d5d618c269c3.s3tc.ctex"]
+source_file="res://demo/assets/bearTrap_0.png"
+dest_files=["res://.godot/imported/bearTrap_0.png-ba130b5a4c94985c89e7adbf2154566a.s3tc.ctex"]
 
 [params]
 
