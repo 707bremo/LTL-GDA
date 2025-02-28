@@ -205,7 +205,6 @@ _data = {
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h3h32"]
 noise_type = 2
-frequency = 0.1
 fractal_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fibp8"]
@@ -300,6 +299,7 @@ transparency = 0.1
 mesh = SubResource("PlaneMesh_wuh33")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+visible = false
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 128.808, 81.2613, 174.915)
