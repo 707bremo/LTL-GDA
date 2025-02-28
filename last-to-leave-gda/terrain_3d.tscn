@@ -154,12 +154,16 @@ background_mode = 2
 sky = SubResource("Sky_jvt06")
 tonemap_mode = 3
 tonemap_white = 16.0
-sdfgi_enabled = true
 sdfgi_use_occlusion = true
 sdfgi_bounce_feedback = 1.25
 sdfgi_y_scale = 2
 sdfgi_energy = 15.0
 glow_intensity = 2.01
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.001
+adjustment_enabled = true
+adjustment_contrast = 0.8
+adjustment_saturation = 0.7
 
 [sub_resource type="Animation" id="Animation_lpi4q"]
 length = 0.001
