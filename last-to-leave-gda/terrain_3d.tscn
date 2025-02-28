@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bdxafxq3gmv0t" path="res://demo/assets/models/smallDeadTwig.fbx" id="3_mke20"]
 [ext_resource type="PackedScene" uid="uid://ccw80w6aei2i0" path="res://demo/assets/models/bigDeadBranch.fbx" id="3_nvarg"]
 [ext_resource type="PackedScene" uid="uid://bwvtgwartxt0g" path="res://demo/assets/models/RockB.tscn" id="5_cbffl"]
-[ext_resource type="PackedScene" uid="uid://bep5xl5oyntdr" path="res://demo/assets/models/bush_1.tscn" id="6_d8w1u"]
+[ext_resource type="PackedScene" path="res://demo/assets/models/bush_1.tscn" id="6_d8w1u"]
 [ext_resource type="PackedScene" uid="uid://be6nrf0b8j4l0" path="res://demo/assets/models/RockA.tscn" id="6_rq30n"]
 [ext_resource type="PackedScene" uid="uid://bkj1covtu08mu" path="res://pine_tree_1.tscn" id="7_6tcd7"]
 [ext_resource type="Shader" path="res://water.gdshader" id="7_pa3jo"]
