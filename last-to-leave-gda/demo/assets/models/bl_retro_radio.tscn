@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb13qanljwuc0"]
+
+[ext_resource type="PackedScene" uid="uid://c8ff413nf71hp" path="res://demo/assets/LTLpre-madeAssets/BL_Retro_Radio.gltf" id="1_27wg0"]
+[ext_resource type="Texture2D" uid="uid://bpx1rfjjr4gsb" path="res://demo/assets/textures/TX_Retro_Radio.png" id="2_cp31c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ulplh"]
+albedo_texture = ExtResource("2_cp31c")
+
+[node name="BL_Retro_Radio" instance=ExtResource("1_27wg0")]
+
+[node name="MS_Retro_Radio" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ulplh")
+
+[node name="Handle" parent="." index="1"]
+visible = false
