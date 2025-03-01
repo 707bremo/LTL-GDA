@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://7m2d22ehfv8j"]
+
+[ext_resource type="PackedScene" uid="uid://curf77d3ebexg" path="res://demo/assets/LTLpre-madeAssets/BL_Sign_Billboard.gltf" id="1_2xr6m"]
+[ext_resource type="Texture2D" uid="uid://vdnbxvtt1p0x" path="res://demo/assets/models/TX_Sign_Billboard.png" id="2_12fni"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oynjq"]
+albedo_texture = ExtResource("2_12fni")
+
+[node name="BL_Sign_Billboard" instance=ExtResource("1_2xr6m")]
+
+[node name="MS_Sign_Billboard" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_oynjq")

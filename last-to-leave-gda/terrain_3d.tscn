@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://c83ehswbyetui"]
+[gd_scene load_steps=56 format=3 uid="uid://c83ehswbyetui"]
 
 [ext_resource type="Texture2D" uid="uid://0vsc2b8f4muk" path="res://demo/assets/models/grass.png" id="1_46c6g"]
 [ext_resource type="Texture2D" uid="uid://dsweyvjigqxsg" path="res://addons/brown_mud_leaves_01_diff_4k.jpg" id="1_nyfxu"]
@@ -16,6 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://bhgsw34dg3rrj" path="res://pine_tree_3.tscn" id="9_tqslt"]
 [ext_resource type="PackedScene" uid="uid://dpqt0rtkvo85l" path="res://demo/assets/models/log.fbx" id="12_ouykg"]
 [ext_resource type="Texture2D" uid="uid://djwwdi8c5f23l" path="res://demo/assets/models/kloofendal_48d_partly_cloudy_puresky_4k.exr" id="12_tt1rn"]
+[ext_resource type="PackedScene" uid="uid://7m2d22ehfv8j" path="res://demo/assets/models/bl_sign_billboard.tscn" id="17_ys1rb"]
+[ext_resource type="PackedScene" uid="uid://dea2qxxvpqd7m" path="res://demo/assets/models/bl_totem_welcome.tscn" id="18_5urac"]
+[ext_resource type="PackedScene" uid="uid://qh46bds76vc" path="res://tent.tscn" id="19_s2y5x"]
+[ext_resource type="PackedScene" uid="uid://c50rvk14mxacj" path="res://lawnChair.tscn" id="20_1tcyo"]
+[ext_resource type="PackedScene" uid="uid://1eodplbl1tof" path="res://campFire.tscn" id="21_4vyu3"]
 
 [sub_resource type="Gradient" id="Gradient_8rypa"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -313,3 +318,19 @@ trail_enabled = true
 trail_lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_6hj4m")
 draw_pass_1 = SubResource("RibbonTrailMesh_gp5mc")
+
+[node name="BL_Sign_Billboard" parent="." instance=ExtResource("17_ys1rb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92661, 0)
+visible = false
+
+[node name="BL_Totem_Welcome" parent="." instance=ExtResource("18_5urac")]
+transform = Transform3D(-0.865247, 0, 1.22529, 0, 1.5, 0, -1.22529, 0, -0.865247, -254.417, -0.778966, -46.5794)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("19_s2y5x")]
+transform = Transform3D(1.71019, 0, 1.82353, 0, 2.5, 0, -1.82353, 0, 1.71019, 19.5508, 1.52726, 176.407)
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("20_1tcyo")]
+transform = Transform3D(0.11689, 0, 2.99772, 0, 3, 0, -2.99772, 0, 0.11689, 19.4522, 0, 164.714)
+
+[node name="Sketchfab_Scene3" parent="." instance=ExtResource("21_4vyu3")]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 24.7581, 0, 168.006)
