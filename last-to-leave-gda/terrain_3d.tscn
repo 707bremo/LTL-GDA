@@ -363,7 +363,7 @@ transform = Transform3D(-0.13572, 0, -2.49631, 0, 2.5, 0, 2.49631, 0, -0.13572, 
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -22.1192, 12.4375, -169.353)
 
 [node name="BL_Board_Message" parent="." instance=ExtResource("28_womgr")]
-transform = Transform3D(-9.83506e-08, 0, -2.25, 0, 2.25, 0, 2.25, 0, -9.83506e-08, 38.9363, -0.232996, 154.567)
+transform = Transform3D(-9.83506e-08, 0, -2.25, 0, 2.25, 0, 2.25, 0, -9.83506e-08, 23.3682, -0.232996, 137.239)
 
 [node name="BL_Crate" parent="." instance=ExtResource("29_mcrns")]
 transform = Transform3D(-0.425064, 0.00863504, -0.905122, 0.0368733, 0.99929, -0.00778305, 0.904412, -0.0366831, -0.425081, -172.676, 10.514, 390.324)
