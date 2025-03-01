@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyhn7c4heh838"]
+
+[ext_resource type="PackedScene" uid="uid://3lcub80aoeia" path="res://demo/assets/models/Cabin.gltf" id="1_78ajw"]
+
+[node name="Cabin" instance=ExtResource("1_78ajw")]
