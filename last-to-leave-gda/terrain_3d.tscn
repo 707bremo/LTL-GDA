@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://c83ehswbyetui"]
+[gd_scene load_steps=66 format=3 uid="uid://c83ehswbyetui"]
 
 [ext_resource type="Texture2D" uid="uid://0vsc2b8f4muk" path="res://demo/assets/models/grass.png" id="1_46c6g"]
 [ext_resource type="Texture2D" uid="uid://dsweyvjigqxsg" path="res://addons/brown_mud_leaves_01_diff_4k.jpg" id="1_nyfxu"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://cu03knnj6pjn5" path="res://demo/assets/models/bl_board_message.tscn" id="28_womgr"]
 [ext_resource type="PackedScene" uid="uid://dxiasd4yhbxbb" path="res://demo/assets/models/bl_crate.tscn" id="29_mcrns"]
 [ext_resource type="PackedScene" uid="uid://dp8pqso5j2qjk" path="res://demo/assets/models/bl_table_cabin.tscn" id="30_fatrm"]
+[ext_resource type="PackedScene" uid="uid://caqsbff6rsk3m" path="res://demo/assets/models/cabin.tscn" id="32_rlv6n"]
 
 [sub_resource type="Gradient" id="Gradient_8rypa"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -370,3 +371,6 @@ transform = Transform3D(-0.425064, 0.00863504, -0.905122, 0.0368733, 0.99929, -0
 
 [node name="BL_Table_Cabin" parent="." instance=ExtResource("30_fatrm")]
 transform = Transform3D(1.35279, -0.207771, -2.38522, 0.0677138, 2.74185, -0.200432, 2.3933, 0.0398654, 1.3539, -20.6901, 12.6553, -163.414)
+
+[node name="Cabin" parent="." instance=ExtResource("32_rlv6n")]
+transform = Transform3D(-1.83588e-08, 0, 0.42, 0, 0.42, 0, -0.42, 0, -1.83588e-08, 334.468, 14.8549, -1.31768)
