@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://c83ehswbyetui"]
+[gd_scene load_steps=65 format=3 uid="uid://c83ehswbyetui"]
 
 [ext_resource type="Texture2D" uid="uid://0vsc2b8f4muk" path="res://demo/assets/models/grass.png" id="1_46c6g"]
 [ext_resource type="Texture2D" uid="uid://dsweyvjigqxsg" path="res://addons/brown_mud_leaves_01_diff_4k.jpg" id="1_nyfxu"]
@@ -26,6 +26,10 @@
 [ext_resource type="PackedScene" uid="uid://ynf31pbdui8y" path="res://demo/assets/models/bl_sign_public_road_ends.tscn" id="24_1pigp"]
 [ext_resource type="PackedScene" uid="uid://ce1ip5arm256k" path="res://demo/assets/models/bl_campfire.tscn" id="25_g0mjy"]
 [ext_resource type="PackedScene" uid="uid://bb13qanljwuc0" path="res://demo/assets/models/bl_retro_radio.tscn" id="26_jdysk"]
+[ext_resource type="PackedScene" uid="uid://c2afadd7b2pyr" path="res://demo/assets/models/bl_firepot.tscn" id="27_pp04t"]
+[ext_resource type="PackedScene" uid="uid://cu03knnj6pjn5" path="res://demo/assets/models/bl_board_message.tscn" id="28_womgr"]
+[ext_resource type="PackedScene" uid="uid://dxiasd4yhbxbb" path="res://demo/assets/models/bl_crate.tscn" id="29_mcrns"]
+[ext_resource type="PackedScene" uid="uid://dp8pqso5j2qjk" path="res://demo/assets/models/bl_table_cabin.tscn" id="30_fatrm"]
 
 [sub_resource type="Gradient" id="Gradient_8rypa"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -350,7 +354,19 @@ transform = Transform3D(2.36521, -0.108501, -0.802492, 0.0367629, 2.48929, -0.22
 transform = Transform3D(-0.695901, 0, -1.87503, 0, 2.5, 0, 1.87503, 0, -0.695901, 457.177, 4.07877, 234.368)
 
 [node name="BL_Campfire" parent="." instance=ExtResource("25_g0mjy")]
-transform = Transform3D(1.98418, -0.251082, 0, 0.251082, 1.98418, 0, 0, 0, 2, 172.162, 4.13198, 443.406)
+transform = Transform3D(1.98418, -0.251082, 0, 0.25043, 1.97902, 0.144039, -0.0180828, -0.1429, 1.99481, -22.1748, 12.3676, -169.449)
 
 [node name="BL_Retro_Radio" parent="." instance=ExtResource("26_jdysk")]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -173.933, 10.5714, 389.922)
+transform = Transform3D(-0.13572, 0, -2.49631, 0, 2.5, 0, 2.49631, 0, -0.13572, -172.655, 11.3282, 390.326)
+
+[node name="BL_Firepot" parent="." instance=ExtResource("27_pp04t")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -22.1192, 12.4375, -169.353)
+
+[node name="BL_Board_Message" parent="." instance=ExtResource("28_womgr")]
+transform = Transform3D(-9.83506e-08, 0, -2.25, 0, 2.25, 0, 2.25, 0, -9.83506e-08, 38.9363, -0.232996, 154.567)
+
+[node name="BL_Crate" parent="." instance=ExtResource("29_mcrns")]
+transform = Transform3D(-0.425064, 0.00863504, -0.905122, 0.0368733, 0.99929, -0.00778305, 0.904412, -0.0366831, -0.425081, -172.676, 10.514, 390.324)
+
+[node name="BL_Table_Cabin" parent="." instance=ExtResource("30_fatrm")]
+transform = Transform3D(1.35279, -0.207771, -2.38522, 0.0677138, 2.74185, -0.200432, 2.3933, 0.0398654, 1.3539, -20.6901, 12.6553, -163.414)

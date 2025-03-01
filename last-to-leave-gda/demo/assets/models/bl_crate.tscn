@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxiasd4yhbxbb"]
+
+[ext_resource type="PackedScene" uid="uid://61cq3880elwu" path="res://demo/assets/LTLpre-madeAssets/BL_Crate.gltf" id="1_kpcdx"]
+[ext_resource type="Texture2D" uid="uid://db5jd0ic6gfq8" path="res://demo/assets/textures/TX_Crate.png" id="2_cvscn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4b1ji"]
+albedo_texture = ExtResource("2_cvscn")
+
+[node name="BL_Crate" instance=ExtResource("1_kpcdx")]
+
+[node name="MS_Crate" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4b1ji")

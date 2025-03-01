@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp8pqso5j2qjk"]
+
+[ext_resource type="PackedScene" uid="uid://cqg0lwaklhu5" path="res://demo/assets/LTLpre-madeAssets/BL_Table_Cabin.gltf" id="1_2gshb"]
+[ext_resource type="Texture2D" uid="uid://4pr8l1qg6usj" path="res://demo/assets/textures/TX_Table_Cabin.png" id="2_ruyu5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8w71o"]
+albedo_texture = ExtResource("2_ruyu5")
+
+[node name="BL_Table_Cabin" instance=ExtResource("1_2gshb")]
+
+[node name="MS_Table_Cabin" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8w71o")
