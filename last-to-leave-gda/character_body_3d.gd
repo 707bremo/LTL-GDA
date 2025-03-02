@@ -42,7 +42,7 @@ func _unhandled_input(event):
 		toogle_inventory.emit()
 
 	if Input.is_action_just_pressed("interact"):
-	interact()
+		interact()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -94,4 +94,4 @@ func _headbob(time) -> Vector3:
 
 func interact() -> void:
 	if interact_ray.is_colliding():
-		print("interact with", interact_ray.get_collider())
+		interact_ray.get_collider().player_interact()

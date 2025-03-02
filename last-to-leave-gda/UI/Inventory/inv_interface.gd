@@ -1,9 +1,13 @@
 extends Control
 
 var grabbed_slot_data: SlotData
+var external_inventory_owner
+
 
 @onready var player_inv: PanelContainer = $PlayerInv
 @onready var grabbed_slot: PanelContainer = $GrabbedSlot
+@onready var external_inv: PanelContainer = $ExternalInv
+
 
 func _physics_process(delta: float) -> void:
 	if grabbed_slot.visible:
@@ -13,6 +17,16 @@ func set_player_inventory_data(inventory_data: InventoryData) -> void:
 	inventory_data.inventory_interact.connect(on_inventory_interact)
 	player_inv.set_inventory_data(inventory_data)
 
+
+func set_external_inventory(_external_inventory_owner) -> void:
+	external_inventory_owner = _external_inventory_owner
+	var inventory_data = external_inventory_owner.inventory_data
+	
+	inventory_data.inventory_interact.connect(on_inventory_interact)
+	external_inv.set_inventory_data(inventory_data)
+	
+	
+	external_inv.show()
 
 func on_inventory_interact(inventory_data: InventoryData, 
 		index: int, button: int) -> void:
