@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c0vldfpln2rig"]
+
+[ext_resource type="Texture2D" uid="uid://8rjvtkymkh87" path="res://UI/Inventory/item/itemICONS/CannedPeaches.webp" id="1_tg25o"]
+[ext_resource type="Script" path="res://UI/Inventory/item/item_data.gd" id="1_urcx7"]
+
+[resource]
+script = ExtResource("1_urcx7")
+name = "Canned Peaches"
+description = "Peaches in a can."
+stackable = true
+object = ExtResource("1_tg25o")
