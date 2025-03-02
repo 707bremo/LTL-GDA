@@ -7,5 +7,5 @@
 script = ExtResource("1_urcx7")
 name = "Canned Peaches"
 description = "Peaches in a can."
-stackable = true
+stackable = false
 object = ExtResource("1_tg25o")

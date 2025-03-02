@@ -1,5 +1,10 @@
 extends CharacterBody3D
 
+@export var inventory_data: InventoryData
+
+signal toogle_inventory()
+
+
 var speed
 const WALK_SPEED = 5.0
 const SPRINT_SPEED = 8.0
@@ -32,6 +37,8 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-100), deg_to_rad(60))
 
+	if Input.is_action_just_pressed("open_inv"):
+		toogle_inventory.emit()
 
 func _physics_process(delta):
 	# Add the gravity.

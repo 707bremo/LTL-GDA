@@ -1,8 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfdsj5xxm3pmk"]
+[gd_scene load_steps=11 format=3 uid="uid://bfdsj5xxm3pmk"]
 
+[ext_resource type="Script" path="res://Main.gd" id="1_5113r"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://test_player.tscn" id="1_sokni"]
 [ext_resource type="PackedScene" uid="uid://cfdnj6i52mb6u" path="res://UI/Inventory/inventory.tscn" id="2_8frjx"]
 [ext_resource type="Texture2D" uid="uid://vyoaqybnkohy" path="res://UI/references/Screenshot 2025-03-01 184534.png" id="2_psjkq"]
+[ext_resource type="Resource" uid="uid://bh01ctte20kgj" path="res://test_inv.tres" id="3_w8q0o"]
+[ext_resource type="Script" path="res://UI/Inventory/inv_interface.gd" id="4_olp5g"]
+[ext_resource type="PackedScene" uid="uid://012ymk0c663s" path="res://UI/Inventory/slot.tscn" id="7_owhbi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5q6bn"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -18,6 +22,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="TestRoom" type="Node"]
+script = ExtResource("1_5113r")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6i4hk")
@@ -30,16 +35,19 @@ use_collision = true
 size = Vector3(50, 1, 50)
 
 [node name="test_player" parent="." instance=ExtResource("1_sokni")]
+inventory_data = ExtResource("3_w8q0o")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="InvInterface" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_olp5g")
 
 [node name="Reference" type="TextureRect" parent="UI/InvInterface"]
 visible = false
@@ -58,3 +66,9 @@ offset_left = 800.0
 offset_top = 144.0
 offset_right = 840.0
 offset_bottom = 184.0
+
+[node name="GrabbedSlot" parent="UI/InvInterface" instance=ExtResource("7_owhbi")]
+visible = false
+modulate = Color(1, 1, 1, 0.482353)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
