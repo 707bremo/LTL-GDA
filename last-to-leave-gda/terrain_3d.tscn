@@ -355,13 +355,13 @@ transform = Transform3D(2.36521, -0.108501, -0.802492, 0.0367629, 2.48929, -0.22
 transform = Transform3D(-0.695901, 0, -1.87503, 0, 2.5, 0, 1.87503, 0, -0.695901, 457.177, 4.07877, 234.368)
 
 [node name="Campfire" parent="." instance=ExtResource("25_g0mjy")]
-transform = Transform3D(1.98418, -0.251082, 0, 0.25043, 1.97902, 0.144039, -0.0180828, -0.1429, 1.99481, -22.1748, 12.3676, -169.449)
+transform = Transform3D(1.99381, -0.156629, 0.0148003, 0.154455, 1.98451, 0.194567, -0.0299231, -0.192822, 1.99046, -14.5916, 12.971, -169.508)
 
 [node name="Radio" parent="." instance=ExtResource("26_jdysk")]
 transform = Transform3D(-0.13572, 0, -2.49631, 0, 2.5, 0, 2.49631, 0, -0.13572, -172.655, 11.3282, 390.326)
 
 [node name="Firepot" parent="." instance=ExtResource("27_pp04t")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -22.1192, 12.4375, -169.353)
+transform = Transform3D(1.49037, -0.169148, -0.0140046, 0.16945, 1.48993, 0.0375035, 0.00968143, -0.0388447, 1.49947, -14.5323, 13.0406, -169.414)
 
 [node name="MessageBoard" parent="." instance=ExtResource("28_womgr")]
 transform = Transform3D(-9.83506e-08, 0, -2.25, 0, 2.25, 0, 2.25, 0, -9.83506e-08, 23.3682, -0.232996, 137.239)
