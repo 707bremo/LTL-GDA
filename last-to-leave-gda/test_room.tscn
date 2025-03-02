@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfdsj5xxm3pmk"]
+[gd_scene load_steps=7 format=3 uid="uid://bfdsj5xxm3pmk"]
 
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://test_player.tscn" id="1_sokni"]
+[ext_resource type="PackedScene" uid="uid://cfdnj6i52mb6u" path="res://UI/Inventory/inventory.tscn" id="2_8frjx"]
+[ext_resource type="Texture2D" uid="uid://vyoaqybnkohy" path="res://UI/references/Screenshot 2025-03-01 184534.png" id="2_psjkq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5q6bn"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -24,6 +26,35 @@ environment = SubResource("Environment_6i4hk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.42013, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
 size = Vector3(50, 1, 50)
 
 [node name="test_player" parent="." instance=ExtResource("1_sokni")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InvInterface" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Reference" type="TextureRect" parent="UI/InvInterface"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_psjkq")
+expand_mode = 3
+
+[node name="PlayerInv" parent="UI/InvInterface" instance=ExtResource("2_8frjx")]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 144.0
+offset_right = 840.0
+offset_bottom = 184.0

@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://012ymk0c663s"]
-
-[ext_resource type="Texture2D" uid="uid://cjjl3g1f0x8cc" path="res://UI/Inventory/item/itemICONS/CannedCorn.webp" id="1_c4dki"]
+[gd_scene format=3 uid="uid://012ymk0c663s"]
 
 [node name="slot" type="PanelContainer"]
 custom_minimum_size = Vector2(80, 80)
@@ -16,11 +14,11 @@ theme_override_constants/margin_bottom = 4
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_c4dki")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="QuantityLabel" type="Label" parent="."]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
