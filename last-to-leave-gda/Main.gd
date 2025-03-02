@@ -19,5 +19,7 @@ func toogle_inv_interface(external_inventory_owner = null) -> void:
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
-	if external_inventory_owner:
+	if external_inventory_owner and inv_interface.visible:
 		inv_interface.set_external_inventory(external_inventory_owner)
+	else:
+		inv_interface.clear_external_inventory()
