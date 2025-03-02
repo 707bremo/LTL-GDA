@@ -5,3 +5,4 @@ class_name ItemData
 @export_multiline var description: String = ""
 @export var stackable: bool = false
 @export var object: Texture
+@export var mesh_for_item: Mesh

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bfdsj5xxm3pmk"]
+[gd_scene load_steps=21 format=3 uid="uid://bfdsj5xxm3pmk"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_5113r"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://test_player.tscn" id="1_sokni"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://UI/Inventory/slot_data.gd" id="10_v1qaj"]
 [ext_resource type="Resource" uid="uid://c0vldfpln2rig" path="res://UI/Inventory/item/items/canned_peaches.tres" id="11_h5dgy"]
 [ext_resource type="Resource" uid="uid://boacdd2ypxadq" path="res://UI/Inventory/item/items/salted_crackers.tres" id="12_icqpg"]
+[ext_resource type="PackedScene" uid="uid://cgk7inheywfs4" path="res://UI/Inventory/item/pickup.tscn" id="13_pl3am"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5q6bn"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -40,6 +41,11 @@ quantity = 2
 script = ExtResource("9_q2km3")
 slot_datas = Array[ExtResource("10_v1qaj")]([SubResource("Resource_nilcg"), null, null, null, SubResource("Resource_ycgxp")])
 
+[sub_resource type="Resource" id="Resource_t40dx"]
+script = ExtResource("10_v1qaj")
+item_data = ExtResource("11_h5dgy")
+quantity = 1
+
 [node name="TestRoom" type="Node"]
 script = ExtResource("1_5113r")
 
@@ -47,7 +53,7 @@ script = ExtResource("1_5113r")
 environment = SubResource("Environment_6i4hk")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.42013, 0)
+transform = Transform3D(1, 0, 0, 0, 0.906507, 0.422191, 0, -0.422191, 0.906507, 0, 5.90056, 4.75698)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 use_collision = true
@@ -104,5 +110,9 @@ offset_right = 80.0
 offset_bottom = 80.0
 
 [node name="Cabinet" parent="." instance=ExtResource("8_yrung")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.732497, -2.48794)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.493376, -2.48794)
 inventory_data = SubResource("Resource_a1b4j")
+
+[node name="Pickup" parent="." instance=ExtResource("13_pl3am")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14774, 1.3485, -0.843002)
+slot_data = SubResource("Resource_t40dx")
