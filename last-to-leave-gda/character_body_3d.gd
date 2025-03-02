@@ -25,6 +25,7 @@ var gravity = 9.8
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
 
 
 func _ready():
@@ -39,6 +40,9 @@ func _unhandled_input(event):
 
 	if Input.is_action_just_pressed("open_inv"):
 		toogle_inventory.emit()
+
+	if Input.is_action_just_pressed("interact"):
+	interact()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -86,3 +90,8 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+
+func interact() -> void:
+	if interact_ray.is_colliding():
+		print("interact with", interact_ray.get_collider())

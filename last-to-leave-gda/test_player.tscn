@@ -21,3 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.509135, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 fov = 119.8
+
+[node name="InteractRay" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -2.5)
+collision_mask = 4
