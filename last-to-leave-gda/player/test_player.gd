@@ -22,6 +22,8 @@ const FOV_CHANGE = 1.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
+var health: int = 5
+
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
@@ -29,6 +31,7 @@ var gravity = 9.8
 
 
 func _ready():
+	PlayerManager.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
@@ -100,3 +103,7 @@ func interact() -> void:
 func get_drop_position() -> Vector3:
 	var direction = -camera.global_transform.basis.z
 	return camera.global_position + direction
+
+
+func heal(heal_value: int) -> void:
+	health += heal_value
