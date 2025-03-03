@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvqooawhyqyqw"]
+[gd_scene load_steps=5 format=3 uid="uid://cvqooawhyqyqw"]
 
 [ext_resource type="Script" path="res://player/test_player.gd" id="1_p76u8"]
+[ext_resource type="PackedScene" uid="uid://dpbjle7jau6df" path="res://UI/HUD/vitals/health_bar.tscn" id="2_0nl34"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gsapo"]
 
@@ -40,3 +41,13 @@ offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="PlayerHealthBar" parent="HUD" instance=ExtResource("2_0nl34")]
+offset_left = 32.0
+offset_top = 624.0
+offset_right = 272.0
+offset_bottom = 628.0
+max_value = 10.0
+value = 3.0

@@ -1,6 +1,6 @@
 extends Node
 
-const Pickup = preload("res://UI/Inventory/item/pickup.tscn")
+const Pickup = preload("res://UI/HUD/Inventory/item/pickup.tscn")
 
 @onready var test_player: CharacterBody3D = $test_player
 @onready var inv_interface: Control = $UI/InvInterface
