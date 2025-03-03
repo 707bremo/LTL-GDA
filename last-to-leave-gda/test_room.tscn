@@ -180,11 +180,11 @@ texture = ExtResource("2_psjkq")
 expand_mode = 3
 
 [node name="Cabinet" parent="." instance=ExtResource("8_yrung")]
-transform = Transform3D(0.941618, 0, 0.336684, 0, 1, 0, -0.336684, 0, 0.941618, 0, 0.493376, -10.7037)
+transform = Transform3D(0.944775, 0, 0.337813, 0, 1.00335, 0, -0.337813, 0, 0.944775, 0, 0.493376, -10.7037)
 inventory_data = SubResource("Resource_a1b4j")
 
 [node name="Cabinet2" parent="." instance=ExtResource("8_yrung")]
-transform = Transform3D(0.887984, 0, -0.459874, 0, 1, 0, 0.459874, 0, 0.887984, 2.66691, 0.5, -11.5848)
+transform = Transform3D(1.82095, 0, -0.337825, 0, 2.6, 0, 0.943044, 0, 0.652315, 2.66691, 0.5, -11.5848)
 inventory_data = SubResource("Resource_wjmi3")
 
 [node name="Pickup" parent="." instance=ExtResource("13_pl3am")]
