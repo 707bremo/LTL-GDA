@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=2 format=3 uid="uid://c5nfndoha1o4d"]
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=3 format=3 uid="uid://c5nfndoha1o4d"]
 
 [ext_resource type="Script" path="res://UI/Inventory/item/item_data_consumable.gd" id="1_apv43"]
+[ext_resource type="Texture2D" uid="uid://cjjl3g1f0x8cc" path="res://UI/Inventory/item/itemICONS/CannedCorn.webp" id="1_bnawv"]
 
 [resource]
 script = ExtResource("1_apv43")
-heal_value = 0
-name = ""
-description = ""
+heal_value = 1
+name = "Canned Corn"
+description = "Does corn in a can actually taste good?"
 stackable = false
+object = ExtResource("1_bnawv")
