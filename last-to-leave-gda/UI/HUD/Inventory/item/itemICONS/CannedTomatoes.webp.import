@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dphk75h438cki"
-path="res://.godot/imported/ChickenSoup.webp-297fe7186f7f3ef006c56c0c536ad029.ctex"
+uid="uid://847ulqvp4i8l"
+path="res://.godot/imported/CannedTomatoes.webp-00bc4933022f122eb35c4780637eb8b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Inventory/item/itemICONS/ChickenSoup.webp"
-dest_files=["res://.godot/imported/ChickenSoup.webp-297fe7186f7f3ef006c56c0c536ad029.ctex"]
+source_file="res://UI/HUD/Inventory/item/itemICONS/CannedTomatoes.webp"
+dest_files=["res://.godot/imported/CannedTomatoes.webp-00bc4933022f122eb35c4780637eb8b1.ctex"]
 
 [params]
 

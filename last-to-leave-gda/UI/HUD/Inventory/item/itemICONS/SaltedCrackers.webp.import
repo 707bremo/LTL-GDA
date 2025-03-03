@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvfv4ag3wu5wm"
-path="res://.godot/imported/SaltedCrackers.webp-7bddb8bb4ebda5a521bdeabd02b399dd.ctex"
+path="res://.godot/imported/SaltedCrackers.webp-74d52a247ff45e887b37914354248164.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Inventory/item/itemICONS/SaltedCrackers.webp"
-dest_files=["res://.godot/imported/SaltedCrackers.webp-7bddb8bb4ebda5a521bdeabd02b399dd.ctex"]
+source_file="res://UI/HUD/Inventory/item/itemICONS/SaltedCrackers.webp"
+dest_files=["res://.godot/imported/SaltedCrackers.webp-74d52a247ff45e887b37914354248164.ctex"]
 
 [params]
 

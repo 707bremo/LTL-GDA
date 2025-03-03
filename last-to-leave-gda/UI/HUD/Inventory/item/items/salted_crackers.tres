@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://boacdd2ypxadq"]
 
-[ext_resource type="Script" path="res://UI/Inventory/item/item_data.gd" id="1_8wg0k"]
-[ext_resource type="Texture2D" uid="uid://cvfv4ag3wu5wm" path="res://UI/Inventory/item/itemICONS/SaltedCrackers.webp" id="1_yjhnl"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/item/item_data.gd" id="1_8wg0k"]
+[ext_resource type="Texture2D" uid="uid://cvfv4ag3wu5wm" path="res://UI/HUD/Inventory/item/itemICONS/SaltedCrackers.webp" id="1_yjhnl"]
 
 [resource]
 script = ExtResource("1_8wg0k")

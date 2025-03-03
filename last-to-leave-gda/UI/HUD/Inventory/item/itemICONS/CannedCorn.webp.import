@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://burhkwwpgsatd"
-path="res://.godot/imported/EnergyBar.webp-f481007d7f2ba18f9d749f93dd2cf7dc.ctex"
+uid="uid://cjjl3g1f0x8cc"
+path="res://.godot/imported/CannedCorn.webp-e646cc5aa91e37b539dfae21196a2a4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Inventory/item/itemICONS/EnergyBar.webp"
-dest_files=["res://.godot/imported/EnergyBar.webp-f481007d7f2ba18f9d749f93dd2cf7dc.ctex"]
+source_file="res://UI/HUD/Inventory/item/itemICONS/CannedCorn.webp"
+dest_files=["res://.godot/imported/CannedCorn.webp-e646cc5aa91e37b539dfae21196a2a4f.ctex"]
 
 [params]
 

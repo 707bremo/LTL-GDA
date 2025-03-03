@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8rjvtkymkh87"
-path="res://.godot/imported/CannedPeaches.webp-50709f106c53efb0592d3969f16b654a.ctex"
+path="res://.godot/imported/CannedPeaches.webp-cadce81d4f5eb97bb87d6375b372b43f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Inventory/item/itemICONS/CannedPeaches.webp"
-dest_files=["res://.godot/imported/CannedPeaches.webp-50709f106c53efb0592d3969f16b654a.ctex"]
+source_file="res://UI/HUD/Inventory/item/itemICONS/CannedPeaches.webp"
+dest_files=["res://.godot/imported/CannedPeaches.webp-cadce81d4f5eb97bb87d6375b372b43f.ctex"]
 
 [params]
 
