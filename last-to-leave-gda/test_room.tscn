@@ -116,3 +116,5 @@ inventory_data = SubResource("Resource_a1b4j")
 [node name="Pickup" parent="." instance=ExtResource("13_pl3am")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14774, 1.3485, -0.843002)
 slot_data = SubResource("Resource_t40dx")
+
+[connection signal="gui_input" from="UI/InvInterface" to="UI/InvInterface" method="_on_gui_input"]
