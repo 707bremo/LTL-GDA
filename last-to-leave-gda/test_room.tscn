@@ -119,3 +119,4 @@ slot_data = SubResource("Resource_t40dx")
 
 [connection signal="drop_slot_data" from="UI/InvInterface" to="." method="_on_inv_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InvInterface" to="UI/InvInterface" method="_on_gui_input"]
+[connection signal="visibility_changed" from="UI/InvInterface" to="UI/InvInterface" method="_on_visibility_changed"]
