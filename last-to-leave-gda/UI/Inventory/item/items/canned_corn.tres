@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=2 format=3 uid="uid://c5nfndoha1o4d"]
+
+[ext_resource type="Script" path="res://UI/Inventory/item/item_data_consumable.gd" id="1_apv43"]
+
+[resource]
+script = ExtResource("1_apv43")
+heal_value = 0
+name = ""
+description = ""
+stackable = false
