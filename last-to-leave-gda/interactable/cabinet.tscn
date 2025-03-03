@@ -1,27 +1,65 @@
-[gd_scene load_steps=5 format=3 uid="uid://cirndjnad781d"]
+[gd_scene load_steps=11 format=3 uid="uid://cirndjnad781d"]
 
 [ext_resource type="Script" path="res://interactable/interactableScripts/cabinet.gd" id="1_6vel8"]
+[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="2_j1f5v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0u44l"]
 albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
-emission = Color(0, 0.486275, 1, 1)
+emission = Color(0.495637, 0.485655, 0.500491, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_w1lyj"]
 material = SubResource("StandardMaterial3D_0u44l")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6om54"]
+albedo_color = Color(0.404511, 0.404511, 0.404511, 1)
+emission_enabled = true
+emission = Color(0, 0.486275, 0.0196078, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4uvkc"]
+material = SubResource("StandardMaterial3D_6om54")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bwyql"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.565375, 0.557402, 0.573356, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_y3hu2"]
+material = SubResource("StandardMaterial3D_bwyql")
+text = "CONTAINER"
+font = ExtResource("2_j1f5v")
+
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wb2do"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[node name="Cabinet" type="StaticBody3D" groups=["external_inventory"]]
+[sub_resource type="BoxShape3D" id="BoxShape3D_u0x5e"]
+
+[node name="Cabinet" type="StaticBody3D" node_paths=PackedStringArray("outline") groups=["external_inventory"]]
 collision_layer = 5
 collision_mask = 0
 script = ExtResource("1_6vel8")
+outline = NodePath("MeshInstance3D/BoxOutline")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_w1lyj")
 
+[node name="BoxOutline" type="MeshInstance3D" parent="MeshInstance3D"]
+visible = false
+mesh = SubResource("BoxMesh_4uvkc")
+skeleton = NodePath("../..")
+
+[node name="Text" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005009, 0.5261)
+mesh = SubResource("TextMesh_y3hu2")
+skeleton = NodePath("../..")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1.00231, 0, 0, 0, 1.00231, 0, 0, 0, 1.00231, 0, 0.5, 0)
 shape = SubResource("ConcavePolygonShape3D_wb2do")
+
+[node name="HighlightArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HighlightArea"]
+shape = SubResource("BoxShape3D_u0x5e")

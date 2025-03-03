@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvqooawhyqyqw"]
+[gd_scene load_steps=7 format=3 uid="uid://cvqooawhyqyqw"]
 
 [ext_resource type="Script" path="res://player/test_player.gd" id="1_p76u8"]
 [ext_resource type="PackedScene" uid="uid://dpbjle7jau6df" path="res://UI/HUD/vitals/health_bar.tscn" id="2_0nl34"]
+[ext_resource type="Script" path="res://player/interact_ray.gd" id="2_2h5an"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gsapo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yvmro"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_nhcc7"]
+length = 2.49618
 
 [node name="test_player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -27,6 +31,14 @@ fov = 119.8
 [node name="InteractRay" type="RayCast3D" parent="Head/Camera3D"]
 target_position = Vector3(0, 0, -2.5)
 collision_mask = 4
+collide_with_areas = true
+script = ExtResource("2_2h5an")
+
+[node name="Area3D" type="Area3D" parent="Head/Camera3D/InteractRay"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/InteractRay/Area3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+shape = SubResource("SeparationRayShape3D_nhcc7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -46,8 +58,11 @@ mouse_filter = 2
 
 [node name="PlayerHealthBar" parent="HUD" instance=ExtResource("2_0nl34")]
 offset_left = 32.0
-offset_top = 624.0
+offset_top = 1024.0
 offset_right = 272.0
-offset_bottom = 628.0
+offset_bottom = 1028.0
 max_value = 10.0
 value = 3.0
+
+[connection signal="body_entered" from="Head/Camera3D/InteractRay/Area3D" to="Head/Camera3D/InteractRay" method="_on_object_colliding"]
+[connection signal="body_exited" from="Head/Camera3D/InteractRay/Area3D" to="Head/Camera3D/InteractRay" method="_on_object_avert"]

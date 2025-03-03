@@ -4,9 +4,12 @@ const Pickup = preload("res://UI/HUD/Inventory/item/pickup.tscn")
 
 @onready var test_player: CharacterBody3D = $test_player
 @onready var inv_interface: Control = $UI/InvInterface
+@onready var panel: Panel = $UI/Panel
 
 
 func _ready() -> void:
+	print(get_viewport().size)
+	
 	test_player.toogle_inventory.connect(toogle_inv_interface)
 	inv_interface.set_player_inventory_data(test_player.inventory_data)
 	
@@ -15,6 +18,7 @@ func _ready() -> void:
 
 func toogle_inv_interface(external_inventory_owner = null) -> void:
 	inv_interface.visible = not inv_interface.visible
+	panel.visible = not panel.visible
 	
 	if inv_interface.visible:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

@@ -18,6 +18,11 @@ config/icon="res://icon.svg"
 
 PlayerManager="*res://player/player_manager.gd"
 
+[display]
+
+window/size/viewport_width=1918
+window/size/viewport_height=1078
+
 [input]
 
 left={

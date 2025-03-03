@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bfdsj5xxm3pmk"]
+[gd_scene load_steps=26 format=3 uid="uid://bfdsj5xxm3pmk"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_5113r"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="1_sokni"]
@@ -7,10 +7,11 @@
 [ext_resource type="Resource" uid="uid://bh01ctte20kgj" path="res://test_inv.tres" id="3_w8q0o"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/inv_interface.gd" id="4_olp5g"]
 [ext_resource type="PackedScene" uid="uid://012ymk0c663s" path="res://UI/HUD/Inventory/slot.tscn" id="7_owhbi"]
+[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="8_lmbon"]
 [ext_resource type="PackedScene" uid="uid://cirndjnad781d" path="res://interactable/cabinet.tscn" id="8_yrung"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/inventory_data.gd" id="9_q2km3"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/slot_data.gd" id="10_v1qaj"]
-[ext_resource type="Resource" uid="uid://c0vldfpln2rig" path="res://UI/HUD/Inventory/item/items/canned_peaches.tres" id="11_h5dgy"]
+[ext_resource type="Resource" uid="uid://c5nfndoha1o4d" path="res://UI/HUD/Inventory/item/items/canned_corn.tres" id="11_hpyjv"]
 [ext_resource type="Resource" uid="uid://boacdd2ypxadq" path="res://UI/HUD/Inventory/item/items/salted_crackers.tres" id="12_icqpg"]
 [ext_resource type="PackedScene" uid="uid://cgk7inheywfs4" path="res://UI/HUD/Inventory/item/pickup.tscn" id="13_pl3am"]
 
@@ -27,19 +28,36 @@ sky = SubResource("Sky_k8bdq")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="Resource" id="Resource_nilcg"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfhuv"]
+bg_color = Color(0.0313726, 0.0313726, 0.0313726, 0.823529)
+
+[sub_resource type="Resource" id="Resource_kdf8m"]
 script = ExtResource("10_v1qaj")
-item_data = ExtResource("11_h5dgy")
+item_data = ExtResource("11_hpyjv")
 quantity = 1
 
-[sub_resource type="Resource" id="Resource_ycgxp"]
+[sub_resource type="Resource" id="Resource_ixwv7"]
 script = ExtResource("10_v1qaj")
-item_data = ExtResource("12_icqpg")
-quantity = 2
+item_data = ExtResource("11_hpyjv")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_3xxho"]
+script = ExtResource("10_v1qaj")
+item_data = ExtResource("11_hpyjv")
+quantity = 1
 
 [sub_resource type="Resource" id="Resource_a1b4j"]
 script = ExtResource("9_q2km3")
-slot_datas = Array[ExtResource("10_v1qaj")]([SubResource("Resource_nilcg"), null, null, null, SubResource("Resource_ycgxp")])
+slot_datas = Array[ExtResource("10_v1qaj")]([SubResource("Resource_kdf8m"), SubResource("Resource_ixwv7"), null, null, null, null, null, SubResource("Resource_3xxho"), null, null])
+
+[sub_resource type="Resource" id="Resource_pub8c"]
+script = ExtResource("10_v1qaj")
+item_data = ExtResource("11_hpyjv")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_wjmi3"]
+script = ExtResource("9_q2km3")
+slot_datas = Array[ExtResource("10_v1qaj")]([SubResource("Resource_pub8c"), null, null, null, null, null, null, null, null, null])
 
 [sub_resource type="Resource" id="Resource_t40dx"]
 script = ExtResource("10_v1qaj")
@@ -49,21 +67,44 @@ quantity = 5
 [node name="TestRoom" type="Node"]
 script = ExtResource("1_5113r")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="Environment" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
 environment = SubResource("Environment_6i4hk")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 0.906507, 0.422191, 0, -0.422191, 0.906507, 0, 5.90056, 4.75698)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="Room" type="Node" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Room"]
 use_collision = true
-size = Vector3(20, 1, 20)
+size = Vector3(30, 1, 30)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.55773, -14.0047)
+use_collision = true
+size = Vector3(30, 10, 2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Room"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 4.55773, -0.00471497)
+use_collision = true
+size = Vector3(30, 10, 2)
 
 [node name="test_player" parent="." instance=ExtResource("1_sokni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36588, 0)
 inventory_data = ExtResource("3_w8q0o")
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cfhuv")
 
 [node name="InvInterface" type="Control" parent="UI"]
 visible = false
@@ -74,6 +115,58 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_olp5g")
+
+[node name="ExternalInv" parent="UI/InvInterface" instance=ExtResource("2_8frjx")]
+visible = false
+layout_mode = 2
+offset_left = 134.0
+offset_top = 190.0
+offset_right = 584.0
+offset_bottom = 890.0
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="SourceLabel" type="Label" parent="UI/InvInterface"]
+layout_mode = 2
+offset_left = 306.0
+offset_top = 147.0
+offset_right = 412.0
+offset_bottom = 170.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("8_lmbon")
+theme_override_font_sizes/font_size = 20
+text = "CONTAINER"
+
+[node name="PlayerInv" parent="UI/InvInterface" instance=ExtResource("2_8frjx")]
+layout_mode = 2
+offset_left = 1346.0
+offset_top = 194.0
+offset_right = 1796.0
+offset_bottom = 894.0
+size_flags_horizontal = 2
+
+[node name="InventoryLabel" type="Label" parent="UI/InvInterface"]
+layout_mode = 2
+offset_left = 1525.0
+offset_top = 151.0
+offset_right = 1632.0
+offset_bottom = 174.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("8_lmbon")
+theme_override_font_sizes/font_size = 20
+text = "INVENTORY"
+horizontal_alignment = 1
+
+[node name="GrabbedSlot" parent="UI/InvInterface" instance=ExtResource("7_owhbi")]
+visible = false
+modulate = Color(1, 1, 1, 0.482353)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_right = 80.0
+offset_bottom = 80.0
+size_flags_horizontal = 3
 
 [node name="Reference" type="TextureRect" parent="UI/InvInterface"]
 visible = false
@@ -86,32 +179,13 @@ grow_vertical = 2
 texture = ExtResource("2_psjkq")
 expand_mode = 3
 
-[node name="PlayerInv" parent="UI/InvInterface" instance=ExtResource("2_8frjx")]
-layout_mode = 0
-offset_left = 800.0
-offset_top = 144.0
-offset_right = 840.0
-offset_bottom = 184.0
-
-[node name="ExternalInv" parent="UI/InvInterface" instance=ExtResource("2_8frjx")]
-visible = false
-layout_mode = 0
-offset_left = 131.0
-offset_top = 144.0
-offset_right = 171.0
-offset_bottom = 184.0
-
-[node name="GrabbedSlot" parent="UI/InvInterface" instance=ExtResource("7_owhbi")]
-visible = false
-modulate = Color(1, 1, 1, 0.482353)
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_right = 80.0
-offset_bottom = 80.0
-
 [node name="Cabinet" parent="." instance=ExtResource("8_yrung")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.493376, -2.48794)
+transform = Transform3D(0.941618, 0, 0.336684, 0, 1, 0, -0.336684, 0, 0.941618, 0, 0.493376, -10.7037)
 inventory_data = SubResource("Resource_a1b4j")
+
+[node name="Cabinet2" parent="." instance=ExtResource("8_yrung")]
+transform = Transform3D(0.887984, 0, -0.459874, 0, 1, 0, 0.459874, 0, 0.887984, 2.66691, 0.5, -11.5848)
+inventory_data = SubResource("Resource_wjmi3")
 
 [node name="Pickup" parent="." instance=ExtResource("13_pl3am")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14774, 1.3485, -0.843002)

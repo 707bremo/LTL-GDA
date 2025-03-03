@@ -5,6 +5,8 @@ extends CharacterBody3D
 signal toogle_inventory()
 
 
+
+
 var speed
 const WALK_SPEED = 5.0
 const SPRINT_SPEED = 8.0
