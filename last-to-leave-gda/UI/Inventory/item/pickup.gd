@@ -15,5 +15,5 @@ func _physics_process(delta: float) -> void:
 	item_mesh.rotate_y(delta)
 
 func _on_interaction_area_body_entered(body: Node3D) -> void:
-	if body.inventory_data.pick_up_slot_data(slot_data):
-		queue_free()
+		if body.inventory_data.pick_up_slot_data(slot_data):
+			queue_free()
