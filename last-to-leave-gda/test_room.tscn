@@ -188,7 +188,19 @@ transform = Transform3D(1.82095, 0, -0.337825, 0, 2.6, 0, 0.943044, 0, 0.652315,
 inventory_data = SubResource("Resource_wjmi3")
 
 [node name="Pickup" parent="." instance=ExtResource("13_pl3am")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14774, 1.3485, -0.843002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14774, 0.809319, -0.843002)
+slot_data = SubResource("Resource_t40dx")
+
+[node name="Pickup2" parent="." instance=ExtResource("13_pl3am")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -5.14774, 0.889685, -0.843002)
+slot_data = SubResource("Resource_t40dx")
+
+[node name="Pickup3" parent="." instance=ExtResource("13_pl3am")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14774, 0.809319, -2.56562)
+slot_data = SubResource("Resource_t40dx")
+
+[node name="Pickup4" parent="." instance=ExtResource("13_pl3am")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -5.14774, 0.889685, -2.56562)
 slot_data = SubResource("Resource_t40dx")
 
 [connection signal="drop_slot_data" from="UI/InvInterface" to="." method="_on_inv_interface_drop_slot_data"]
