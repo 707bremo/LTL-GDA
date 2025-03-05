@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvqooawhyqyqw"]
+[gd_scene load_steps=8 format=3 uid="uid://cvqooawhyqyqw"]
 
 [ext_resource type="Script" path="res://player/test_player.gd" id="1_p76u8"]
 [ext_resource type="PackedScene" uid="uid://dpbjle7jau6df" path="res://UI/HUD/vitals/health_bar.tscn" id="2_0nl34"]
 [ext_resource type="Script" path="res://player/interact_ray.gd" id="2_2h5an"]
+[ext_resource type="PackedScene" uid="uid://2l28vknscmbj" path="res://UI/HUD/vitals/armor_bar.tscn" id="4_pcca8"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gsapo"]
 
@@ -61,8 +62,17 @@ offset_left = 32.0
 offset_top = 1024.0
 offset_right = 272.0
 offset_bottom = 1028.0
-max_value = 10.0
+max_value = 20.0
 value = 3.0
+
+[node name="ArmorBar" parent="HUD/PlayerHealthBar" instance=ExtResource("4_pcca8")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -216.0
+offset_right = 816.0
+offset_bottom = 584.0
+scale = Vector2(0.262868, 0.262868)
+tint_under = Color(1, 1, 1, 0.411765)
 
 [connection signal="body_entered" from="Head/Camera3D/InteractRay/Area3D" to="Head/Camera3D/InteractRay" method="_on_object_colliding"]
 [connection signal="body_exited" from="Head/Camera3D/InteractRay/Area3D" to="Head/Camera3D/InteractRay" method="_on_object_avert"]

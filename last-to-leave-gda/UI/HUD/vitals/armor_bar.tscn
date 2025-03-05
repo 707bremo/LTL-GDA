@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://2l28vknscmbj"]
+
+[ext_resource type="Texture2D" uid="uid://b4y03v86wl32r" path="res://vesticonarmorbar.png" id="1_t1klb"]
+[ext_resource type="Script" path="res://UI/HUD/vitals/armor_bar.gd" id="2_jy2p7"]
+
+[node name="ArmorBar" type="TextureProgressBar"]
+offset_right = 40.0
+offset_bottom = 40.0
+value = 60.0
+fill_mode = 3
+texture_under = ExtResource("1_t1klb")
+texture_progress = ExtResource("1_t1klb")
+tint_under = Color(1, 1, 1, 0.392157)
+script = ExtResource("2_jy2p7")

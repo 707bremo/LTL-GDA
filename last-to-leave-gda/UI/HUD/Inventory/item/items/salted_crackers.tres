@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://boacdd2ypxadq"]
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=3 format=3 uid="uid://c8uywm5gome0f"]
 
-[ext_resource type="Script" path="res://UI/HUD/Inventory/item/item_data.gd" id="1_8wg0k"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/item/item_data_consumable.gd" id="1_0cppg"]
 [ext_resource type="Texture2D" uid="uid://cvfv4ag3wu5wm" path="res://UI/HUD/Inventory/item/itemICONS/SaltedCrackers.webp" id="1_yjhnl"]
 
 [resource]
-script = ExtResource("1_8wg0k")
+script = ExtResource("1_0cppg")
+heal_value = 1
+armor_value = 0
 name = "Salted Crackers"
-description = "Small pack of crackers, slightly salted."
+description = "A pack of small crackers. Good for quick snacking."
 stackable = true
 object = ExtResource("1_yjhnl")

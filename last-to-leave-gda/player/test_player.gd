@@ -25,15 +25,17 @@ const FOV_CHANGE = 1.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
 var health: int = 3
-
+var armor: int = 30
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
 @onready var p_health_bar: ProgressBar = $HUD/PlayerHealthBar
+@onready var armor_bar: TextureProgressBar = $HUD/PlayerHealthBar/ArmorBar
 
 
 func _ready():
+	armor_bar.value = armor
 	p_health_bar.value = health
 	PlayerManager.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -112,3 +114,7 @@ func get_drop_position() -> Vector3:
 func heal(heal_value: int) -> void:
 	health += heal_value
 	p_health_bar.value = health
+
+func gain_armor(armor_value: int) -> void:
+	armor += armor_value
+	armor_bar.value = armor

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=3 format=3 uid="uid://bkbdbmb5d5bx4"]
+
+[ext_resource type="Script" path="res://UI/HUD/Inventory/item/item_data_consumable.gd" id="1_01x76"]
+[ext_resource type="Texture2D" uid="uid://bydb3cxafeulb" path="res://UI/HUD/Inventory/item/itemICONS/armorplate.png" id="1_g7sps"]
+
+[resource]
+script = ExtResource("1_01x76")
+heal_value = 0
+armor_value = 20
+name = "Armor Plate"
+description = "Decreases bullet pressure at the cost of mobility."
+stackable = false
+object = ExtResource("1_g7sps")
