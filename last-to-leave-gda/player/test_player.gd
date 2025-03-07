@@ -26,6 +26,7 @@ const FOV_CHANGE = 1.5
 var gravity = 9.8
 var health: int = 3
 var armor: int = 30
+var stamina: float = 1
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
@@ -118,3 +119,8 @@ func heal(heal_value: int) -> void:
 func gain_armor(armor_value: int) -> void:
 	armor += armor_value
 	armor_bar.value = armor
+
+
+func lose_stamina(stamina_value: float) -> void:
+	stamina += stamina_value
+	
