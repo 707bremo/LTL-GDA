@@ -26,16 +26,19 @@ const FOV_CHANGE = 1.5
 var gravity = 9.8
 var health: int = 3
 var armor: int = 30
-var stamina: float = 1
+var stamina: float = 6
+var stamina_lost: float = 0.01
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
 @onready var p_health_bar: ProgressBar = $HUD/PlayerHealthBar
 @onready var armor_bar: TextureProgressBar = $HUD/PlayerHealthBar/ArmorBar
+@onready var stamina_bar: ProgressBar = $HUD/PlayerHealthBar/StaminaBar
 
 
 func _ready():
+	stamina_bar.value = stamina
 	armor_bar.value = armor
 	p_health_bar.value = health
 	PlayerManager.player = self
@@ -65,6 +68,7 @@ func _physics_process(delta):
 	
 	# Handle Sprint.
 	if Input.is_action_pressed("sprint"):
+		lose_stamina()
 		speed = SPRINT_SPEED
 	else:
 		speed = WALK_SPEED
@@ -121,6 +125,7 @@ func gain_armor(armor_value: int) -> void:
 	armor_bar.value = armor
 
 
-func lose_stamina(stamina_value: float) -> void:
-	stamina += stamina_value
-	
+func lose_stamina() -> void:
+	stamina -= stamina_lost
+	#stamina += stamina_value
+	stamina_bar.value = stamina
