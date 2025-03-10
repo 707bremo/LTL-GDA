@@ -1,25 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuamrk0x8gwq2"]
+[gd_scene load_steps=6 format=3 uid="uid://dax2ao0bsraq4"]
 
 [ext_resource type="Script" path="res://stamina_bar.gd" id="1_x3yac"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iugok"]
-bg_color = Color(1, 1, 1, 0.392157)
+[sub_resource type="Gradient" id="Gradient_2hvl7"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 0.294118)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aa1yo"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ap5pc"]
+gradient = SubResource("Gradient_2hvl7")
+width = 140
+height = 4
 
-[node name="StaminaBar" type="ProgressBar"]
-offset_right = 240.0
+[sub_resource type="Gradient" id="Gradient_30qqf"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jm5vl"]
+gradient = SubResource("Gradient_30qqf")
+width = 140
+height = 4
+
+[node name="StaminaBar" type="TextureProgressBar"]
+offset_right = 140.0
 offset_bottom = 4.0
-theme_override_styles/background = SubResource("StyleBoxFlat_iugok")
-theme_override_styles/fill = SubResource("StyleBoxFlat_aa1yo")
-max_value = 1.0
-value = 0.5
-show_percentage = false
+value = 42.0
+fill_mode = 6
+texture_under = SubResource("GradientTexture2D_ap5pc")
+texture_progress = SubResource("GradientTexture2D_jm5vl")
 script = ExtResource("1_x3yac")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

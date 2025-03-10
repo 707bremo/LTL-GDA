@@ -1,8 +1,7 @@
-extends ProgressBar
+extends TextureProgressBar
 
 
 var stamina = 0 : set = _set_stamina
-@onready var timer: Timer = $Timer
 
 
 
