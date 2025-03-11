@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://bs7n3g21lutnf"]
+
+[ext_resource type="Script" path="res://interactable/interactableScripts/cabinet.gd" id="1_5sfap"]
+[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="2_yvkbo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kcdmj"]
+size = Vector3(0.8, 1.1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xtw0l"]
+albedo_color = Color(0.403922, 0.403922, 0.403922, 1)
+emission_enabled = true
+emission = Color(0, 0.486275, 0.0196078, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_585dh"]
+material = SubResource("StandardMaterial3D_xtw0l")
+size = Vector3(0.8, 1.1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j688i"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.565375, 0.557402, 0.573356, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_5lnmr"]
+material = SubResource("StandardMaterial3D_j688i")
+text = "LUGGAGE
+BAG"
+font = ExtResource("2_yvkbo")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rbefe"]
+size = Vector3(0.8, 1.1, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wxdib"]
+size = Vector3(0.8, 1.1, 0.5)
+
+[node name="luggage_bag" type="StaticBody3D" node_paths=PackedStringArray("outline") groups=["external_inventory"]]
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("1_5sfap")
+outline = NodePath("MeshInstance3D/BagOutline")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_kcdmj")
+
+[node name="BagOutline" type="MeshInstance3D" parent="MeshInstance3D"]
+visible = false
+mesh = SubResource("BoxMesh_585dh")
+skeleton = NodePath("../..")
+
+[node name="Text" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005009, 0.278507)
+mesh = SubResource("TextMesh_5lnmr")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_rbefe")
+
+[node name="HighlightArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HighlightArea"]
+shape = SubResource("BoxShape3D_wxdib")

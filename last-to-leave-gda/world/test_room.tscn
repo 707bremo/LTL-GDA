@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bfdsj5xxm3pmk"]
+[gd_scene load_steps=49 format=3 uid="uid://bfdsj5xxm3pmk"]
 
 [ext_resource type="Script" path="res://world/Main.gd" id="1_4pghp"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="2_6cywo"]
@@ -20,6 +20,9 @@
 [ext_resource type="Resource" uid="uid://1vheh4dicsax" path="res://UI/HUD/Inventory/item/items/energy_bar.tres" id="18_4mrce"]
 [ext_resource type="Resource" uid="uid://cfutfyhm6yfja" path="res://UI/HUD/Inventory/item/items/potato_chips.tres" id="19_j6lm5"]
 [ext_resource type="Resource" uid="uid://g3ukneeirp16" path="res://UI/HUD/Inventory/item/items/chicken_soup.tres" id="20_apgal"]
+[ext_resource type="PackedScene" uid="uid://bs7n3g21lutnf" path="res://interactable/luggage_bag.tscn" id="21_a2qv8"]
+[ext_resource type="PackedScene" uid="uid://cmpadl7eyt37u" path="res://interactable/refridgerator.tscn" id="22_fvs83"]
+[ext_resource type="Resource" uid="uid://d4nkk4jii1jgp" path="res://UI/HUD/Inventory/item/items/canned_tomatoes.tres" id="23_p0wsp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5q6bn"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -108,6 +111,34 @@ quantity = 1
 [sub_resource type="Resource" id="Resource_apgk0"]
 script = ExtResource("10_gtidb")
 slot_datas = Array[ExtResource("11_kkf2v")]([SubResource("Resource_gy3vt"), null, null, SubResource("Resource_1uw41"), SubResource("Resource_526xh"), null])
+
+[sub_resource type="Resource" id="Resource_ejwdl"]
+script = ExtResource("11_kkf2v")
+item_data = ExtResource("18_4mrce")
+quantity = 3
+
+[sub_resource type="Resource" id="Resource_p83np"]
+script = ExtResource("10_gtidb")
+slot_datas = Array[ExtResource("11_kkf2v")]([SubResource("Resource_ejwdl"), null, null, null])
+
+[sub_resource type="Resource" id="Resource_slm6o"]
+script = ExtResource("11_kkf2v")
+item_data = ExtResource("23_p0wsp")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_myf5f"]
+script = ExtResource("11_kkf2v")
+item_data = ExtResource("23_p0wsp")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_3exjb"]
+script = ExtResource("11_kkf2v")
+item_data = ExtResource("13_amrmn")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_v5k2k"]
+script = ExtResource("10_gtidb")
+slot_datas = Array[ExtResource("11_kkf2v")]([SubResource("Resource_slm6o"), null, null, null, null, null, null, null, null, SubResource("Resource_myf5f"), SubResource("Resource_3exjb")])
 
 [node name="TestRoom" type="Node"]
 script = ExtResource("1_4pghp")
@@ -239,6 +270,14 @@ slot_data = SubResource("Resource_kvejm")
 [node name="Tent" parent="." instance=ExtResource("17_yj8xa")]
 transform = Transform3D(2.52807, 0, 3.76887, 0, 2.22812, 0, -3.31077, 0, 2.87787, -9.27392, 0.507343, 0)
 inventory_data = SubResource("Resource_apgk0")
+
+[node name="luggage_bag" parent="." instance=ExtResource("21_a2qv8")]
+transform = Transform3D(0.818902, 0.573934, 2.50874e-08, 0, -4.37114e-08, 1, 0.573934, -0.818902, -3.57953e-08, 6.0265, 0.74103, -7.60915)
+inventory_data = SubResource("Resource_p83np")
+
+[node name="Refridgerator" parent="." instance=ExtResource("22_fvs83")]
+transform = Transform3D(-0.37658, 0, -0.926384, 0, 1, 0, 0.926384, 0, -0.37658, 7.96199, 1, 0)
+inventory_data = SubResource("Resource_v5k2k")
 
 [connection signal="drop_slot_data" from="UI/InvInterface" to="." method="_on_inv_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InvInterface" to="UI/InvInterface" method="_on_gui_input"]

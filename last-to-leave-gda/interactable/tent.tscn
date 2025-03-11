@@ -6,7 +6,7 @@
 [sub_resource type="PrismMesh" id="PrismMesh_8lr2g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ns0id"]
-albedo_color = Color(0, 0, 0, 1)
+albedo_color = Color(0.403922, 0.403922, 0.403922, 1)
 emission_enabled = true
 emission = Color(0, 0.486275, 0.0196078, 1)
 
@@ -27,6 +27,7 @@ font = ExtResource("2_koivk")
 data = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ki3ra"]
+size = Vector3(1, 2, 1)
 
 [node name="Tent" type="StaticBody3D" node_paths=PackedStringArray("outline") groups=["external_inventory"]]
 collision_layer = 5

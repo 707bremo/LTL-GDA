@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmpadl7eyt37u"]
+
+[ext_resource type="Script" path="res://interactable/interactableScripts/cabinet.gd" id="1_s5qq5"]
+[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="2_kuhd2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8iaun"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vb72d"]
+albedo_color = Color(0.403922, 0.403922, 0.403922, 1)
+emission_enabled = true
+emission = Color(0, 0.486275, 0.0196078, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ue2lj"]
+material = SubResource("StandardMaterial3D_vb72d")
+size = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrapk"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.565375, 0.557402, 0.573356, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_mhxyq"]
+material = SubResource("StandardMaterial3D_wrapk")
+text = "FRIDGE"
+font = ExtResource("2_kuhd2")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j3j32"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ki3ra"]
+size = Vector3(1, 2, 1)
+
+[node name="Refridgerator" type="StaticBody3D" node_paths=PackedStringArray("outline") groups=["external_inventory"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("1_s5qq5")
+outline = NodePath("MeshInstance3D/FridgeOutline")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_8iaun")
+
+[node name="FridgeOutline" type="MeshInstance3D" parent="MeshInstance3D"]
+visible = false
+mesh = SubResource("BoxMesh_ue2lj")
+skeleton = NodePath("../..")
+
+[node name="Text" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005009, 0.5261)
+mesh = SubResource("TextMesh_mhxyq")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_j3j32")
+
+[node name="HighlightArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HighlightArea"]
+shape = SubResource("BoxShape3D_ki3ra")
