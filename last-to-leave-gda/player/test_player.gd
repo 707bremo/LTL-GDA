@@ -152,7 +152,7 @@ func _process(delta) -> void:
 
 
 	# Get the input direction and handle the movement/deceleration.
-	var input_dir = Input.get_vector("left", "right", "up", "down")
+	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	var direction = (head.transform.basis * transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if is_on_floor():
 		if direction:
