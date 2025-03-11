@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dw1v0npmsuvnm"]
+[gd_scene load_steps=6 format=3 uid="uid://dax2ao0bsraq4"]
 
-[ext_resource type="Script" path="res://stamina_bar.gd" id="1_x3yac"]
+[ext_resource type="Script" path="res://UI/HUD/vitals/stamina_bar.gd" id="1_x3yac"]
 
 [sub_resource type="Gradient" id="Gradient_2hvl7"]
 offsets = PackedFloat32Array(0)

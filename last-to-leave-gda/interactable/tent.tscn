@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://2f5p0imqkb4d"]
+
+[ext_resource type="Script" path="res://interactable/interactableScripts/cabinet.gd" id="1_1n323"]
+[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="2_koivk"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_8lr2g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ns0id"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0, 0.486275, 0.0196078, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_8bvg0"]
+material = SubResource("StandardMaterial3D_ns0id")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bwyql"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.565375, 0.557402, 0.573356, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_yglg5"]
+material = SubResource("StandardMaterial3D_bwyql")
+text = "TENT"
+font = ExtResource("2_koivk")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hunwi"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ki3ra"]
+
+[node name="Tent" type="StaticBody3D"]
+script = ExtResource("1_1n323")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("PrismMesh_8lr2g")
+
+[node name="TentOutline" type="MeshInstance3D" parent="MeshInstance3D"]
+visible = false
+mesh = SubResource("PrismMesh_8bvg0")
+skeleton = NodePath("../..")
+
+[node name="Text" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005009, 0.5261)
+mesh = SubResource("TextMesh_yglg5")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.00231, 0, 0, 0, 1.00231, 0, 0, 0, 1.00231, 0, 0.5, 0)
+shape = SubResource("ConcavePolygonShape3D_hunwi")
+
+[node name="HighlightArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HighlightArea"]
+shape = SubResource("BoxShape3D_ki3ra")
