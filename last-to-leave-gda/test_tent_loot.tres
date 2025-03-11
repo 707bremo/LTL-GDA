@@ -5,4 +5,4 @@
 
 [resource]
 script = ExtResource("1_41nre")
-slot_datas = Array[ExtResource("2_nu3bd")]([])
+slot_datas = Array[ExtResource("2_nu3bd")]([null, null, null, null, null, null])

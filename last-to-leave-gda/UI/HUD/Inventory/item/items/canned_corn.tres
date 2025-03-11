@@ -5,7 +5,8 @@
 
 [resource]
 script = ExtResource("1_apv43")
-heal_value = 1
+heal_value = 3
+armor_value = 0
 name = "Canned Corn"
 description = "Does corn in a can actually taste good?"
 stackable = false

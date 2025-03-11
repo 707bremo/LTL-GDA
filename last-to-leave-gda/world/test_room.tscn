@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bfdsj5xxm3pmk"]
+[gd_scene load_steps=40 format=3 uid="uid://bfdsj5xxm3pmk"]
 
 [ext_resource type="Script" path="res://world/Main.gd" id="1_4pghp"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="2_6cywo"]
@@ -17,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://cgk7inheywfs4" path="res://UI/HUD/Inventory/item/pickup.tscn" id="15_acbsn"]
 [ext_resource type="Resource" uid="uid://c8uywm5gome0f" path="res://UI/HUD/Inventory/item/items/salted_crackers.tres" id="16_2upln"]
 [ext_resource type="PackedScene" uid="uid://2f5p0imqkb4d" path="res://interactable/tent.tscn" id="17_yj8xa"]
+[ext_resource type="Resource" uid="uid://1vheh4dicsax" path="res://UI/HUD/Inventory/item/items/energy_bar.tres" id="18_4mrce"]
+[ext_resource type="Resource" uid="uid://cfutfyhm6yfja" path="res://UI/HUD/Inventory/item/items/potato_chips.tres" id="19_j6lm5"]
+[ext_resource type="Resource" uid="uid://g3ukneeirp16" path="res://UI/HUD/Inventory/item/items/chicken_soup.tres" id="20_apgal"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5q6bn"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -87,9 +90,24 @@ script = ExtResource("11_kkf2v")
 item_data = ExtResource("16_2upln")
 quantity = 10
 
+[sub_resource type="Resource" id="Resource_gy3vt"]
+script = ExtResource("11_kkf2v")
+item_data = ExtResource("18_4mrce")
+quantity = 5
+
+[sub_resource type="Resource" id="Resource_1uw41"]
+script = ExtResource("11_kkf2v")
+item_data = ExtResource("19_j6lm5")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_526xh"]
+script = ExtResource("11_kkf2v")
+item_data = ExtResource("20_apgal")
+quantity = 1
+
 [sub_resource type="Resource" id="Resource_apgk0"]
 script = ExtResource("10_gtidb")
-slot_datas = Array[ExtResource("11_kkf2v")]([])
+slot_datas = Array[ExtResource("11_kkf2v")]([SubResource("Resource_gy3vt"), null, null, SubResource("Resource_1uw41"), SubResource("Resource_526xh"), null])
 
 [node name="TestRoom" type="Node"]
 script = ExtResource("1_4pghp")

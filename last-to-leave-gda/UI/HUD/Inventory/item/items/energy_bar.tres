@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=3 format=3 uid="uid://1vheh4dicsax"]
+
+[ext_resource type="Script" path="res://UI/HUD/Inventory/item/item_data_consumable.gd" id="1_bto1a"]
+[ext_resource type="Texture2D" uid="uid://burhkwwpgsatd" path="res://UI/HUD/Inventory/item/itemICONS/EnergyBar.webp" id="1_k6yol"]
+
+[resource]
+script = ExtResource("1_bto1a")
+heal_value = 2
+armor_value = 0
+name = "Energy Bar"
+description = "Just your regular bar of oats and dried up berries."
+stackable = true
+object = ExtResource("1_k6yol")

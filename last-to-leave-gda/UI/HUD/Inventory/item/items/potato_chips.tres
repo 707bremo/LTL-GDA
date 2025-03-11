@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=3 format=3 uid="uid://cfutfyhm6yfja"]
+
+[ext_resource type="Script" path="res://UI/HUD/Inventory/item/item_data_consumable.gd" id="1_cpjlo"]
+[ext_resource type="Texture2D" uid="uid://cb52i1cbryb3f" path="res://UI/HUD/Inventory/item/itemICONS/LaysChips.webp" id="1_tn1p7"]
+
+[resource]
+script = ExtResource("1_cpjlo")
+heal_value = 2
+armor_value = 0
+name = "Bag of chips"
+description = "Light and crispy. Favorable snack in a tense environment."
+stackable = false
+object = ExtResource("1_tn1p7")

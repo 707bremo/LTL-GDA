@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=3 format=3 uid="uid://d4nkk4jii1jgp"]
+
+[ext_resource type="Script" path="res://UI/HUD/Inventory/item/item_data_consumable.gd" id="1_ccroq"]
+[ext_resource type="Texture2D" uid="uid://847ulqvp4i8l" path="res://UI/HUD/Inventory/item/itemICONS/CannedTomatoes.webp" id="1_od6m0"]
+
+[resource]
+script = ExtResource("1_ccroq")
+heal_value = 3
+armor_value = 0
+name = "Canned Tomatoes"
+description = "Sometimes it was used for pizza. Now it's consumed to survive on the brink of any scavenger's starvation."
+stackable = false
+object = ExtResource("1_od6m0")

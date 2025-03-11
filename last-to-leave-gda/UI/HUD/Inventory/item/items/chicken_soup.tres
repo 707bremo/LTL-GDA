@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=3 format=3 uid="uid://g3ukneeirp16"]
+
+[ext_resource type="Script" path="res://UI/HUD/Inventory/item/item_data_consumable.gd" id="1_hfcn0"]
+[ext_resource type="Texture2D" uid="uid://dphk75h438cki" path="res://UI/HUD/Inventory/item/itemICONS/ChickenSoup.webp" id="1_mdy50"]
+
+[resource]
+script = ExtResource("1_hfcn0")
+heal_value = 6
+armor_value = 0
+name = "Chicken Soup"
+description = "Sadly, the chicken is kinda rubbery. But the flavor makes up for it."
+stackable = false
+object = ExtResource("1_mdy50")

@@ -23,6 +23,10 @@ PlayerManager="*res://player/player_manager.gd"
 window/size/viewport_width=1918
 window/size/viewport_height=1078
 
+[global_group]
+
+external_inventory="group for any containers or loot sources"
+
 [input]
 
 left={
