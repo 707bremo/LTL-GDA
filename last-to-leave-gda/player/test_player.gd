@@ -33,6 +33,9 @@ var armor: int = 30
 var max_stamina: float = 100
 var stamina: float = 100
 var stamina_lost: float = 20
+var hunger: float = 100
+var hunger_lost: float = 0.02
+
 
 
 # vital (Conditions)
@@ -54,6 +57,10 @@ var is_sprinting = false
 @onready var stamina_bar: TextureProgressBar = $HUD/PlayerHealthBar/StaminaBar
 @onready var stamina_bar_anim: AnimationPlayer = $StaminaBarAnim
 @onready var fatigued_blinker: ColorRect = $FatiguedBlinker
+@onready var hunger_bar: ProgressBar = $HUD/PlayerHealthBar/HungerBar
+
+
+
 
 
 func _ready():
@@ -108,6 +115,15 @@ func _physics_process(delta):
 	stamina_bar.value = stamina
 
 func _process(delta) -> void:
+	
+	#if hunger > 0:
+		#hunger = hunger_lost * delta
+		#hunger_bar.value = hunger
+	
+	#elif hunger <= 0:
+		#health = health - hunger_lost * delta
+		#hunger = 0
+	
 	if can_regen == false and stamina_bar.value < 100:
 		stamina_bar.visible = true
 		can_start_timer = true

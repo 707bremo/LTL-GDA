@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cvqooawhyqyqw"]
+[gd_scene load_steps=14 format=3 uid="uid://cvqooawhyqyqw"]
 
 [ext_resource type="Script" path="res://player/test_player.gd" id="1_p76u8"]
 [ext_resource type="PackedScene" uid="uid://dpbjle7jau6df" path="res://UI/HUD/vitals/health_bar.tscn" id="2_0nl34"]
 [ext_resource type="Script" path="res://player/interact_ray.gd" id="2_2h5an"]
 [ext_resource type="PackedScene" uid="uid://2l28vknscmbj" path="res://UI/HUD/vitals/armor_bar.tscn" id="4_pcca8"]
+[ext_resource type="PackedScene" uid="uid://dcpr2jokur15r" path="res://hunger_bar.tscn" id="5_pp44l"]
 [ext_resource type="PackedScene" uid="uid://dax2ao0bsraq4" path="res://UI/HUD/vitals/stamina_bar.tscn" id="5_tbfnt"]
 [ext_resource type="PackedScene" uid="uid://bxwt77dbpmvd4" path="res://UI/pause_menu.tscn" id="6_v3jdj"]
 
@@ -84,13 +85,20 @@ mouse_filter = 2
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
+[node name="PauseMenu" parent="HUD" instance=ExtResource("6_v3jdj")]
+
 [node name="PlayerHealthBar" parent="HUD" instance=ExtResource("2_0nl34")]
 offset_left = 32.0
-offset_top = 1024.0
+offset_top = 915.0
 offset_right = 272.0
-offset_bottom = 1028.0
-max_value = 20.0
+offset_bottom = 919.0
+max_value = 50.0
 value = 3.0
+
+[node name="HungerBar" parent="HUD/PlayerHealthBar" instance=ExtResource("5_pp44l")]
+layout_mode = 0
+offset_top = 12.0
+offset_bottom = 16.0
 
 [node name="ArmorBar" parent="HUD/PlayerHealthBar" instance=ExtResource("4_pcca8")]
 layout_mode = 0
@@ -108,23 +116,20 @@ anchor_left = 3.43333
 anchor_top = -2.0
 anchor_right = 4.327
 anchor_bottom = -0.195
-offset_right = -74.4799
-offset_bottom = -3.22
+offset_left = -823.999
+offset_top = 14.0
+offset_right = -798.48
+offset_bottom = 10.78
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(1.53194, 1.80547)
-metadata/_edit_use_anchors_ = true
-
-[node name="PauseMenu" parent="HUD" instance=ExtResource("6_v3jdj")]
 
 [node name="FatiguedBlinker" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0.709314)
 z_index = -1
-offset_left = 856.0
-offset_top = 1016.0
-offset_right = 1069.0
-offset_bottom = 1023.0
-scale = Vector2(1.00692, 1.03351)
+offset_left = 32.0
+offset_top = 921.0
+offset_right = 272.0
+offset_bottom = 925.0
 color = Color(0.891291, 4.18738e-06, 8.66354e-07, 1)
 
 [node name="StaminaBarAnim" type="AnimationPlayer" parent="."]

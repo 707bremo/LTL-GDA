@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=3 format=3 uid="uid://cds81cbksibuu"]
+
+[ext_resource type="Texture2D" uid="uid://d2qcaccoa82rb" path="res://UI/HUD/Inventory/item/itemICONS/waterbottle.png" id="1_vqojy"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/item/item_data_consumable.gd" id="1_w73dj"]
+
+[resource]
+script = ExtResource("1_w73dj")
+heal_value = 8
+armor_value = 0
+periodic_time = 8
+name = "Water Bottle"
+description = "Bottled water fresh from the rivers of Raja-Jooseppi."
+stackable = false
+object = ExtResource("1_vqojy")

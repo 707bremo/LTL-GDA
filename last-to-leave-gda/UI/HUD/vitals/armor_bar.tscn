@@ -4,8 +4,9 @@
 [ext_resource type="Script" path="res://UI/HUD/vitals/armor_bar.gd" id="2_jy2p7"]
 
 [node name="ArmorBar" type="TextureProgressBar"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 800.0
+offset_bottom = 800.0
+scale = Vector2(0.3, 0.3)
 value = 60.0
 fill_mode = 3
 texture_under = ExtResource("1_t1klb")

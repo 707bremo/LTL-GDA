@@ -8,7 +8,7 @@ colors = PackedColorArray(1, 1, 1, 0.294118)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ap5pc"]
 gradient = SubResource("Gradient_2hvl7")
-width = 140
+width = 240
 height = 4
 
 [sub_resource type="Gradient" id="Gradient_30qqf"]
@@ -17,7 +17,7 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_jm5vl"]
 gradient = SubResource("Gradient_30qqf")
-width = 140
+width = 240
 height = 4
 
 [node name="StaminaBar" type="TextureProgressBar"]

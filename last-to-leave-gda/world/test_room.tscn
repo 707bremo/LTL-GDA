@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bfdsj5xxm3pmk"]
+[gd_scene load_steps=53 format=3 uid="uid://bfdsj5xxm3pmk"]
 
 [ext_resource type="Script" path="res://world/Main.gd" id="1_4pghp"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="2_6cywo"]
@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://bs7n3g21lutnf" path="res://interactable/luggage_bag.tscn" id="21_a2qv8"]
 [ext_resource type="PackedScene" uid="uid://cmpadl7eyt37u" path="res://interactable/refridgerator.tscn" id="22_fvs83"]
 [ext_resource type="Resource" uid="uid://d4nkk4jii1jgp" path="res://UI/HUD/Inventory/item/items/canned_tomatoes.tres" id="23_p0wsp"]
+[ext_resource type="Resource" uid="uid://cds81cbksibuu" path="res://UI/HUD/Inventory/item/items/water_bottle.tres" id="24_l7v60"]
+[ext_resource type="Resource" uid="uid://ungidsdli55p" path="res://UI/HUD/Inventory/item/items/cherry_soda.tres" id="25_8b3lk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5q6bn"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -126,9 +128,19 @@ script = ExtResource("11_kkf2v")
 item_data = ExtResource("23_p0wsp")
 quantity = 1
 
+[sub_resource type="Resource" id="Resource_074c8"]
+script = ExtResource("11_kkf2v")
+item_data = ExtResource("24_l7v60")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_af20k"]
+script = ExtResource("11_kkf2v")
+item_data = ExtResource("24_l7v60")
+quantity = 1
+
 [sub_resource type="Resource" id="Resource_myf5f"]
 script = ExtResource("11_kkf2v")
-item_data = ExtResource("23_p0wsp")
+item_data = ExtResource("25_8b3lk")
 quantity = 1
 
 [sub_resource type="Resource" id="Resource_3exjb"]
@@ -138,7 +150,7 @@ quantity = 1
 
 [sub_resource type="Resource" id="Resource_v5k2k"]
 script = ExtResource("10_gtidb")
-slot_datas = Array[ExtResource("11_kkf2v")]([SubResource("Resource_slm6o"), null, null, null, null, null, null, null, null, SubResource("Resource_myf5f"), SubResource("Resource_3exjb")])
+slot_datas = Array[ExtResource("11_kkf2v")]([SubResource("Resource_slm6o"), null, null, null, null, null, null, SubResource("Resource_074c8"), SubResource("Resource_af20k"), SubResource("Resource_myf5f"), SubResource("Resource_3exjb")])
 
 [node name="TestRoom" type="Node"]
 script = ExtResource("1_4pghp")
@@ -255,27 +267,29 @@ grow_vertical = 2
 texture = ExtResource("8_ab6c3")
 expand_mode = 3
 
-[node name="Cabinet" parent="." instance=ExtResource("9_qu4lt")]
+[node name="LootSources" type="Node" parent="."]
+
+[node name="Cabinet" parent="LootSources" instance=ExtResource("9_qu4lt")]
 transform = Transform3D(0.944775, 0, 0.337813, 0, 1.00335, 0, -0.337813, 0, 0.944775, 0, 0.493376, -10.7037)
 inventory_data = SubResource("Resource_a1b4j")
 
-[node name="Cabinet2" parent="." instance=ExtResource("9_qu4lt")]
+[node name="Cabinet2" parent="LootSources" instance=ExtResource("9_qu4lt")]
 transform = Transform3D(1.82095, 0, -0.337825, 0, 2.6, 0, 0.943044, 0, 0.652315, 2.66691, 0.5, -11.5848)
 inventory_data = SubResource("Resource_wjmi3")
 
-[node name="Pickup" parent="." instance=ExtResource("15_acbsn")]
+[node name="Pickup" parent="LootSources" instance=ExtResource("15_acbsn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.94875, 1.65384, 0)
 slot_data = SubResource("Resource_kvejm")
 
-[node name="Tent" parent="." instance=ExtResource("17_yj8xa")]
+[node name="Tent" parent="LootSources" instance=ExtResource("17_yj8xa")]
 transform = Transform3D(2.52807, 0, 3.76887, 0, 2.22812, 0, -3.31077, 0, 2.87787, -9.27392, 0.507343, 0)
 inventory_data = SubResource("Resource_apgk0")
 
-[node name="luggage_bag" parent="." instance=ExtResource("21_a2qv8")]
+[node name="luggage_bag" parent="LootSources" instance=ExtResource("21_a2qv8")]
 transform = Transform3D(0.818902, 0.573934, 2.50874e-08, 0, -4.37114e-08, 1, 0.573934, -0.818902, -3.57953e-08, 6.0265, 0.74103, -7.60915)
 inventory_data = SubResource("Resource_p83np")
 
-[node name="Refridgerator" parent="." instance=ExtResource("22_fvs83")]
+[node name="Refridgerator" parent="LootSources" instance=ExtResource("22_fvs83")]
 transform = Transform3D(-0.37658, 0, -0.926384, 0, 1, 0, 0.926384, 0, -0.37658, 7.96199, 1, 0)
 inventory_data = SubResource("Resource_v5k2k")
 

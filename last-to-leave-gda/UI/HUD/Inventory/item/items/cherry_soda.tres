@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=3 format=3 uid="uid://ungidsdli55p"]
+
+[ext_resource type="Script" path="res://UI/HUD/Inventory/item/item_data_consumable.gd" id="1_5hq8s"]
+[ext_resource type="Texture2D" uid="uid://dmsfvbvjdnkuy" path="res://UI/HUD/Inventory/item/itemICONS/cherrysoda.png" id="1_g2120"]
+
+[resource]
+script = ExtResource("1_5hq8s")
+heal_value = 4
+armor_value = 0
+periodic_time = 8
+name = "Cherry Soda"
+description = "The answer is clear."
+stackable = false
+object = ExtResource("1_g2120")

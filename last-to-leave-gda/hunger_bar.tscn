@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcpr2jokur15r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fkghs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5yjf"]
+bg_color = Color(0, 1, 0, 1)
+
+[node name="hunger_bar" type="ProgressBar"]
+offset_right = 240.0
+offset_bottom = 4.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_fkghs")
+theme_override_styles/fill = SubResource("StyleBoxFlat_s5yjf")
+value = 80.0
+show_percentage = false
