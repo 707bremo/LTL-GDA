@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Control
 
 const Slot = preload("res://inventory/slot.tscn")
 

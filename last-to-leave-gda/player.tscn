@@ -1,21 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3yccfperamvs"]
+[gd_scene load_steps=7 format=3 uid="uid://d3yccfperamvs"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_vbs7i"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5bct"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rhvbo"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5bct"]
+[sub_resource type="Animation" id="Animation_ekji4"]
+resource_name = "Crouch"
+
+[sub_resource type="Animation" id="Animation_suwgn"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iep0c"]
+_data = {
+"Crouch": SubResource("Animation_ekji4"),
+"RESET": SubResource("Animation_suwgn")
+}
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_vbs7i")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_rhvbo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_m5bct")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47778, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_rhvbo")
+skeleton = NodePath("../..")
+
+[node name="CameraController" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraController"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_iep0c")
+}
