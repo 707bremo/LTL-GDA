@@ -6,7 +6,7 @@ signal toogle_inventory()
 
 
 
-
+# speed variables
 var speed
 const FATIGUED = 3.22
 const WALK_SPEED = 5.0
@@ -27,18 +27,22 @@ const FOV_CHANGE = 1.5
 var gravity = 9.8
 
 
-# vitals
-var health: int = 3
+# *** vitals (Main-Values) ***
 var armor: int = 30
+
+# *** vitals (Conditions) ***
+
+# health
+var max_health: float = 100.0
+var health: int = 40
+var health_regen_ae: float = 0.5
+var current_health = health
+var health_regen_IN: int = 1
+
+# stamina
 var max_stamina: float = 100
 var stamina: float = 100
 var stamina_lost: float = 20
-var hunger: float = 100
-var hunger_lost: float = 0.02
-
-
-
-# vital (Conditions)
 var can_regen = true
 var time_to_wait: float = 2
 var can_fatigued_timer = true
@@ -47,6 +51,16 @@ var fatigued_timer = 0
 var stamina_timer = 0
 var can_start_timer = true
 var is_sprinting = false
+
+
+
+
+
+# hunger
+var max_hunger: float = 100.0
+var current_hunger = max_hunger
+var hunger_lost: float = 0.25
+
 
 
 @onready var head = $Head
@@ -64,10 +78,18 @@ var is_sprinting = false
 
 
 func _ready():
+	if hunger_bar:
+		hunger_bar.max_value = max_hunger
+		hunger_bar.value = current_hunger
+	
+	if p_health_bar:
+		p_health_bar.value = current_health
+	
+	
+	
 	stamina_bar.visible = false
 	stamina_bar.value = stamina
 	armor_bar.value = armor
-	p_health_bar.value = health
 	PlayerManager.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -116,14 +138,34 @@ func _physics_process(delta):
 
 func _process(delta) -> void:
 	
-	#if hunger > 0:
-		#hunger = hunger_lost * delta
-		#hunger_bar.value = hunger
 	
-	#elif hunger <= 0:
-		#health = health - hunger_lost * delta
-		#hunger = 0
+	# Constantly decrease the hunger over time.
+	current_hunger -= hunger_lost * delta
+	current_hunger = clamp(current_hunger, 0, max_hunger) # Cannot go past 0.
 	
+	
+	if hunger_bar:
+		hunger_bar.value = current_hunger
+	
+	if current_hunger == 0:
+		current_health -= 0.055 * delta # Once hunger reaches 0, player will start to lose health very slowly.
+		hunger_bar.value = current_health
+	
+	if p_health_bar:
+		p_health_bar.value = current_health
+	
+	# Checks if the hunger exceeds boost limit. If the hunger is below 90, drop the health boost.
+	if current_hunger >= 90: 
+		current_health += health_regen_ae * delta 
+	if current_hunger < 90:
+		current_health += (health_regen_ae/2) * delta
+	if current_health == 100:
+		p_health_bar.value = current_health
+	
+	
+	
+	
+	# Check if the player is able to regen stamina. If true, stamina will increase over time.
 	if can_regen == false and stamina_bar.value < 100:
 		stamina_bar.visible = true
 		can_start_timer = true
@@ -133,7 +175,6 @@ func _process(delta) -> void:
 				can_regen = true
 				can_start_timer = false
 				stamina_timer = 0
-	
 	
 	
 	if stamina_bar.value > 60:
@@ -157,16 +198,19 @@ func _process(delta) -> void:
 	if speed == FATIGUED and is_sprinting == true:
 		is_sprinting = false
 	
-	if stamina_bar.value == 100:
+	# The regeneration of stamina shouldn't exceed 100.
+	if stamina_bar.value == 100: 
 		can_regen = false
 		stamina_bar.visible = false
 	if can_regen == true:
 		stamina += stamina_lost * delta
 		can_start_timer = false
 		stamina_timer = 0
-
-
-
+	
+	
+	
+	
+	
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (head.transform.basis * transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -210,9 +254,14 @@ func get_drop_position() -> Vector3:
 	return camera.global_position + direction
 
 
-func heal(heal_value: int) -> void:
-	health += heal_value
-	p_health_bar.value = health
+func replenish_hunger(gain_hunger_value: int) -> void:
+	current_hunger += gain_hunger_value
+	hunger_bar.value = current_hunger
+
+func gain_health(heal_value: int) -> void:
+	if current_hunger >= 90:
+		current_health += heal_value
+		p_health_bar.value = health
 
 func gain_armor(armor_value: int) -> void:
 	armor += armor_value

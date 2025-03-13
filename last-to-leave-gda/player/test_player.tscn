@@ -92,13 +92,13 @@ offset_left = 32.0
 offset_top = 915.0
 offset_right = 272.0
 offset_bottom = 919.0
-max_value = 50.0
 value = 3.0
 
 [node name="HungerBar" parent="HUD/PlayerHealthBar" instance=ExtResource("5_pp44l")]
 layout_mode = 0
 offset_top = 12.0
 offset_bottom = 16.0
+value = 100.0
 
 [node name="ArmorBar" parent="HUD/PlayerHealthBar" instance=ExtResource("4_pcca8")]
 layout_mode = 0

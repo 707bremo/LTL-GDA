@@ -7,7 +7,7 @@
 script = ExtResource("1_bto1a")
 heal_value = 6
 armor_value = 0
-periodic_time = 0
+gain_hunger_value = 2
 name = "Energy Bar"
 description = "Just your regular bar of oats and dried up berries."
 stackable = true
