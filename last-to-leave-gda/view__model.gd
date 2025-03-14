@@ -6,13 +6,14 @@ extends Camera3D
 @onready var shoot_sound: AudioStreamPlayer3D = $shoot_sound
 @onready var shotgun_cock_back_sound: AudioStreamPlayer3D = $shotgun_cock_back_sound
 @onready var holster_sound: AudioStreamPlayer3D = $holster_sound
+@onready var muzzle_flash: GPUParticles3D = $fps_rig/shotgun/shotgun_model/muzzle_flash
 var shotgun_in_use = true
 var bullet = load("res://bullet.tscn")
 var instance
 var can_shoot = true  
 
 func _ready() -> void:
-	pass
+	muzzle_flash.emitting = false 
 
 func _process(delta: float) -> void:
 	fps_rig.position.x = lerp(fps_rig.position.x, 0.0, delta * 5)
@@ -26,6 +27,9 @@ func _input(event) -> void:
 	if event.is_action_pressed("shoot") and can_shoot:
 		can_shoot = false  
 		animation_player.play("fire")
+		muzzle_flash.emitting = true
+		await get_tree().create_timer(0.05).timeout  
+		muzzle_flash.emitting = false
 		shoot_sound.play()
 		instance = bullet.instantiate()
 		instance.position = gun_barrel.global_position
@@ -36,12 +40,3 @@ func _input(event) -> void:
 		shotgun_cock_back_sound.play()
 		await animation_player.animation_finished
 		can_shoot = true
-	elif event.is_action_pressed("use"):
-		holster_sound.play()
-		shotgun_in_use = !shotgun_in_use
-		if shotgun_in_use:
-			animation_player.play("put_away")
-			can_shoot = false
-		else:
-			animation_player.play("pull_up")
-			can_shoot = true
