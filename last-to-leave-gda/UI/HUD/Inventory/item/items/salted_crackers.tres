@@ -7,7 +7,7 @@
 script = ExtResource("1_0cppg")
 heal_value = 2
 armor_value = 0
-periodic_time = 0
+gain_hunger_value = 2
 name = "Salted Crackers"
 description = "A pack of small crackers. Good for quick snacking."
 stackable = true

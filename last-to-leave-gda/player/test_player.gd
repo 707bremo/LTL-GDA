@@ -59,7 +59,7 @@ var is_sprinting = false
 # hunger
 var max_hunger: float = 100.0
 var current_hunger = max_hunger
-var hunger_lost: float = 0.5
+var hunger_lost: float = 0.25
 
 
 
@@ -165,10 +165,10 @@ func _process(delta) -> void:
 		print(current_health)
 	
 	# Checks if the hunger exceeds boost limit. If the hunger is below 90, drop the health boost.
-	if current_hunger >= 90 and current_hunger >= 75: 
-		current_health += health_regen_ae * delta 
-	if current_hunger < 90 and current_hunger <= 50 and current_hunger != 0:
-		current_health += (health_regen_ae/2) * delta
+	if current_hunger >= 90:
+		current_health += health_regen_IN * delta 
+	if current_hunger < 90 and current_hunger >= 50:
+		current_health += health_regen_ae * delta
 	if current_health == 100:
 		p_health_bar.value = current_health
 	

@@ -7,6 +7,7 @@
 script = ExtResource("1_cpjlo")
 heal_value = 2
 armor_value = 0
+gain_hunger_value = 2
 name = "Bag of chips"
 description = "Light and crispy. Favorable snack in a tense environment."
 stackable = false

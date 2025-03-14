@@ -7,6 +7,7 @@
 script = ExtResource("1_pktma")
 heal_value = 3
 armor_value = 0
+gain_hunger_value = 5
 name = "Canned Peaches"
 description = "Peaches in a tin can."
 stackable = false

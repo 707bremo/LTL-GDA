@@ -7,6 +7,7 @@
 script = ExtResource("1_ccroq")
 heal_value = 3
 armor_value = 0
+gain_hunger_value = 5
 name = "Canned Tomatoes"
 description = "Sometimes it was used for pizza. Now it's consumed to survive on the brink of any scavenger's starvation."
 stackable = false
