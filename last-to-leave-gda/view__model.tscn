@@ -917,6 +917,9 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(-0.461901, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_0n7xx"]
+resource_name = "scope_in"
+
 [sub_resource type="Animation" id="Animation_vfjrd"]
 resource_name = "shotgun_cock_back"
 length = 0.5
@@ -968,9 +971,6 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.095324, 0, 0), Vector3(0, 0, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_0n7xx"]
-resource_name = "scope_in"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3dygs"]
 _data = {
