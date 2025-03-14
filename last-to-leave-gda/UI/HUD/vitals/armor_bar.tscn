@@ -6,7 +6,7 @@
 [node name="ArmorBar" type="TextureProgressBar"]
 offset_right = 800.0
 offset_bottom = 800.0
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.143636, 0.143636)
 value = 25.0
 fill_mode = 3
 texture_under = ExtResource("1_t1klb")

@@ -59,15 +59,15 @@ var is_sprinting = false
 # hunger
 var max_hunger: float = 100.0
 var current_hunger = max_hunger
-var hunger_lost: float = 0.25
+var hunger_lost: float = 0.5
 
 
 
 # armor
-var armor_stable = Color(0.498039, 1, 0)
-var armor_worn = Color(0.678431, 1, 0.184314) 
-var armor_damaged = Color(1, 0.54902, 0)
-var armor_critical = Color("ff0000")
+var stable_color = Color("00ff00")
+var worn_color = Color("GREEN_YELLOW") 
+var damaged_color = Color("ORANGE")
+var critical_color = Color("RED")
 
 
 
@@ -98,7 +98,7 @@ func _ready():
 	stamina_bar.visible = false
 	stamina_bar.value = stamina
 	armor_bar.value = armor
-	armor_bar.tint_progress = armor_damaged
+	armor_bar.tint_progress = damaged_color
 	PlayerManager.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -167,13 +167,38 @@ func _process(delta) -> void:
 	# Checks if the hunger exceeds boost limit. If the hunger is below 90, drop the health boost.
 	if current_hunger >= 90 and current_hunger >= 75: 
 		current_health += health_regen_ae * delta 
-	if current_hunger < 90 and current_hunger <= 50:
+	if current_hunger < 90 and current_hunger <= 50 and current_hunger != 0:
 		current_health += (health_regen_ae/2) * delta
 	if current_health == 100:
 		p_health_bar.value = current_health
 	
 	
-	
+	# *** Change the color of the health bar based on the player's physical conditions ***
+	# when health and hunger are at least 75 or more
+	var health_stylebox = p_health_bar.get_theme_stylebox("fill")
+	var hunger_stylebox = hunger_bar.get_theme_stylebox("fill")
+	 
+	if health_stylebox is StyleBoxFlat:
+		if current_health >= 75:
+			health_stylebox.bg_color = stable_color
+		elif current_health >= 50:
+			health_stylebox.bg_color = worn_color
+		elif current_health >= 25:
+			health_stylebox.bg_color = damaged_color
+		else:
+			health_stylebox.bg_color = critical_color
+			p_health_bar.add_theme_stylebox_override("fill", health_stylebox)
+
+	if hunger_stylebox is StyleBoxFlat:
+		if current_hunger >= 75:
+			hunger_stylebox.bg_color = stable_color
+		elif current_hunger >= 50:
+			hunger_stylebox.bg_color = worn_color
+		elif current_hunger >= 25:
+			hunger_stylebox.bg_color = damaged_color
+		else:
+			hunger_stylebox.bg_color = critical_color
+			hunger_bar.add_theme_stylebox_override("fill", hunger_stylebox)
 	
 	# Check if the player is able to regen stamina. If true, stamina will increase over time.
 	if can_regen == false and stamina_bar.value < 100:
@@ -281,10 +306,10 @@ func gain_armor(armor_value: int) -> void:
 # FOR APPEARANCE ONLY
 func change_armor_durability_APP():
 	if armor_bar.value <= 100 and armor_bar.value >= 75:
-		armor_bar.tint_progress = armor_stable
+		armor_bar.tint_progress = stable_color
 	if armor_bar.value <= 75 and armor_bar.value >= 50:
-		armor_bar.tint_progress = armor_worn
+		armor_bar.tint_progress = worn_color
 	if armor_bar.value <= 50 and armor_bar.value >= 25:
-		armor_bar.tint_progress = armor_damaged
+		armor_bar.tint_progress = damaged_color
 	if armor_bar.value <= 25 and armor_bar.value > 0:
-		armor_bar.tint_progress = armor_critical
+		armor_bar.tint_progress = critical_color

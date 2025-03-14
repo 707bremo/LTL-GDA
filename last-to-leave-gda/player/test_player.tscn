@@ -102,12 +102,10 @@ value = 100.0
 
 [node name="ArmorBar" parent="HUD/PlayerHealthBar" instance=ExtResource("4_pcca8")]
 layout_mode = 0
-offset_left = 16.0
-offset_top = -216.0
-offset_right = 816.0
-offset_bottom = 584.0
-scale = Vector2(0.262868, 0.262868)
-tint_under = Color(1, 1, 1, 0.411765)
+offset_left = 61.0
+offset_top = -125.0
+offset_right = 861.0
+offset_bottom = 675.0
 
 [node name="StaminaBar" parent="HUD/PlayerHealthBar" instance=ExtResource("5_tbfnt")]
 layout_mode = 1
@@ -116,9 +114,9 @@ anchor_left = 3.43333
 anchor_top = -2.0
 anchor_right = 4.327
 anchor_bottom = -0.195
-offset_left = -823.999
+offset_left = -17.9991
 offset_top = 14.0
-offset_right = -798.48
+offset_right = 7.52014
 offset_bottom = 10.78
 grow_horizontal = 2
 grow_vertical = 0
@@ -126,9 +124,9 @@ grow_vertical = 0
 [node name="FatiguedBlinker" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0.709314)
 z_index = -1
-offset_left = 32.0
+offset_left = 838.0
 offset_top = 921.0
-offset_right = 272.0
+offset_right = 1078.0
 offset_bottom = 925.0
 color = Color(0.891291, 4.18738e-06, 8.66354e-07, 1)
 
