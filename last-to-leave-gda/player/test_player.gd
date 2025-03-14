@@ -63,6 +63,14 @@ var hunger_lost: float = 0.25
 
 
 
+# armor
+var armor_stable = Color(0.498039, 1, 0)
+var armor_worn = Color(0.678431, 1, 0.184314) 
+var armor_damaged = Color(1, 0.54902, 0)
+var armor_critical = Color("ff0000")
+
+
+
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
@@ -90,6 +98,7 @@ func _ready():
 	stamina_bar.visible = false
 	stamina_bar.value = stamina
 	armor_bar.value = armor
+	armor_bar.tint_progress = armor_damaged
 	PlayerManager.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -148,16 +157,17 @@ func _process(delta) -> void:
 		hunger_bar.value = current_hunger
 	
 	if current_hunger == 0:
-		current_health -= 0.055 * delta # Once hunger reaches 0, player will start to lose health very slowly.
-		hunger_bar.value = current_health
+		current_health -= 0.099 * delta # Once hunger reaches 0, player will start to lose health very slowly.
+		hunger_bar.value = current_hunger
 	
 	if p_health_bar:
 		p_health_bar.value = current_health
+		print(current_health)
 	
 	# Checks if the hunger exceeds boost limit. If the hunger is below 90, drop the health boost.
-	if current_hunger >= 90: 
+	if current_hunger >= 90 and current_hunger >= 75: 
 		current_health += health_regen_ae * delta 
-	if current_hunger < 90:
+	if current_hunger < 90 and current_hunger <= 50:
 		current_health += (health_regen_ae/2) * delta
 	if current_health == 100:
 		p_health_bar.value = current_health
@@ -266,3 +276,15 @@ func gain_health(heal_value: int) -> void:
 func gain_armor(armor_value: int) -> void:
 	armor += armor_value
 	armor_bar.value = armor
+	change_armor_durability_APP()
+
+# FOR APPEARANCE ONLY
+func change_armor_durability_APP():
+	if armor_bar.value <= 100 and armor_bar.value >= 75:
+		armor_bar.tint_progress = armor_stable
+	if armor_bar.value <= 75 and armor_bar.value >= 50:
+		armor_bar.tint_progress = armor_worn
+	if armor_bar.value <= 50 and armor_bar.value >= 25:
+		armor_bar.tint_progress = armor_damaged
+	if armor_bar.value <= 25 and armor_bar.value > 0:
+		armor_bar.tint_progress = armor_critical

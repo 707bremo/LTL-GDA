@@ -4,6 +4,9 @@ extends TextureProgressBar
 
 var armor = 0 : set = _set_armor
 
+# Different color stages for the armor's progress
+# If the armor is at a particular stage of durability, the color will change
+
 
 
 func _set_armor(new_armor):
