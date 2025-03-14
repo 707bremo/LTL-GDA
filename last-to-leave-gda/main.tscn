@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1jcg6ppur5uh"]
+[gd_scene load_steps=8 format=3 uid="uid://c1jcg6ppur5uh"]
 
 [ext_resource type="PackedScene" uid="uid://d3yccfperamvs" path="res://player.tscn" id="1_pninw"]
 [ext_resource type="PackedScene" uid="uid://5r4uj8lak04o" path="res://inventory/inventory.tscn" id="2_0bwem"]
-[ext_resource type="Resource" uid="uid://b5rp4msf54c4o" path="res://test_inv.tres" id="2_u8bjy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ehsge"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -41,7 +40,6 @@ mesh = SubResource("PlaneMesh_wc6rj")
 shape = SubResource("ConcavePolygonShape3D_jukuq")
 
 [node name="Player" parent="." instance=ExtResource("1_pninw")]
-inventory_data = ExtResource("2_u8bjy")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
