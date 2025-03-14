@@ -173,6 +173,9 @@ func _process(delta) -> void:
 		p_health_bar.value = current_health
 	
 	
+	current_health = clamp(current_health, 0, max_health)
+	
+	
 	# *** Change the color of the health bar based on the player's physical conditions ***
 	# when health and hunger are at least 75 or more
 	var health_stylebox = p_health_bar.get_theme_stylebox("fill")
