@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=4 uid="uid://g246xwet3sl0"]
+[gd_scene load_steps=82 format=4 uid="uid://g246xwet3sl0"]
 
 [ext_resource type="Script" path="res://view__model.gd" id="1_6dhx7"]
 [ext_resource type="Texture2D" uid="uid://caovtwtb1yy0n" path="res://assets_for_arms/uploads-files-2614590-Shotgun_Model_Shotgun_4k_BaseColor.png" id="1_53tk2"]
@@ -832,6 +832,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0682508, 0.0450817, 0.124457)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_bux01"]
 resource_name = "fire"
@@ -969,16 +993,12 @@ tracks/3/keys = {
 "values": [Vector3(0, 0, 0), Vector3(-0.095324, 0, 0), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_0n7xx"]
-resource_name = "scope_in"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3dygs"]
 _data = {
 "RESET": SubResource("Animation_ckr54"),
 "fire": SubResource("Animation_bux01"),
 "pull_up": SubResource("Animation_g40lt"),
 "put_away": SubResource("Animation_m6p81"),
-"scope_in": SubResource("Animation_0n7xx"),
 "shotgun_cock_back": SubResource("Animation_vfjrd")
 }
 
@@ -1067,7 +1087,6 @@ surface_material_override/0 = ExtResource("4_5be63")
 
 [node name="index_0" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand/hand"]
 transform = Transform3D(1, -2.06633e-09, 1.88949e-08, -2.06633e-09, 0.976364, 0.216133, -1.88949e-08, -0.216133, 0.976364, 0.635515, -7.45058e-09, -1.8433)
-visible = false
 layers = 2
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_t5juw")
@@ -1075,8 +1094,7 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("4_5be63")
 
 [node name="index_1" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand/hand/index_0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.520542)
-visible = false
+transform = Transform3D(1, 2.22045e-15, 7.10543e-15, 3.10862e-15, 1, 0, -7.10543e-15, 0, 1, 0, 2.38419e-07, -0.520542)
 layers = 2
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_itbgj")
@@ -1085,7 +1103,6 @@ surface_material_override/0 = ExtResource("4_5be63")
 
 [node name="index_2" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand/hand/index_0/index_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.496836)
-visible = false
 layers = 2
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_utfmo")
@@ -1094,7 +1111,6 @@ surface_material_override/0 = ExtResource("4_5be63")
 
 [node name="middle_0" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand/hand"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219422, 0, -1.96367)
-visible = false
 layers = 2
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_0yn7l")
@@ -1103,7 +1119,6 @@ surface_material_override/0 = ExtResource("4_5be63")
 
 [node name="middle_1" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand/hand/middle_0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.595449)
-visible = false
 layers = 2
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_ng0rx")
@@ -1112,7 +1127,6 @@ surface_material_override/0 = ExtResource("4_5be63")
 
 [node name="middle_2" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand/hand/middle_0/middle_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.576577)
-visible = false
 layers = 2
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_i21h5")
@@ -1120,8 +1134,7 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("4_5be63")
 
 [node name="pinky_0" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand/hand"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.636916, 0, -1.87594)
-visible = false
+transform = Transform3D(0.89192, -0.420396, -0.166572, 0.450929, 0.85441, 0.258159, 0.0337923, -0.305369, 0.951634, -0.636916, -0.255592, -1.87594)
 layers = 2
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_vm5t7")
@@ -1130,7 +1143,6 @@ surface_material_override/0 = ExtResource("4_5be63")
 
 [node name="pinky_1" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand/hand/pinky_0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.508631)
-visible = false
 layers = 2
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_575me")
@@ -1139,7 +1151,6 @@ surface_material_override/0 = ExtResource("4_5be63")
 
 [node name="pinky_2" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand/hand/pinky_0/pinky_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.484157)
-visible = false
 layers = 2
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_tkvk6")
@@ -1147,8 +1158,7 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("4_5be63")
 
 [node name="ring_0" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand/hand"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22161, 0, -1.94957)
-visible = false
+transform = Transform3D(0.719037, -0.679765, -0.144588, 0.694972, 0.703303, 0.149594, -1.81881e-08, -0.208048, 0.978119, -0.22161, -0.196208, -1.94957)
 layers = 2
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_dpfwf")
@@ -1157,7 +1167,6 @@ surface_material_override/0 = ExtResource("4_5be63")
 
 [node name="ring_1" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand/hand/ring_0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.578411)
-visible = false
 layers = 2
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_2kumd")
@@ -1166,7 +1175,6 @@ surface_material_override/0 = ExtResource("4_5be63")
 
 [node name="ring_2" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand/hand/ring_0/ring_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.558439)
-visible = false
 layers = 2
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_vrxam")
