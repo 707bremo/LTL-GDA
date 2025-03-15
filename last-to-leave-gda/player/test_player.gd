@@ -178,6 +178,58 @@ func _process(delta) -> void:
 	
 	# *** Change the color of the health bar based on the player's physical conditions ***
 	# when health and hunger are at least 75 or more
+	change_UI_APP()
+	
+	# Check if the player is able to regen stamina. If true, stamina will increase over time.
+	check_stamina_regen(delta)
+	
+	# Get the input direction and handle the movement/deceleration.
+	check_player_camera(delta)
+	move_and_slide()
+
+
+func _headbob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * BOB_FREQ) * BOB_AMP
+	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
+	return pos
+
+
+func interact() -> void:
+	if interact_ray.is_colliding():
+		interact_ray.get_collider().player_interact()
+
+
+func get_drop_position() -> Vector3:
+	var direction = -camera.global_transform.basis.z
+	return camera.global_position + direction
+
+
+func replenish_hunger(gain_hunger_value: int) -> void:
+	current_hunger += gain_hunger_value
+	hunger_bar.value = current_hunger
+
+func gain_health(heal_value: int) -> void:
+	if current_hunger >= 90:
+		current_health += heal_value
+		p_health_bar.value = health
+
+func gain_armor(armor_value: int) -> void:
+	armor += armor_value
+	armor_bar.value = armor
+	change_UI_APP()
+
+# FOR APPEARANCE ONLY
+func change_UI_APP():
+	if armor_bar.value <= 100 and armor_bar.value >= 75:
+		armor_bar.tint_progress = stable_color
+	if armor_bar.value <= 75 and armor_bar.value >= 50:
+		armor_bar.tint_progress = worn_color
+	if armor_bar.value <= 50 and armor_bar.value >= 25:
+		armor_bar.tint_progress = damaged_color
+	if armor_bar.value <= 25 and armor_bar.value > 0:
+		armor_bar.tint_progress = critical_color
+
 	var health_stylebox = p_health_bar.get_theme_stylebox("fill")
 	var hunger_stylebox = hunger_bar.get_theme_stylebox("fill")
 	 
@@ -202,8 +254,31 @@ func _process(delta) -> void:
 		else:
 			hunger_stylebox.bg_color = critical_color
 			hunger_bar.add_theme_stylebox_override("fill", hunger_stylebox)
+
+func check_player_camera(delta):
+	var input_dir = Input.get_vector("left", "right", "up", "down")
+	var direction = (head.transform.basis * transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if is_on_floor():
+		if direction:
+			velocity.x = direction.x * speed
+			velocity.z = direction.z * speed
+		else:
+			velocity.x = lerp(velocity.x, direction.x * speed, delta * 7.0)
+			velocity.z = lerp(velocity.z, direction.z * speed, delta * 7.0)
+	else:
+		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
+		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
 	
-	# Check if the player is able to regen stamina. If true, stamina will increase over time.
+	# Head bob
+	t_bob += delta * velocity.length() * float(is_on_floor())
+	camera.transform.origin = _headbob(t_bob)
+	
+	# FOV
+	var velocity_clamped = clamp(velocity.length(), 0.5, SPRINT_SPEED * 2)
+	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
+	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
+
+func check_stamina_regen(delta):
 	if can_regen == false and stamina_bar.value < 100:
 		stamina_bar.visible = true
 		can_start_timer = true
@@ -245,74 +320,3 @@ func _process(delta) -> void:
 		can_start_timer = false
 		stamina_timer = 0
 	
-	
-	
-	
-	
-	# Get the input direction and handle the movement/deceleration.
-	var input_dir = Input.get_vector("left", "right", "up", "down")
-	var direction = (head.transform.basis * transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if is_on_floor():
-		if direction:
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
-		else:
-			velocity.x = lerp(velocity.x, direction.x * speed, delta * 7.0)
-			velocity.z = lerp(velocity.z, direction.z * speed, delta * 7.0)
-	else:
-		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
-		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
-	
-	# Head bob
-	t_bob += delta * velocity.length() * float(is_on_floor())
-	camera.transform.origin = _headbob(t_bob)
-	
-	# FOV
-	var velocity_clamped = clamp(velocity.length(), 0.5, SPRINT_SPEED * 2)
-	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
-	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
-	
-	move_and_slide()
-
-
-func _headbob(time) -> Vector3:
-	var pos = Vector3.ZERO
-	pos.y = sin(time * BOB_FREQ) * BOB_AMP
-	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
-	return pos
-
-
-func interact() -> void:
-	if interact_ray.is_colliding():
-		interact_ray.get_collider().player_interact()
-
-
-func get_drop_position() -> Vector3:
-	var direction = -camera.global_transform.basis.z
-	return camera.global_position + direction
-
-
-func replenish_hunger(gain_hunger_value: int) -> void:
-	current_hunger += gain_hunger_value
-	hunger_bar.value = current_hunger
-
-func gain_health(heal_value: int) -> void:
-	if current_hunger >= 90:
-		current_health += heal_value
-		p_health_bar.value = health
-
-func gain_armor(armor_value: int) -> void:
-	armor += armor_value
-	armor_bar.value = armor
-	change_armor_durability_APP()
-
-# FOR APPEARANCE ONLY
-func change_armor_durability_APP():
-	if armor_bar.value <= 100 and armor_bar.value >= 75:
-		armor_bar.tint_progress = stable_color
-	if armor_bar.value <= 75 and armor_bar.value >= 50:
-		armor_bar.tint_progress = worn_color
-	if armor_bar.value <= 50 and armor_bar.value >= 25:
-		armor_bar.tint_progress = damaged_color
-	if armor_bar.value <= 25 and armor_bar.value > 0:
-		armor_bar.tint_progress = critical_color
