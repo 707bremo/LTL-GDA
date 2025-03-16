@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cldne8mvtr05h"]
+
+[ext_resource type="PackedScene" uid="uid://dlswp57t53fkw" path="res://demo/assets/LTLpre-madeAssets/WarehouseExterior.gltf" id="1_3pgvr"]
+[ext_resource type="Texture2D" uid="uid://pilpk03bdidt" path="res://demo/assets/LTLpre-madeAssets/factory_wall_diff_4k.jpg" id="2_vlsls"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1q3qa"]
+albedo_color = Color(0.969605, 0.977279, 1.54018e-06, 1)
+albedo_texture = ExtResource("2_vlsls")
+
+[node name="WarehouseExterior" instance=ExtResource("1_3pgvr")]
+
+[node name="DoorsYellow" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1q3qa")
