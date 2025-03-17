@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://81uu3xlggkn3"]
+
+[ext_resource type="PackedScene" uid="uid://c5ecn28lmp0ni" path="res://demo/assets/LTLpre-madeAssets/HouseFurniture(Bathroom&Bedroom).gltf" id="1_0oprp"]
+
+[node name="HouseFurniture(Bathroom&Bedroom)" instance=ExtResource("1_0oprp")]

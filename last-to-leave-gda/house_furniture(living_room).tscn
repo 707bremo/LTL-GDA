@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=3 uid="uid://dxxe5gihy6o6f"]
+
+[ext_resource type="PackedScene" uid="uid://bmdb42xia2575" path="res://demo/assets/LTLpre-madeAssets/HouseFurniture(LivingRoom).gltf" id="1_e8afb"]
+[ext_resource type="Texture2D" uid="uid://bb0fpthiuohqj" path="res://demo/assets/models/green_metal_rust_disp_4k.png" id="2_4sx6e"]
+[ext_resource type="Texture2D" uid="uid://bo70o384yl3r3" path="res://demo/assets/LTLpre-madeAssets/TX_Cabinet_Basic.png" id="3_n0g2l"]
+[ext_resource type="Texture2D" uid="uid://0d2hkjew3p5f" path="res://demo/assets/LTLpre-madeAssets/plywood_rough_4k.png" id="4_fpmj0"]
+[ext_resource type="Texture2D" uid="uid://b3emds46olbid" path="res://demo/assets/LTLpre-madeAssets/gravelly_sand_diff_4k.jpg" id="4_qviib"]
+[ext_resource type="Texture2D" uid="uid://5kemciodwfxn" path="res://demo/assets/LTLpre-madeAssets/dumpster_0.png" id="5_k30lk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usdk6"]
+albedo_color = Color(0.377919, 0.377919, 0.377919, 1)
+albedo_texture = ExtResource("2_4sx6e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_viuev"]
+albedo_texture = ExtResource("3_n0g2l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3wq6"]
+albedo_color = Color(0.392709, 0.338115, 0.213295, 1)
+albedo_texture = ExtResource("4_qviib")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hkx5x"]
+albedo_color = Color(0.733005, 0.733005, 0.733005, 1)
+albedo_texture = ExtResource("5_k30lk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f34wk"]
+albedo_color = Color(0.552941, 0.482353, 0.321569, 1)
+albedo_texture = ExtResource("4_fpmj0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_byc4l"]
+albedo_color = Color(0.55268, 0.481959, 0.323502, 1)
+albedo_texture = ExtResource("4_fpmj0")
+
+[node name="HouseFurniture(LivingRoom)" instance=ExtResource("1_e8afb")]
+
+[node name="MS_Carpet" parent="." index="1"]
+transform = Transform3D(0.0393923, 0.00694593, 5.34524e-10, -2.98023e-10, 4.76837e-09, -0.04, -0.00694593, 0.0393923, 4.74768e-09, -10.0478, 0.478596, 0.470517)
+
+[node name="Body_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/Body" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="Button3_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/Button3" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="Door_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/Door" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="pCube2_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/pCube2" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="pCube3_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/pCube3" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="pCube4_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/pCube4" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="pCylinder1_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/pCylinder1" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="pCylinder28_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/pCylinder28" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="pCylinder29_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/pCylinder29" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="pCylinder30_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/pCylinder30" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="pCylinder31_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/pCylinder31" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="pCylinder7_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/pCylinder7" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="pCylinder8_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/pCylinder8" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="tape2_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/tape2" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="tape3_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/tape3" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="tape_1_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/tape_1" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
+
+[node name="defaultMaterial_009" parent="." index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_viuev")
+
+[node name="defaultMaterial_011" parent="." index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_o3wq6")
+
+[node name="Mesher001_21 - Default_0" parent="." index="12"]
+surface_material_override/0 = SubResource("StandardMaterial3D_hkx5x")
+
+[node name="boxes_1_pallet_and_boxes_0_001" parent="." index="14"]
+surface_material_override/0 = SubResource("StandardMaterial3D_f34wk")
+
+[node name="boxes_2_pallet_and_boxes_0" parent="." index="15"]
+surface_material_override/0 = SubResource("StandardMaterial3D_byc4l")
