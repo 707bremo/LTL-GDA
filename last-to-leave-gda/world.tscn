@@ -6,6 +6,6 @@
 [node name="World" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_1w0ji")]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 221.701, 2.21753, 1762.19)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 221.701, 2.21753, 2284.47)
 
 [node name="Terrain3D" parent="." instance=ExtResource("1_apgil")]
