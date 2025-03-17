@@ -7,8 +7,9 @@
 script = ExtResource("1_w73dj")
 heal_value = 8
 armor_value = 0
-periodic_time = 8
+gain_hunger_value = 0
 name = "Water Bottle"
 description = "Bottled water fresh from the rivers of Raja-Jooseppi."
 stackable = false
 object = ExtResource("1_vqojy")
+weight = 0.26

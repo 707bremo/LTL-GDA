@@ -7,7 +7,9 @@
 script = ExtResource("1_01x76")
 heal_value = 0
 armor_value = 20
+gain_hunger_value = 0
 name = "Armor Plate"
 description = "Decreases bullet pressure at the cost of mobility."
 stackable = false
 object = ExtResource("1_g7sps")
+weight = 2.0

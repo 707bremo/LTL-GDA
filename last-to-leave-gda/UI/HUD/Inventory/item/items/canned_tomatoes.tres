@@ -12,3 +12,4 @@ name = "Canned Tomatoes"
 description = "Sometimes it was used for pizza. Now it's consumed to survive on the brink of any scavenger's starvation."
 stackable = false
 object = ExtResource("1_od6m0")
+weight = 0.5

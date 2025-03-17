@@ -12,3 +12,4 @@ name = "Canned Peaches"
 description = "Peaches in a tin can."
 stackable = false
 object = ExtResource("1_tg25o")
+weight = 0.5

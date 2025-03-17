@@ -12,3 +12,4 @@ name = "Canned Corn"
 description = "Does corn in a can actually taste good?"
 stackable = false
 object = ExtResource("1_bnawv")
+weight = 0.45

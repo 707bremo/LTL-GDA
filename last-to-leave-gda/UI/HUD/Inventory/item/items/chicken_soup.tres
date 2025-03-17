@@ -12,3 +12,4 @@ name = "Chicken Soup"
 description = "Sadly, the chicken is kinda rubbery. But the flavor makes up for it."
 stackable = false
 object = ExtResource("1_mdy50")
+weight = 0.3

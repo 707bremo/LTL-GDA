@@ -12,3 +12,4 @@ name = "Bag of chips"
 description = "Light and crispy. Favorable snack in a tense environment."
 stackable = false
 object = ExtResource("1_tn1p7")
+weight = 0.2

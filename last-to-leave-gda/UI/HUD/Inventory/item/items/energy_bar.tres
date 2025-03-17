@@ -12,3 +12,4 @@ name = "Energy Bar"
 description = "Just your regular bar of oats and dried up berries."
 stackable = true
 object = ExtResource("1_k6yol")
+weight = 0.05

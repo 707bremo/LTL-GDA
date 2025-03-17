@@ -6,6 +6,7 @@ class_name ItemData
 @export var stackable: bool = false
 @export var object: Texture
 @export var mesh_for_item: Mesh
+@export var weight: float
 
 func use(target) -> void:
 	pass

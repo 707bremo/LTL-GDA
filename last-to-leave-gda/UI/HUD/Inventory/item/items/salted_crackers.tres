@@ -12,3 +12,4 @@ name = "Salted Crackers"
 description = "A pack of small crackers. Good for quick snacking."
 stackable = true
 object = ExtResource("1_yjhnl")
+weight = 0.05

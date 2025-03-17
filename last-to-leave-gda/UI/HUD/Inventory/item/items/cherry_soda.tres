@@ -7,8 +7,9 @@
 script = ExtResource("1_5hq8s")
 heal_value = 4
 armor_value = 0
-periodic_time = 8
+gain_hunger_value = 0
 name = "Cherry Soda"
 description = "The answer is clear."
 stackable = false
 object = ExtResource("1_g2120")
+weight = 0.53
