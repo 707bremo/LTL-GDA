@@ -11,7 +11,7 @@ var external_inventory_owner
 @onready var player_inv: PanelContainer = $PlayerInv
 @onready var grabbed_slot: PanelContainer = $GrabbedSlot
 @onready var external_inv: PanelContainer = $ExternalInv
-
+@onready var weight_bar: ProgressBar = $WeightBar
 
 func _physics_process(delta: float) -> void:
 	if grabbed_slot.visible:
@@ -23,8 +23,13 @@ func _physics_process(delta: float) -> void:
 
 func set_player_inventory_data(inventory_data: InventoryData) -> void:
 	inventory_data.inventory_interact.connect(on_inventory_interact)
+	inventory_data.weight_updated.connect(update_weight_bar)
 	player_inv.set_inventory_data(inventory_data)
 
+
+func update_weight_bar(current_weight: float, max_weight: float) -> void:
+	weight_bar.max_value = max_weight
+	weight_bar.value = current_weight
 
 func set_external_inventory(_external_inventory_owner) -> void:
 	external_inventory_owner = _external_inventory_owner

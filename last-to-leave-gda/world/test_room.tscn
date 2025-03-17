@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bfdsj5xxm3pmk"]
+[gd_scene load_steps=55 format=3 uid="uid://bfdsj5xxm3pmk"]
 
 [ext_resource type="Script" path="res://world/Main.gd" id="1_4pghp"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="2_6cywo"]
@@ -41,6 +41,11 @@ glow_enabled = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfhuv"]
 bg_color = Color(0.0313726, 0.0313726, 0.0313726, 0.823529)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0k43"]
+bg_color = Color(0.194349, 0.194349, 0.194349, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5aahp"]
 
 [sub_resource type="Resource" id="Resource_0x1mb"]
 script = ExtResource("11_kkf2v")
@@ -203,6 +208,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_n1lqp")
+
+[node name="WeightBar" type="ProgressBar" parent="UI/InvInterface"]
+layout_mode = 0
+offset_left = 1437.0
+offset_top = 866.0
+offset_right = 1795.0
+offset_bottom = 893.0
+theme_override_styles/background = SubResource("StyleBoxFlat_b0k43")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5aahp")
+max_value = 18.0
+value = 14.26
+show_percentage = false
+
+[node name="Label" type="Label" parent="UI/InvInterface/WeightBar"]
+layout_mode = 0
+offset_left = -90.0
+offset_top = 2.0
+offset_right = -12.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("6_3njpv")
+theme_override_font_sizes/font_size = 20
+text = "WEIGHT:"
 
 [node name="ExternalInv" parent="UI/InvInterface" instance=ExtResource("5_vebsm")]
 visible = false

@@ -4,15 +4,25 @@ class_name InventoryData
 
 signal inventory_updated(inventory_data: InventoryData)
 signal inventory_interact(inventory_data: InventoryData, index: int, button: int)
+signal weight_updated(current_weight: float, max_weight: float)
 
 @export var slot_datas: Array[SlotData]
+var current_weight: float = 0.0
+const MAX_WEIGHT: float = 18.0
 
+func calculate_current_weight() -> void:
+	current_weight = 0.0
+	for slot_data in slot_datas:
+		if slot_data:
+			current_weight += slot_data.item_data.weight * slot_data.quantity
+	weight_updated.emit(current_weight, MAX_WEIGHT)
 
 func grab_slot_data(index: int) -> SlotData:
 	var slot_data = slot_datas[index]
 	
 	if slot_data:
 		slot_datas[index] = null
+		calculate_current_weight()
 		inventory_updated.emit(self)
 		return slot_data
 	else:
@@ -27,6 +37,7 @@ func drop_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
 	else:
 		slot_datas[index] = grabbed_slot_data
 		return_slot_data = slot_data
+	calculate_current_weight()
 		
 	inventory_updated.emit(self)
 	return return_slot_data
@@ -38,6 +49,7 @@ func drop_single_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
 		slot_datas[index] = grabbed_slot_data.create_single_slot_data()
 	elif slot_data.can_merge_with(grabbed_slot_data):
 		slot_data.fully_merge_with(grabbed_slot_data.create_single_slot_data())
+	calculate_current_weight()
 	
 	inventory_updated.emit(self)
 	
@@ -56,7 +68,7 @@ func use_slot_data(index: int) -> void:
 		slot_data.quantity -= 1
 		if slot_data.quantity < 1:
 			slot_datas[index] = null
-	
+		calculate_current_weight()
 	PlayerManager.use_slot_data(slot_data)
 	
 	print(slot_data.item_data.name)
@@ -65,16 +77,20 @@ func use_slot_data(index: int) -> void:
 	inventory_updated.emit(self)
 
 func pick_up_slot_data(slot_data: SlotData) -> bool:
-	
+	var added_weight = slot_data.item_data.weight * slot_data.quantity
+	if current_weight + added_weight > MAX_WEIGHT:
+		return false
 	for index in slot_datas.size():
 		if slot_datas[index] and slot_datas[index].can_fully_merge_with(slot_data):
 			slot_datas[index].fully_merge_with(slot_data)
+			calculate_current_weight()
 			inventory_updated.emit(self)
 			return true
 	
 	for index in slot_datas.size():
 		if not slot_datas[index]:
 			slot_datas[index] = slot_data
+			calculate_current_weight()
 			inventory_updated.emit(self)
 			return true
 	
