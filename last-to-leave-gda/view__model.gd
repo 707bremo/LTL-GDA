@@ -13,7 +13,10 @@ var instance
 var can_shoot = true  
 
 func _ready() -> void:
-	muzzle_flash.emitting = false 
+	muzzle_flash.emitting = false
+	muzzle_flash.visible = false
+	muzzle_flash.one_shot = true
+	muzzle_flash.set_process(false)  
 
 func _process(delta: float) -> void:
 	fps_rig.position.x = lerp(fps_rig.position.x, 0.0, delta * 5)
@@ -27,14 +30,16 @@ func _input(event) -> void:
 	if event.is_action_pressed("shoot") and can_shoot:
 		can_shoot = false  
 		animation_player.play("fire")
-		muzzle_flash.emitting = true
-		await get_tree().create_timer(0.05).timeout  
-		muzzle_flash.emitting = false
+		muzzle_flash.set_process(true)  
+		muzzle_flash.visible = true
+		muzzle_flash.restart()  
+		muzzle_flash.emitting = true  
 		shoot_sound.play()
 		instance = bullet.instantiate()
 		instance.position = gun_barrel.global_position
 		instance.transform.basis = gun_barrel.global_transform.basis
 		get_parent().add_child(instance)
+		muzzle_flash.set_process(false)  
 		await animation_player.animation_finished
 		animation_player.play("shotgun_cock_back")
 		shotgun_cock_back_sound.play()

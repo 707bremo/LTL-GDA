@@ -15,8 +15,8 @@ albedo_color = Color(1, 0.713726, 0, 1)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yhb4f"]
 spread = 26.25
-initial_velocity_min = 7.15
-initial_velocity_max = 11.75
+initial_velocity_min = 4.0
+initial_velocity_max = 7.0
 gravity = Vector3(0, -6, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cca2h"]
@@ -941,9 +941,6 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(-0.461901, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_0n7xx"]
-resource_name = "scope_in"
-
 [sub_resource type="Animation" id="Animation_vfjrd"]
 resource_name = "shotgun_cock_back"
 length = 0.5
@@ -1020,10 +1017,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.1544
 
 [node name="muzzle_flash" type="GPUParticles3D" parent="fps_rig/shotgun/shotgun_model"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0183075, 0.198744, 0)
-visible = false
 material_override = SubResource("StandardMaterial3D_iffg0")
-amount = 30
-lifetime = 0.45
+amount = 15
+lifetime = 0.6
 explosiveness = 1.0
 fixed_fps = 120
 process_material = SubResource("ParticleProcessMaterial_yhb4f")
