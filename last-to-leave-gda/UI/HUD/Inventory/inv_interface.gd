@@ -1,6 +1,8 @@
 extends Control
 
 signal drop_slot_data(slot_data: SlotData)
+signal force_quit_source
+
 
 var grabbed_slot_data: SlotData
 var external_inventory_owner
@@ -14,6 +16,10 @@ var external_inventory_owner
 func _physics_process(delta: float) -> void:
 	if grabbed_slot.visible:
 		grabbed_slot.global_position = get_global_mouse_position() + Vector2(5,5)
+	
+	if external_inventory_owner \
+			and external_inventory_owner.global_position.distance_to(PlayerManager.get_global_position()) > 3:
+		force_quit_source.emit()
 
 func set_player_inventory_data(inventory_data: InventoryData) -> void:
 	inventory_data.inventory_interact.connect(on_inventory_interact)

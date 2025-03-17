@@ -12,6 +12,8 @@ func _ready() -> void:
 	
 	test_player.toogle_inventory.connect(toogle_inv_interface)
 	inv_interface.set_player_inventory_data(test_player.inventory_data)
+	inv_interface.force_quit_source.connect(toogle_inv_interface)
+	
 	
 	for node in get_tree().get_nodes_in_group("external_inventory"):
 		node.toogle_inventory.connect(toogle_inv_interface)
