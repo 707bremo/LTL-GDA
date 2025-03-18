@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7h5uopjp1j0x"]
+
+[ext_resource type="PackedScene" uid="uid://bxvbf22ouwhpa" path="res://demo/assets/LTLpre-madeAssets/picnic_basket.glb" id="1_of52r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c13ix"]
+size = Vector3(0.619995, 1, 1.59583)
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_of52r")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Basket_obj_cleaner_materialmerger_gles/Object_4" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Basket_obj_cleaner_materialmerger_gles/Object_4/StaticBody3D" index="0"]
+transform = Transform3D(2, 0, 0, 0, 0.75, 0, 0, 0, 0.5, -0.578418, -2.96558, 0.434268)
+shape = SubResource("BoxShape3D_c13ix")
