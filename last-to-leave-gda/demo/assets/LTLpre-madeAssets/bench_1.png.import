@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5l67bxqnppo6"
-path="res://.godot/imported/bench_1.png-4e5625dc20d826447c904369fecb2fef.ctex"
+path.s3tc="res://.godot/imported/bench_1.png-4e5625dc20d826447c904369fecb2fef.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "4f14806e36bf687dc4bbfd5bb16e8316"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://demo/assets/LTLpre-madeAssets/bench_1.png"
-dest_files=["res://.godot/imported/bench_1.png-4e5625dc20d826447c904369fecb2fef.ctex"]
+dest_files=["res://.godot/imported/bench_1.png-4e5625dc20d826447c904369fecb2fef.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -34,4 +35,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
