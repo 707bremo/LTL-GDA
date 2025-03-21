@@ -7,5 +7,7 @@
 
 [node name="Player" parent="." instance=ExtResource("2_1w0ji")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 228.446, 2.21753, 2055.75)
+visible = false
 
 [node name="Terrain3D" parent="." instance=ExtResource("1_apgil")]
+show_grid = false
