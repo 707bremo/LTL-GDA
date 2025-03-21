@@ -8,13 +8,7 @@ signal weight_updated(current_weight: float, max_weight: float)
 
 @export var slot_datas: Array[SlotData]
 var current_weight: float = 0.0
-const MAX_WEIGHT: float = 3.0
-
-
-# inventory_data.gd (ADD THIS AFTER @export var slot_datas)
-func _init() -> void:
-	calculate_current_weight()
-
+const MAX_WEIGHT: float = 18.0
 
 func calculate_current_weight() -> void:
 	current_weight = 0.0
@@ -35,13 +29,6 @@ func grab_slot_data(index: int) -> SlotData:
 		return null
 
 func drop_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
-	var potential_weight = current_weight - (slot_datas[index].item_data.weight * slot_datas[index].quantity if slot_datas[index] else 0)
-	potential_weight += grabbed_slot_data.item_data.weight * grabbed_slot_data.quantity
-
-	if potential_weight > MAX_WEIGHT:
-		return grabbed_slot_data  # Reject the drop
-	
-	
 	var slot_data = slot_datas[index]
 	
 	var return_slot_data: SlotData
@@ -56,12 +43,6 @@ func drop_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
 	return return_slot_data
 
 func drop_single_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
-	var potential_weight = current_weight + grabbed_slot_data.item_data.weight
-	if potential_weight > MAX_WEIGHT:
-		return grabbed_slot_data  # Reject the drop
-	
-	
-	
 	var slot_data = slot_datas[index]
 	
 	if not slot_data:

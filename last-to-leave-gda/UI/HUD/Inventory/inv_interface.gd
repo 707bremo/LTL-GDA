@@ -3,7 +3,7 @@ extends Control
 signal drop_slot_data(slot_data: SlotData)
 signal force_quit_source
 
-var inventory_manager: InventoryData
+
 var grabbed_slot_data: SlotData
 var external_inventory_owner
 
@@ -85,12 +85,9 @@ func _on_gui_input(event: InputEvent) -> void:
 			and event.is_pressed() \
 			and grabbed_slot_data:
 			
-		var previous_weight = grabbed_slot_data.item_data.weight * grabbed_slot_data.quantity
 		match event.button_index:
 			MOUSE_BUTTON_LEFT:
 				drop_slot_data.emit(grabbed_slot_data)
-				if inventory_manager.current_weight + previous_weight <= inventory_manager.inventory_data.MAX_WEIGHT:
-					grabbed_slot_data = null
 				grabbed_slot_data = null
 			MOUSE_BUTTON_RIGHT:
 				drop_slot_data.emit(grabbed_slot_data.create_single_slot_data())
