@@ -7,7 +7,16 @@ data = PackedVector3Array(23.479, 6.2983, 0.2551, 36, 6.2167, 0.2634, 36, 6.2983
 
 [node name="Cabin" instance=ExtResource("1_t6o5p")]
 
+[node name="LogEnds" parent="." index="14"]
+visible = false
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Logs" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Logs/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_n7ert")
+
+[node name="FireplaceDirt" parent="." index="39"]
+visible = false
+
+[node name="LogEnds_001" parent="." index="40"]
+visible = false
