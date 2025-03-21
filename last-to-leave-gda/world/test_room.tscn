@@ -217,8 +217,8 @@ offset_right = 1795.0
 offset_bottom = 893.0
 theme_override_styles/background = SubResource("StyleBoxFlat_b0k43")
 theme_override_styles/fill = SubResource("StyleBoxFlat_5aahp")
-max_value = 18.0
-value = 14.26
+max_value = 3.0
+value = 1.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="UI/InvInterface/WeightBar"]
