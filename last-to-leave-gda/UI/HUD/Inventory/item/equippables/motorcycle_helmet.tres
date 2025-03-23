@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemDataEquippable" load_steps=3 format=3 uid="uid://utfy5lpqx73l"]
+
+[ext_resource type="Texture2D" uid="uid://co0vu2r6lbebj" path="res://UI/HUD/Inventory/item/itemICONS/motorcyclehelmetIMG.png" id="1_67sp0"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/item/equippable_item_data.gd" id="1_wnave"]
+
+[resource]
+script = ExtResource("1_wnave")
+defence = 1
+name = "Motorcycle Helmet"
+description = "Protection at minimum cost, but not the most durable."
+stackable = false
+object = ExtResource("1_67sp0")
+weight = 0.0

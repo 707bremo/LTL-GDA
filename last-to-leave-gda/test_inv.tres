@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=9 format=3 uid="uid://bh01ctte20kgj"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=11 format=3 uid="uid://bh01ctte20kgj"]
 
 [ext_resource type="Script" path="res://UI/HUD/Inventory/inventory_data.gd" id="1_4ucnf"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/slot_data.gd" id="2_eaq0e"]
 [ext_resource type="Resource" uid="uid://bwot2yqefnhhg" path="res://UI/HUD/Inventory/item/items/canned_peaches.tres" id="3_tjuvo"]
 [ext_resource type="Resource" uid="uid://c8uywm5gome0f" path="res://UI/HUD/Inventory/item/items/salted_crackers.tres" id="4_y6fyo"]
 [ext_resource type="Resource" uid="uid://c5nfndoha1o4d" path="res://UI/HUD/Inventory/item/items/canned_corn.tres" id="5_711r2"]
+[ext_resource type="Resource" uid="uid://utfy5lpqx73l" path="res://UI/HUD/Inventory/item/equippables/motorcycle_helmet.tres" id="6_3frtr"]
 
 [sub_resource type="Resource" id="Resource_6t88e"]
 script = ExtResource("2_eaq0e")
@@ -21,6 +22,11 @@ script = ExtResource("2_eaq0e")
 item_data = ExtResource("4_y6fyo")
 quantity = 3
 
+[sub_resource type="Resource" id="Resource_uoty8"]
+script = ExtResource("2_eaq0e")
+item_data = ExtResource("6_3frtr")
+quantity = 1
+
 [resource]
 script = ExtResource("1_4ucnf")
-slot_datas = Array[ExtResource("2_eaq0e")]([SubResource("Resource_6t88e"), SubResource("Resource_o47yi"), null, null, null, SubResource("Resource_oyyv7"), null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+slot_datas = Array[ExtResource("2_eaq0e")]([SubResource("Resource_6t88e"), SubResource("Resource_o47yi"), null, null, null, SubResource("Resource_oyyv7"), null, null, SubResource("Resource_uoty8"), null, null, null, null, null, null, null, null, null, null, null])

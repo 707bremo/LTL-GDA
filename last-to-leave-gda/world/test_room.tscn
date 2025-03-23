@@ -1,9 +1,10 @@
-[gd_scene load_steps=55 format=3 uid="uid://bfdsj5xxm3pmk"]
+[gd_scene load_steps=57 format=3 uid="uid://bfdsj5xxm3pmk"]
 
 [ext_resource type="Script" path="res://world/Main.gd" id="1_4pghp"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="2_6cywo"]
 [ext_resource type="Resource" uid="uid://bh01ctte20kgj" path="res://test_inv.tres" id="3_en235"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/inv_interface.gd" id="4_n1lqp"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/equipment_data.gd" id="4_s1re2"]
 [ext_resource type="PackedScene" uid="uid://cfdnj6i52mb6u" path="res://UI/HUD/Inventory/inventory.tscn" id="5_vebsm"]
 [ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="6_3njpv"]
 [ext_resource type="PackedScene" uid="uid://012ymk0c663s" path="res://UI/HUD/Inventory/slot.tscn" id="7_ntpok"]
@@ -38,6 +39,10 @@ background_mode = 2
 sky = SubResource("Sky_k8bdq")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_5dgym"]
+script = ExtResource("4_s1re2")
+slot_datas = Array[ExtResource("11_kkf2v")]([null])
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfhuv"]
 bg_color = Color(0.0313726, 0.0313726, 0.0313726, 0.823529)
@@ -187,6 +192,7 @@ size = Vector3(30, 10, 2)
 [node name="test_player" parent="." instance=ExtResource("2_6cywo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36588, 0)
 inventory_data = ExtResource("3_en235")
+equip_inventory_data = SubResource("Resource_5dgym")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -237,7 +243,7 @@ layout_mode = 2
 offset_left = 134.0
 offset_top = 190.0
 offset_right = 584.0
-offset_bottom = 890.0
+offset_bottom = 832.0
 size_flags_horizontal = 10
 size_flags_vertical = 4
 
@@ -258,6 +264,14 @@ layout_mode = 2
 offset_left = 1346.0
 offset_top = 194.0
 offset_right = 1796.0
+offset_bottom = 832.0
+size_flags_horizontal = 2
+
+[node name="EquipInv" parent="UI/InvInterface" instance=ExtResource("5_vebsm")]
+layout_mode = 2
+offset_left = 736.0
+offset_top = 194.0
+offset_right = 1186.0
 offset_bottom = 832.0
 size_flags_horizontal = 2
 

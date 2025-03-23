@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @export var inventory_data: InventoryData
+@export var equip_inventory_data: Equippable
 
 signal toogle_inventory()
 
