@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://dajo4o8ibri8a"]
+
+[ext_resource type="PackedScene" uid="uid://cfdnj6i52mb6u" path="res://UI/HUD/Inventory/inventory.tscn" id="1_gqt17"]
+[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="2_5h2wk"]
+
+[node name="WeaponInv" instance=ExtResource("1_gqt17")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="PrimaryLabel" type="Label" parent="VBoxContainer" index="0"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_5h2wk")
+theme_override_font_sizes/font_size = 13
+text = "PRIMARY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SecondaryLabel" type="Label" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_5h2wk")
+theme_override_font_sizes/font_size = 13
+text = "SECONDARY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MeleeLabel" type="Label" parent="VBoxContainer" index="2"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_5h2wk")
+theme_override_font_sizes/font_size = 13
+text = "MELEE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ToolLabel" type="Label" parent="VBoxContainer" index="3"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_5h2wk")
+theme_override_font_sizes/font_size = 13
+text = "TOOL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemGrid" parent="MarginContainer" index="0"]
+theme_override_constants/v_separation = 50
+columns = 1

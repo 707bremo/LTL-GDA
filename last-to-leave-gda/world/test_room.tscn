@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bfdsj5xxm3pmk"]
+[gd_scene load_steps=61 format=3 uid="uid://bfdsj5xxm3pmk"]
 
 [ext_resource type="Script" path="res://world/Main.gd" id="1_4pghp"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="2_6cywo"]
@@ -7,12 +7,15 @@
 [ext_resource type="Script" path="res://UI/HUD/Inventory/equipment_data.gd" id="4_s1re2"]
 [ext_resource type="PackedScene" uid="uid://cfdnj6i52mb6u" path="res://UI/HUD/Inventory/inventory.tscn" id="5_vebsm"]
 [ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="6_3njpv"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/weapon_data.gd" id="6_xmq84"]
 [ext_resource type="PackedScene" uid="uid://012ymk0c663s" path="res://UI/HUD/Inventory/slot.tscn" id="7_ntpok"]
 [ext_resource type="Texture2D" uid="uid://vyoaqybnkohy" path="res://UI/references/Screenshot 2025-03-01 184534.png" id="8_ab6c3"]
+[ext_resource type="PackedScene" uid="uid://b7y1q8fbk2d1x" path="res://UI/HUD/Inventory/equip_inv.tscn" id="9_clp70"]
 [ext_resource type="PackedScene" uid="uid://cirndjnad781d" path="res://interactable/cabinet.tscn" id="9_qu4lt"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/inventory_data.gd" id="10_gtidb"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/slot_data.gd" id="11_kkf2v"]
 [ext_resource type="Resource" uid="uid://bwot2yqefnhhg" path="res://UI/HUD/Inventory/item/items/canned_peaches.tres" id="12_53f3x"]
+[ext_resource type="PackedScene" uid="uid://dajo4o8ibri8a" path="res://UI/HUD/Inventory/weapon_inv.tscn" id="12_px8vc"]
 [ext_resource type="Resource" uid="uid://c5nfndoha1o4d" path="res://UI/HUD/Inventory/item/items/canned_corn.tres" id="13_amrmn"]
 [ext_resource type="Resource" uid="uid://bkbdbmb5d5bx4" path="res://UI/HUD/Inventory/item/items/armor_plate.tres" id="14_1yhix"]
 [ext_resource type="PackedScene" uid="uid://cgk7inheywfs4" path="res://UI/HUD/Inventory/item/pickup.tscn" id="15_acbsn"]
@@ -40,9 +43,13 @@ sky = SubResource("Sky_k8bdq")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="Resource" id="Resource_5dgym"]
+[sub_resource type="Resource" id="Resource_i232q"]
 script = ExtResource("4_s1re2")
-slot_datas = Array[ExtResource("11_kkf2v")]([null])
+slot_datas = Array[ExtResource("11_kkf2v")]([null, null, null, null])
+
+[sub_resource type="Resource" id="Resource_8scqe"]
+script = ExtResource("6_xmq84")
+slot_datas = Array[ExtResource("11_kkf2v")]([null, null, null, null])
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfhuv"]
 bg_color = Color(0.0313726, 0.0313726, 0.0313726, 0.823529)
@@ -192,7 +199,8 @@ size = Vector3(30, 10, 2)
 [node name="test_player" parent="." instance=ExtResource("2_6cywo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36588, 0)
 inventory_data = ExtResource("3_en235")
-equip_inventory_data = SubResource("Resource_5dgym")
+equip_inventory_data = SubResource("Resource_i232q")
+weapon_inventory_data = SubResource("Resource_8scqe")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -267,13 +275,19 @@ offset_right = 1796.0
 offset_bottom = 832.0
 size_flags_horizontal = 2
 
-[node name="EquipInv" parent="UI/InvInterface" instance=ExtResource("5_vebsm")]
+[node name="EquipInv" parent="UI/InvInterface" instance=ExtResource("9_clp70")]
 layout_mode = 2
 offset_left = 736.0
-offset_top = 194.0
-offset_right = 1186.0
-offset_bottom = 832.0
-size_flags_horizontal = 2
+offset_top = 304.0
+offset_right = 832.0
+offset_bottom = 774.0
+
+[node name="WeaponInv" parent="UI/InvInterface" instance=ExtResource("12_px8vc")]
+layout_mode = 0
+offset_left = 1088.0
+offset_top = 304.0
+offset_right = 1176.0
+offset_bottom = 784.0
 
 [node name="InventoryLabel" type="Label" parent="UI/InvInterface"]
 layout_mode = 2

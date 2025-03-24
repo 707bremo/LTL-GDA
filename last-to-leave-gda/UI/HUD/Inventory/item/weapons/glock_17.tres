@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemDataWeapon" load_steps=3 format=3 uid="uid://cerax175nrji"]
+
+[ext_resource type="Script" path="res://UI/HUD/Inventory/item/weapon_item_data.gd" id="1_m2xhg"]
+[ext_resource type="Texture2D" uid="uid://dki4i1bfi8d80" path="res://UI/HUD/Inventory/item/weapons/weaponICONS/glock17IMG.png" id="1_rcwkf"]
+
+[resource]
+script = ExtResource("1_m2xhg")
+max_ammo = 17
+ammo_type = "9mm"
+name = "Glock 17"
+description = "Austrian Pistol"
+stackable = false
+object = ExtResource("1_rcwkf")
+weight = 0.0

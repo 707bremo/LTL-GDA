@@ -13,6 +13,7 @@ var external_inventory_owner
 @onready var external_inv: PanelContainer = $ExternalInv
 @onready var weight_bar: ProgressBar = $WeightBar
 @onready var equip_inv: PanelContainer = $EquipInv
+@onready var weapon_inv: PanelContainer = $WeaponInv
 
 func _physics_process(delta: float) -> void:
 	if grabbed_slot.visible:
@@ -32,6 +33,12 @@ func set_equip_inventory_data(inventory_data: InventoryData) -> void:
 	inventory_data.inventory_interact.connect(on_inventory_interact)
 	inventory_data.weight_updated.connect(update_weight_bar)
 	equip_inv.set_inventory_data(inventory_data)
+
+
+func set_weapon_inventory_data(inventory_data: InventoryData) -> void:
+	inventory_data.inventory_interact.connect(on_inventory_interact)
+	inventory_data.weight_updated.connect(update_weight_bar)
+	weapon_inv.set_inventory_data(inventory_data)
 
 func update_weight_bar(current_weight: float, max_weight: float) -> void:
 	weight_bar.max_value = max_weight
