@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemDataWeapon" load_steps=3 format=3 uid="uid://c5q5lujr0qo5f"]
+
+[ext_resource type="Script" path="res://UI/HUD/Inventory/item/weapon_item_data.gd" id="1_q41m7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qr56y"]
+
+[resource]
+script = ExtResource("1_q41m7")
+max_ammo = 31
+ammo_type = "5.56mm"
+mesh = SubResource("BoxMesh_qr56y")
+position = Vector3(0.92, -0.71, -0.89)
+rotation = Vector3(0, 0, 12)
+name = "M4A1"
+description = "Standard issue rifle. Most reliable of all in its class."
+stackable = false
+weight = 0.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bfdsj5xxm3pmk"]
+[gd_scene load_steps=65 format=3 uid="uid://bfdsj5xxm3pmk"]
 
 [ext_resource type="Script" path="res://world/Main.gd" id="1_4pghp"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="2_6cywo"]
@@ -7,9 +7,11 @@
 [ext_resource type="Script" path="res://UI/HUD/Inventory/equipment_data.gd" id="4_s1re2"]
 [ext_resource type="PackedScene" uid="uid://cfdnj6i52mb6u" path="res://UI/HUD/Inventory/inventory.tscn" id="5_vebsm"]
 [ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="6_3njpv"]
+[ext_resource type="Resource" uid="uid://utfy5lpqx73l" path="res://UI/HUD/Inventory/item/equippables/motorcycle_helmet.tres" id="6_8mn1c"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/weapon_data.gd" id="6_xmq84"]
 [ext_resource type="PackedScene" uid="uid://012ymk0c663s" path="res://UI/HUD/Inventory/slot.tscn" id="7_ntpok"]
 [ext_resource type="Texture2D" uid="uid://vyoaqybnkohy" path="res://UI/references/Screenshot 2025-03-01 184534.png" id="8_ab6c3"]
+[ext_resource type="Resource" uid="uid://cerax175nrji" path="res://UI/HUD/Inventory/item/weapons/glock_17.tres" id="8_g076a"]
 [ext_resource type="PackedScene" uid="uid://b7y1q8fbk2d1x" path="res://UI/HUD/Inventory/equip_inv.tscn" id="9_clp70"]
 [ext_resource type="PackedScene" uid="uid://cirndjnad781d" path="res://interactable/cabinet.tscn" id="9_qu4lt"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/inventory_data.gd" id="10_gtidb"]
@@ -43,13 +45,23 @@ sky = SubResource("Sky_k8bdq")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="Resource" id="Resource_2extl"]
+script = ExtResource("11_kkf2v")
+item_data = ExtResource("6_8mn1c")
+quantity = 1
+
 [sub_resource type="Resource" id="Resource_i232q"]
 script = ExtResource("4_s1re2")
-slot_datas = Array[ExtResource("11_kkf2v")]([null, null, null, null])
+slot_datas = Array[ExtResource("11_kkf2v")]([SubResource("Resource_2extl"), null, null, null])
+
+[sub_resource type="Resource" id="Resource_glbpq"]
+script = ExtResource("11_kkf2v")
+item_data = ExtResource("8_g076a")
+quantity = 1
 
 [sub_resource type="Resource" id="Resource_8scqe"]
 script = ExtResource("6_xmq84")
-slot_datas = Array[ExtResource("11_kkf2v")]([null, null, null, null])
+slot_datas = Array[ExtResource("11_kkf2v")]([null, SubResource("Resource_glbpq"), null, null])
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfhuv"]
 bg_color = Color(0.0313726, 0.0313726, 0.0313726, 0.823529)

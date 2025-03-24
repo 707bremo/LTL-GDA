@@ -1,5 +1,5 @@
 extends InventoryData
-class_name Weapons
+class_name WeaponInvData
 
 
 func drop_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:

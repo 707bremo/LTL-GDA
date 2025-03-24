@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvqooawhyqyqw"]
+[gd_scene load_steps=15 format=3 uid="uid://cvqooawhyqyqw"]
 
 [ext_resource type="Script" path="res://player/test_player.gd" id="1_p76u8"]
 [ext_resource type="PackedScene" uid="uid://dpbjle7jau6df" path="res://UI/HUD/vitals/health_bar.tscn" id="2_0nl34"]
 [ext_resource type="Script" path="res://player/interact_ray.gd" id="2_2h5an"]
+[ext_resource type="PackedScene" uid="uid://dx3kijcnxivig" path="res://weapons.tscn" id="3_46w64"]
 [ext_resource type="PackedScene" uid="uid://2l28vknscmbj" path="res://UI/HUD/vitals/armor_bar.tscn" id="4_pcca8"]
 [ext_resource type="PackedScene" uid="uid://dcpr2jokur15r" path="res://UI/HUD/vitals/hunger_bar.tscn" id="5_pp44l"]
 [ext_resource type="PackedScene" uid="uid://dax2ao0bsraq4" path="res://UI/HUD/vitals/stamina_bar.tscn" id="5_tbfnt"]
@@ -68,6 +69,9 @@ script = ExtResource("2_2h5an")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/InteractRay/Area3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 shape = SubResource("SeparationRayShape3D_nhcc7")
+
+[node name="weapons" parent="Head/Camera3D" instance=ExtResource("3_46w64")]
+transform = Transform3D(0.978148, -0.207912, 0, 0.207912, 0.978148, 0, 0, 0, 1, 0.92, -0.71, -0.89)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
