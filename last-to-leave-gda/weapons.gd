@@ -12,8 +12,10 @@ extends Node3D
 
 var mouse_movement : Vector2
 
-#func _ready() -> void:
-	#pass await owner.ready
+func _ready() -> void:
+	await owner.ready
+	WEAPON_TYPE = load("res://UI/HUD/Inventory/item/weapons/NoWeapon/no_weapon.tres")
+	load_weapon()
 
 
 func _input(event):

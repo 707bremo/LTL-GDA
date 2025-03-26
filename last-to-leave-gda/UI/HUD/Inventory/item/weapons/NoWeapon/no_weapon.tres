@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemDataWeapon" load_steps=2 format=3 uid="uid://73hbixwfk5c4"]
+
+[ext_resource type="Script" path="res://UI/HUD/Inventory/item/weapon_item_data.gd" id="1_ikyti"]
+
+[resource]
+script = ExtResource("1_ikyti")
+max_ammo = 0
+ammo_type = "None"
+sway_min = Vector2(0, 0)
+sway_max = Vector2(0, 0)
+sway_speed_position = 0.0
+sway_speed_rotation = 0.0
+sway_amount_position = 0.0
+sway_amount_rotation = 0.0
+position = Vector3(0, 0, 0)
+rotation = Vector3(0, 0, 0)
+name = ""
+description = ""
+stackable = false
+weight = 0.0
