@@ -22,6 +22,11 @@ func _input(event):
 	if event.is_action_pressed("draw_weapon1"):
 		WEAPON_TYPE = load("res://UI/HUD/Inventory/item/weapons/M4A1/m4a1.tres")
 		load_weapon()
+	
+	if event.is_action_pressed("withdraw_weapon"):
+		WEAPON_TYPE = load("res://UI/HUD/Inventory/item/weapons/NoWeapon/no_weapon.tres")
+		load_weapon()
+	
 	if event is InputEventMouseMotion:
 		mouse_movement = event.relative
 
