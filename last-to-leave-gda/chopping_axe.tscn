@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://s3p3is8fyvbr"]
+
+[ext_resource type="PackedScene" uid="uid://bbhxvm77bvb45" path="res://demo/assets/LTLpre-madeAssets/ChoppingAxe.gltf" id="1_e707s"]
+[ext_resource type="Texture2D" uid="uid://bkvly5a8nguuk" path="res://demo/assets/LTLpre-madeAssets/green_metal_rust_disp_4k.png" id="2_4ywai"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ti6m3"]
+albedo_color = Color(0.54099, 0.54099, 0.54099, 1)
+albedo_texture = ExtResource("2_4ywai")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7rcr"]
+albedo_texture = ExtResource("2_4ywai")
+
+[node name="ChoppingAxe" instance=ExtResource("1_e707s")]
+
+[node name="Cube_002" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ti6m3")
+
+[node name="Cube_003" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_k7rcr")
