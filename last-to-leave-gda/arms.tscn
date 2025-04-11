@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://deeiejvhk146"]
-
-[ext_resource type="PackedScene" uid="uid://bg83vlf4sb3r1" path="res://uploads-files-2864994-arms.fbx" id="1_ino6u"]
-
-[node name="uploads-files-2864994-arms" instance=ExtResource("1_ino6u")]
-
-[node name="arms" parent="skeleton/Skeleton3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0.0113802, 0, 0)
