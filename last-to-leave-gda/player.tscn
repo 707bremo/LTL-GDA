@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3yccfperamvs"]
+[gd_scene load_steps=4 format=3 uid="uid://d3yccfperamvs"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_vbs7i"]
-[ext_resource type="PackedScene" uid="uid://bcekluwxwg1dw" path="res://Arms 2.fbx" id="2_3juqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5bct"]
 
@@ -9,12 +8,6 @@
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_vbs7i")
-
-[node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0683832, 0.295284, -0.315336)
-
-[node name="Camera3D" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -24,8 +17,8 @@ shape = SubResource("CapsuleShape3D_m5bct")
 mesh = SubResource("CapsuleMesh_rhvbo")
 skeleton = NodePath("../..")
 
-[node name="CameraController" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0683832, 0.295284, -0.315336)
 
-[node name="Arms 2" parent="." instance=ExtResource("2_3juqv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41959, 0, 0)
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

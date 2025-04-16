@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://bd4n0y4e0wqlx"]
+[gd_scene load_steps=2 format=3 uid="uid://bd4n0y4e0wqlx"]
 
-[node name="Pistol" type="Node3D"]
+[ext_resource type="Script" path="res://weapon.gd" id="1_xt8s7"]
+
+[node name="Pistol" type="Node3D" node_paths=PackedStringArray("current_sight")]
+script = ExtResource("1_xt8s7")
+current_sight = NodePath("Sight_1")
 
 [node name="Target_L" type="Marker3D" parent="."]
 
