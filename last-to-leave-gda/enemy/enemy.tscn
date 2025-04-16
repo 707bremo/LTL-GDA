@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://d4mp5gutalf3n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vr4tg"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ki5d3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3f3ev"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_15gik"]
+size = Vector3(5.25, 5.25, 5.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e3ub3"]
+size = Vector3(5.25, 5.25, 5.25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mdgc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wj66d"]
+size = Vector3(0.45, 0.25, 0.13)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_vr4tg")
+mesh = SubResource("CapsuleMesh_ki5d3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_3f3ev")
+
+[node name="EnemyFOV" type="Area3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EnemyFOV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.15)
+visible = false
+mesh = SubResource("BoxMesh_15gik")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyFOV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.15)
+shape = SubResource("BoxShape3D_e3ub3")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Eyes" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.450736, -0.445392)
+material_override = SubResource("StandardMaterial3D_0mdgc")
+mesh = SubResource("BoxMesh_wj66d")
+
+[node name="FOV_cast" type="RayCast3D" parent="."]
