@@ -46,3 +46,4 @@ material_override = SubResource("StandardMaterial3D_0mdgc")
 mesh = SubResource("BoxMesh_wj66d")
 
 [node name="FOV_cast" type="RayCast3D" parent="."]
+target_position = Vector3(0, -1, -10)

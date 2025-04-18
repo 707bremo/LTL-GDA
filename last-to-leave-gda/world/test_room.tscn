@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bfdsj5xxm3pmk"]
+[gd_scene load_steps=68 format=3 uid="uid://bfdsj5xxm3pmk"]
 
 [ext_resource type="Script" path="res://world/Main.gd" id="1_4pghp"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="2_6cywo"]
@@ -31,6 +31,8 @@
 [ext_resource type="Resource" uid="uid://d4nkk4jii1jgp" path="res://UI/HUD/Inventory/item/items/canned_tomatoes.tres" id="23_p0wsp"]
 [ext_resource type="Resource" uid="uid://cds81cbksibuu" path="res://UI/HUD/Inventory/item/items/water_bottle.tres" id="24_l7v60"]
 [ext_resource type="Resource" uid="uid://ungidsdli55p" path="res://UI/HUD/Inventory/item/items/cherry_soda.tres" id="25_8b3lk"]
+[ext_resource type="PackedScene" uid="uid://d4mp5gutalf3n" path="res://enemy/enemy.tscn" id="32_t8rrn"]
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="33_cen5u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5q6bn"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -180,6 +182,8 @@ quantity = 1
 [sub_resource type="Resource" id="Resource_v5k2k"]
 script = ExtResource("10_gtidb")
 slot_datas = Array[ExtResource("11_kkf2v")]([SubResource("Resource_slm6o"), null, null, null, null, null, null, SubResource("Resource_074c8"), SubResource("Resource_af20k"), SubResource("Resource_myf5f"), SubResource("Resource_3exjb")])
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_67taw"]
 
 [node name="TestRoom" type="Node"]
 script = ExtResource("1_4pghp")
@@ -359,6 +363,30 @@ inventory_data = SubResource("Resource_p83np")
 [node name="Refridgerator" parent="LootSources" instance=ExtResource("22_fvs83")]
 transform = Transform3D(-0.37658, 0, -0.926384, 0, 1, 0, 0.926384, 0, -0.37658, 7.96199, 1, 0)
 inventory_data = SubResource("Resource_v5k2k")
+
+[node name="patrol_points" type="Node3D" parent="."]
+
+[node name="stop1" type="Marker3D" parent="patrol_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.57729, 0, -9.20339)
+
+[node name="stop2" type="Marker3D" parent="patrol_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7039, 0, -10.4798)
+
+[node name="stop3" type="Marker3D" parent="patrol_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80132, 0, -3.68497)
+
+[node name="stop4" type="Marker3D" parent="patrol_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42246, 0, -10.0935)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_67taw")
+
+[node name="test_enemy" parent="." instance=ExtResource("32_t8rrn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30776, 1.50415, -7.66122)
+script = ExtResource("33_cen5u")
+speed = null
+negative_pos = null
+is_patrolling_guard = null
 
 [connection signal="drop_slot_data" from="UI/InvInterface" to="." method="_on_inv_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InvInterface" to="UI/InvInterface" method="_on_gui_input"]
