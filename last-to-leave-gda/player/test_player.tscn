@@ -41,7 +41,7 @@ _data = {
 "blink": SubResource("Animation_ig4fm")
 }
 
-[node name="test_player" type="CharacterBody3D"]
+[node name="test_player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_layer = 2
 script = ExtResource("1_p76u8")

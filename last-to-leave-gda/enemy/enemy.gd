@@ -81,4 +81,113 @@ func pursuit_state(delta):
 	
 	velocity = change_diretion * speed * delta
 	
-	#look_at(Vector3(Global.player_current_pos.x, self.global_transform.origin.y, Global.player_current_pos.z), Vector3)
+	look_at(Vector3(PlayerManager.player_current_pos.x, self.global_transform.origin.y, PlayerManager.player_current_pos.z), Vector3(0,1,0))
+	
+	
+
+
+func back_to_post(delta):
+	
+	
+	if not is_at_post:
+		
+		await get_tree().process_frame
+		# direction will continue to change according to the state of the enemy
+		var direction
+		
+		nav_agent.target_position = all_points[0]
+		direction = nav_agent.get_next_path_position() - global_position
+		direction = direction.normalized()
+		
+		velocity = velocity.lerp(direction * speed * delta, 1.0)
+		
+		# for some reason, a bug occurs when this isn't 0, so we'll leave this for now
+		direction.y = 0
+		
+		look_at(global_transform.origin + direction)
+		
+	if is_at_post:
+		
+		direction_transition()
+		
+		
+
+func direction_transition():
+	
+	# if a posted guard abandons a search or pursuit, it will reset its rotation to its original spot
+	var default_rotation = get_parent().get_node("reset_guard_rotations/pg1_reset_marker").global_position
+	# must use Basis rotation or else enemy will face opposite direction all the time
+	var reset_rotation = Basis.looking_at(default_rotation * negative_pos)
+	
+	# get and store the current enemy rotation
+	var current_rotation = basis.get_rotation_quaternion()
+	basis = current_rotation.slerp(reset_rotation, 0.1)
+	
+	velocity = Vector3.ZERO
+	
+	
+
+
+func _on_navigation_agent_3d_target_reached() -> void:
+	
+	# locate and move enemy to next spots using definitive algorithm
+	
+	if is_patrolling_guard:
+		
+		next_point += 1
+		
+		if next_point >= all_points.size():
+			
+			# counts very last spot
+			next_point = all_points[-1]
+			# then resets the spot to 0, indicating a complete cycle
+			next_point = 0
+			
+	
+	if not is_patrolling_guard and not in_pursuit:
+		
+		is_at_post = true
+	
+
+func get_new_target(new_target):
+	
+	nav_agent.set_target_position(new_target)
+
+
+func _on_timer_timeout() -> void:
+	
+	
+	# every half-second, the timer updates the pathfinder, ruled-in for optimization
+	check_sight()
+	get_new_target(PlayerManager.player_current_pos)
+	
+
+func check_sight():
+	
+	# player must be colliding with FOV_cast to begin pursuit
+	if seen_player:
+		
+		FOV_caster.look_at(PlayerManager.player_current_pos, Vector3(0,1,0))
+		
+	
+	if FOV_caster.is_colliding():
+		
+		var collider = FOV_caster.get_collider()
+		
+		# reverse normal states if player is detected
+		if collider.is_in_group("player"):
+			in_pursuit = true
+			is_at_post = false
+
+
+
+func _on_enemy_fov_body_entered(body) -> void:
+	
+	if body.is_in_group("player"):
+		seen_player = true
+	
+
+func _on_enemy_fov_body_exited(body) -> void:
+	
+	if body.is_in_group("player"):
+		seen_player = false

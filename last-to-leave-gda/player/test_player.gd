@@ -88,6 +88,7 @@ var critical_color = Color("RED")
 
 
 func _ready():
+	
 	if hunger_bar:
 		hunger_bar.max_value = max_hunger
 		hunger_bar.value = current_hunger
@@ -119,6 +120,10 @@ func _unhandled_input(event):
 		interact()
 
 func _physics_process(delta):
+	
+	PlayerManager.player_current_pos = global_position
+	
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta

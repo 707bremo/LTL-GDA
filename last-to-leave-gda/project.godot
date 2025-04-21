@@ -26,6 +26,7 @@ window/size/viewport_height=1078
 [global_group]
 
 external_inventory="group for any containers or loot sources"
+player=""
 
 [input]
 

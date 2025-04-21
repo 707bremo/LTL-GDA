@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4mp5gutalf3n"]
+[gd_scene load_steps=9 format=3 uid="uid://d4mp5gutalf3n"]
+
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="1_o7dyg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vr4tg"]
 albedo_color = Color(1, 0, 0, 1)
@@ -19,6 +21,8 @@ size = Vector3(5.25, 5.25, 5.25)
 size = Vector3(0.45, 0.25, 0.13)
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_o7dyg")
+is_patrolling_guard = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_vr4tg")
@@ -39,6 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.15)
 shape = SubResource("BoxShape3D_e3ub3")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.7
 
 [node name="Eyes" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.450736, -0.445392)
@@ -47,3 +52,11 @@ mesh = SubResource("BoxMesh_wj66d")
 
 [node name="FOV_cast" type="RayCast3D" parent="."]
 target_position = Vector3(0, -1, -10)
+collide_with_areas = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="EnemyFOV" to="." method="_on_enemy_fov_body_entered"]
+[connection signal="body_exited" from="EnemyFOV" to="." method="_on_enemy_fov_body_exited"]
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
