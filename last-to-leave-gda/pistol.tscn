@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd4n0y4e0wqlx"]
+[gd_scene load_steps=3 format=3 uid="uid://bd4n0y4e0wqlx"]
 
 [ext_resource type="Script" path="res://weapon.gd" id="1_xt8s7"]
+[ext_resource type="ArrayMesh" uid="uid://p7t706sfa6tv" path="res://psitol 1.1.tres" id="2_dks3v"]
 
 [node name="Pistol" type="Node3D" node_paths=PackedStringArray("current_sight")]
 script = ExtResource("1_xt8s7")
@@ -11,8 +12,11 @@ current_sight = NodePath("Sight_1")
 [node name="Target_R" type="Marker3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_dks3v")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.157486, 0.158929)
+mesh = ExtResource("2_dks3v")
 
 [node name="Sight_1" type="Marker3D" parent="."]
 
