@@ -72,7 +72,7 @@ var damaged_color = Color("ORANGE")
 var critical_color = Color("RED")
 
 
-
+# player UI and camera
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
@@ -84,6 +84,14 @@ var critical_color = Color("RED")
 @onready var hunger_bar: ProgressBar = $HUD/PlayerHealthBar/HungerBar
 
 
+# reference to floor raycast
+@onready var floor_type_cast: RayCast3D = $floor_type_cast
+
+# SFX for floors etc..
+@onready var grass_sound: AudioStreamPlayer3D = $floor_sounds/grass_sound
+@onready var gravel_sound: AudioStreamPlayer3D = $floor_sounds/gravel_sound
+@onready var wood_sound: AudioStreamPlayer3D = $floor_sounds/wood_sound
+@onready var metal_sound: AudioStreamPlayer3D = $floor_sounds/metal_sound
 
 
 
@@ -322,3 +330,16 @@ func check_stamina_regen(delta):
 		can_start_timer = false
 		stamina_timer = 0
 	
+
+func play_step_sounds():
+	
+	if floor_type_cast.is_colliding():
+		var collider = floor_type_cast.get_collider()
+		if collider.is_in_group("grass"):
+			grass_sound.play()
+		if collider.is_in_group("gravel"):
+			gravel_sound.play()
+		if collider.is_in_group("wood"):
+			wood_sound.play()
+		if collider.is_in_group("metal"):
+			metal_sound.play()
