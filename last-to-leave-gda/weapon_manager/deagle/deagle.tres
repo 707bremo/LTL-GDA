@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=2 format=3 uid="uid://dl315d4lqgvy0"]
+
+[ext_resource type="Script" path="res://weapon_manager/weapon_resource.gd" id="1_mu343"]
+
+[resource]
+script = ExtResource("1_mu343")
+damage = 10

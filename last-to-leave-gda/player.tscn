@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3yccfperamvs"]
+[gd_scene load_steps=5 format=3 uid="uid://d3yccfperamvs"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_vbs7i"]
-[ext_resource type="Script" path="res://weapon_manager.gd" id="2_l4b7o"]
-[ext_resource type="Script" path="res://procedural_recoil.gd" id="3_x4iyf"]
+[ext_resource type="PackedScene" uid="uid://ddw610oe8l1je" path="res://weapon_manager/weapon_manager.tscn" id="2_pkx05"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5bct"]
 
@@ -25,8 +24,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0683832, 0.295284, -0.3153
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
-[node name="WeaponManager" type="Node" parent="."]
-script = ExtResource("2_l4b7o")
+[node name="BulletRayCast3D" type="RayCast3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.829027)
+target_position = Vector3(0, 0, -999)
 
-[node name="ProceduralRecoil" type="Node" parent="."]
-script = ExtResource("3_x4iyf")
+[node name="WeaponManager" parent="." node_paths=PackedStringArray("player", "bullet_raycast") instance=ExtResource("2_pkx05")]
+player = NodePath("..")
+bullet_raycast = NodePath("../Head/Camera3D/BulletRayCast3D")
