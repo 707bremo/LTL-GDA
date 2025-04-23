@@ -24,6 +24,9 @@ data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0,
 
 [node name="Main" type="Node"]
 
+[node name="Player" parent="." instance=ExtResource("1_pninw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0326869, 0)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bxyw1")
 
@@ -40,9 +43,6 @@ mesh = SubResource("PlaneMesh_wc6rj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.630328)
 shape = SubResource("ConcavePolygonShape3D_jukuq")
-
-[node name="Player" parent="." instance=ExtResource("1_pninw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0326869, 0)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
