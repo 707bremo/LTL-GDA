@@ -27,6 +27,10 @@ window/size/viewport_height=1078
 
 external_inventory="group for any containers or loot sources"
 player=""
+grass=""
+gravel=""
+wood=""
+metal=""
 
 [input]
 

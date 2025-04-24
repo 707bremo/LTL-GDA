@@ -88,7 +88,8 @@ var critical_color = Color("RED")
 @onready var floor_type_cast: RayCast3D = $floor_type_cast
 
 # SFX for floors etc..
-@onready var grass_sound: AudioStreamPlayer3D = $floor_sounds/grass_sound
+@onready var sound_align: AnimationPlayer = $sound_align
+@onready var dirt_sound: AudioStreamPlayer3D = $floor_sounds/dirt_sound
 @onready var gravel_sound: AudioStreamPlayer3D = $floor_sounds/gravel_sound
 @onready var wood_sound: AudioStreamPlayer3D = $floor_sounds/wood_sound
 @onready var metal_sound: AudioStreamPlayer3D = $floor_sounds/metal_sound
@@ -272,12 +273,15 @@ func check_player_camera(delta):
 		if direction:
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
+			sound_align.play("footsteps")
 		else:
 			velocity.x = lerp(velocity.x, direction.x * speed, delta * 7.0)
 			velocity.z = lerp(velocity.z, direction.z * speed, delta * 7.0)
+			sound_align.pause()
 	else:
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
+		
 	
 	# Head bob
 	t_bob += delta * velocity.length() * float(is_on_floor())
@@ -336,10 +340,18 @@ func play_step_sounds():
 	if floor_type_cast.is_colliding():
 		var collider = floor_type_cast.get_collider()
 		if collider.is_in_group("grass"):
-			grass_sound.play()
+			dirt_sound.play()
+		else:
+			dirt_sound.stop()
 		if collider.is_in_group("gravel"):
 			gravel_sound.play()
+		else:
+			gravel_sound.stop()
 		if collider.is_in_group("wood"):
 			wood_sound.play()
+		else:
+			wood_sound.stop()
 		if collider.is_in_group("metal"):
 			metal_sound.play()
+		else:
+			metal_sound.stop()

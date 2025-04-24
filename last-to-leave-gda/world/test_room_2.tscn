@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=3 uid="uid://7doy4sdkj00r"]
+
+[ext_resource type="Texture2D" uid="uid://dt61xch818eh0" path="res://world/surfaces/dirt_texture.jpg" id="1_ji5s0"]
+[ext_resource type="Texture2D" uid="uid://bfbjwvpj5rbc5" path="res://world/surfaces/wood_texture.jpg" id="2_q1cqb"]
+[ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="3_2veoa"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4ll7n"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_4o37d"]
+sky_material = SubResource("ProceduralSkyMaterial_4ll7n")
+
+[sub_resource type="Environment" id="Environment_268uo"]
+background_mode = 2
+sky = SubResource("Sky_4o37d")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fshjb"]
+albedo_texture = ExtResource("1_ji5s0")
+
+[sub_resource type="BoxMesh" id="BoxMesh_rlp8d"]
+size = Vector3(1.44, 1.495, 0.11)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cktgb"]
+albedo_texture = ExtResource("2_q1cqb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbg8u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kyf71"]
+albedo_texture = ExtResource("1_ji5s0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gmgp"]
+albedo_texture = ExtResource("2_q1cqb")
+
+[node name="test_room2" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_268uo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="test_player" parent="." instance=ExtResource("3_2veoa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38412, 3.18578, -2.55919)
+collision_layer = 10
+collision_mask = 9
+
+[node name="display_dirt" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.243, 1, 13.608)
+size = Vector3(2.61, 3, 0.33)
+
+[node name="image" type="MeshInstance3D" parent="display_dirt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.306967, -0.132096)
+material_override = SubResource("StandardMaterial3D_fshjb")
+mesh = SubResource("BoxMesh_rlp8d")
+
+[node name="display_gravel" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27653, 1, 13.608)
+size = Vector3(2.61, 3, 0.33)
+
+[node name="display_wood" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.37369, 1, 13.608)
+size = Vector3(2.61, 3, 0.33)
+
+[node name="image2" type="MeshInstance3D" parent="display_wood"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00781345, 0.306967, -0.132096)
+material_override = SubResource("StandardMaterial3D_cktgb")
+mesh = SubResource("BoxMesh_rlp8d")
+skeleton = NodePath("../../display_dirt")
+
+[node name="display_metal" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.36429, 1, 13.608)
+size = Vector3(2.61, 3, 0.33)
+
+[node name="ground" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.986934, 0)
+material_override = SubResource("StandardMaterial3D_rbg8u")
+use_collision = true
+size = Vector3(70, 2, 70)
+metadata/_edit_lock_ = true
+
+[node name="floortypes" type="Node3D" parent="."]
+
+[node name="dirt_floor" type="CSGBox3D" parent="floortypes" groups=["grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.24583, -0.454067, 10.6705)
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+size = Vector3(3, 1, 5)
+material = SubResource("StandardMaterial3D_kyf71")
+
+[node name="gravelfloor" type="CSGBox3D" parent="floortypes" groups=["gravel"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28242, -0.454067, 10.6705)
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+size = Vector3(3, 1, 5)
+
+[node name="woodfloor" type="CSGBox3D" parent="floortypes" groups=["wood"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38412, -0.454067, 10.6705)
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+size = Vector3(3, 1, 5)
+material = SubResource("StandardMaterial3D_8gmgp")
+
+[node name="metalfloor" type="CSGBox3D" parent="floortypes" groups=["metal"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.36217, -0.454067, 10.6705)
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+size = Vector3(3, 1, 5)
