@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://7doy4sdkj00r"]
+[gd_scene load_steps=13 format=3 uid="uid://d36st3ruq2unw"]
 
 [ext_resource type="Texture2D" uid="uid://dt61xch818eh0" path="res://world/surfaces/dirt_texture.jpg" id="1_ji5s0"]
 [ext_resource type="Texture2D" uid="uid://bfbjwvpj5rbc5" path="res://world/surfaces/wood_texture.jpg" id="2_q1cqb"]

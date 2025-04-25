@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cvqooawhyqyqw"]
+[gd_scene load_steps=17 format=3 uid="uid://cvqooawhyqyqw"]
 
 [ext_resource type="Script" path="res://player/test_player.gd" id="1_p76u8"]
 [ext_resource type="PackedScene" uid="uid://dpbjle7jau6df" path="res://UI/HUD/vitals/health_bar.tscn" id="2_0nl34"]
@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dcpr2jokur15r" path="res://UI/HUD/vitals/hunger_bar.tscn" id="5_pp44l"]
 [ext_resource type="PackedScene" uid="uid://dax2ao0bsraq4" path="res://UI/HUD/vitals/stamina_bar.tscn" id="5_tbfnt"]
 [ext_resource type="PackedScene" uid="uid://bxwt77dbpmvd4" path="res://UI/pause_menu.tscn" id="6_v3jdj"]
-[ext_resource type="AudioStream" uid="uid://bm3uockhjw8l0" path="res://UI/Sounds/SFX/dirt_walking_sound.wav" id="9_yxdsn"]
-[ext_resource type="AudioStream" uid="uid://yyio4t215lur" path="res://UI/Sounds/SFX/wood_walking_sound.wav" id="10_gqief"]
+[ext_resource type="Script" path="res://player/footstep_manager.gd" id="9_mguq6"]
+[ext_resource type="AudioStream" uid="uid://bv0lxoura8k3g" path="res://UI/Sounds/SFX/dirt_walk.mp3" id="10_kwla3"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gsapo"]
 
@@ -43,37 +43,6 @@ _data = {
 "blink": SubResource("Animation_ig4fm")
 }
 
-[sub_resource type="Animation" id="Animation_pkgna"]
-resource_name = "footsteps"
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.233333, 0.533333, 0.733333, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"values": [{
-"args": [],
-"method": &"play_step_sounds"
-}, {
-"args": [],
-"method": &"play_step_sounds"
-}, {
-"args": [],
-"method": &"play_step_sounds"
-}, {
-"args": [],
-"method": &"play_step_sounds"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_42ylv"]
-_data = {
-"footsteps": SubResource("Animation_pkgna")
-}
-
 [node name="test_player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_layer = 2
@@ -105,20 +74,6 @@ shape = SubResource("SeparationRayShape3D_nhcc7")
 
 [node name="weapons" parent="Head/Camera3D" instance=ExtResource("3_46w64")]
 transform = Transform3D(0.978148, -0.207912, 0, 0.207912, 0.978148, 0, 0, 0, 1, 0.92, -0.71, -0.89)
-
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -3.0
-offset_top = -4.0
-offset_right = 3.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -173,30 +128,13 @@ libraries = {
 "": SubResource("AnimationLibrary_5spp3")
 }
 
-[node name="sound_align" type="AnimationPlayer" parent="."]
-root_node = NodePath("../floor_type_cast")
-libraries = {
-"": SubResource("AnimationLibrary_42ylv")
-}
+[node name="Footstep_manager" type="Node3D" parent="." node_paths=PackedStringArray("ground_pos")]
+script = ExtResource("9_mguq6")
+footstep_sounds = Array[AudioStreamMP3]([ExtResource("10_kwla3")])
+ground_pos = NodePath("../GroundPosition")
 
-[node name="floor_type_cast" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.594828, 0)
-collision_mask = 8
-collide_with_areas = true
-
-[node name="floor_sounds" type="Node3D" parent="."]
-
-[node name="dirt_sound" type="AudioStreamPlayer3D" parent="floor_sounds"]
-stream = ExtResource("9_yxdsn")
-volume_db = 4.848
-
-[node name="gravel_sound" type="AudioStreamPlayer3D" parent="floor_sounds"]
-
-[node name="wood_sound" type="AudioStreamPlayer3D" parent="floor_sounds"]
-stream = ExtResource("10_gqief")
-volume_db = 9.697
-
-[node name="metal_sound" type="AudioStreamPlayer3D" parent="floor_sounds"]
+[node name="GroundPosition" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.716693, 0)
 
 [connection signal="body_entered" from="Head/Camera3D/InteractRay/Area3D" to="Head/Camera3D/InteractRay" method="_on_object_colliding"]
 [connection signal="body_exited" from="Head/Camera3D/InteractRay/Area3D" to="Head/Camera3D/InteractRay" method="_on_object_avert"]
