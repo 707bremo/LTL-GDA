@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgs2a1o68qk7t"]
+
+[ext_resource type="PackedScene" uid="uid://71kphxvgw000" path="res://demo/assets/LTLpre-madeAssets/Windmill.gltf" id="1_bplic"]
+
+[node name="Windmill" instance=ExtResource("1_bplic")]
