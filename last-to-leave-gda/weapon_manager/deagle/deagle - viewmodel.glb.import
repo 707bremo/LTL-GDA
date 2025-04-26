@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d0730d1dwc2ta"
-path="res://.godot/imported/desert_droid.glb-2ce3f60df378647b3697d7852fc5720d.scn"
+uid="uid://boh3q5tp7vpu2"
+path="res://.godot/imported/deagle - viewmodel.glb-76098cf756147fea2500662439725659.scn"
 
 [deps]
 
-source_file="res://addons/desert_droid.glb"
-dest_files=["res://.godot/imported/desert_droid.glb-2ce3f60df378647b3697d7852fc5720d.scn"]
+source_file="res://weapon_manager/deagle/deagle - viewmodel.glb"
+dest_files=["res://.godot/imported/deagle - viewmodel.glb-76098cf756147fea2500662439725659.scn"]
 
 [params]
 

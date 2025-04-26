@@ -1,12 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://d3yccfperamvs"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_vbs7i"]
-[ext_resource type="PackedScene" uid="uid://bd4n0y4e0wqlx" path="res://pistol.tscn" id="2_37jug"]
 [ext_resource type="PackedScene" uid="uid://ddw610oe8l1je" path="res://weapon_manager/weapon_manager.tscn" id="2_pkx05"]
+[ext_resource type="PackedScene" uid="uid://d0730d1dwc2ta" path="res://addons/desert_droid.glb" id="3_60s6m"]
+[ext_resource type="PackedScene" uid="uid://bd4n0y4e0wqlx" path="res://pistol.tscn" id="4_s4571"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5bct"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_rhvbo"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_vbs7i")
@@ -15,18 +14,25 @@ script = ExtResource("1_vbs7i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_m5bct")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-mesh = SubResource("CapsuleMesh_rhvbo")
-skeleton = NodePath("../..")
+[node name="desert_droid" parent="CollisionShape3D" instance=ExtResource("3_60s6m")]
+transform = Transform3D(-0.99994, 0, -0.0109254, 0, 1, 0, 0.0109254, 0, -0.99994, 0, -0.990703, 0)
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0683832, 0.295284, -0.315336)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00021781, 3.27759, -0.321597)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.140674, 0)
 
-[node name="Pistol" parent="Head/Camera3D" instance=ExtResource("2_37jug")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96982, 0, 2)
+[node name="BulletRayCast3D" type="RayCast3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.314937)
+target_position = Vector3(0, 0, -999)
 
-[node name="WeaponManager" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_pkx05")]
+[node name="ViewModel" type="Node3D" parent="Head/Camera3D"]
+
+[node name="WeaponManager" parent="." node_paths=PackedStringArray("player", "bullet_raycast", "view_model_container") instance=ExtResource("2_pkx05")]
 player = NodePath("..")
+bullet_raycast = NodePath("../Head/Camera3D/BulletRayCast3D")
+view_model_container = NodePath("../Head/Camera3D/ViewModel")
+
+[node name="Pistol" parent="." instance=ExtResource("4_s4571")]
+transform = Transform3D(0.0361902, 0, 0.999345, 0, 1, 0, -0.999345, 0, 0.0361902, 0.513061, 1.69286, -0.760434)

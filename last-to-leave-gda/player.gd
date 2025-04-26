@@ -24,7 +24,7 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-100), deg_to_rad(60))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-120), deg_to_rad(60))
 
 
 func _headbob(time) -> Vector3:
@@ -67,6 +67,3 @@ func _physics_process(delta):
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	move_and_slide()
-
-	elif is_ads == true:
-		
