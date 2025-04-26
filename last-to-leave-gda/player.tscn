@@ -35,4 +35,4 @@ bullet_raycast = NodePath("../Head/Camera3D/BulletRayCast3D")
 view_model_container = NodePath("../Head/Camera3D/ViewModel")
 
 [node name="Pistol" parent="." instance=ExtResource("4_s4571")]
-transform = Transform3D(0.0361902, 0, 0.999345, 0, 1, 0, -0.999345, 0, 0.0361902, 0.513061, 1.69286, -0.760434)
+transform = Transform3D(0.0361902, 0, 0.999345, 0, 1, 0, -0.999345, 0, 0.0361902, 0.513061, 2.12965, -0.760434)
