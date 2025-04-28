@@ -1,12 +1,11 @@
 extends Control
+const NewGameScene := preload("res://world/test_room.tscn")
 
 func _ready():
-	$blurAnim.play("RESET")
-	hide()
+	pass
 
 func resume_game():
 	get_tree().paused = false
-	$blurAnim.play_backwards("blurmenu")
 	hide()
 
 func load_game():
@@ -14,7 +13,6 @@ func load_game():
 
 func pause_game():
 	get_tree().paused = true
-	$blurAnim.play("blurmenu")
 	show()
 
 func test_pause_menu():
@@ -25,15 +23,14 @@ func test_pause_menu():
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		resume_game()
 
-func _on_continue_pressed() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	resume_game()
-
-func _on_load_pressed() -> void:
-	pass 
-
-func _on_exit_pressed() -> void:
-	get_tree().quit()
-
 func _process(delta: float) -> void:
 	test_pause_menu()
+
+func _on_load_game_pressed() -> void:
+	pass
+
+func _on_quit_game_pressed() -> void:
+	get_tree().quit()
+
+func _on_new_game_pressed() -> void:
+	get_tree().change_scene_to_packed(NewGameScene)
