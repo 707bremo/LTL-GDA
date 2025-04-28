@@ -23,16 +23,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00021781, 3.27759, -0.3215
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.140674, 0)
 
-[node name="BulletRayCast3D" type="RayCast3D" parent="Head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.314937)
-target_position = Vector3(0, 0, -999)
+[node name="Pistol" parent="Head/Camera3D" instance=ExtResource("4_s4571")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.238651, -1.07901, -0.341318)
 
-[node name="ViewModel" type="Node3D" parent="Head/Camera3D"]
+[node name="pos" type="Node3D" parent="Head/Camera3D/Pistol"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0.732123, 0.503806, 2.98023e-08)
 
-[node name="WeaponManager" parent="." node_paths=PackedStringArray("player", "bullet_raycast", "view_model_container") instance=ExtResource("2_pkx05")]
+[node name="WeaponManager" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_pkx05")]
 player = NodePath("..")
-bullet_raycast = NodePath("../Head/Camera3D/BulletRayCast3D")
-view_model_container = NodePath("../Head/Camera3D/ViewModel")
-
-[node name="Pistol" parent="." instance=ExtResource("4_s4571")]
-transform = Transform3D(0.0361902, 0, 0.999345, 0, 1, 0, -0.999345, 0, 0.0361902, 0.513061, 2.12965, -0.760434)

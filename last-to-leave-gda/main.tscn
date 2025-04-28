@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1jcg6ppur5uh"]
+[gd_scene load_steps=9 format=3 uid="uid://c1jcg6ppur5uh"]
 
 [ext_resource type="PackedScene" uid="uid://d3yccfperamvs" path="res://player.tscn" id="1_pninw"]
 [ext_resource type="PackedScene" uid="uid://5r4uj8lak04o" path="res://inventory/inventory.tscn" id="2_0bwem"]
+[ext_resource type="PackedScene" uid="uid://ddw610oe8l1je" path="res://weapon_manager/weapon_manager.tscn" id="3_731kk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ehsge"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -60,3 +61,5 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 50.0
 offset_bottom = 50.0
+
+[node name="WeaponManager" parent="." instance=ExtResource("3_731kk")]

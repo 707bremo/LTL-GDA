@@ -18,6 +18,9 @@ var gravity = 9.8
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
+var bullet=load("res://bullet.tscn")
+@onready var pos = $Head/Camera3D/Pistol/pos
+
 @export var current_weapon : Weapon
 
 func _unhandled_input(event):
@@ -67,3 +70,9 @@ func _physics_process(delta):
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	move_and_slide()
+
+	if Input.is_action_just_pressed("click"):
+		var instance=bullet.instantiate()
+		instance.position=pos.global_position
+		instance.transform.basis=pos.global_transform.basis
+		get_parent().add_child(instance)

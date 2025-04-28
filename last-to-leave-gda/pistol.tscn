@@ -8,9 +8,8 @@ height = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ueart"]
 
-[node name="Pistol" type="Node3D" node_paths=PackedStringArray("current_sight")]
+[node name="Pistol" type="Node3D"]
 script = ExtResource("1_xt8s7")
-current_sight = NodePath("")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0108906, -0.999941, 0, 0.999941, 0.0108906, 0, 0, 0, 1, 0.27163, 0.463679, 0)
