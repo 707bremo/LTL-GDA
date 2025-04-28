@@ -23,6 +23,9 @@ shape = SubResource("ConcavePolygonShape3D_j8v23")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_033/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_3k0us")
 
+[node name="Cube_036" parent="." index="4"]
+visible = false
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube_038" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_038/StaticBody3D" index="0"]
