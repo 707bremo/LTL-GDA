@@ -1,5 +1,6 @@
 extends Control
 
+@onready var select_sound_1: AudioStreamPlayer = $select_sound1
 
 
 func _ready():
@@ -29,10 +30,12 @@ func test_pause_menu():
 		resume_game()
 
 func _on_continue_pressed() -> void:
+	select_sound_1.play()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	resume_game()
 
 func _on_load_pressed() -> void:
+	select_sound_1.play()
 	pass # Replace with function body.
 
 func _on_exit_pressed() -> void:
