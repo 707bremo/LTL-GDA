@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj2wt6otjsuvy"]
+
+[ext_resource type="PackedScene" uid="uid://p31culdgng6d" path="res://demo/assets/LTLpre-madeAssets/Silo.glb" id="1_cqv6e"]
+
+[node name="Silo" instance=ExtResource("1_cqv6e")]
