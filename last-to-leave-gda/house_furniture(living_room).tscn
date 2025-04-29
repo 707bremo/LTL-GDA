@@ -2,33 +2,34 @@
 
 [ext_resource type="PackedScene" uid="uid://bmdb42xia2575" path="res://demo/assets/LTLpre-madeAssets/HouseFurniture(LivingRoom).gltf" id="1_e8afb"]
 [ext_resource type="Texture2D" uid="uid://bb0fpthiuohqj" path="res://demo/assets/models/green_metal_rust_disp_4k.png" id="2_4sx6e"]
-[ext_resource type="Texture2D" uid="uid://bo70o384yl3r3" path="res://demo/assets/LTLpre-madeAssets/TX_Cabinet_Basic.png" id="3_n0g2l"]
-[ext_resource type="Texture2D" uid="uid://0d2hkjew3p5f" path="res://demo/assets/LTLpre-madeAssets/plywood_rough_4k.png" id="4_fpmj0"]
+[ext_resource type="Texture2D" uid="uid://caoyfh52p1rvs" path="res://demo/assets/LTLpre-madeAssets/FarmHouseExterior_Rad_Grungemap_04_Image.jpg" id="3_x302s"]
 [ext_resource type="Texture2D" uid="uid://b3emds46olbid" path="res://demo/assets/LTLpre-madeAssets/gravelly_sand_diff_4k.jpg" id="4_qviib"]
-[ext_resource type="Texture2D" uid="uid://5kemciodwfxn" path="res://demo/assets/LTLpre-madeAssets/dumpster_0.png" id="5_k30lk"]
+[ext_resource type="Texture2D" uid="uid://biw1a7t8607oa" path="res://demo/assets/LTLpre-madeAssets/ShipmentContainerGray(Closed)_scratches-2.jpg" id="5_akib8"]
+[ext_resource type="Texture2D" uid="uid://c1xie4jv55imc" path="res://demo/assets/LTLpre-madeAssets/FarmHouseExterior_painted_concrete_02_rough_2k.png" id="6_qtras"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usdk6"]
 albedo_color = Color(0.377919, 0.377919, 0.377919, 1)
 albedo_texture = ExtResource("2_4sx6e")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_viuev"]
-albedo_texture = ExtResource("3_n0g2l")
+albedo_color = Color(0.746779, 0.727492, 0.686883, 1)
+albedo_texture = ExtResource("3_x302s")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3wq6"]
 albedo_color = Color(0.392709, 0.338115, 0.213295, 1)
 albedo_texture = ExtResource("4_qviib")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hkx5x"]
-albedo_color = Color(0.733005, 0.733005, 0.733005, 1)
-albedo_texture = ExtResource("5_k30lk")
+albedo_color = Color(0.180005, 0.180005, 0.180005, 1)
+albedo_texture = ExtResource("5_akib8")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f34wk"]
-albedo_color = Color(0.552941, 0.482353, 0.321569, 1)
-albedo_texture = ExtResource("4_fpmj0")
+albedo_color = Color(0.701961, 0.580392, 0.396078, 1)
+albedo_texture = ExtResource("6_qtras")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_byc4l"]
-albedo_color = Color(0.55268, 0.481959, 0.323502, 1)
-albedo_texture = ExtResource("4_fpmj0")
+albedo_color = Color(0.701961, 0.580392, 0.396078, 1)
+albedo_texture = ExtResource("6_qtras")
 
 [node name="HouseFurniture(LivingRoom)" instance=ExtResource("1_e8afb")]
 
@@ -88,6 +89,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_viuev")
 
 [node name="defaultMaterial_011" parent="." index="10"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o3wq6")
+
+[node name="Object_6" parent="." index="11"]
+visible = false
 
 [node name="Mesher001_21 - Default_0" parent="." index="12"]
 surface_material_override/0 = SubResource("StandardMaterial3D_hkx5x")

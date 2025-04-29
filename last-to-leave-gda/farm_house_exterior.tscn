@@ -27,3 +27,16 @@ shape = SubResource("ConcavePolygonShape3D_wkk4d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder_001/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_jd0a4")
+
+[node name="Cube_007" parent="." index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5, -1.10194, 23.1571, -16.6076)
+visible = false
+
+[node name="Cube_009" parent="." index="11"]
+visible = false
+
+[node name="Cube_010" parent="." index="12"]
+visible = false
+
+[node name="Cube_012" parent="." index="13"]
+visible = false
