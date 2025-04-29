@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy8nm1r32lf7b"]
+
+[ext_resource type="PackedScene" uid="uid://b44r5wdxllgjm" path="res://demo/assets/LTLpre-madeAssets/FarmHouseExterior.glb" id="1_qrdxy"]
+
+[node name="FarmHouseExterior" instance=ExtResource("1_qrdxy")]
