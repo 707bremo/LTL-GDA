@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://fn0ocq4no5tn"]
+
+[ext_resource type="PackedScene" uid="uid://bcp3tbmbueoos" path="res://demo/assets/LTLpre-madeAssets/ToolShed2Door(ForAnimation).glb" id="1_65lvw"]
+[ext_resource type="Texture2D" uid="uid://cpt7fyebo08qh" path="res://demo/assets/LTLpre-madeAssets/FarmHouseFurnitureAndOuthouse_metal01_diffuse.jpg" id="2_0d6ng"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2va1"]
+albedo_texture = ExtResource("2_0d6ng")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6esdl"]
+size = Vector3(0.6, 5, 0.1)
+
+[node name="ToolShed2Door(ForAnimation)" instance=ExtResource("1_65lvw")]
+
+[node name="Cube_005" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_t2va1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_005" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_005/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.361861, 0, 0.0295959)
+shape = SubResource("BoxShape3D_6esdl")

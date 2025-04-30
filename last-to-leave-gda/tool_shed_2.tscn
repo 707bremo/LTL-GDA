@@ -28,6 +28,9 @@ data = PackedVector3Array(6.0839, -3.0719, -0.5241, 0.2286, -3.0719, -58.3094, 6
 
 [node name="ToolShed2" instance=ExtResource("1_j21kc")]
 
+[node name="Cube_026" parent="." index="0"]
+visible = false
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube_026" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_026/StaticBody3D" index="0"]
