@@ -1,6 +1,6 @@
 extends Control
 
-@onready var select_sound_1: AudioStreamPlayer = $select_sound1
+@onready var select_sound_1: AudioStreamPlayer = $select_sound_1
 
 
 func _ready():
@@ -28,6 +28,7 @@ func test_pause_menu():
 	elif Input.is_action_just_pressed("pause_game") and get_tree().paused == true:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		resume_game()
+
 
 func _on_continue_pressed() -> void:
 	select_sound_1.play()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://d36st3ruq2unw"]
+[gd_scene load_steps=14 format=3 uid="uid://d36st3ruq2unw"]
 
 [ext_resource type="Texture2D" uid="uid://dt61xch818eh0" path="res://world/surfaces/dirt_texture.jpg" id="1_ji5s0"]
 [ext_resource type="Texture2D" uid="uid://bfbjwvpj5rbc5" path="res://world/surfaces/wood_texture.jpg" id="2_q1cqb"]
+[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="3_0n4qs"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="3_2veoa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4ll7n"]
@@ -57,6 +58,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.306967, -0.132096)
 material_override = SubResource("StandardMaterial3D_fshjb")
 mesh = SubResource("BoxMesh_rlp8d")
 
+[node name="Label3D" type="Label3D" parent="display_dirt"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.014761, 2.05545, -0.324096)
+text = "DIRT"
+font = ExtResource("3_0n4qs")
+font_size = 142
+outline_size = 52
+
 [node name="display_gravel" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27653, 1, 13.608)
 size = Vector3(2.61, 3, 0.33)
@@ -70,6 +78,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00781345, 0.306967, -0.1320
 material_override = SubResource("StandardMaterial3D_cktgb")
 mesh = SubResource("BoxMesh_rlp8d")
 skeleton = NodePath("../../display_dirt")
+
+[node name="Label3D" type="Label3D" parent="display_wood"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.0415, -0.329166)
+text = "WOOD"
+font = ExtResource("3_0n4qs")
+font_size = 142
+outline_size = 52
 
 [node name="display_metal" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.36429, 1, 13.608)
@@ -85,31 +100,31 @@ metadata/_edit_lock_ = true
 [node name="floortypes" type="Node3D" parent="."]
 
 [node name="dirt_floor" type="CSGBox3D" parent="floortypes" groups=["grass"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.24583, -0.454067, 10.6705)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.22126, -0.454067, 7.87033)
 use_collision = true
 collision_layer = 9
 collision_mask = 9
-size = Vector3(3, 1, 5)
+size = Vector3(5.26, 1, 10.35)
 material = SubResource("StandardMaterial3D_kyf71")
 
 [node name="gravelfloor" type="CSGBox3D" parent="floortypes" groups=["gravel"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28242, -0.454067, 10.6705)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25786, -0.454067, 7.92799)
 use_collision = true
 collision_layer = 9
 collision_mask = 9
-size = Vector3(3, 1, 5)
+size = Vector3(5.26, 1, 10.35)
 
 [node name="woodfloor" type="CSGBox3D" parent="floortypes" groups=["wood"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38412, -0.454067, 10.6705)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.50705, -0.454067, 7.98373)
 use_collision = true
 collision_layer = 9
 collision_mask = 9
-size = Vector3(3, 1, 5)
+size = Vector3(5.26, 1, 10.35)
 material = SubResource("StandardMaterial3D_8gmgp")
 
 [node name="metalfloor" type="CSGBox3D" parent="floortypes" groups=["metal"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.36217, -0.454067, 10.6705)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.38673, -0.454067, 7.95582)
 use_collision = true
 collision_layer = 9
 collision_mask = 9
-size = Vector3(3, 1, 5)
+size = Vector3(5.26, 1, 10.35)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxwt77dbpmvd4"]
+[gd_scene load_steps=10 format=3 uid="uid://bxwt77dbpmvd4"]
 
 [ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_wrwgp"]
 [ext_resource type="Shader" path="res://pauseMenu.gdshader" id="2_ijcbb"]
 [ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="3_2y6wc"]
 [ext_resource type="AudioStream" uid="uid://cusiagfm6mssb" path="res://UI/Sounds/UI-SFX/reverbed_spacebar.wav" id="4_ey30u"]
+[ext_resource type="AudioStream" uid="uid://bb7uvbcbd2ve3" path="res://UI/Sounds/UI-SFX/reverbed_scroll_sound.mp3" id="5_d4vqu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6yfld"]
 shader = ExtResource("2_ijcbb")
@@ -125,8 +126,12 @@ libraries = {
 "": SubResource("AnimationLibrary_2w2rb")
 }
 
-[node name="select_sound1" type="AudioStreamPlayer" parent="."]
+[node name="select_sound_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ey30u")
+volume_db = 12.0
+
+[node name="select_sound_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_d4vqu")
 volume_db = 12.0
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/Continue" to="." method="_on_continue_pressed"]
