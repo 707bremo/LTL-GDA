@@ -10,24 +10,24 @@
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_vbs7i")
 
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00021781, 3.27759, -0.321597)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00021781, 3.41826, -0.321597)
+
+[node name="Pistol" parent="Camera3D" instance=ExtResource("4_s4571")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.238651, -1.07901, -0.341318)
+
+[node name="ADS_Position" type="Marker3D" parent="Camera3D/Pistol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99829, -0.0578078)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_m5bct")
 
 [node name="desert_droid" parent="CollisionShape3D" instance=ExtResource("3_60s6m")]
 transform = Transform3D(-0.99994, 0, -0.0109254, 0, 1, 0, 0.0109254, 0, -0.99994, 0, -0.990703, 0)
-
-[node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00021781, 3.27759, -0.321597)
-
-[node name="Camera3D" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.140674, 0)
-
-[node name="Pistol" parent="Head/Camera3D" instance=ExtResource("4_s4571")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.238651, -1.07901, -0.341318)
-
-[node name="pos" type="Node3D" parent="Head/Camera3D/Pistol"]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0.732123, 0.503806, 2.98023e-08)
 
 [node name="WeaponManager" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_pkx05")]
 player = NodePath("..")

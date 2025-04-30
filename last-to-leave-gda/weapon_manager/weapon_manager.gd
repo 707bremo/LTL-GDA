@@ -21,5 +21,6 @@ func update_weapon_model() -> void:
 func _ready() -> void:
 	update_weapon_model()
 	
+	
 func _process(delta: float) -> void:
 	pass
