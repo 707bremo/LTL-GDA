@@ -31,6 +31,10 @@ grass=""
 gravel=""
 wood=""
 metal=""
+tent=""
+cabinet=""
+fridge=""
+luggage=""
 
 [input]
 

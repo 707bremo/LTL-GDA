@@ -8,7 +8,7 @@ signal weight_updated(current_weight: float, max_weight: float)
 
 @export var slot_datas: Array[SlotData]
 var current_weight: float = 0.0
-const MAX_WEIGHT: float = 18.0
+var MAX_WEIGHT: float = 18.0
 
 func calculate_current_weight() -> void:
 	current_weight = 0.0

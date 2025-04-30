@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cvqooawhyqyqw"]
+[gd_scene load_steps=21 format=3 uid="uid://cvqooawhyqyqw"]
 
 [ext_resource type="Script" path="res://player/test_player.gd" id="1_p76u8"]
 [ext_resource type="PackedScene" uid="uid://dpbjle7jau6df" path="res://UI/HUD/vitals/health_bar.tscn" id="2_0nl34"]
@@ -9,10 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://dax2ao0bsraq4" path="res://UI/HUD/vitals/stamina_bar.tscn" id="5_tbfnt"]
 [ext_resource type="PackedScene" uid="uid://bxwt77dbpmvd4" path="res://UI/pause_menu.tscn" id="6_v3jdj"]
 [ext_resource type="Script" path="res://player/footstep_manager.gd" id="9_mguq6"]
-[ext_resource type="AudioStream" uid="uid://bv0lxoura8k3g" path="res://UI/Sounds/SFX/dirt_walk.mp3" id="10_kwla3"]
-[ext_resource type="AudioStream" uid="uid://cwdk6huxr2le0" path="res://UI/Sounds/SFX/wood_walk.mp3" id="11_w0kiy"]
-[ext_resource type="AudioStream" uid="uid://dbgdxgywijpmh" path="res://UI/Sounds/SFX/wood_walk2.mp3" id="12_y3xte"]
-[ext_resource type="AudioStream" uid="uid://cipphgeh74d07" path="res://UI/Sounds/SFX/wood_walk3.mp3" id="13_7pxge"]
+[ext_resource type="AudioStream" uid="uid://bv0lxoura8k3g" path="res://UI/Sounds/walk_SFX/dirt_walk.mp3" id="10_kwla3"]
+[ext_resource type="AudioStream" uid="uid://cwdk6huxr2le0" path="res://UI/Sounds/walk_SFX/wood_walk.mp3" id="11_w0kiy"]
+[ext_resource type="AudioStream" uid="uid://dbgdxgywijpmh" path="res://UI/Sounds/walk_SFX/wood_walk2.mp3" id="12_y3xte"]
+[ext_resource type="AudioStream" uid="uid://cipphgeh74d07" path="res://UI/Sounds/walk_SFX/wood_walk3.mp3" id="13_7pxge"]
+[ext_resource type="AudioStream" uid="uid://cesu2iq06kgld" path="res://UI/Sounds/loot_source_SFX/cabinet_door.mp3" id="14_acy07"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gsapo"]
 
@@ -143,6 +144,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.716693, 0)
 
 [node name="floor_detector" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.278902, 0)
+
+[node name="cabinet_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_acy07")
+volume_db = 10.0
 
 [connection signal="body_entered" from="Head/Camera3D/InteractRay/Area3D" to="Head/Camera3D/InteractRay" method="_on_object_colliding"]
 [connection signal="body_exited" from="Head/Camera3D/InteractRay/Area3D" to="Head/Camera3D/InteractRay" method="_on_object_avert"]

@@ -6,7 +6,7 @@ extends CharacterBody3D
 
 signal toogle_inventory()
 signal step
-
+signal opening_container
 
 # variable for footstep
 var can_play : bool = true
@@ -93,6 +93,9 @@ var critical_color = Color("RED")
 
 
 func _ready():
+	
+	self.opening_container.connect(play_container_sound)
+	
 	if hunger_bar:
 		hunger_bar.max_value = max_hunger
 		hunger_bar.value = current_hunger
@@ -339,3 +342,6 @@ func check_stamina_regen(delta):
 		can_start_timer = false
 		stamina_timer = 0
 	
+
+func play_container_sound():
+	$cabinet_sound.play()

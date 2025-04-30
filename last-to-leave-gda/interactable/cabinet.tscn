@@ -34,7 +34,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u0x5e"]
 
-[node name="Cabinet" type="StaticBody3D" node_paths=PackedStringArray("outline") groups=["external_inventory"]]
+[node name="Cabinet" type="StaticBody3D" node_paths=PackedStringArray("outline") groups=["cabinet", "external_inventory"]]
 collision_layer = 5
 collision_mask = 0
 script = ExtResource("1_6vel8")
