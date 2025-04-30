@@ -21,5 +21,17 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ipm0r")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Logs/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_n7ert")
 
+[node name="CabinDoor" parent="." index="24"]
+visible = false
+
+[node name="CabinDoorWindowDivider" parent="." index="26"]
+visible = false
+
+[node name="CabinDoorWindow" parent="." index="35"]
+visible = false
+
 [node name="LogEnds_001" parent="." index="40"]
+visible = false
+
+[node name="CabinDoor_001" parent="." index="58"]
 visible = false
