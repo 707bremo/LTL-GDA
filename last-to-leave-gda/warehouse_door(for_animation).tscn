@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq4wck6lggfkl"]
+
+[ext_resource type="PackedScene" uid="uid://diwjktgud8jro" path="res://demo/assets/LTLpre-madeAssets/WarehouseDoor(ForAnimation).glb" id="1_xa1gm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d1hs6"]
+size = Vector3(1, 0.5, 0.1)
+
+[node name="WarehouseDoor(ForAnimation)" instance=ExtResource("1_xa1gm")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Backdoor" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Backdoor/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0415539, -0.285624, 0)
+shape = SubResource("BoxShape3D_d1hs6")

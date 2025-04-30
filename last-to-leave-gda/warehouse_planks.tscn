@@ -4,5 +4,8 @@
 
 [node name="WarehousePlanks" instance=ExtResource("1_7mew4")]
 
+[node name="Backdoor" parent="." index="1"]
+visible = false
+
 [node name="BrokenPlanks" parent="." index="4"]
 transform = Transform3D(0.0233862, 0.0340696, -0.475127, 0.00780032, -0.277811, -0.0581426, -0.675702, -0.0020279, -0.0171154, -35.8737, -16.4642, 69.1817)
