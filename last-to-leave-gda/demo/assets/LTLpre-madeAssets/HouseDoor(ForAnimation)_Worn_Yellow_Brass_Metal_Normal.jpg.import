@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dqnd461fh8snb"
+path.s3tc="res://.godot/imported/HouseDoor(ForAnimation)_Worn_Yellow_Brass_Metal_Normal.jpg-d9de89c57b17e0aa1bef3421ee5860c8.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "a8ac21ccc424c0ad6e79293a4d73845f"
+}
+
+[deps]
+
+source_file="res://demo/assets/LTLpre-madeAssets/HouseDoor(ForAnimation)_Worn_Yellow_Brass_Metal_Normal.jpg"
+dest_files=["res://.godot/imported/HouseDoor(ForAnimation)_Worn_Yellow_Brass_Metal_Normal.jpg-d9de89c57b17e0aa1bef3421ee5860c8.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://demo/assets/LTLpre-madeAssets/HouseDoor(ForAnimation)_Worn_Yellow_Brass_Metal_Normal.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
