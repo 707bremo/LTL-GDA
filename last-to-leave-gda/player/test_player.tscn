@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cvqooawhyqyqw"]
+[gd_scene load_steps=23 format=3 uid="uid://cvqooawhyqyqw"]
 
 [ext_resource type="Script" path="res://player/test_player.gd" id="1_p76u8"]
 [ext_resource type="PackedScene" uid="uid://dpbjle7jau6df" path="res://UI/HUD/vitals/health_bar.tscn" id="2_0nl34"]
@@ -13,7 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://cwdk6huxr2le0" path="res://UI/Sounds/walk_SFX/wood_walk.mp3" id="11_w0kiy"]
 [ext_resource type="AudioStream" uid="uid://dbgdxgywijpmh" path="res://UI/Sounds/walk_SFX/wood_walk2.mp3" id="12_y3xte"]
 [ext_resource type="AudioStream" uid="uid://cipphgeh74d07" path="res://UI/Sounds/walk_SFX/wood_walk3.mp3" id="13_7pxge"]
+[ext_resource type="Script" path="res://player/container_sounds.gd" id="14_57p54"]
 [ext_resource type="AudioStream" uid="uid://cesu2iq06kgld" path="res://UI/Sounds/loot_source_SFX/cabinet_door.mp3" id="14_acy07"]
+[ext_resource type="AudioStream" uid="uid://dgcxdwgvgkneu" path="res://UI/Sounds/loot_source_SFX/tent_zipper.mp3" id="16_yyd7l"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gsapo"]
 
@@ -139,15 +141,16 @@ wood_footstep_sounds = Array[AudioStreamMP3]([ExtResource("11_w0kiy"), ExtResour
 ground_pos = NodePath("../GroundPosition")
 floor_detector = NodePath("../floor_detector")
 
+[node name="Container_sounds" type="Node3D" parent="." node_paths=PackedStringArray("container_detector")]
+script = ExtResource("14_57p54")
+container_sounds = Array[AudioStreamMP3]([ExtResource("14_acy07"), null, ExtResource("16_yyd7l"), null])
+container_detector = NodePath("../Head/Camera3D/InteractRay")
+
 [node name="GroundPosition" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.716693, 0)
 
 [node name="floor_detector" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.278902, 0)
-
-[node name="cabinet_sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_acy07")
-volume_db = 10.0
 
 [connection signal="body_entered" from="Head/Camera3D/InteractRay/Area3D" to="Head/Camera3D/InteractRay" method="_on_object_colliding"]
 [connection signal="body_exited" from="Head/Camera3D/InteractRay/Area3D" to="Head/Camera3D/InteractRay" method="_on_object_avert"]

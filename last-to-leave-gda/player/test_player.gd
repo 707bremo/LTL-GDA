@@ -8,8 +8,12 @@ signal toogle_inventory()
 signal step
 signal opening_container
 
-# variable for footstep
+# variable for footsteps
 var can_play : bool = true
+
+# variable for container sounds
+var can_play_container : bool =  true
+
 
 
 # speed variables
@@ -88,13 +92,8 @@ var critical_color = Color("RED")
 @onready var hunger_bar: ProgressBar = $HUD/PlayerHealthBar/HungerBar
 
 
-# reference to floor raycast
-@onready var floor_type_cast: RayCast3D = $floor_type_cast
-
-
 func _ready():
 	
-	self.opening_container.connect(play_container_sound)
 	
 	if hunger_bar:
 		hunger_bar.max_value = max_hunger
@@ -123,8 +122,11 @@ func _unhandled_input(event):
 		toogle_inventory.emit()
 
 
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact") and can_play_container:
 		interact()
+		can_play_container = false
+		emit_signal("opening_container")
+		
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -342,6 +344,3 @@ func check_stamina_regen(delta):
 		can_start_timer = false
 		stamina_timer = 0
 	
-
-func play_container_sound():
-	$cabinet_sound.play()
