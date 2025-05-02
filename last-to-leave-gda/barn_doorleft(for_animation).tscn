@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnifc1hdwaeas"]
+
+[ext_resource type="PackedScene" uid="uid://d1n6ububaibce" path="res://demo/assets/LTLpre-madeAssets/BarnDoorleft(ForAnimation).glb" id="1_8n26l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2uvfp"]
+size = Vector3(0.5, 11, 6)
+
+[node name="BarnDoorleft(ForAnimation)" instance=ExtResource("1_8n26l")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorLeft_001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorLeft_001/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181408, 0, -3.44581)
+shape = SubResource("BoxShape3D_2uvfp")

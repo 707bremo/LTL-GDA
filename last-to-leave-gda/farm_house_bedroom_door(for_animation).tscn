@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7227ehbpoao7"]
+
+[ext_resource type="PackedScene" uid="uid://boioiii2iwofp" path="res://demo/assets/LTLpre-madeAssets/FarmHouseBedroomDoor(ForAnimation).glb" id="1_t18e3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4jnql"]
+size = Vector3(6, 175, 75)
+
+[node name="FarmHouseBedroomDoor(ForAnimation)" instance=ExtResource("1_t18e3")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorBedroom_001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorBedroom_001/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75992, 0, -39.5139)
+shape = SubResource("BoxShape3D_4jnql")
