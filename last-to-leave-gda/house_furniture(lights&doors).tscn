@@ -4,6 +4,15 @@
 
 [node name="HouseFurniture(Lights&Doors)" instance=ExtResource("1_8cerl")]
 
+[node name="Doorknob_001" parent="." index="2"]
+visible = false
+
+[node name="Doorknob_002" parent="." index="4"]
+visible = false
+
+[node name="Doorknob_003" parent="." index="6"]
+visible = false
+
 [node name="polySurface25_aiStandardSurface1_0" parent="." index="28"]
 transform = Transform3D(-1.2434, -0.128317, 1.90863e-07, 0.128317, -1.2434, -1.05535e-07, 2.00688e-07, -8.53847e-08, 1.25, -24.5873, 13.4116, -0.028)
 

@@ -13,6 +13,9 @@ data = PackedVector3Array(-20.5723, -7.668, 9.4386, 127.514, -7.7921, 9.3151, 12
 
 [node name="FarmHouseExterior" instance=ExtResource("1_qrdxy")]
 
+[node name="DoorEntrance" parent="." index="4"]
+visible = false
+
 [node name="StaticBody3D" type="StaticBody3D" parent="WallsInside" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WallsInside/StaticBody3D" index="0"]
@@ -39,4 +42,10 @@ visible = false
 visible = false
 
 [node name="Cube_012" parent="." index="13"]
+visible = false
+
+[node name="DoorBedroom_001" parent="." index="16"]
+visible = false
+
+[node name="DoorBedroom_002" parent="." index="18"]
 visible = false
