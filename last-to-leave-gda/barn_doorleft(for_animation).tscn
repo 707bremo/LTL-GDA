@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnifc1hdwaeas"]
+[gd_scene load_steps=8 format=3 uid="uid://cnifc1hdwaeas"]
 
 [ext_resource type="PackedScene" uid="uid://d1n6ububaibce" path="res://demo/assets/LTLpre-madeAssets/BarnDoorleft(ForAnimation).glb" id="1_8n26l"]
+[ext_resource type="Script" path="res://barn_door_L.gd" id="2_uy82i"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_duxht"]
 points = PackedVector3Array(-0.302602, -0.721805, -6.37148, 0.4, 5.20251, -0.221228, -0.122562, 5.7578, 0.108479, -0.122562, -5.7625, 0.108479, 0.777426, 0.357378, -6.37148, -0.122562, 5.7578, -6.7317, 0.597386, -4.32246, 0.108479, -0.122562, -5.7625, -6.7317, 0.4, -5.20721, -6.402, 0.4, 5.20251, -6.402, 0.597386, 4.13734, 0.108479, 0.597386, -4.32246, -3.49105, -0.302602, 0.536678, -6.01126, 0.4, -5.20721, -0.221228, 0.597386, 4.13734, -3.49105, 0.777426, -0.362077, -6.01126, 0.777426, -0.362077, -6.37148, -0.302602, -0.721805, -6.01126, -0.302602, 0.536678, -6.37148, 0.777426, 0.357378, -6.01126)
@@ -60,6 +61,7 @@ _data = {
 }
 
 [node name="BarnDoorleft(ForAnimation)" instance=ExtResource("1_8n26l")]
+script = ExtResource("2_uy82i")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DoorLeft_001" index="0" groups=["door"]]
 

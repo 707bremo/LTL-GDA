@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmae7aiydadar"]
+[gd_scene load_steps=4 format=3 uid="uid://cmae7aiydadar"]
 
 [ext_resource type="PackedScene" uid="uid://ceexu25fa30e8" path="res://demo/assets/LTLpre-madeAssets/FarmHouseDoor(ForAnimation).glb" id="1_v3xfv"]
+[ext_resource type="Script" path="res://farm_house_door.gd" id="2_vewcr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8sipn"]
 size = Vector3(80, 175, 10)
 
 [node name="FarmHouseDoor(ForAnimation)" instance=ExtResource("1_v3xfv")]
+script = ExtResource("2_vewcr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DoorEntrance" index="0"]
 

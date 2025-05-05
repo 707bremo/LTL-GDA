@@ -22,7 +22,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 fov = 90.0
 
 [node name="RayCast3D" type="RayCast3D" parent="Head"]
-transform = Transform3D(0.83374, 0, 0, 0, -6.19547e-08, -0.83374, 0, 1.41736, -3.64439e-08, 0, 0, 0)
+transform = Transform3D(0.83374, 0, 0, 0, -6.19547e-08, -0.83374, 0, 1.41736, -3.64439e-08, -0.0114884, 0.0123472, -0.0386351)
+collide_with_areas = true
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -31,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 1
