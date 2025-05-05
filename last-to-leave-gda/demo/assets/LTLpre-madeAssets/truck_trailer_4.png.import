@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckayodpxedbue"
+uid="uid://c5eno5mbe2hhk"
 path.s3tc="res://.godot/imported/truck_trailer_4.png-e6ff32da1b21213cb7912afebd77133a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "0bf50e5173befc558a65222a7a1e8b87"
 }
 
 [deps]

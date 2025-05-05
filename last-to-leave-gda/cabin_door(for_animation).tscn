@@ -7,7 +7,7 @@ data = PackedVector3Array(0.1973, 0.6345, -3.922, 0.1973, 3.972, -0.0565, 0.1973
 
 [node name="CabinDoor(ForAnimation)" instance=ExtResource("1_883eo")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CabinDoor_001" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="CabinDoor_001" index="0" groups=["door"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CabinDoor_001/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_1a3cd")

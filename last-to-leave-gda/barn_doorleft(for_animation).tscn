@@ -1,14 +1,72 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnifc1hdwaeas"]
+[gd_scene load_steps=7 format=3 uid="uid://cnifc1hdwaeas"]
 
 [ext_resource type="PackedScene" uid="uid://d1n6ububaibce" path="res://demo/assets/LTLpre-madeAssets/BarnDoorleft(ForAnimation).glb" id="1_8n26l"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2uvfp"]
-size = Vector3(0.5, 11, 6)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_duxht"]
+points = PackedVector3Array(-0.302602, -0.721805, -6.37148, 0.4, 5.20251, -0.221228, -0.122562, 5.7578, 0.108479, -0.122562, -5.7625, 0.108479, 0.777426, 0.357378, -6.37148, -0.122562, 5.7578, -6.7317, 0.597386, -4.32246, 0.108479, -0.122562, -5.7625, -6.7317, 0.4, -5.20721, -6.402, 0.4, 5.20251, -6.402, 0.597386, 4.13734, 0.108479, 0.597386, -4.32246, -3.49105, -0.302602, 0.536678, -6.01126, 0.4, -5.20721, -0.221228, 0.597386, 4.13734, -3.49105, 0.777426, -0.362077, -6.01126, 0.777426, -0.362077, -6.37148, -0.302602, -0.721805, -6.01126, -0.302602, 0.536678, -6.37148, 0.777426, 0.357378, -6.01126)
+
+[sub_resource type="Animation" id="Animation_ln7j7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorLeft_001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8fob1"]
+resource_name = "barn_door2_close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorLeft_001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_k6m8u"]
+resource_name = "barn_door2_open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorLeft_001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l8q38"]
+_data = {
+"RESET": SubResource("Animation_ln7j7"),
+"barn_door2_close": SubResource("Animation_8fob1"),
+"barn_door2_open": SubResource("Animation_k6m8u")
+}
 
 [node name="BarnDoorleft(ForAnimation)" instance=ExtResource("1_8n26l")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DoorLeft_001" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorLeft_001" index="0" groups=["door"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorLeft_001/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181408, 0, -3.44581)
-shape = SubResource("BoxShape3D_2uvfp")
+shape = SubResource("ConvexPolygonShape3D_duxht")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_l8q38")
+}

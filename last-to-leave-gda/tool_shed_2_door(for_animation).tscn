@@ -6,16 +6,15 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2va1"]
 albedo_texture = ExtResource("2_0d6ng")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6esdl"]
-size = Vector3(0.6, 5, 0.1)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n1cc6"]
+points = PackedVector3Array(-0.730711, -3.07991, -0.0091536, 0.0341393, -3.07991, -0.0091536, -0.621404, 0.233883, 0.136518, -0.730711, 3.07531, -0.0091536, 0.0341393, 3.07531, 0.0636607, -0.621404, 0.34354, -0.0820107, 0.0341393, -3.07991, 0.0636607, 0.0341393, 3.07531, -0.0091536, -0.730711, -3.07991, 0.0636607, -0.730711, 3.07531, 0.0636607)
 
 [node name="ToolShed2Door(ForAnimation)" instance=ExtResource("1_65lvw")]
 
 [node name="Cube_005" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_t2va1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube_005" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_005" index="0" groups=["door"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_005/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.361861, 0, 0.0295959)
-shape = SubResource("BoxShape3D_6esdl")
+shape = SubResource("ConvexPolygonShape3D_n1cc6")

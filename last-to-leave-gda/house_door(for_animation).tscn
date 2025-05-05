@@ -2,13 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://83gptfxtckyk" path="res://demo/assets/LTLpre-madeAssets/HouseDoor(ForAnimation).glb" id="1_18xj7"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_04gmq"]
-size = Vector3(1.75, 45, 22.5)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5iv2s"]
+points = PackedVector3Array(-3.89953, -0.091301, 21.9202, 0.55843, 23.6868, 24.8927, 0.55843, 23.6868, -0.371532, 0.55843, -23.8694, 24.8927, -1.6699, -23.8694, -0.371532, 2.78807, 0.648856, 22.6621, -2.41289, 21.4571, 2.60102, 0.55843, -23.8694, -0.371532, -1.6699, -23.8694, 24.8927, -1.6699, 23.6868, 24.8927, -2.41289, -20.8948, 2.60102, -1.6699, 23.6868, -0.371532, -3.89953, 2.13383, 24.1484, -2.41289, -20.8948, 21.9202, -2.41289, 21.4571, 21.9202, 2.78807, 1.39367, 23.4065, 2.04442, -0.091301, 24.1484, -3.89953, -0.091301, 24.1484, -3.89953, 2.13383, 21.9202, 2.78807, 0.648856, 23.4065, 2.78807, 1.39367, 22.6621)
 
 [node name="HouseDoor(ForAnimation)" instance=ExtResource("1_18xj7")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Doorknob_001" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Doorknob_001" index="0" groups=["door"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Doorknob_001/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.817543, 0, 11.5935)
-shape = SubResource("BoxShape3D_04gmq")
+shape = SubResource("ConvexPolygonShape3D_5iv2s")

@@ -2,13 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://csbdyehxg707c" path="res://demo/assets/LTLpre-madeAssets/ToolShed1Door(ForAnimation).glb" id="1_dlwmq"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1wi4g"]
-size = Vector3(0.5, 5, 0.1)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ma06t"]
+points = PackedVector3Array(-0.644227, 0.27173, 0.114684, -0.735255, -3.09555, -0.0218452, 0.0384089, -3.09555, 0.0691741, 0.0384089, 3.09375, -0.0218452, -0.735255, 3.09375, -0.0218452, 0.0384089, 3.09375, 0.0691741, 0.0384089, -3.09555, -0.0218452, -0.735255, -3.09555, 0.0691741, -0.735255, 3.09375, 0.0691741)
 
 [node name="ToolShed1Door(ForAnimation)" instance=ExtResource("1_dlwmq")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube_005" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_005" index="0" groups=["door"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_005/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0, 0.025)
-shape = SubResource("BoxShape3D_1wi4g")
+shape = SubResource("ConvexPolygonShape3D_ma06t")

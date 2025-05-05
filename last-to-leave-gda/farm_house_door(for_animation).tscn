@@ -9,6 +9,6 @@ size = Vector3(80, 175, 10)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DoorEntrance" index="0"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEntrance/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEntrance/StaticBody3D" index="0" groups=["door"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5853, 0, 2.0249)
 shape = SubResource("BoxShape3D_8sipn")
