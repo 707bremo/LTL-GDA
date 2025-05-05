@@ -68,11 +68,13 @@ func _physics_process(delta):
 
 	# Door interaction
 	if Input.is_action_just_pressed("interact"):
+		print("raycast collide with door")
 		if raycast.is_colliding():
 			var collider = raycast.get_collider()
 			if collider.is_in_group("door") and "interact" in collider:
 				collider.interact()
-				print("raycast collide with door")
+				emit_signal("door_open")
+	
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO

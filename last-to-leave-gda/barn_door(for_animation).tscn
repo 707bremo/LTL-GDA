@@ -22,7 +22,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_nx6r7"]
-resource_name = "barn_door1_close"
+resource_name = "close"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -38,7 +38,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_h2ihl"]
-resource_name = "barn_door1_open"
+resource_name = "open"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -56,8 +56,8 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pacnw"]
 _data = {
 "RESET": SubResource("Animation_eingc"),
-"barn_door1_close": SubResource("Animation_nx6r7"),
-"barn_door1_open": SubResource("Animation_h2ihl")
+"close": SubResource("Animation_nx6r7"),
+"open": SubResource("Animation_h2ihl")
 }
 
 [node name="BarnDoor(ForAnimation)" instance=ExtResource("1_pllt7")]
