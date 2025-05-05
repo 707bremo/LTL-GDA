@@ -63,9 +63,9 @@ _data = {
 [node name="BarnDoorleft(ForAnimation)" instance=ExtResource("1_8n26l")]
 script = ExtResource("2_uy82i")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DoorLeft_001" index="0" groups=["door"]]
+[node name="Area3D" type="Area3D" parent="DoorLeft_001" index="0" groups=["door"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorLeft_001/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorLeft_001/Area3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_duxht")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]

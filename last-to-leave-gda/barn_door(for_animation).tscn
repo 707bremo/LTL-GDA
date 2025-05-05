@@ -66,9 +66,9 @@ script = ExtResource("2_d6ogh")
 [node name="DoorLeft_003" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6636, 3.34828, -11.0701)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DoorLeft_003" index="0" groups=["door"]]
+[node name="Area3D" type="Area3D" parent="DoorLeft_003" index="0" groups=["door"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorLeft_003/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorLeft_003/Area3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_fsc6o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]

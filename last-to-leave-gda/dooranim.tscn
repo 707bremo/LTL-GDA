@@ -61,9 +61,9 @@ _data = {
 
 [node name="CabinDoor(ForAnimation)" instance=ExtResource("1_p4vgc")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CabinDoor_001" index="0"]
+[node name="Area3D" type="Area3D" parent="CabinDoor_001" index="0"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CabinDoor_001/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CabinDoor_001/Area3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_1squj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]

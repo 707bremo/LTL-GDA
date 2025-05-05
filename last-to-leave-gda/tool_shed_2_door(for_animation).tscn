@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://fn0ocq4no5tn"]
+[gd_scene load_steps=9 format=3 uid="uid://fn0ocq4no5tn"]
 
 [ext_resource type="PackedScene" uid="uid://bcp3tbmbueoos" path="res://demo/assets/LTLpre-madeAssets/ToolShed2Door(ForAnimation).glb" id="1_65lvw"]
 [ext_resource type="Texture2D" uid="uid://cpt7fyebo08qh" path="res://demo/assets/LTLpre-madeAssets/FarmHouseFurnitureAndOuthouse_metal01_diffuse.jpg" id="2_0d6ng"]
@@ -9,12 +9,72 @@ albedo_texture = ExtResource("2_0d6ng")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n1cc6"]
 points = PackedVector3Array(-0.730711, -3.07991, -0.0091536, 0.0341393, -3.07991, -0.0091536, -0.621404, 0.233883, 0.136518, -0.730711, 3.07531, -0.0091536, 0.0341393, 3.07531, 0.0636607, -0.621404, 0.34354, -0.0820107, 0.0341393, -3.07991, 0.0636607, 0.0341393, 3.07531, -0.0091536, -0.730711, -3.07991, 0.0636607, -0.730711, 3.07531, 0.0636607)
 
+[sub_resource type="Animation" id="Animation_cxlni"]
+resource_name = "tool_shed_door_open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_005:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8qe7j"]
+resource_name = "tool_shed_door_close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_005:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w7jaj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_005:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jhal3"]
+_data = {
+"RESET": SubResource("Animation_w7jaj"),
+"tool_shed_door_close": SubResource("Animation_8qe7j"),
+"tool_shed_door_open": SubResource("Animation_cxlni")
+}
+
 [node name="ToolShed2Door(ForAnimation)" instance=ExtResource("1_65lvw")]
 
 [node name="Cube_005" parent="." index="0"]
+transform = Transform3D(-1.63918e-07, 0, -3.5, 0, 1, 0, 3.75, 0, -1.5299e-07, 2.33879, 3.09874, 3.25001)
 surface_material_override/0 = SubResource("StandardMaterial3D_t2va1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube_005" index="0" groups=["door"]]
+[node name="Area3D" type="Area3D" parent="Cube_005" index="0" groups=["door"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_005/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_005/Area3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_n1cc6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_jhal3")
+}

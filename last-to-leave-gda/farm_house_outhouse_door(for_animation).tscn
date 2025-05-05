@@ -7,9 +7,9 @@ size = Vector3(75, 175, 6)
 
 [node name="FarmHouseOuthouseDoor(ForAnimation)" instance=ExtResource("1_6ekv2")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DoorEntrance_004" index="0"]
+[node name="Area3D" type="Area3D" parent="DoorEntrance_004" index="0"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEntrance_004/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEntrance_004/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.3978, 7.71653, 2.70154)
 shape = SubResource("BoxShape3D_c318f")
 
