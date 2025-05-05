@@ -11,9 +11,6 @@ signal opening_container
 # variable for footsteps
 var can_play : bool = true
 
-# variable for container sounds
-var can_play_container : bool =  true
-
 
 
 # speed variables
@@ -122,9 +119,8 @@ func _unhandled_input(event):
 		toogle_inventory.emit()
 
 
-	if Input.is_action_just_pressed("interact") and can_play_container:
+	if Input.is_action_just_pressed("interact"):
 		interact()
-		can_play_container = false
 		emit_signal("opening_container")
 		
 
