@@ -64,6 +64,8 @@ _data = {
 script = ExtResource("2_uy82i")
 
 [node name="Area3D" type="Area3D" parent="DoorLeft_001" index="0" groups=["door"]]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorLeft_001/Area3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_duxht")

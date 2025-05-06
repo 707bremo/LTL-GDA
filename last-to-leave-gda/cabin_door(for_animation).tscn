@@ -67,6 +67,8 @@ script = ExtResource("2_w243b")
 transform = Transform3D(1.20648, 0, 0, 0, 1.1025, 0, 0, 0, 1.1025, 29.1097, 5.07501, 3.27072)
 
 [node name="Area3D" type="Area3D" parent="CabinDoor_001" index="0" groups=["door"]]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CabinDoor_001/Area3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_1a3cd")

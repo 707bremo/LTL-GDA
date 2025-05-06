@@ -1,16 +1,75 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbmsij3g2mwe8"]
+[gd_scene load_steps=7 format=3 uid="uid://cbmsij3g2mwe8"]
 
 [ext_resource type="PackedScene" uid="uid://bc623ffikjfgy" path="res://demo/assets/LTLpre-madeAssets/FarmHouseOuthouseDoor(ForAnimation).glb" id="1_6ekv2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c318f"]
 size = Vector3(75, 175, 6)
 
+[sub_resource type="Animation" id="Animation_p4u7m"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorEntrance_004:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_knt47"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorEntrance_004:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2mq8v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorEntrance_004:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mbm00"]
+_data = {
+"RESET": SubResource("Animation_2mq8v"),
+"close": SubResource("Animation_knt47"),
+"open": SubResource("Animation_p4u7m")
+}
+
 [node name="FarmHouseOuthouseDoor(ForAnimation)" instance=ExtResource("1_6ekv2")]
 
 [node name="Area3D" type="Area3D" parent="DoorEntrance_004" index="0"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEntrance_004/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.3978, 7.71653, 2.70154)
 shape = SubResource("BoxShape3D_c318f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_mbm00")
+}

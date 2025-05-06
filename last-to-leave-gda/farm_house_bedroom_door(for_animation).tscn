@@ -6,38 +6,6 @@
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5dn70"]
 points = PackedVector3Array(-8.45852, -85.777, -72.5819, 0.42805, 94.9614, 1.46521, 3.39217, 86.0702, -4.45433, 0.42805, -94.6682, 1.46521, 12.2816, -2.80476, -78.5095, -17.348, -2.80476, -78.5095, 0.42805, 94.9614, -81.4815, -8.45852, 86.0702, -4.45433, -8.45852, -85.777, -7.41816, 0.42805, -94.6682, -81.4815, -8.45852, 86.0702, -75.5457, 12.2816, -8.72605, -57.7708, -17.348, -8.72605, -57.7708, 3.39217, -85.777, -7.41816, 3.39217, 86.0702, -75.5457, 3.39217, -85.777, -72.5819, -5.30401, -88.5723, -1.20121, -8.45852, -2.80476, -81.4815, -5.30401, -88.5723, -78.8151, -5.30392, 88.8628, -1.20239, 3.39217, -2.80476, -81.4815, -17.348, -2.80476, -57.7708, 12.2816, -2.80476, -57.7708, -5.30392, 88.8628, -78.8139, -8.45852, -11.696, -81.4815, -8.45852, 83.1003, -4.45433, 3.39217, 83.1003, -4.45433, 3.39217, -11.696, -81.4815)
 
-[sub_resource type="Animation" id="Animation_mrph5"]
-resource_name = "farm_house_bedroom_door_open"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DoorBedroom_001:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_o5ln3"]
-resource_name = "farm_house_bedroom_door_close"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DoorBedroom_001:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_0v1md"]
 length = 0.001
 tracks/0/type = "value"
@@ -53,20 +21,54 @@ tracks/0/keys = {
 "values": [Vector3(0, 1.5708, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_o5ln3"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorBedroom_001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mrph5"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorBedroom_001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7qfts"]
 _data = {
 "RESET": SubResource("Animation_0v1md"),
-"farm_house_bedroom_door_close": SubResource("Animation_o5ln3"),
-"farm_house_bedroom_door_open": SubResource("Animation_mrph5")
+"close": SubResource("Animation_o5ln3"),
+"open": SubResource("Animation_mrph5")
 }
 
 [node name="FarmHouseBedroomDoor(ForAnimation)" instance=ExtResource("1_t18e3")]
 script = ExtResource("2_s3701")
 
 [node name="DoorBedroom_001" parent="." index="0"]
-transform = Transform3D(-1.63918e-09, 0, 0.0375, 0, 0.0375, 0, -0.0375, 0, -1.63918e-09, 0.616133, 3.50395, -19.0289)
+transform = Transform3D(-1.3575e-07, 0, 0.0375, 0, 0.0375, 0, -0.0375, 0, -1.3575e-07, 0.616133, 3.50395, -19.0289)
 
 [node name="Area3D" type="Area3D" parent="DoorBedroom_001" index="0" groups=["door"]]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorBedroom_001/Area3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_5dn70")
