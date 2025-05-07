@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk45yf7q0apyx"
+uid="uid://relbc864dnbe"
 path.s3tc="res://.godot/imported/scarecrow_1.png-bc4c83379f8bea8896df95fb284cc5d4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "16ed303214648a5527a28b8e6eb70c56"
 }
 
 [deps]

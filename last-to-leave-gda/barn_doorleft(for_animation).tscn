@@ -74,3 +74,5 @@ shape = SubResource("ConvexPolygonShape3D_duxht")
 libraries = {
 "": SubResource("AnimationLibrary_l8q38")
 }
+
+[connection signal="door_interacted" from="." to="." method="_on_door_interacted"]

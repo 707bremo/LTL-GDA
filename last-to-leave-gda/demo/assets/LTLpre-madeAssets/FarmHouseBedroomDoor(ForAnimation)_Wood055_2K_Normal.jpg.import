@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctooyvec8lhim"
+uid="uid://c7744dgynk0o"
 path.s3tc="res://.godot/imported/FarmHouseBedroomDoor(ForAnimation)_Wood055_2K_Normal.jpg-7520c40b2c183118e3b4ef5d7023970f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "2fe2c686922aabbd34b649c24735f259"
 }
 
 [deps]

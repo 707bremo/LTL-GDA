@@ -20,6 +20,7 @@ var gravity = 13
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var raycast = $Head/RayCast3D
+@onready var label = $Control/Label
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -67,14 +68,17 @@ func _physics_process(delta):
 	move_and_slide()
 
 	# Door interaction
-	if Input.is_action_just_pressed("interact"):
-		if raycast.is_colliding():
-			print("raycast collide with door")
+
+	if raycast.is_colliding():
+		label.text = "Press [E] to interact"
+		if Input.is_action_just_pressed("interact"):
 			var collider = raycast.get_collider()
-			if collider.is_in_group("door") and "interact" in collider:
+			if collider is Node and collider.is_in_group("door") and "interact" in collider:
 				collider.interact()
 				emit_signal("door_open")
-	
+				print("emiting signal")
+	else:
+		label.text = ""
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
