@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cysiov1pi554x"]
+[gd_scene load_steps=7 format=3 uid="uid://cysiov1pi554x"]
 
 [ext_resource type="Script" path="res://followingEnemy.gd" id="1_c1t4p"]
+[ext_resource type="PackedScene" uid="uid://j6dbbhy7fs8c" path="res://enemy_gun.tscn" id="2_k6kpq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8vcbq"]
 albedo_color = Color(1, 0.407246, 0.338652, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6ehiu"]
 material = SubResource("StandardMaterial3D_8vcbq")
+
+[sub_resource type="BoxMesh" id="BoxMesh_omdi7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_agkym"]
 
@@ -17,6 +20,10 @@ script = ExtResource("1_c1t4p")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_6ehiu")
 
+[node name="face" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.758597, 0, 0, 0, 0.180665, 0, 0, 0, 0.3, 0, 1.34648, -0.430577)
+mesh = SubResource("BoxMesh_omdi7")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_agkym")
@@ -25,6 +32,9 @@ shape = SubResource("CapsuleShape3D_agkym")
 target_desired_distance = 10.0
 path_height_offset = 0.1
 avoidance_enabled = true
+
+[node name="enemy_gun" parent="." instance=ExtResource("2_k6kpq")]
+transform = Transform3D(0.285632, 0, 0, 0, 0.309965, 0, 0, 0, 1.62197, 0.542701, 0.919548, -0.592107)
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
