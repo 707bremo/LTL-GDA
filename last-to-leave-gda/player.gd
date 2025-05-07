@@ -17,13 +17,8 @@ var gravity = 9.8
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
-@onready var ads_position = $Head/Camera3D/Pistol/ADS_Position
-var is_aiming = false
-var aim_speed = 8.0
-var default_camera_position: Vector3
 
 var bullet=load("res://bullet.tscn")
-@onready var pos = $Head/Camera3D/Pistol/ADS_Position
 @export var current_weapon : Weapon
 
 func _unhandled_input(event):
@@ -67,32 +62,8 @@ func _physics_process(delta):
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
 	t_bob += delta * velocity.length() * float(is_on_floor())
-	camera.transform.origin = _headbob(t_bob)
 
 	var velocity_clamped = clamp(velocity.length(), 0.5, SPRINT_SPEED * 2)
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	move_and_slide()
-
-	if Input.is_action_just_pressed("click"):
-		var instance=bullet.instantiate()
-		instance.position=pos.global_position
-		instance.transform.basis=pos.global_transform.basis
-		get_parent().add_child(instance)
-	
-func _ready():
-	default_camera_position = camera.transform.origin 
-
-func _input(event):
-	if event.is_action_pressed("aim"):
-		is_aiming = true
-	elif event.is_action_released("aim"):
-		is_aiming = false
-
-func _process(delta):
-	var target_position: Vector3
-	if is_aiming:
-		target_position = ads_position.global_transorm.origin
-	else:
-		target_position = global_transform.origin + default_camera_position
-	camera.global_transform.origin = camera.global_transform.origin.lerp(target_position, delta * aim_speed)
