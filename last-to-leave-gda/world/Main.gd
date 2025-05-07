@@ -42,4 +42,4 @@ func _on_inv_interface_drop_slot_data(slot_data: SlotData) -> void:
 	add_child(pick_up)
 
 func _physics_process(delta):
-	get_tree().call_group("enemies", "update_target_location")
+	get_tree().call_group("enemies", "update_target_location", test_player.global_transform.origin)
