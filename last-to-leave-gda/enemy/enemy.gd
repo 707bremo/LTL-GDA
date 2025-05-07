@@ -154,7 +154,7 @@ func get_new_target(new_target):
 	nav_agent.set_target_position(new_target)
 
 
-func _on_timer_timeout() -> void:
+func _on_timer_timeout():
 	
 	
 	# every half-second, the timer updates the pathfinder, ruled-in for optimization
