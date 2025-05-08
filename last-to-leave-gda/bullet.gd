@@ -12,5 +12,6 @@ func _process(delta: float) -> void:
 		global_position += direction * speed * delta
 		look_at(target.global_position, Vector3.UP)
 
-func _on_body_entered(body: Node) -> void:
-	queue_free()  # Remove the bullet
+func _on_body_entered(body: CharacterBody3D) -> void:
+	if body == CharacterBody3D:
+		queue_free()  # Remove the bullet

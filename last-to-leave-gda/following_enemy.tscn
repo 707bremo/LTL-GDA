@@ -25,7 +25,7 @@ transform = Transform3D(0.758597, 0, 0, 0, 0.180665, 0, 0, 0, 0.3, 0, 1.34648, -
 mesh = SubResource("BoxMesh_omdi7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_agkym")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -34,7 +34,7 @@ path_height_offset = 0.1
 avoidance_enabled = true
 
 [node name="enemy_gun" parent="." instance=ExtResource("2_k6kpq")]
-transform = Transform3D(0.285632, 0, 0, 0, 0.309965, 0, 0, 0, 1.62197, 0.542701, 0.919548, -0.592107)
+transform = Transform3D(0.285632, 0, 0, 0, 0.309965, 0, 0, 0, 0.371394, 0.542701, 0.919548, -0.797779)
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
