@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://dttq1ehp6gmxr"]
+
+[ext_resource type="PackedScene" uid="uid://83gptfxtckyk" path="res://demo/assets/LTLpre-madeAssets/HouseDoor(ForAnimation).glb" id="1_18xj7"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5iv2s"]
+points = PackedVector3Array(-3.89953, -0.091301, 21.9202, 0.55843, 23.6868, 24.8927, 0.55843, 23.6868, -0.371532, 0.55843, -23.8694, 24.8927, -1.6699, -23.8694, -0.371532, 2.78807, 0.648856, 22.6621, -2.41289, 21.4571, 2.60102, 0.55843, -23.8694, -0.371532, -1.6699, -23.8694, 24.8927, -1.6699, 23.6868, 24.8927, -2.41289, -20.8948, 2.60102, -1.6699, 23.6868, -0.371532, -3.89953, 2.13383, 24.1484, -2.41289, -20.8948, 21.9202, -2.41289, 21.4571, 21.9202, 2.78807, 1.39367, 23.4065, 2.04442, -0.091301, 24.1484, -3.89953, -0.091301, 24.1484, -3.89953, 2.13383, 21.9202, 2.78807, 0.648856, 23.4065, 2.78807, 1.39367, 22.6621)
+
+[sub_resource type="Animation" id="Animation_3ts1y"]
+resource_name = "house_door_open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Doorknob_001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pv2dd"]
+resource_name = "house_door_close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Doorknob_001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3p50t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Doorknob_001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a2rrt"]
+_data = {
+"RESET": SubResource("Animation_3p50t"),
+"house_door_close": SubResource("Animation_pv2dd"),
+"house_door_open": SubResource("Animation_3ts1y")
+}
+
+[node name="HouseDoor(ForAnimation)" instance=ExtResource("1_18xj7")]
+
+[node name="Area3D" type="Area3D" parent="Doorknob_001" index="0" groups=["door"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doorknob_001/Area3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_5iv2s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_a2rrt")
+}

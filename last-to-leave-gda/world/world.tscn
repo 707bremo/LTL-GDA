@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://piy7l6qbal3q"]
+[gd_scene load_steps=3 format=3 uid="uid://piy7l6qbal3q"]
+
+[ext_resource type="PackedScene" uid="uid://c83ehswbyetui" path="res://terrain_3d.tscn" id="1_apgil"]
+[ext_resource type="PackedScene" uid="uid://2pqygnnutm7c" path="res://player.tscn" id="2_1w0ji"]
 
 [node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2024.92)
+
+[node name="Player" parent="." instance=ExtResource("2_1w0ji")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 89.384, 10.989, -3945.48)
+
+[node name="Terrain3D" parent="." instance=ExtResource("1_apgil")]

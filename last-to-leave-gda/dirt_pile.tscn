@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cge14fp6ten2a"]
+
+[ext_resource type="PackedScene" uid="uid://bgp0jvv173g4u" path="res://demo/assets/LTLpre-madeAssets/DirtPile.gltf" id="1_s0g08"]
+[ext_resource type="Texture2D" uid="uid://bh2s1raao2lwj" path="res://demo/assets/LTLpre-madeAssets/coast_sand_01_diff_2k.jpg" id="2_q1yj8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0drpe"]
+albedo_color = Color(0.464735, 0.398365, 0.2904, 1)
+albedo_texture = ExtResource("2_q1yj8")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_c4bpk"]
+radius = 2.0
+
+[node name="DirtPile" instance=ExtResource("1_s0g08")]
+
+[node name="Sphere" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0drpe")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sphere" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sphere/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.503976, -0.0652449)
+shape = SubResource("CylinderShape3D_c4bpk")

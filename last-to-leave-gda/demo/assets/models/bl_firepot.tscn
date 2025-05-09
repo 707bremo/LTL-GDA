@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2afadd7b2pyr"]
+
+[ext_resource type="PackedScene" uid="uid://b7ld7v24l0hl5" path="res://demo/assets/LTLpre-madeAssets/BL_Firepot.gltf" id="1_4mlmb"]
+[ext_resource type="Texture2D" uid="uid://btw5074e5hl6b" path="res://demo/assets/textures/TX_Firepot.png" id="2_qw1q5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1p1l"]
+albedo_texture = ExtResource("2_qw1q5")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rv86x"]
+height = 0.5
+radius = 0.4
+
+[node name="BL_Firepot" instance=ExtResource("1_4mlmb")]
+
+[node name="MS_Firepot" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_m1p1l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MS_Firepot" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MS_Firepot/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.288539, 0)
+shape = SubResource("CylinderShape3D_rv86x")

@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b8fyve0ack3d7"
+path.s3tc="res://.godot/imported/worn_shed_pbr_game-ready_9.jpg-274aa79f278a77de4eba10985c2d602a.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "eb3e8341f90cdd69b3fa71d0b98f1463"
+}
+
+[deps]
+
+source_file="res://demo/assets/LTLpre-madeAssets/worn_shed_pbr_game-ready_9.jpg"
+dest_files=["res://.godot/imported/worn_shed_pbr_game-ready_9.jpg-274aa79f278a77de4eba10985c2d602a.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

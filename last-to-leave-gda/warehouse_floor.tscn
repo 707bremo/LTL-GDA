@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://brrctkbvsdud0"]
+
+[ext_resource type="PackedScene" uid="uid://xqdeloq3barr" path="res://demo/assets/LTLpre-madeAssets/WarehouseFloor.gltf" id="1_4bkcx"]
+[ext_resource type="Texture2D" uid="uid://du5cm1lp53qe4" path="res://demo/assets/LTLpre-madeAssets/rusty_metal_sheet_rough_4k_exr.png" id="2_0b8kv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjdea"]
+albedo_color = Color(0.266575, 0.266575, 0.266575, 1)
+albedo_texture = ExtResource("2_0b8kv")
+
+[node name="WarehouseFloor" instance=ExtResource("1_4bkcx")]
+
+[node name="Floor" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pjdea")

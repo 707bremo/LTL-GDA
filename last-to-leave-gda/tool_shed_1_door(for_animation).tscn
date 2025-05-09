@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://xng4hy3uobq3"]
+
+[ext_resource type="PackedScene" uid="uid://csbdyehxg707c" path="res://demo/assets/LTLpre-madeAssets/ToolShed1Door(ForAnimation).glb" id="1_dlwmq"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ma06t"]
+points = PackedVector3Array(-0.644227, 0.27173, 0.114684, -0.735255, -3.09555, -0.0218452, 0.0384089, -3.09555, 0.0691741, 0.0384089, 3.09375, -0.0218452, -0.735255, 3.09375, -0.0218452, 0.0384089, 3.09375, 0.0691741, 0.0384089, -3.09555, -0.0218452, -0.735255, -3.09555, 0.0691741, -0.735255, 3.09375, 0.0691741)
+
+[node name="ToolShed1Door(ForAnimation)" instance=ExtResource("1_dlwmq")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_005" index="0" groups=["door"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_005/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ma06t")

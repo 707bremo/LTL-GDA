@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bep5xl5oyntdr"]
+
+[ext_resource type="PackedScene" uid="uid://ben23r8rhvkgo" path="res://demo/assets/models/Bush1.fbx" id="1_86v4f"]
+[ext_resource type="Texture2D" uid="uid://d0jccy1p7wtka" path="res://demo/assets/models/bearTrap_0.png" id="2_bi072"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uefb5"]
+albedo_color = Color(0.439216, 0.505882, 0.160784, 1)
+albedo_texture = ExtResource("2_bi072")
+
+[node name="Bush1" instance=ExtResource("1_86v4f")]
+
+[node name="bush_001" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_uefb5")

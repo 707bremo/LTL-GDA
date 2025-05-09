@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhgsw34dg3rrj"]
+
+[ext_resource type="PackedScene" uid="uid://dny67vnfggcs0" path="res://demo/assets/models/pineTree3.fbx" id="1_wrrj6"]
+[ext_resource type="Texture2D" uid="uid://d0jccy1p7wtka" path="res://demo/assets/models/bearTrap_0.png" id="2_fhjmr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03v5m"]
+albedo_color = Color(0.440782, 0.506734, 0.161166, 1)
+albedo_texture = ExtResource("2_fhjmr")
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_pixjd"]
+
+[node name="pineTree3" instance=ExtResource("1_wrrj6")]
+
+[node name="tree3_002" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 7.54979e-08, 0, -7.54979e-08, 1, 0.084, 27.986, 0)
+lod_bias = 0.01
+surface_material_override/0 = SubResource("StandardMaterial3D_03v5m")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 29.9714, -0.0436194, 0, 1.30858, 0.999048, 0, 14.9392, -0.67684)
+occluder = SubResource("BoxOccluder3D_pixjd")

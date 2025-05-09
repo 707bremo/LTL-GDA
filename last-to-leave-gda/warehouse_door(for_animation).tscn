@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://bq4wck6lggfkl"]
+
+[ext_resource type="PackedScene" uid="uid://diwjktgud8jro" path="res://demo/assets/LTLpre-madeAssets/WarehouseDoor(ForAnimation).glb" id="1_xa1gm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d1hs6"]
+size = Vector3(1, 0.5, 0.1)
+
+[sub_resource type="Animation" id="Animation_rcshd"]
+resource_name = "warehouse_door_open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backdoor:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5708), Vector3(-1.87484e-22, 1.5708, -1.5708)]
+}
+
+[sub_resource type="Animation" id="Animation_pdsnl"]
+resource_name = "warehouse_door_close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backdoor:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.87484e-22, 1.5708, -1.5708), Vector3(0, 0, -1.5708)]
+}
+
+[sub_resource type="Animation" id="Animation_44wtd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backdoor:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5708)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4mn0m"]
+_data = {
+"RESET": SubResource("Animation_44wtd"),
+"warehouse_door_close": SubResource("Animation_pdsnl"),
+"warehouse_door_open": SubResource("Animation_rcshd")
+}
+
+[node name="WarehouseDoor(ForAnimation)" instance=ExtResource("1_xa1gm")]
+
+[node name="Backdoor" parent="." index="0"]
+transform = Transform3D(-4.38852e-07, 10.0398, 0, -10.0398, -4.38852e-07, 0, 0, 0, 9.03578, -222.65, -8.62313, 166.487)
+
+[node name="Area3D" type="Area3D" parent="Backdoor" index="0" groups=["door"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Backdoor/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0415539, -0.285624, 0)
+shape = SubResource("BoxShape3D_d1hs6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_4mn0m")
+}

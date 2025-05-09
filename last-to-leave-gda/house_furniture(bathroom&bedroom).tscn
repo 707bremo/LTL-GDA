@@ -1,0 +1,53 @@
+[gd_scene load_steps=14 format=3 uid="uid://81uu3xlggkn3"]
+
+[ext_resource type="PackedScene" uid="uid://c5ecn28lmp0ni" path="res://demo/assets/LTLpre-madeAssets/HouseFurniture(Bathroom&Bedroom).gltf" id="1_0oprp"]
+[ext_resource type="Texture2D" uid="uid://dkvlknfmc6scx" path="res://demo/assets/LTLpre-madeAssets/aerial_grass_rock_rough_4k.jpg" id="2_xlekw"]
+[ext_resource type="Texture2D" uid="uid://dy7tgqdv8xik4" path="res://demo/assets/LTLpre-madeAssets/FarmHouseExterior_metal01_diffuse.jpg" id="3_tk3um"]
+[ext_resource type="Texture2D" uid="uid://b3xi3taylf6ey" path="res://demo/assets/LTLpre-madeAssets/FarmHouseExterior_green_metal_rust_diff_4k.jpg" id="4_kwhau"]
+[ext_resource type="Texture2D" uid="uid://ci4iv0vha61b6" path="res://demo/assets/LTLpre-madeAssets/FarmHouseFurnitureAndOuthouse_painted_concrete_02_rough_2k.png" id="5_uxfeu"]
+[ext_resource type="Texture2D" uid="uid://clgr633qg347u" path="res://demo/assets/LTLpre-madeAssets/FarmHouseExterior_Wood02_basecolor.png" id="6_itn6a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_14upx"]
+albedo_texture = ExtResource("2_xlekw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sb0qn"]
+albedo_texture = ExtResource("2_xlekw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3p5n"]
+albedo_texture = ExtResource("3_tk3um")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gssr8"]
+albedo_texture = ExtResource("4_kwhau")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yy0l8"]
+albedo_color = Color(0.702205, 0.581232, 0.397697, 1)
+albedo_texture = ExtResource("5_uxfeu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rtkp5"]
+albedo_texture = ExtResource("6_itn6a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwb0g"]
+albedo_texture = ExtResource("6_itn6a")
+
+[node name="HouseFurniture(Bathroom&Bedroom)" instance=ExtResource("1_0oprp")]
+
+[node name="defaultMaterial" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_14upx")
+
+[node name="defaultMaterial_001" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_sb0qn")
+
+[node name="defaultMaterial_004" parent="." index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_l3p5n")
+
+[node name="bottles_1_bottles_0" parent="." index="9"]
+surface_material_override/0 = SubResource("StandardMaterial3D_gssr8")
+
+[node name="boxes_1_pallet_and_boxes_0" parent="." index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yy0l8")
+
+[node name="pallet_1_pallet_and_boxes_0" parent="." index="11"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rtkp5")
+
+[node name="pallet_2_pallet_and_boxes_0" parent="." index="12"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pwb0g")
