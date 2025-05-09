@@ -36,7 +36,7 @@ var armor: int = 30
 
 # health
 var max_health: float = 100.0
-var health: int = 40
+var health: int = 100
 var health_regen_ae: float = 0.5
 var current_health = health
 var health_regen_IN: int = 1
@@ -82,10 +82,8 @@ var critical_color = Color("RED")
 @onready var stamina_bar_anim: AnimationPlayer = $StaminaBarAnim
 @onready var fatigued_blinker: ColorRect = $FatiguedBlinker
 @onready var hunger_bar: ProgressBar = $HUD/PlayerHealthBar/HungerBar
-
-
-
-
+@onready var hurt_sound: AudioStreamPlayer3D = $hurt_sound
+@onready var player = get_parent()
 
 func _ready():
 	
@@ -96,7 +94,7 @@ func _ready():
 	if p_health_bar:
 		p_health_bar.value = current_health
 	
-	
+	player.player_hit.connect(take_damage)
 	
 	stamina_bar.visible = false
 	stamina_bar.value = stamina
@@ -327,3 +325,6 @@ func check_stamina_regen(delta):
 		can_start_timer = false
 		stamina_timer = 0
 	
+func take_damage():
+	hurt_sound.play()
+	health = health - 5.0

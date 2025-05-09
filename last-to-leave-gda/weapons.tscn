@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dx3kijcnxivig"]
+[gd_scene load_steps=4 format=3 uid="uid://bai0qq6yyhep3"]
 
 [ext_resource type="Script" path="res://weapons.gd" id="1_j72pw"]
 [ext_resource type="Resource" uid="uid://c5q5lujr0qo5f" path="res://UI/HUD/Inventory/item/weapons/M4A1/m4a1.tres" id="2_x56dk"]

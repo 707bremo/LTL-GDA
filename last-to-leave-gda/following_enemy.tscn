@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cysiov1pi554x"]
+[gd_scene load_steps=7 format=3 uid="uid://cfmbtd4qu7rsy"]
 
 [ext_resource type="Script" path="res://followingEnemy.gd" id="1_c1t4p"]
-[ext_resource type="PackedScene" uid="uid://j6dbbhy7fs8c" path="res://enemy_gun.tscn" id="2_k6kpq"]
+[ext_resource type="PackedScene" uid="uid://csspfar20rijo" path="res://enemy_gun.tscn" id="2_k6kpq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8vcbq"]
 albedo_color = Color(1, 0.407246, 0.338652, 1)

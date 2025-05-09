@@ -23,7 +23,6 @@ func _on_navigation_agent_3d_target_reached():
 	emit_signal("attack_player")
 
 
-
 func _on_navigation_agent_3d_velocity_computed(safe_velocity):
 	velocity = velocity.move_toward(safe_velocity, 0.25)
 	move_and_slide()

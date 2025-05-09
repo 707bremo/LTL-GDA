@@ -3,6 +3,7 @@ extends Node3D
 @onready var enemy = get_parent()
 @onready var bullet_scene = preload("res://bullet.tscn")  
 @onready var shoot_timer: Timer = $Enemy_shoot_timer 
+@onready var enemy_shot: AudioStreamPlayer3D = $enemy_shot
 var can_shoot := true
 
 func _ready() -> void:
@@ -18,6 +19,7 @@ func shoot_bullet():
 	bullet.target = player
 	can_shoot = false
 	shoot_timer.start()  
+	enemy_shot.play()
 
 func _on_enemy_shoot_timer_timeout() -> void:
 	can_shoot = true  
