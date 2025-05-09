@@ -43,7 +43,6 @@ _data = {
 
 [node name="test_player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-collision_layer = 2
 script = ExtResource("1_p76u8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
