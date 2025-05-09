@@ -36,5 +36,9 @@ avoidance_enabled = true
 [node name="enemy_gun" parent="." instance=ExtResource("2_k6kpq")]
 transform = Transform3D(0.285632, 0, 0, 0, 0.309965, 0, 0, 0, 0.371394, 0.542701, 0.919548, -0.797779)
 
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.1
+
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

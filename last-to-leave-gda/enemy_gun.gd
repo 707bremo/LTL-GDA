@@ -14,6 +14,7 @@ func shoot_bullet():
 		return 
 	var bullet = bullet_scene.instantiate()
 	get_tree().current_scene.add_child(bullet) 
+	self.add_to_group("bullets")
 	bullet.global_position = global_position  
 	var player = PlayerManager.player  
 	bullet.target = player

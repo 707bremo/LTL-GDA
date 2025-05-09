@@ -20,6 +20,7 @@ func _ready() -> void:
 	for node in get_tree().get_nodes_in_group("external_inventory"):
 		node.toogle_inventory.connect(toogle_inv_interface)
 
+
 func toogle_inv_interface(external_inventory_owner = null) -> void:
 	inv_interface.visible = not inv_interface.visible
 	panel.visible = not panel.visible

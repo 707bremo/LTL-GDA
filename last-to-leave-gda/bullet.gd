@@ -1,7 +1,12 @@
 extends Area3D
+
+
 @export var speed: float = 30.0
 var target: CharacterBody3D
 signal player_hit
+
+
+
 
 func _ready() -> void:
 	connect("body_entered", _on_body_entered)
@@ -14,5 +19,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: CharacterBody3D) -> void:
 	if body is CharacterBody3D:
-		emit_signal("player_hit")
-		queue_free()  # Remove the bullet
+		queue_free()

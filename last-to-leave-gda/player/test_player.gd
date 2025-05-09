@@ -55,9 +55,6 @@ var can_start_timer = true
 var is_sprinting = false
 
 
-
-
-
 # hunger
 var max_hunger: float = 100.0
 var current_hunger = max_hunger
@@ -82,8 +79,8 @@ var critical_color = Color("RED")
 @onready var stamina_bar_anim: AnimationPlayer = $StaminaBarAnim
 @onready var fatigued_blinker: ColorRect = $FatiguedBlinker
 @onready var hunger_bar: ProgressBar = $HUD/PlayerHealthBar/HungerBar
-@onready var hurt_sound: AudioStreamPlayer3D = $hurt_sound
-@onready var player = get_parent()
+
+
 
 func _ready():
 	
@@ -94,14 +91,13 @@ func _ready():
 	if p_health_bar:
 		p_health_bar.value = current_health
 	
-	player.player_hit.connect(take_damage)
-	
 	stamina_bar.visible = false
 	stamina_bar.value = stamina
 	armor_bar.value = armor
 	armor_bar.tint_progress = damaged_color
 	PlayerManager.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 
 
 func _unhandled_input(event):
@@ -324,7 +320,3 @@ func check_stamina_regen(delta):
 		stamina += stamina_lost * delta
 		can_start_timer = false
 		stamina_timer = 0
-	
-func take_damage():
-	hurt_sound.play()
-	health = health - 5.0

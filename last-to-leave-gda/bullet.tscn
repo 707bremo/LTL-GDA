@@ -25,3 +25,5 @@ shape = SubResource("ConvexPolygonShape3D_pfrhh")
 [node name="bullet" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.3027, 0, 0, 0, 0.233077, 0, 0, 0, 0.26865, 0, 0, 0)
 mesh = SubResource("BoxMesh_gkust")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
