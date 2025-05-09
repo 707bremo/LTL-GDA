@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://player.gd" id="1_vbs7i"]
 [ext_resource type="PackedScene" uid="uid://ddw610oe8l1je" path="res://weapon_manager/weapon_manager.tscn" id="2_pkx05"]
+[ext_resource type="PackedScene" uid="uid://d1fqvp4k8akhc" path="res://deagle.tscn" id="2_w622e"]
 [ext_resource type="PackedScene" uid="uid://d0730d1dwc2ta" path="res://addons/desert_droid.glb" id="3_60s6m"]
-[ext_resource type="PackedScene" uid="uid://bd4n0y4e0wqlx" path="res://pistol.tscn" id="3_663jb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5bct"]
 
@@ -16,12 +16,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00021781, 3.27759, -0.3215
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14067, 0)
 
-[node name="WeaponManager" parent="Head/Camera3D" instance=ExtResource("2_pkx05")]
-
-[node name="FPS_Rig" type="Node3D" parent="Head/Camera3D/WeaponManager"]
-
-[node name="Pistol" parent="Head/Camera3D/WeaponManager/FPS_Rig" instance=ExtResource("3_663jb")]
-transform = Transform3D(0.00240853, 0, 0.999997, 0, 1, 0, -0.999997, 0, 0.00240853, 0.365783, -0.691767, -0.452622)
+[node name="deagle" parent="Head/Camera3D" instance=ExtResource("2_w622e")]
+transform = Transform3D(-0.00436299, 0, 0.199952, 0, 0.2, 0, -0.199952, 0, -0.00436299, 0.257998, -0.32999, -0.287867)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
