@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxeahpqb7b4bv"]
+
+[ext_resource type="PackedScene" uid="uid://ck1ynjibni8u8" path="res://uploads-files-3599428-AK47.fbx" id="1_qsiu4"]
+
+[node name="uploads-files-3599428-AK47" instance=ExtResource("1_qsiu4")]
