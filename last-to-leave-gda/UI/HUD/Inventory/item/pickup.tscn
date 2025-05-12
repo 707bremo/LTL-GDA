@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cgk7inheywfs4"]
 
 [ext_resource type="Script" path="res://UI/HUD/Inventory/item/pickup.gd" id="1_mnk04"]
-[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="2_jksvx"]
+[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://UI/fonts/Esperanto SmallCaps Regular.ttf" id="2_jksvx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_pnkfm"]
 

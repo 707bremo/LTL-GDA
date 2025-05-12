@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cmmsfh84jhs03"
-path="res://.godot/imported/Esperanto SmallCaps Regular.ttf-540d0c00e0416daaf05be3b89015fb2d.fontdata"
+uid="uid://1c23xkb8xumk"
+path="res://.godot/imported/JetJaneMono Bold.ttf-83c22c6827c68d87022ad3cf3e3f8ce3.fontdata"
 
 [deps]
 
-source_file="res://Esperanto SmallCaps Regular.ttf"
-dest_files=["res://.godot/imported/Esperanto SmallCaps Regular.ttf-540d0c00e0416daaf05be3b89015fb2d.fontdata"]
+source_file="res://UI/fonts/JetJaneMono Bold.ttf"
+dest_files=["res://.godot/imported/JetJaneMono Bold.ttf-83c22c6827c68d87022ad3cf3e3f8ce3.fontdata"]
 
 [params]
 

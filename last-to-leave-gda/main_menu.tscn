@@ -1,74 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6vrpyhhri180"]
+[gd_scene load_steps=11 format=3 uid="uid://c6vrpyhhri180"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_0p4i2"]
-[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="1_ndvbq"]
+[ext_resource type="FontFile" uid="uid://8tdm14ofrfqc" path="res://UI/fonts/glacial-indifference.bold.otf" id="2_tf65f"]
+[ext_resource type="FontFile" uid="uid://1c23xkb8xumk" path="res://UI/fonts/JetJaneMono Bold.ttf" id="3_dwhpb"]
 [ext_resource type="AudioStream" uid="uid://cb3u4am848qkc" path="res://UI/Sounds/music/MainMenu_mooz.wav" id="3_fp035"]
+[ext_resource type="Texture2D" uid="uid://dpkx1sxrmr3sw" path="res://UI/main_menu_interface/ui_arrow_icon.png" id="4_tqi5r"]
+[ext_resource type="AudioStream" uid="uid://c2owoamg2cqae" path="res://UI/Sounds/select/select_sound3.wav" id="5_42pl0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2v10c"]
-
-[sub_resource type="Animation" id="Animation_g7jry"]
-resource_name = "main_opening"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("play/buttonBG:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.633333, 1.63333, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0.548963, 0.548963, 0.548963, 1), Color(1, 1, 1, 1), Color(0.54902, 0.54902, 0.54902, 0.466667)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("play/buttonBG:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.633334, 1.13333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 63), Vector2(1918, 63)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("play/buttonFollow:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.633333),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("play/buttonFollow:size")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.633333, 1.03333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 9), Vector2(1918, 9)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("play/select_frame:color")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(1.63333, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.172549, 0.356863, 0.670588, 0), Color(0.172549, 0.356863, 0.670588, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_abmwd"]
 length = 0.001
@@ -132,6 +71,118 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(0.172549, 0.356863, 0.670588, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("play/Label:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("play/UiArrowIcon:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g7jry"]
+resource_name = "main_opening"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("play/buttonBG:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.633333, 1.63333, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.548963, 0.548963, 0.548963, 1), Color(1, 1, 1, 1), Color(0.54902, 0.54902, 0.54902, 0.466667)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("play/buttonBG:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.633334, 1.36667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 63), Vector2(1918, 63)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("play/buttonFollow:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.633333),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("play/buttonFollow:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.633333, 1.23333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 9), Vector2(1918, 9)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("play/select_frame:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.63333, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.172549, 0.356863, 0.670588, 0), Color(0.172549, 0.356863, 0.670588, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("play/Label:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.63333, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("play/UiArrowIcon:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.63333, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0wlhd"]
 _data = {
@@ -167,28 +218,40 @@ offset_top = 381.0
 offset_right = 51.0
 offset_bottom = 602.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_ndvbq")
+theme_override_fonts/font = ExtResource("2_tf65f")
 theme_override_font_sizes/font_size = 100
-text = "LAST TO 
-              LEAVE"
+text = "LAST TO
+          LEAVE"
 
 [node name="play" type="Button" parent="."]
 layout_mode = 2
 offset_top = 872.0
-offset_right = 1912.0
+offset_right = 1918.0
 offset_bottom = 935.0
-theme_override_fonts/font = ExtResource("1_ndvbq")
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2v10c")
-text = "                                                PRESS START"
+text = "       "
 alignment = 0
+
+[node name="Label" type="Label" parent="play"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 506.0
+offset_right = 911.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 40
+text = "Press START button"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="buttonBG" type="ColorRect" parent="play"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1912.0
+offset_right = -1918.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.172549, 0.356863, 0.670588, 1)
@@ -199,7 +262,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 70.0
-offset_right = -1912.0
+offset_right = -1918.0
 offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -211,10 +274,25 @@ offset_right = 455.0
 offset_bottom = 63.0
 color = Color(0.172549, 0.356863, 0.670588, 0)
 
-[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_fp035")
+[node name="UiArrowIcon" type="Sprite2D" parent="play"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(419, 31)
+rotation = 1.5708
+scale = Vector2(0.0754769, 0.0754769)
+texture = ExtResource("4_tqi5r")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="SoundsNmoozic" type="Node" parent="."]
+
+[node name="main_select" type="AudioStreamPlayer" parent="SoundsNmoozic"]
+stream = ExtResource("5_42pl0")
+volume_db = -3.0
+bus = &"UI-SFX"
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="SoundsNmoozic"]
+stream = ExtResource("3_fp035")
+bus = &"Music"
+
+[node name="MenuPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_0wlhd")
 }

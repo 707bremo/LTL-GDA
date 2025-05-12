@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cirndjnad781d"]
 
 [ext_resource type="Script" path="res://interactable/interactableScripts/cabinet.gd" id="1_6vel8"]
-[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="2_j1f5v"]
+[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://UI/fonts/Esperanto SmallCaps Regular.ttf" id="2_j1f5v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0u44l"]
 albedo_color = Color(0, 0, 0, 1)

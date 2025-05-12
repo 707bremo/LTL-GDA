@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b7y1q8fbk2d1x"]
 
 [ext_resource type="PackedScene" uid="uid://cfdnj6i52mb6u" path="res://UI/HUD/Inventory/inventory.tscn" id="1_uyanh"]
-[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="2_gkrss"]
+[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://UI/fonts/Esperanto SmallCaps Regular.ttf" id="2_gkrss"]
 
 [node name="EquipInv" instance=ExtResource("1_uyanh")]
 
