@@ -16,6 +16,7 @@ func _physics_process(delta):
 	var distance_to_player = global_transform.origin.distance_to(player_pos)
 
 	if distance_to_player > 10.0:
+		look_at(player_pos, Vector3.UP)
 		update_target_location(player_pos)
 		SPEED = 2.0
 		if not attack_timer.is_stopped():
