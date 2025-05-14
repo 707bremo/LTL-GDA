@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://xwxdj260dkya"]
+
+[ext_resource type="Script" path="res://weapons.gd" id="1_j72pw"]
+[ext_resource type="Resource" path="res://UI/HUD/Inventory/item/weapons/M4A1/m4a1.tres" id="2_x56dk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qr56y"]
+
+[node name="weapons" type="Node3D"]
+transform = Transform3D(0.978148, -0.207912, 0, 0.207912, 0.978148, 0, 0, 0, 1, 0.92, -0.71, -0.89)
+script = ExtResource("1_j72pw")
+WEAPON_TYPE = ExtResource("2_x56dk")
+
+[node name="WeaponMesh" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+mesh = SubResource("BoxMesh_qr56y")
