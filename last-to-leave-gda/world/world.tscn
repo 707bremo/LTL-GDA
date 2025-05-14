@@ -1,12 +1,183 @@
-[gd_scene load_steps=3 format=3 uid="uid://piy7l6qbal3q"]
+[gd_scene load_steps=25 format=3 uid="uid://piy7l6qbal3q"]
 
 [ext_resource type="PackedScene" uid="uid://c83ehswbyetui" path="res://terrain_3d.tscn" id="1_apgil"]
-[ext_resource type="PackedScene" uid="uid://2pqygnnutm7c" path="res://player.tscn" id="2_1w0ji"]
+[ext_resource type="Script" path="res://world/Main.gd" id="1_eownp"]
+[ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="2_e663m"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/inventory_data.gd" id="3_orrkt"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/slot_data.gd" id="4_6n5w3"]
+[ext_resource type="Resource" uid="uid://cds81cbksibuu" path="res://UI/HUD/Inventory/item/items/water_bottle.tres" id="5_pu28j"]
+[ext_resource type="Resource" uid="uid://cfutfyhm6yfja" path="res://UI/HUD/Inventory/item/items/potato_chips.tres" id="6_j48h7"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/equipment_data.gd" id="7_glpi3"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/weapon_data.gd" id="8_6v7kd"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/inv_interface.gd" id="10_5ww66"]
+[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="11_mnjnj"]
+[ext_resource type="PackedScene" uid="uid://cfdnj6i52mb6u" path="res://UI/HUD/Inventory/inventory.tscn" id="12_doqa1"]
+[ext_resource type="PackedScene" uid="uid://b7y1q8fbk2d1x" path="res://UI/HUD/Inventory/equip_inv.tscn" id="13_nb3bg"]
+[ext_resource type="PackedScene" uid="uid://dajo4o8ibri8a" path="res://UI/HUD/Inventory/weapon_inv.tscn" id="14_eeapl"]
+[ext_resource type="PackedScene" uid="uid://012ymk0c663s" path="res://UI/HUD/Inventory/slot.tscn" id="15_m7rcu"]
+[ext_resource type="Texture2D" uid="uid://vyoaqybnkohy" path="res://UI/references/Screenshot 2025-03-01 184534.png" id="16_1nj63"]
+
+[sub_resource type="Resource" id="Resource_kfprv"]
+script = ExtResource("4_6n5w3")
+item_data = ExtResource("5_pu28j")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_kgiqn"]
+script = ExtResource("4_6n5w3")
+item_data = ExtResource("6_j48h7")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_1vsbv"]
+script = ExtResource("3_orrkt")
+slot_datas = Array[ExtResource("4_6n5w3")]([SubResource("Resource_kfprv"), null, null, null, null, null, null, null, null, null, null, SubResource("Resource_kgiqn"), null, null, null, null, null, null, null, null])
+
+[sub_resource type="Resource" id="Resource_q17w4"]
+script = ExtResource("7_glpi3")
+slot_datas = Array[ExtResource("4_6n5w3")]([null, null, null, null])
+
+[sub_resource type="Resource" id="Resource_j2sse"]
+script = ExtResource("8_6v7kd")
+slot_datas = Array[ExtResource("4_6n5w3")]([null, null, null, null])
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7u4kn"]
+bg_color = Color(0.0313726, 0.0313726, 0.0313726, 0.823529)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47733"]
+bg_color = Color(0.194349, 0.194349, 0.194349, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f50o5"]
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2024.92)
+script = ExtResource("1_eownp")
 
-[node name="Player" parent="." instance=ExtResource("2_1w0ji")]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 89.384, 10.989, -3945.48)
+[node name="test_player" parent="." instance=ExtResource("2_e663m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 329.338, 15.7503, -2006.18)
+inventory_data = SubResource("Resource_1vsbv")
+equip_inventory_data = SubResource("Resource_q17w4")
+weapon_inventory_data = SubResource("Resource_j2sse")
 
 [node name="Terrain3D" parent="." instance=ExtResource("1_apgil")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7u4kn")
+
+[node name="InvInterface" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_5ww66")
+
+[node name="WeightBar" type="ProgressBar" parent="UI/InvInterface"]
+layout_mode = 0
+offset_left = 1437.0
+offset_top = 866.0
+offset_right = 1795.0
+offset_bottom = 893.0
+theme_override_styles/background = SubResource("StyleBoxFlat_47733")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f50o5")
+max_value = 18.0
+value = 14.26
+show_percentage = false
+
+[node name="Label" type="Label" parent="UI/InvInterface/WeightBar"]
+layout_mode = 0
+offset_left = -90.0
+offset_top = 2.0
+offset_right = -12.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("11_mnjnj")
+theme_override_font_sizes/font_size = 20
+text = "WEIGHT:"
+
+[node name="ExternalInv" parent="UI/InvInterface" instance=ExtResource("12_doqa1")]
+visible = false
+layout_mode = 2
+offset_left = 134.0
+offset_top = 190.0
+offset_right = 584.0
+offset_bottom = 832.0
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="SourceLabel" type="Label" parent="UI/InvInterface"]
+layout_mode = 2
+offset_left = 306.0
+offset_top = 147.0
+offset_right = 412.0
+offset_bottom = 170.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("11_mnjnj")
+theme_override_font_sizes/font_size = 20
+text = "CONTAINER"
+
+[node name="PlayerInv" parent="UI/InvInterface" instance=ExtResource("12_doqa1")]
+layout_mode = 2
+offset_left = 1346.0
+offset_top = 194.0
+offset_right = 1796.0
+offset_bottom = 832.0
+size_flags_horizontal = 2
+
+[node name="EquipInv" parent="UI/InvInterface" instance=ExtResource("13_nb3bg")]
+layout_mode = 2
+offset_left = 736.0
+offset_top = 304.0
+offset_right = 832.0
+offset_bottom = 774.0
+
+[node name="WeaponInv" parent="UI/InvInterface" instance=ExtResource("14_eeapl")]
+layout_mode = 0
+offset_left = 1088.0
+offset_top = 304.0
+offset_right = 1176.0
+offset_bottom = 784.0
+
+[node name="InventoryLabel" type="Label" parent="UI/InvInterface"]
+layout_mode = 2
+offset_left = 1525.0
+offset_top = 151.0
+offset_right = 1632.0
+offset_bottom = 174.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("11_mnjnj")
+theme_override_font_sizes/font_size = 20
+text = "INVENTORY"
+horizontal_alignment = 1
+
+[node name="GrabbedSlot" parent="UI/InvInterface" instance=ExtResource("15_m7rcu")]
+visible = false
+modulate = Color(1, 1, 1, 0.482353)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_right = 80.0
+offset_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="Reference" type="TextureRect" parent="UI/InvInterface"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_1nj63")
+expand_mode = 3
+
+[connection signal="gui_input" from="UI/InvInterface" to="UI/InvInterface" method="_on_gui_input"]
+[connection signal="visibility_changed" from="UI/InvInterface" to="UI/InvInterface" method="_on_visibility_changed"]
