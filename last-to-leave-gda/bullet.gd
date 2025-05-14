@@ -1,21 +1,16 @@
 extends Area3D
 
-
 @export var speed: float = 30.0
-var target: CharacterBody3D
+var direction: Vector3 = Vector3.ZERO
 signal player_hit
-
-
-
 
 func _ready() -> void:
 	connect("body_entered", _on_body_entered)
 
 func _process(delta: float) -> void:
-	if target and target.is_inside_tree():
-		var direction = (target.global_position - global_position).normalized()
+	if direction != Vector3.ZERO:
 		global_position += direction * speed * delta
-		look_at(target.global_position, Vector3.UP)
+		look_at(global_position + direction, Vector3.UP)
 
 func _on_body_entered(body: CharacterBody3D) -> void:
 	if body is CharacterBody3D:

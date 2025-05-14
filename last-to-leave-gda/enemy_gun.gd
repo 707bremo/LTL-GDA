@@ -13,13 +13,14 @@ func shoot_bullet():
 	if not can_shoot:
 		return 
 	var bullet = bullet_scene.instantiate()
-	get_tree().current_scene.add_child(bullet) 
+	get_tree().current_scene.add_child(bullet)
 	self.add_to_group("bullets")
-	bullet.global_position = global_position  
-	var player = PlayerManager.player  
-	bullet.target = player
+	bullet.global_position = global_position
+	var player = PlayerManager.player
+	var direction = (player.global_position - global_position).normalized()
+	bullet.direction = direction 
 	can_shoot = false
-	shoot_timer.start()  
+	shoot_timer.start()
 	enemy_shot.play()
 
 func _on_enemy_shoot_timer_timeout() -> void:
