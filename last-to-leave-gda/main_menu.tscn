@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6vrpyhhri180"]
+[gd_scene load_steps=13 format=3 uid="uid://bbposk6idlbm"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_0p4i2"]
 [ext_resource type="FontFile" uid="uid://8tdm14ofrfqc" path="res://UI/fonts/glacial-indifference.bold.otf" id="2_tf65f"]
@@ -8,6 +8,12 @@
 [ext_resource type="AudioStream" uid="uid://c2owoamg2cqae" path="res://UI/Sounds/select/select_sound3.wav" id="5_42pl0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2v10c"]
+
+[sub_resource type="Gradient" id="Gradient_j7abv"]
+colors = PackedColorArray(0.172549, 0.356863, 0.670588, 1, 0.428073, 0.61304, 0.923776, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sfkdv"]
+gradient = SubResource("Gradient_j7abv")
 
 [sub_resource type="Animation" id="Animation_abmwd"]
 length = 0.001
@@ -220,7 +226,7 @@ offset_bottom = 602.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_tf65f")
 theme_override_font_sizes/font_size = 100
-text = "LAST TO
+text = "LAST T
           LEAVE"
 
 [node name="play" type="Button" parent="."]
@@ -242,7 +248,7 @@ offset_right = 911.0
 offset_bottom = 63.0
 theme_override_fonts/font = ExtResource("3_dwhpb")
 theme_override_font_sizes/font_size = 40
-text = "Press START button"
+text = "Press ENTER button"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -268,11 +274,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.172549, 0.356863, 0.670588, 1)
 
-[node name="select_frame" type="ColorRect" parent="play"]
+[node name="select_frame" type="TextureRect" parent="play"]
 layout_mode = 0
-offset_right = 455.0
-offset_bottom = 63.0
-color = Color(0.172549, 0.356863, 0.670588, 0)
+offset_top = 63.0
+offset_right = 63.0
+offset_bottom = 521.0
+rotation = -1.5708
+texture = SubResource("GradientTexture1D_sfkdv")
+expand_mode = 1
 
 [node name="UiArrowIcon" type="Sprite2D" parent="play"]
 self_modulate = Color(1, 1, 1, 0)
