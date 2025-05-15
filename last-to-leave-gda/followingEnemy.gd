@@ -6,17 +6,27 @@ signal attack_player
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var attack_timer = $AttackTimer  # Ensure this Timer node is added in your scene
+@onready var raycast: RayCast3D = $face/RayCast3D  # RayCast3D node under 'face'
 
-var SPEED = 2.0
+var SPEED = 1.5
 var player_pos = PlayerManager.player_current_pos
 
 func _ready():
-	var enemy_wander = get_node("/followingEnemy/StateMachine/EnemyWander")
+	raycast.enabled = true  # Make sure raycast is enabled
 
 func _physics_process(delta):
 	player_pos = PlayerManager.player_current_pos
 	if player_pos == null:
 		return
+
+	# Rotate the parent 'face' node to look at the player
+	$face.look_at(player_pos, Vector3.UP)
+
+	# RayCast3D now points forward (-Z local), so check collision
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
+		if collider is CharacterBody3D:
+			print("player in sight")
 
 	var distance_to_player = global_transform.origin.distance_to(player_pos)
 

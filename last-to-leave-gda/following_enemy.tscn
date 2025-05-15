@@ -26,6 +26,9 @@ mesh = SubResource("CapsuleMesh_6ehiu")
 transform = Transform3D(0.758597, 0, 0, 0, 0.180665, 0, 0, 0, 0.3, 0, 1.34648, -0.430577)
 mesh = SubResource("BoxMesh_omdi7")
 
+[node name="RayCast3D" type="RayCast3D" parent="face"]
+transform = Transform3D(281.253, -0.0228598, -0.206279, -0.409807, 0.0484294, -141.485, 0.181125, 35.6073, 0.192301, 0, 0, -0.364213)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_agkym")
