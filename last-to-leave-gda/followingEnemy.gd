@@ -2,11 +2,16 @@ extends CharacterBody3D
 
 signal attack_player 
 
+@export var WalkSpeed: float = 1.5
+
 @onready var nav_agent = $NavigationAgent3D
 @onready var attack_timer = $AttackTimer  # Ensure this Timer node is added in your scene
 
 var SPEED = 2.0
 var player_pos = PlayerManager.player_current_pos
+
+func _ready():
+	var enemy_wander = get_node("/followingEnemy/StateMachine/EnemyWander")
 
 func _physics_process(delta):
 	player_pos = PlayerManager.player_current_pos
@@ -15,7 +20,7 @@ func _physics_process(delta):
 
 	var distance_to_player = global_transform.origin.distance_to(player_pos)
 
-	if distance_to_player > 10.0:
+	if distance_to_player > 5.0:
 		look_at(player_pos, Vector3.UP)
 		update_target_location(player_pos)
 		SPEED = 2.0

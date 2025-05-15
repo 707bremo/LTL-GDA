@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfmbtd4qu7rsy"]
+[gd_scene load_steps=9 format=3 uid="uid://cfmbtd4qu7rsy"]
 
 [ext_resource type="Script" path="res://followingEnemy.gd" id="1_c1t4p"]
 [ext_resource type="PackedScene" uid="uid://csspfar20rijo" path="res://enemy_gun.tscn" id="2_k6kpq"]
+[ext_resource type="Script" path="res://enemy/enemy_state_machine.gd" id="3_hfa8c"]
+[ext_resource type="Script" path="res://enemy/enemy_wander.gd" id="4_845m3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8vcbq"]
 albedo_color = Color(1, 0.407246, 0.338652, 1)
@@ -38,6 +40,12 @@ transform = Transform3D(0.285632, 0, 0, 0, 0.309965, 0, 0, 0, 0.371394, 0.542701
 
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_hfa8c")
+
+[node name="EnemyWander" type="Node" parent="StateMachine"]
+script = ExtResource("4_845m3")
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]

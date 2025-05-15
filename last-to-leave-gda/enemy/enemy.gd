@@ -1,13 +1,9 @@
 extends CharacterBody3D
 
-
 # get all region / area related nodes
 @onready var get_nav_map = get_parent().get_node("NavigationRegion3D")
 @onready var nav_agent = get_node("NavigationAgent3D")
 @onready var FOV_caster = get_node("FOV_cast")
-
-
-@export var speed : float = 100.0
 
 var all_points = []
 var next_point = 0
@@ -65,7 +61,7 @@ func patrolling(delta):
 	direction = nav_agent.get_next_path_position() - global_position
 	
 	direction = direction.normalized()
-	velocity = velocity.lerp(direction * speed * delta, 1.0)
+	#velocity = velocity.lerp(direction * speed * delta, 1.0)
 	direction.y = 0
 	
 	look_at(global_transform.origin + direction)
@@ -79,7 +75,7 @@ func pursuit_state(delta):
 	var current_target = nav_agent.get_next_path_position()
 	var change_diretion = (current_target - enemy_current_map_pos).normalized()
 	
-	velocity = change_diretion * speed * delta
+	#velocity = change_diretion * speed * delta
 	
 	look_at(Vector3(PlayerManager.player_current_pos.x, self.global_transform.origin.y, PlayerManager.player_current_pos.z), Vector3(0,1,0))
 	
@@ -99,7 +95,7 @@ func back_to_post(delta):
 		direction = nav_agent.get_next_path_position() - global_position
 		direction = direction.normalized()
 		
-		velocity = velocity.lerp(direction * speed * delta, 1.0)
+		#velocity = velocity.lerp(direction * speed * delta, 1.0)
 		
 		# for some reason, a bug occurs when this isn't 0, so we'll leave this for now
 		direction.y = 0
