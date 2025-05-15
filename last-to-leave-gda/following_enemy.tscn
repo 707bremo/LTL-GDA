@@ -41,8 +41,9 @@ transform = Transform3D(0.285632, 0, 0, 0, 0.309965, 0, 0, 0, 0.371394, 0.542701
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.1
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("InitialState")]
 script = ExtResource("3_hfa8c")
+InitialState = NodePath("EnemyWander")
 
 [node name="EnemyWander" type="Node" parent="StateMachine"]
 script = ExtResource("4_845m3")

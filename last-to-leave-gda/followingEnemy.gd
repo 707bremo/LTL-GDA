@@ -7,13 +7,22 @@ signal attack_player
 @onready var nav_agent = $NavigationAgent3D
 @onready var attack_timer = $AttackTimer  # Ensure this Timer node is added in your scene
 
+var player: CharacterBody3D = null
 var SPEED = 2.0
 var player_pos = PlayerManager.player_current_pos
 
 func _ready():
-	var enemy_wander = get_node("/followingEnemy/StateMachine/EnemyWander")
+	player = get_tree().get_nodes_in_group("player")[0]
 
 func _physics_process(delta):
+	nav_agent.set_target_position(player.global_position)
+	
+	if nav_agent.is_navigation_finished():
+		return
+	
+	var next_position: Vector3 = nav_agent.get_next_path_position()
+	velocity = global_position.direction_to(next_position) * WalkSpeed
+	
 	player_pos = PlayerManager.player_current_pos
 	if player_pos == null:
 		return

@@ -3,8 +3,7 @@ class_name StateMachine
 
 @export var InitialState: State
 
-var current_state : State = null
-
+var current_state: State = null
 var states: Dictionary = {}
 
 func _ready() -> void:
@@ -21,7 +20,7 @@ func _process(delta: float) -> void:
 	if current_state:
 		current_state.process(delta)
 
-func physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if current_state:
 		current_state.physics_process(delta)
 
