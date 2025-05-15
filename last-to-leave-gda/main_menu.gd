@@ -62,6 +62,7 @@ func stop_transfer(anim_name: StringName) -> void:
 
 
 func play_game_pressed():
+	$SoundsNmoozic/main_select.play()
 	selection_bg.visible = true
 	menu_player.play("selected")
 

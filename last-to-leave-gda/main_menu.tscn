@@ -150,46 +150,34 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("lobby_screen/Label:position")
+tracks/10/path = NodePath("lobby_screen/selection_bg:size")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-682, 231)]
+"values": [Vector2(1918, 54)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("lobby_screen/selection_bg:size")
+tracks/11/path = NodePath("lobby_screen/selection_bg:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1918, 54)]
+"values": [Vector2(0, 562)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("lobby_screen/selection_bg:position")
+tracks/12/path = NodePath("lobby_screen/selection_bg:color")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 562)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("lobby_screen/selection_bg:color")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -496,7 +484,6 @@ offset_bottom = 1003.0
 color = Color(0, 0, 0, 1)
 
 [node name="lobby_screen" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -519,17 +506,37 @@ rotation = 3.14159
 scale = Vector2(0.0754769, 0.0754769)
 texture = ExtResource("4_tqi5r")
 
-[node name="Label" type="Label" parent="lobby_screen"]
-modulate = Color(0.172549, 0.356863, 0.670588, 0.388235)
+[node name="select_frame2" type="TextureRect" parent="lobby_screen"]
+visible = false
 layout_mode = 0
-offset_left = -682.0
-offset_top = 231.0
-offset_bottom = 471.0
-theme_override_fonts/font = ExtResource("2_tf65f")
-theme_override_font_sizes/font_size = 200
-text = "NOXX"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_top = 670.0
+offset_right = 54.0
+offset_bottom = 1022.0
+rotation = -1.5708
+texture = SubResource("GradientTexture1D_sfkdv")
+expand_mode = 1
+
+[node name="UiArrowIcon" type="Sprite2D" parent="lobby_screen/select_frame2"]
+position = Vector2(26.9988, 323)
+rotation = 3.14159
+scale = Vector2(0.0754769, 0.0754769)
+texture = ExtResource("4_tqi5r")
+
+[node name="select_frame3" type="TextureRect" parent="lobby_screen"]
+visible = false
+layout_mode = 0
+offset_top = 724.0
+offset_right = 54.0
+offset_bottom = 1076.0
+rotation = -1.5708
+texture = SubResource("GradientTexture1D_sfkdv")
+expand_mode = 1
+
+[node name="UiArrowIcon" type="Sprite2D" parent="lobby_screen/select_frame3"]
+position = Vector2(26.9988, 323)
+rotation = 3.14159
+scale = Vector2(0.0754769, 0.0754769)
+texture = ExtResource("4_tqi5r")
 
 [node name="play_game" type="Button" parent="lobby_screen"]
 layout_mode = 0
@@ -557,7 +564,7 @@ offset_bottom = 616.0
 
 [node name="main_select" type="AudioStreamPlayer" parent="SoundsNmoozic"]
 stream = ExtResource("5_42pl0")
-volume_db = -3.0
+volume_db = 14.0
 bus = &"UI-SFX"
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="SoundsNmoozic"]
