@@ -4,6 +4,21 @@
 [ext_resource type="FontFile" uid="uid://1c23xkb8xumk" path="res://UI/fonts/JetJaneMono Bold.ttf" id="2_8kijo"]
 [ext_resource type="Texture2D" uid="uid://bg72cqyjrsrxs" path="res://UI/main_menu_interface/SIIMlogo.png" id="3_qifdq"]
 
+[sub_resource type="Animation" id="Animation_1elri"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["LOADING"]
+}
+
 [sub_resource type="Animation" id="Animation_jaqfr"]
 resource_name = "loading_text"
 length = 1.2
@@ -21,65 +36,10 @@ tracks/0/keys = {
 "values": ["LOADING", "LOADING.", "LOADING..", "LOADING..."]
 }
 
-[sub_resource type="Animation" id="Animation_1elri"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Label:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["LOADING"]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3or2i"]
 _data = {
 "RESET": SubResource("Animation_1elri"),
 "loading_text": SubResource("Animation_jaqfr")
-}
-
-[sub_resource type="Animation" id="Animation_1ysg5"]
-resource_name = "load_opening"
-length = 0.7
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(40, 0), Vector2(40, 1078)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect2:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(40, 0), Vector2(40, 1078)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect2:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1636, 1078), Vector2(1636, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_0xfud"]
@@ -167,6 +127,46 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1ysg5"]
+resource_name = "load_opening"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(40, 0), Vector2(40, 1078)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(40, 0), Vector2(40, 1078)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1636, 1078), Vector2(1636, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_1d6eo"]
@@ -323,10 +323,12 @@ scale = Vector2(1.59575, 1.59575)
 texture = ExtResource("3_qifdq")
 
 [node name="ColorRect" type="ColorRect" parent="elements"]
+layout_mode = 0
 offset_right = 40.0
 color = Color(0.172549, 0.356863, 0.670588, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="elements"]
+layout_mode = 0
 offset_left = 1636.0
 offset_top = 1078.0
 offset_right = 1676.0
@@ -337,3 +339,5 @@ color = Color(0.172549, 0.356863, 0.670588, 1)
 libraries = {
 "": SubResource("AnimationLibrary_jsb7j")
 }
+
+[connection signal="animation_finished" from="elements/loading_rods" to="." method="_on_loading_rods_animation_finished"]
