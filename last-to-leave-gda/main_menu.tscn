@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bbposk6idlbm"]
+[gd_scene load_steps=20 format=3 uid="uid://bbposk6idlbm"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_0p4i2"]
 [ext_resource type="FontFile" uid="uid://8tdm14ofrfqc" path="res://UI/fonts/glacial-indifference.bold.otf" id="2_tf65f"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cb3u4am848qkc" path="res://UI/Sounds/music/MainMenu_mooz.wav" id="3_fp035"]
 [ext_resource type="Texture2D" uid="uid://dpkx1sxrmr3sw" path="res://UI/main_menu_interface/ui_arrow_icon.png" id="4_tqi5r"]
 [ext_resource type="AudioStream" uid="uid://c2owoamg2cqae" path="res://UI/Sounds/select/select_sound3.wav" id="5_42pl0"]
+[ext_resource type="Texture2D" uid="uid://bg72cqyjrsrxs" path="res://UI/main_menu_interface/SIIMlogo.png" id="7_vik44"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2v10c"]
 
@@ -14,6 +15,15 @@ colors = PackedColorArray(0.172549, 0.356863, 0.670588, 1, 0.428073, 0.61304, 0.
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_sfkdv"]
 gradient = SubResource("Gradient_j7abv")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ecmde"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5cxil"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm4tx"]
+bg_color = Color(0.4, 0.592157, 0.913725, 0.607843)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nnvo6"]
 
 [sub_resource type="Animation" id="Animation_abmwd"]
 length = 0.001
@@ -68,19 +78,19 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("play/select_frame:color")
+tracks/4/path = NodePath("play/Label:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.172549, 0.356863, 0.670588, 0)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("play/Label:self_modulate")
+tracks/5/path = NodePath("play/UiArrowIcon:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -92,7 +102,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("play/UiArrowIcon:self_modulate")
+tracks/6/path = NodePath("play/select_frame:self_modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -100,6 +110,90 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("transfer_screen/ColorRect:size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 291)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("transfer_screen/ColorRect:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1918, 370)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("transfer_screen/ColorRect2:size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 291)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("lobby_screen/Label:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-682, 231)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("lobby_screen/selection_bg:size")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1918, 54)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("lobby_screen/selection_bg:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 562)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("lobby_screen/selection_bg:color")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_g7jry"]
@@ -156,19 +250,19 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("play/select_frame:color")
+tracks/4/path = NodePath("play/Label:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(1.63333, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.172549, 0.356863, 0.670588, 0), Color(0.172549, 0.356863, 0.670588, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("play/Label:self_modulate")
+tracks/5/path = NodePath("play/UiArrowIcon:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -180,7 +274,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("play/UiArrowIcon:self_modulate")
+tracks/6/path = NodePath("play/select_frame:self_modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -190,10 +284,92 @@ tracks/6/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_2li5w"]
+resource_name = "transfer_to_lobby"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transfer_screen/ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 291), Vector2(1918, 291)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("transfer_screen/ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1918, 370), Vector2(0, 370)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("transfer_screen/ColorRect2:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 291), Vector2(1918, 291)]
+}
+
+[sub_resource type="Animation" id="Animation_k1id0"]
+resource_name = "selected"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lobby_screen/selection_bg:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1918, 54), Vector2(1918, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lobby_screen/selection_bg:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 562), Vector2(0, 589)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lobby_screen/selection_bg:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0wlhd"]
 _data = {
 "RESET": SubResource("Animation_abmwd"),
-"main_opening": SubResource("Animation_g7jry")
+"main_opening": SubResource("Animation_g7jry"),
+"selected": SubResource("Animation_k1id0"),
+"transfer_to_lobby": SubResource("Animation_2li5w")
 }
 
 [node name="MainMenu" type="Control"]
@@ -205,7 +381,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0p4i2")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="bg" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -214,7 +390,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -222,15 +398,20 @@ anchor_right = 0.5
 offset_left = -616.0
 offset_top = 381.0
 offset_right = 51.0
-offset_bottom = 602.0
+offset_bottom = 624.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_tf65f")
 theme_override_font_sizes/font_size = 100
 text = "LAST T
           LEAVE"
 
+[node name="siimlogo" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(702, 446)
+scale = Vector2(0.3035, 0.3035)
+texture = ExtResource("7_vik44")
+
 [node name="play" type="Button" parent="."]
-layout_mode = 2
 offset_top = 872.0
 offset_right = 1918.0
 offset_bottom = 935.0
@@ -275,6 +456,7 @@ grow_vertical = 2
 color = Color(0.172549, 0.356863, 0.670588, 1)
 
 [node name="select_frame" type="TextureRect" parent="play"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_top = 63.0
 offset_right = 63.0
@@ -289,6 +471,85 @@ position = Vector2(419, 31)
 rotation = 1.5708
 scale = Vector2(0.0754769, 0.0754769)
 texture = ExtResource("4_tqi5r")
+
+[node name="transfer_screen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="transfer_screen"]
+layout_mode = 0
+offset_left = 1918.0
+offset_top = 370.0
+offset_right = 1918.0
+offset_bottom = 661.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="transfer_screen"]
+layout_mode = 0
+offset_top = 712.0
+offset_bottom = 1003.0
+color = Color(0, 0, 0, 1)
+
+[node name="lobby_screen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="select_frame" type="TextureRect" parent="lobby_screen"]
+offset_top = 616.0
+offset_right = 54.0
+offset_bottom = 968.0
+rotation = -1.5708
+texture = SubResource("GradientTexture1D_sfkdv")
+expand_mode = 1
+
+[node name="UiArrowIcon" type="Sprite2D" parent="lobby_screen/select_frame"]
+position = Vector2(26.9988, 323)
+rotation = 3.14159
+scale = Vector2(0.0754769, 0.0754769)
+texture = ExtResource("4_tqi5r")
+
+[node name="Label" type="Label" parent="lobby_screen"]
+modulate = Color(0.172549, 0.356863, 0.670588, 0.388235)
+layout_mode = 0
+offset_left = -682.0
+offset_top = 231.0
+offset_bottom = 471.0
+theme_override_fonts/font = ExtResource("2_tf65f")
+theme_override_font_sizes/font_size = 200
+text = "NOXX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="play_game" type="Button" parent="lobby_screen"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 562.0
+offset_right = 1918.0
+offset_bottom = 617.0
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ecmde")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5cxil")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hm4tx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nnvo6")
+text = " PLAY"
+alignment = 0
+
+[node name="selection_bg" type="ColorRect" parent="lobby_screen"]
+visible = false
+layout_mode = 0
+offset_top = 562.0
+offset_right = 1918.0
+offset_bottom = 616.0
 
 [node name="SoundsNmoozic" type="Node" parent="."]
 
@@ -305,3 +566,7 @@ bus = &"Music"
 libraries = {
 "": SubResource("AnimationLibrary_0wlhd")
 }
+
+[connection signal="pressed" from="play" to="." method="transfer_screen"]
+[connection signal="pressed" from="lobby_screen/play_game" to="." method="play_game_pressed"]
+[connection signal="animation_finished" from="MenuPlayer" to="." method="stop_transfer"]
