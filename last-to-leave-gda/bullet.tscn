@@ -9,7 +9,7 @@ size = Vector3(0.1, 0.1, 0.522705)
 size = Vector3(0.2, 0.2, 1)
 
 [node name="Bullet" type="CharacterBody3D"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.0102948, 0)
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0.0102948, 0)
 script = ExtResource("1_6kxth")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
