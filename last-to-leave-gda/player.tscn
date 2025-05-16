@@ -25,29 +25,28 @@ transform = Transform3D(-0.000201408, 0, 0.019999, 0, 0.02, 0, -0.019999, 0, -0.
 [node name="pos2" type="Node3D" parent="Head/Camera3D/Shotgun"]
 transform = Transform3D(0.0880939, 0, -7.49948, 0, 7.5, 0, 7.49948, 0, 0.0880939, 28.3426, 3.34433, -0.217466)
 
-[node name="WeaponManager" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_pkx05")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.686482, 2.8489, -0.102408)
-player = NodePath("..")
+[node name="WeaponManager" parent="Head" instance=ExtResource("2_pkx05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.686699, -0.42869, 0.219189)
 
-[node name="FPS_Rig" type="Node3D" parent="WeaponManager"]
+[node name="FPS_Rig" type="Node3D" parent="Head/WeaponManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0882208, 0)
 
-[node name="deagle" parent="WeaponManager/FPS_Rig" instance=ExtResource("2_w622e")]
+[node name="deagle" parent="Head/WeaponManager/FPS_Rig" instance=ExtResource("2_w622e")]
 transform = Transform3D(-0.00327226, 0, 0.149964, 0, 0.15, 0, -0.149964, 0, -0.00327226, 0.25778, 0.491846, -0.609464)
 
-[node name="pos2" type="Node3D" parent="WeaponManager/FPS_Rig/deagle"]
+[node name="pos2" type="Node3D" parent="Head/WeaponManager/FPS_Rig/deagle"]
 transform = Transform3D(-0.000842998, 0, 0.149998, 0, 0.15, 0, -0.149998, 0, -0.000842998, -5.06129, -2.18541, 4.27437)
 
-[node name="Sniper" parent="WeaponManager/FPS_Rig" instance=ExtResource("5_0hu60")]
+[node name="Sniper" parent="Head/WeaponManager/FPS_Rig" instance=ExtResource("5_0hu60")]
 transform = Transform3D(-0.00809825, 0, 0.999967, 0, 1, 0, -0.999967, 0, -0.00809825, 0.079764, 0.516674, -0.510936)
 
-[node name="AR" parent="WeaponManager/FPS_Rig" instance=ExtResource("6_4ndi6")]
+[node name="AR" parent="Head/WeaponManager/FPS_Rig" instance=ExtResource("6_4ndi6")]
 transform = Transform3D(0.0167194, 0, -0.99986, 0, 1, 0, 0.99986, 0, 0.0167194, 0.368955, 0.562468, -1.02775)
 
-[node name="pos" type="Node3D" parent="WeaponManager/FPS_Rig/AR"]
+[node name="pos" type="Node3D" parent="Head/WeaponManager/FPS_Rig/AR"]
 transform = Transform3D(0.149999, 0, -0.000450274, 0, 0.15, 0, 0.000450274, 0, 0.149999, 1.02688, -0.419829, -0.0240619)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="WeaponManager"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Head/WeaponManager"]
 root_node = NodePath("../FPS_Rig")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
