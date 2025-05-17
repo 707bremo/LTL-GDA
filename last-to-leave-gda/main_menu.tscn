@@ -1,12 +1,14 @@
-[gd_scene load_steps=20 format=3 uid="uid://bbposk6idlbm"]
+[gd_scene load_steps=31 format=3 uid="uid://bbposk6idlbm"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_0p4i2"]
 [ext_resource type="FontFile" uid="uid://8tdm14ofrfqc" path="res://UI/fonts/glacial-indifference.bold.otf" id="2_tf65f"]
 [ext_resource type="FontFile" uid="uid://1c23xkb8xumk" path="res://UI/fonts/JetJaneMono Bold.ttf" id="3_dwhpb"]
 [ext_resource type="AudioStream" uid="uid://cb3u4am848qkc" path="res://UI/Sounds/music/MainMenu_mooz.wav" id="3_fp035"]
 [ext_resource type="Texture2D" uid="uid://dpkx1sxrmr3sw" path="res://UI/main_menu_interface/ui_arrow_icon.png" id="4_tqi5r"]
-[ext_resource type="AudioStream" uid="uid://c2owoamg2cqae" path="res://UI/Sounds/select/select_sound3.wav" id="5_42pl0"]
+[ext_resource type="Script" path="res://lobby_screen.gd" id="6_6rr1j"]
+[ext_resource type="AudioStream" uid="uid://do0owtxhtllo8" path="res://UI/Sounds/select/select_sound2.wav" id="7_f8mm3"]
 [ext_resource type="Texture2D" uid="uid://bg72cqyjrsrxs" path="res://UI/main_menu_interface/SIIMlogo.png" id="7_vik44"]
+[ext_resource type="AudioStream" uid="uid://8ktisvb65aay" path="res://UI/Sounds/select/scroll_sound.wav" id="8_amd48"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2v10c"]
 
@@ -24,6 +26,264 @@ gradient = SubResource("Gradient_j7abv")
 bg_color = Color(0.4, 0.592157, 0.913725, 0.607843)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nnvo6"]
+
+[sub_resource type="GDScript" id="GDScript_5e5vf"]
+script/source = "extends Control
+
+@onready var return_button: Button = $return
+
+
+
+func _on_return_pressed() -> void:
+	self.emit_signal(\"back\")
+"
+
+[sub_resource type="Animation" id="Animation_b8lsk"]
+resource_name = "controls_looping"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("logo2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, -248), Vector2(3, 1013)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("logo4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(405, -248), Vector2(405, 1013)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("logo6:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(802, -248), Vector2(802, 1013)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("logo8:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1197, -248), Vector2(1197, 1013)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("logo9:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1590, -248), Vector2(1590, 1013)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("logo:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(203, 1008), Vector2(203, -248)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("logo3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(605, 1008), Vector2(605, -248)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("logo5:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1002, 1008), Vector2(1002, -248)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("logo7:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1397, 1008), Vector2(1397, -248)]
+}
+
+[sub_resource type="Animation" id="Animation_wk46p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("logo2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, -248)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("logo4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(405, -248)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("logo6:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(802, -248)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("logo8:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1197, -248)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("logo9:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1590, -248)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("logo:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(203, 1008)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("logo3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(605, 1008)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("logo5:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1002, 1008)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("logo7:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1397, 1008)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_err1n"]
+_data = {
+"RESET": SubResource("Animation_wk46p"),
+"controls_looping": SubResource("Animation_b8lsk")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsx6t"]
+bg_color = Color(0.172549, 0.356863, 0.670588, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mkof"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nuiwh"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+expand_margin_left = 14.0
+expand_margin_top = 10.0
+expand_margin_right = 14.0
+expand_margin_bottom = 10.0
 
 [sub_resource type="Animation" id="Animation_abmwd"]
 length = 0.001
@@ -352,11 +612,93 @@ tracks/2/keys = {
 "values": [Vector2(0, 291), Vector2(1918, 291)]
 }
 
+[sub_resource type="Animation" id="Animation_04cvl"]
+resource_name = "selected2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lobby_screen/selection_bg:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1918, 54), Vector2(1918, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lobby_screen/selection_bg:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 616), Vector2(0, 643)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lobby_screen/selection_bg:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j7x25"]
+resource_name = "selected3"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lobby_screen/selection_bg:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1918, 54), Vector2(1918, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lobby_screen/selection_bg:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, 671), Vector2(-1, 698)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lobby_screen/selection_bg:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0wlhd"]
 _data = {
 "RESET": SubResource("Animation_abmwd"),
 "main_opening": SubResource("Animation_g7jry"),
 "selected": SubResource("Animation_k1id0"),
+"selected2": SubResource("Animation_04cvl"),
+"selected3": SubResource("Animation_j7x25"),
 "transfer_to_lobby": SubResource("Animation_2li5w")
 }
 
@@ -484,12 +826,14 @@ offset_bottom = 1003.0
 color = Color(0, 0, 0, 1)
 
 [node name="lobby_screen" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("6_6rr1j")
 
 [node name="select_frame" type="TextureRect" parent="lobby_screen"]
 layout_mode = 0
@@ -499,40 +843,9 @@ offset_bottom = 968.0
 rotation = -1.5708
 texture = SubResource("GradientTexture1D_sfkdv")
 expand_mode = 1
+metadata/_edit_group_ = true
 
 [node name="UiArrowIcon" type="Sprite2D" parent="lobby_screen/select_frame"]
-position = Vector2(26.9988, 323)
-rotation = 3.14159
-scale = Vector2(0.0754769, 0.0754769)
-texture = ExtResource("4_tqi5r")
-
-[node name="select_frame2" type="TextureRect" parent="lobby_screen"]
-visible = false
-layout_mode = 0
-offset_top = 670.0
-offset_right = 54.0
-offset_bottom = 1022.0
-rotation = -1.5708
-texture = SubResource("GradientTexture1D_sfkdv")
-expand_mode = 1
-
-[node name="UiArrowIcon" type="Sprite2D" parent="lobby_screen/select_frame2"]
-position = Vector2(26.9988, 323)
-rotation = 3.14159
-scale = Vector2(0.0754769, 0.0754769)
-texture = ExtResource("4_tqi5r")
-
-[node name="select_frame3" type="TextureRect" parent="lobby_screen"]
-visible = false
-layout_mode = 0
-offset_top = 724.0
-offset_right = 54.0
-offset_bottom = 1076.0
-rotation = -1.5708
-texture = SubResource("GradientTexture1D_sfkdv")
-expand_mode = 1
-
-[node name="UiArrowIcon" type="Sprite2D" parent="lobby_screen/select_frame3"]
 position = Vector2(26.9988, 323)
 rotation = 3.14159
 scale = Vector2(0.0754769, 0.0754769)
@@ -553,6 +866,35 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_nnvo6")
 text = " PLAY"
 alignment = 0
 
+[node name="controls_button" type="Button" parent="lobby_screen"]
+offset_left = 352.0
+offset_top = 617.0
+offset_right = 1918.0
+offset_bottom = 672.0
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ecmde")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5cxil")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hm4tx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nnvo6")
+text = " CONTROLS
+"
+alignment = 0
+
+[node name="exit_button" type="Button" parent="lobby_screen"]
+offset_left = 352.0
+offset_top = 671.0
+offset_right = 1918.0
+offset_bottom = 726.0
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ecmde")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5cxil")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hm4tx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nnvo6")
+text = " EXIT"
+alignment = 0
+
 [node name="selection_bg" type="ColorRect" parent="lobby_screen"]
 visible = false
 layout_mode = 0
@@ -560,12 +902,350 @@ offset_top = 562.0
 offset_right = 1918.0
 offset_bottom = 616.0
 
+[node name="controls_screen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_5e5vf")
+
+[node name="bg2" type="ColorRect" parent="controls_screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="controls_screen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 196.0
+offset_right = 175.0
+offset_bottom = 287.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.172549, 0.356863, 0.670588, 1)
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 79
+text = "CONTROLS"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="controls_screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -339.0
+offset_top = -365.0
+offset_right = 339.0
+offset_bottom = 365.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 235
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="controls_screen/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 45
+alignment = 1
+
+[node name="Label" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 30
+text = "FORWARD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 30
+text = "BACKWARD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 30
+text = "LEFT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 30
+text = "RIGHT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 30
+text = "INTERACT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 30
+text = "INVENTORY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="controls_screen/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 45
+alignment = 1
+
+[node name="Label" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 30
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 30
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 30
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 30
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 30
+text = "TAB"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 30
+text = "F"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="logo" type="TextureRect" parent="controls_screen"]
+modulate = Color(0.172549, 0.356863, 0.670588, 0.196078)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -756.0
+offset_top = 469.0
+offset_right = -442.0
+offset_bottom = 783.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_vik44")
+expand_mode = 1
+
+[node name="logo2" type="TextureRect" parent="controls_screen"]
+modulate = Color(0.172549, 0.356863, 0.670588, 0.196078)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -956.0
+offset_top = -787.0
+offset_right = -642.0
+offset_bottom = -473.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_vik44")
+expand_mode = 1
+
+[node name="logo3" type="TextureRect" parent="controls_screen"]
+modulate = Color(0.172549, 0.356863, 0.670588, 0.196078)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -354.0
+offset_top = 469.0
+offset_right = -40.0
+offset_bottom = 783.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_vik44")
+expand_mode = 1
+
+[node name="logo4" type="TextureRect" parent="controls_screen"]
+modulate = Color(0.172549, 0.356863, 0.670588, 0.196078)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -554.0
+offset_top = -787.0
+offset_right = -240.0
+offset_bottom = -473.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_vik44")
+expand_mode = 1
+
+[node name="logo5" type="TextureRect" parent="controls_screen"]
+modulate = Color(0.172549, 0.356863, 0.670588, 0.196078)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 43.0
+offset_top = 469.0
+offset_right = 357.0
+offset_bottom = 783.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_vik44")
+expand_mode = 1
+
+[node name="logo6" type="TextureRect" parent="controls_screen"]
+modulate = Color(0.172549, 0.356863, 0.670588, 0.196078)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = -787.0
+offset_right = 157.0
+offset_bottom = -473.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_vik44")
+expand_mode = 1
+
+[node name="logo7" type="TextureRect" parent="controls_screen"]
+modulate = Color(0.172549, 0.356863, 0.670588, 0.196078)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 438.0
+offset_top = 469.0
+offset_right = 752.0
+offset_bottom = 783.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_vik44")
+expand_mode = 1
+
+[node name="logo9" type="TextureRect" parent="controls_screen"]
+modulate = Color(0.172549, 0.356863, 0.670588, 0.196078)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 631.0
+offset_top = -787.0
+offset_right = 945.0
+offset_bottom = -473.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_vik44")
+expand_mode = 1
+
+[node name="logo8" type="TextureRect" parent="controls_screen"]
+modulate = Color(0.172549, 0.356863, 0.670588, 0.196078)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 238.0
+offset_top = -787.0
+offset_right = 552.0
+offset_bottom = -473.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_vik44")
+expand_mode = 1
+
+[node name="loopers" type="AnimationPlayer" parent="controls_screen"]
+libraries = {
+"": SubResource("AnimationLibrary_err1n")
+}
+
+[node name="return" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -81.5
+offset_top = -218.0
+offset_right = 81.5
+offset_bottom = -186.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_nsx6t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5mkof")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nuiwh")
+text = "RETURN TO MENU"
+
 [node name="SoundsNmoozic" type="Node" parent="."]
 
 [node name="main_select" type="AudioStreamPlayer" parent="SoundsNmoozic"]
-stream = ExtResource("5_42pl0")
-volume_db = 14.0
+stream = ExtResource("7_f8mm3")
+volume_db = 20.0
 bus = &"UI-SFX"
+
+[node name="scroll_select" type="AudioStreamPlayer" parent="SoundsNmoozic"]
+stream = ExtResource("8_amd48")
+volume_db = 10.0
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="SoundsNmoozic"]
 stream = ExtResource("3_fp035")
@@ -577,5 +1257,13 @@ libraries = {
 }
 
 [connection signal="pressed" from="play" to="." method="transfer_screen"]
+[connection signal="mouse_entered" from="lobby_screen/play_game" to="lobby_screen" method="_on_play_game_mouse_entered"]
 [connection signal="pressed" from="lobby_screen/play_game" to="." method="play_game_pressed"]
+[connection signal="focus_entered" from="lobby_screen/controls_button" to="lobby_screen" method="_on_controls_button_focus_entered"]
+[connection signal="mouse_entered" from="lobby_screen/controls_button" to="lobby_screen" method="_on_controls_button_mouse_entered"]
+[connection signal="pressed" from="lobby_screen/controls_button" to="." method="controls_button_pressed"]
+[connection signal="focus_entered" from="lobby_screen/exit_button" to="lobby_screen" method="_on_exit_button_focus_entered"]
+[connection signal="mouse_entered" from="lobby_screen/exit_button" to="lobby_screen" method="_on_exit_button_mouse_entered"]
+[connection signal="pressed" from="lobby_screen/exit_button" to="." method="exit_button_pressed"]
+[connection signal="pressed" from="return" to="." method="_on_return_pressed"]
 [connection signal="animation_finished" from="MenuPlayer" to="." method="stop_transfer"]
