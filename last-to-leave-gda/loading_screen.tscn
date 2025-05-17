@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7cutjmeie33h"]
+[gd_scene load_steps=18 format=3 uid="uid://b7cutjmeie33h"]
 
 [ext_resource type="Script" path="res://loading_screen.gd" id="1_ucw4w"]
 [ext_resource type="FontFile" uid="uid://1c23xkb8xumk" path="res://UI/fonts/JetJaneMono Bold.ttf" id="2_8kijo"]
@@ -104,30 +104,6 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(1398, 1294)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("noxx_label:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0, 0, 1)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("siim_label:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_1ysg5"]
 resource_name = "load_opening"
@@ -197,36 +173,186 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1398, 1294), Vector2(1398, 537), Vector2(1398, -211)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("noxx_label:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.43333, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("siim_label:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.43333, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jsb7j"]
 _data = {
 "RESET": SubResource("Animation_0xfud"),
 "load_opening": SubResource("Animation_1ysg5"),
 "looped_elements": SubResource("Animation_1d6eo")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n4345"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 5
+
+[sub_resource type="Animation" id="Animation_bp572"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("advice_text:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("advice_text2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("advice_text3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("advice_text5:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0dmtu"]
+resource_name = "text_scrolling"
+length = 21.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("advice_text:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5.1, 6.1, 10.1, 10.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("advice_text2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(11.1, 11.6, 14.6, 15.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("advice_text3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(15.6, 16.1, 20.1, 20.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("advice_text5:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 4, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ypvhb"]
+_data = {
+"RESET": SubResource("Animation_bp572"),
+"text_scrolling": SubResource("Animation_0dmtu")
+}
+
+[sub_resource type="Animation" id="Animation_pmh8b"]
+resource_name = "cover_move"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cover:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(308, 60), Vector2(308, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cover:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(211, -10), Vector2(211, 20)]
+}
+
+[sub_resource type="Animation" id="Animation_8eail"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cover:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(308, 60)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cover:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(211, -10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_12svk"]
+_data = {
+"RESET": SubResource("Animation_8eail"),
+"cover_move": SubResource("Animation_pmh8b")
 }
 
 [node name="LoadingScreen" type="CanvasLayer"]
@@ -281,33 +407,6 @@ offset_left = 120.0
 offset_right = 160.0
 offset_bottom = 40.0
 
-[node name="noxx_label" type="Label" parent="elements"]
-modulate = Color(1, 0, 0, 1)
-layout_mode = 0
-offset_left = 255.0
-offset_top = 530.0
-offset_right = 321.0
-offset_bottom = 565.0
-theme_override_colors/font_color = Color(0.172549, 0.356863, 0.670588, 1)
-theme_override_fonts/font = ExtResource("2_8kijo")
-theme_override_font_sizes/font_size = 30
-text = "NOXX"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="siim_label" type="Label" parent="elements"]
-layout_mode = 0
-offset_left = 1375.0
-offset_top = 530.0
-offset_right = 1441.0
-offset_bottom = 565.0
-theme_override_colors/font_color = Color(0.172549, 0.356863, 0.670588, 1)
-theme_override_fonts/font = ExtResource("2_8kijo")
-theme_override_font_sizes/font_size = 30
-text = "SIIM"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="siimlogo" type="Sprite2D" parent="elements"]
 self_modulate = Color(1, 1, 1, 0.196078)
 texture_filter = 2
@@ -340,4 +439,140 @@ libraries = {
 "": SubResource("AnimationLibrary_jsb7j")
 }
 
+[node name="game_tips" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -365.0
+offset_top = 134.0
+offset_right = 365.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="advice_title" type="Label" parent="game_tips"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_fonts/font = ExtResource("2_8kijo")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_n4345")
+text = "ADVICE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cover" type="ColorRect" parent="game_tips"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.0
+offset_top = 20.0
+offset_right = 154.0
+offset_bottom = 20.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="advice_text" type="Label" parent="game_tips"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_top = 72.0
+offset_right = 58.0
+offset_bottom = 118.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_fonts/font = ExtResource("2_8kijo")
+theme_override_font_sizes/font_size = 35
+text = "You'll be hungry on the run.
+Make sure you eat anything
+you can salvage."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="advice_text2" type="Label" parent="game_tips"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_top = 72.0
+offset_right = 58.0
+offset_bottom = 118.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_fonts/font = ExtResource("2_8kijo")
+theme_override_font_sizes/font_size = 35
+text = "Don't die..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="advice_text3" type="Label" parent="game_tips"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_top = 72.0
+offset_right = 58.0
+offset_bottom = 118.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_fonts/font = ExtResource("2_8kijo")
+theme_override_font_sizes/font_size = 35
+text = "Stay out of sight.
+Being spotted by enemies just
+attracts more of them.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="advice_text5" type="Label" parent="game_tips"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -329.0
+offset_top = 72.0
+offset_right = 329.0
+offset_bottom = 333.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_fonts/font = ExtResource("2_8kijo")
+theme_override_font_sizes/font_size = 35
+text = "This is all about decision making.
+
+
+Every choice you make has its
+consequences and benefits.
+Your speed matters."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text_animations" type="AnimationPlayer" parent="game_tips"]
+libraries = {
+"": SubResource("AnimationLibrary_ypvhb")
+}
+
+[node name="advice_title_player" type="AnimationPlayer" parent="game_tips"]
+libraries = {
+"": SubResource("AnimationLibrary_12svk")
+}
+
 [connection signal="animation_finished" from="elements/loading_rods" to="." method="_on_loading_rods_animation_finished"]
+[connection signal="animation_finished" from="game_tips/advice_title_player" to="." method="_on_advice_title_player_animation_finished"]

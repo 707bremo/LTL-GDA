@@ -13,6 +13,7 @@ extends Control
 @onready var play_game_button: Button = $lobby_screen/play_game
 @onready var selection_bg: ColorRect = $lobby_screen/selection_bg
 @onready var return_button: Button = $return
+@onready var v_stripe: TextureRect = $v_stripe
 
 # screens
 @onready var lobby_screen: Control = $lobby_screen
@@ -51,6 +52,11 @@ func transfer_screen():
 	menu_player.play("transfer_to_lobby")
 
 func stop_transfer(anim_name: StringName) -> void:
+	
+	
+	if anim_name == "main_opening":
+		menu_player.play("main_loops")
+	
 	if anim_name == "transfer_to_lobby":
 		lobby_screen.visible = true
 		is_lobby_screen = true
@@ -58,6 +64,7 @@ func stop_transfer(anim_name: StringName) -> void:
 		title.visible = false
 		siimlogo.visible = false
 		play_button.visible = false
+		v_stripe.visible = false
 		menu_player.play("lobby_opening")
 
 
