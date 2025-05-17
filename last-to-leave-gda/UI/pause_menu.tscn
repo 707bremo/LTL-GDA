@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_wrwgp"]
 [ext_resource type="Shader" path="res://pauseMenu.gdshader" id="2_ijcbb"]
-[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="3_2y6wc"]
+[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://UI/fonts/Esperanto SmallCaps Regular.ttf" id="3_2y6wc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6yfld"]
 shader = ExtResource("2_ijcbb")

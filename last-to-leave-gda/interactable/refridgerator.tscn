@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cmpadl7eyt37u"]
 
 [ext_resource type="Script" path="res://interactable/interactableScripts/cabinet.gd" id="1_s5qq5"]
-[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="2_kuhd2"]
+[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://UI/fonts/Esperanto SmallCaps Regular.ttf" id="2_kuhd2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8iaun"]
 size = Vector3(1, 2, 1)
