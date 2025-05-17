@@ -476,9 +476,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -154.0
-offset_top = 20.0
+offset_top = -10.0
 offset_right = 154.0
-offset_bottom = 20.0
+offset_bottom = 50.0
 grow_horizontal = 2
 color = Color(0, 0, 0, 1)
 

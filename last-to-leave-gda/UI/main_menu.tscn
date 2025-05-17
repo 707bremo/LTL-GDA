@@ -1,15 +1,15 @@
 [gd_scene load_steps=30 format=3 uid="uid://bbposk6idlbm"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_0p4i2"]
-[ext_resource type="FontFile" uid="uid://8tdm14ofrfqc" path="res://UI/fonts/glacial-indifference.bold.otf" id="2_tf65f"]
-[ext_resource type="Texture2D" uid="uid://5gsdlqitygcu" path="res://main_menu_gradientUI.tres" id="2_x7u04"]
-[ext_resource type="FontFile" uid="uid://1c23xkb8xumk" path="res://UI/fonts/JetJaneMono Bold.ttf" id="3_dwhpb"]
-[ext_resource type="AudioStream" uid="uid://cb3u4am848qkc" path="res://UI/Sounds/music/MainMenu_mooz.wav" id="3_fp035"]
-[ext_resource type="Texture2D" uid="uid://dpkx1sxrmr3sw" path="res://UI/main_menu_interface/ui_arrow_icon.png" id="4_tqi5r"]
-[ext_resource type="Script" path="res://lobby_screen.gd" id="6_6rr1j"]
-[ext_resource type="AudioStream" uid="uid://do0owtxhtllo8" path="res://UI/Sounds/select/select_sound2.wav" id="7_f8mm3"]
-[ext_resource type="Texture2D" uid="uid://bg72cqyjrsrxs" path="res://UI/main_menu_interface/SIIMlogo.png" id="7_vik44"]
-[ext_resource type="AudioStream" uid="uid://8ktisvb65aay" path="res://UI/Sounds/select/scroll_sound.wav" id="8_amd48"]
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_x06ck"]
+[ext_resource type="Texture2D" uid="uid://5gsdlqitygcu" path="res://main_menu_gradientUI.tres" id="2_6567b"]
+[ext_resource type="Texture2D" uid="uid://bg72cqyjrsrxs" path="res://UI/main_menu_interface/SIIMlogo.png" id="3_k8xrf"]
+[ext_resource type="FontFile" uid="uid://1c23xkb8xumk" path="res://UI/fonts/JetJaneMono Bold.ttf" id="4_tccth"]
+[ext_resource type="FontFile" uid="uid://8tdm14ofrfqc" path="res://UI/fonts/glacial-indifference.bold.otf" id="5_w6cdp"]
+[ext_resource type="Texture2D" uid="uid://dpkx1sxrmr3sw" path="res://UI/main_menu_interface/ui_arrow_icon.png" id="6_x1cou"]
+[ext_resource type="Script" path="res://lobby_screen.gd" id="7_0s2dy"]
+[ext_resource type="AudioStream" uid="uid://do0owtxhtllo8" path="res://UI/Sounds/select/select_sound2.wav" id="8_txxwt"]
+[ext_resource type="AudioStream" uid="uid://8ktisvb65aay" path="res://UI/Sounds/select/scroll_sound.wav" id="9_paqs7"]
+[ext_resource type="AudioStream" uid="uid://cb3u4am848qkc" path="res://UI/Sounds/music/MainMenu_mooz.wav" id="10_jkg6u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2v10c"]
 
@@ -488,6 +488,23 @@ tracks/17/keys = {
 "values": [Vector2(393, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_vlwwn"]
+resource_name = "main_loops"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("v_stripe/SiiMlogo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(193, -144), Vector2(193, 3477)]
+}
+
 [sub_resource type="Animation" id="Animation_g7jry"]
 resource_name = "main_opening"
 length = 3.1
@@ -784,23 +801,6 @@ tracks/3/keys = {
 "values": [Vector2(393, 0), Vector2(393, 1073)]
 }
 
-[sub_resource type="Animation" id="Animation_vlwwn"]
-resource_name = "main_loops"
-length = 10.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("v_stripe/SiiMlogo:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(193, -144), Vector2(193, 3477)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0wlhd"]
 _data = {
 "RESET": SubResource("Animation_abmwd"),
@@ -819,7 +819,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0p4i2")
+script = ExtResource("1_x06ck")
 
 [node name="bg" type="ColorRect" parent="."]
 layout_mode = 1
@@ -842,20 +842,20 @@ offset_right = -282.0
 offset_bottom = -1077.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("2_x7u04")
+texture = ExtResource("2_6567b")
 flip_h = true
 
 [node name="SiiMlogo" type="Sprite2D" parent="v_stripe"]
 modulate = Color(0.403922, 0.596078, 0.917647, 1)
 self_modulate = Color(0.403922, 0.596078, 0.917647, 0.145098)
 position = Vector2(193, -144)
-texture = ExtResource("7_vik44")
+texture = ExtResource("3_k8xrf")
 
 [node name="SiiMlogo2" type="Sprite2D" parent="v_stripe/SiiMlogo"]
 modulate = Color(0.403922, 0.596078, 0.917647, 1)
 self_modulate = Color(0.403922, 0.596078, 0.917647, 0.145098)
 position = Vector2(-6, -2215)
-texture = ExtResource("7_vik44")
+texture = ExtResource("3_k8xrf")
 
 [node name="Label" type="Label" parent="v_stripe/SiiMlogo"]
 self_modulate = Color(0.172549, 0.356863, 0.670588, 0.313726)
@@ -863,7 +863,7 @@ offset_left = -105.0
 offset_top = -2034.0
 offset_right = 117.0
 offset_bottom = -197.0
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 400
 text = "N
 O
@@ -881,7 +881,7 @@ offset_top = 381.0
 offset_right = 51.0
 offset_bottom = 624.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_tf65f")
+theme_override_fonts/font = ExtResource("5_w6cdp")
 theme_override_font_sizes/font_size = 100
 text = "LAST T
           LEAVE"
@@ -891,14 +891,14 @@ self_modulate = Color(1, 1, 1, 0)
 texture_filter = 2
 position = Vector2(702, 446)
 scale = Vector2(0.3035, 0.3035)
-texture = ExtResource("7_vik44")
+texture = ExtResource("3_k8xrf")
 
 [node name="play" type="Button" parent="."]
 layout_mode = 0
 offset_top = 872.0
 offset_right = 1918.0
 offset_bottom = 935.0
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2v10c")
 text = "       "
@@ -910,7 +910,7 @@ layout_mode = 0
 offset_left = 506.0
 offset_right = 911.0
 offset_bottom = 63.0
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 40
 text = "Press ENTER button"
 horizontal_alignment = 1
@@ -945,7 +945,7 @@ offset_top = 63.0
 offset_right = 63.0
 offset_bottom = 521.0
 rotation = -1.5708
-texture = ExtResource("2_x7u04")
+texture = ExtResource("2_6567b")
 expand_mode = 1
 
 [node name="UiArrowIcon" type="Sprite2D" parent="play"]
@@ -953,7 +953,7 @@ self_modulate = Color(1, 1, 1, 0)
 position = Vector2(419, 31)
 rotation = 1.5708
 scale = Vector2(0.0754769, 0.0754769)
-texture = ExtResource("4_tqi5r")
+texture = ExtResource("6_x1cou")
 
 [node name="transfer_screen" type="Control" parent="."]
 layout_mode = 1
@@ -993,7 +993,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("6_6rr1j")
+script = ExtResource("7_0s2dy")
 
 [node name="select_frame" type="TextureRect" parent="lobby_screen"]
 layout_mode = 0
@@ -1001,7 +1001,7 @@ offset_top = 616.0
 offset_right = 54.0
 offset_bottom = 968.0
 rotation = -1.5708
-texture = ExtResource("2_x7u04")
+texture = ExtResource("2_6567b")
 expand_mode = 1
 metadata/_edit_group_ = true
 
@@ -1009,7 +1009,7 @@ metadata/_edit_group_ = true
 position = Vector2(26.9988, 323)
 rotation = 3.14159
 scale = Vector2(0.0754769, 0.0754769)
-texture = ExtResource("4_tqi5r")
+texture = ExtResource("6_x1cou")
 
 [node name="play_game" type="Button" parent="lobby_screen"]
 layout_mode = 0
@@ -1017,7 +1017,7 @@ offset_left = 352.0
 offset_top = 562.0
 offset_right = 1918.0
 offset_bottom = 617.0
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ecmde")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5cxil")
@@ -1032,7 +1032,7 @@ offset_left = 352.0
 offset_top = 617.0
 offset_right = 1918.0
 offset_bottom = 672.0
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ecmde")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5cxil")
@@ -1048,7 +1048,7 @@ offset_left = 352.0
 offset_top = 671.0
 offset_right = 1918.0
 offset_bottom = 726.0
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ecmde")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5cxil")
@@ -1093,7 +1093,7 @@ offset_right = 175.0
 offset_bottom = 287.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.172549, 0.356863, 0.670588, 1)
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 79
 text = "CONTROLS"
 
@@ -1120,7 +1120,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 30
 text = "FORWARD"
 horizontal_alignment = 1
@@ -1128,7 +1128,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 30
 text = "BACKWARD"
 horizontal_alignment = 1
@@ -1136,7 +1136,7 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 30
 text = "LEFT"
 horizontal_alignment = 1
@@ -1144,7 +1144,7 @@ vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 30
 text = "RIGHT"
 horizontal_alignment = 1
@@ -1152,7 +1152,7 @@ vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 30
 text = "INTERACT"
 horizontal_alignment = 1
@@ -1160,7 +1160,7 @@ vertical_alignment = 1
 
 [node name="Label6" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 30
 text = "INVENTORY"
 horizontal_alignment = 1
@@ -1173,7 +1173,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 30
 text = "W"
 horizontal_alignment = 1
@@ -1181,7 +1181,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 30
 text = "S"
 horizontal_alignment = 1
@@ -1189,7 +1189,7 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 30
 text = "A"
 horizontal_alignment = 1
@@ -1197,7 +1197,7 @@ vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 30
 text = "D"
 horizontal_alignment = 1
@@ -1205,7 +1205,7 @@ vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 30
 text = "TAB"
 horizontal_alignment = 1
@@ -1213,7 +1213,7 @@ vertical_alignment = 1
 
 [node name="Label6" type="Label" parent="controls_screen/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 30
 text = "F"
 horizontal_alignment = 1
@@ -1233,7 +1233,7 @@ offset_right = -442.0
 offset_bottom = 783.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_vik44")
+texture = ExtResource("3_k8xrf")
 expand_mode = 1
 
 [node name="logo2" type="TextureRect" parent="controls_screen"]
@@ -1250,7 +1250,7 @@ offset_right = -642.0
 offset_bottom = -473.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_vik44")
+texture = ExtResource("3_k8xrf")
 expand_mode = 1
 
 [node name="logo3" type="TextureRect" parent="controls_screen"]
@@ -1267,7 +1267,7 @@ offset_right = -40.0
 offset_bottom = 783.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_vik44")
+texture = ExtResource("3_k8xrf")
 expand_mode = 1
 
 [node name="logo4" type="TextureRect" parent="controls_screen"]
@@ -1284,7 +1284,7 @@ offset_right = -240.0
 offset_bottom = -473.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_vik44")
+texture = ExtResource("3_k8xrf")
 expand_mode = 1
 
 [node name="logo5" type="TextureRect" parent="controls_screen"]
@@ -1301,7 +1301,7 @@ offset_right = 357.0
 offset_bottom = 783.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_vik44")
+texture = ExtResource("3_k8xrf")
 expand_mode = 1
 
 [node name="logo6" type="TextureRect" parent="controls_screen"]
@@ -1318,7 +1318,7 @@ offset_right = 157.0
 offset_bottom = -473.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_vik44")
+texture = ExtResource("3_k8xrf")
 expand_mode = 1
 
 [node name="logo7" type="TextureRect" parent="controls_screen"]
@@ -1335,7 +1335,7 @@ offset_right = 752.0
 offset_bottom = 783.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_vik44")
+texture = ExtResource("3_k8xrf")
 expand_mode = 1
 
 [node name="logo9" type="TextureRect" parent="controls_screen"]
@@ -1352,7 +1352,7 @@ offset_right = 945.0
 offset_bottom = -473.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_vik44")
+texture = ExtResource("3_k8xrf")
 expand_mode = 1
 
 [node name="logo8" type="TextureRect" parent="controls_screen"]
@@ -1369,7 +1369,7 @@ offset_right = 552.0
 offset_bottom = -473.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_vik44")
+texture = ExtResource("3_k8xrf")
 expand_mode = 1
 
 [node name="loopers" type="AnimationPlayer" parent="controls_screen"]
@@ -1391,7 +1391,7 @@ offset_right = 81.5
 offset_bottom = -186.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("3_dwhpb")
+theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/hover = SubResource("StyleBoxFlat_nsx6t")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5mkof")
@@ -1401,16 +1401,16 @@ text = "RETURN TO MENU"
 [node name="SoundsNmoozic" type="Node" parent="."]
 
 [node name="main_select" type="AudioStreamPlayer" parent="SoundsNmoozic"]
-stream = ExtResource("7_f8mm3")
+stream = ExtResource("8_txxwt")
 volume_db = 20.0
 bus = &"UI-SFX"
 
 [node name="scroll_select" type="AudioStreamPlayer" parent="SoundsNmoozic"]
-stream = ExtResource("8_amd48")
+stream = ExtResource("9_paqs7")
 volume_db = 10.0
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="SoundsNmoozic"]
-stream = ExtResource("3_fp035")
+stream = ExtResource("10_jkg6u")
 bus = &"Music"
 
 [node name="MenuPlayer" type="AnimationPlayer" parent="."]
