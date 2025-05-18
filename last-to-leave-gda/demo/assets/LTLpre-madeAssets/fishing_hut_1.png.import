@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc7bg0sd57o1n"
+uid="uid://bi737sm3ywbgu"
 path.s3tc="res://.godot/imported/fishing_hut_1.png-d6165a42f8546caaf57b25ae5f67861a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "bf37dd16cf06a3f52a80bf95ab323043"
 }
 
 [deps]
@@ -27,8 +24,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=8
-roughness/src_normal="res://demo/assets/LTLpre-madeAssets/fishing_hut_2.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

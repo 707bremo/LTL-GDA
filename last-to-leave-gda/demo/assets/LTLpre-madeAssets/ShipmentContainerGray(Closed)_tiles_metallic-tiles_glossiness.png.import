@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj4t5mkbnqupk"
+uid="uid://bv2oo2jbdhaeo"
 path.s3tc="res://.godot/imported/ShipmentContainerGray(Closed)_tiles_metallic-tiles_glossiness.png-3587508256ded3cbf351d710752a8891.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "1be3942d37f1809921689fe86a49c7da"
 }
 
 [deps]

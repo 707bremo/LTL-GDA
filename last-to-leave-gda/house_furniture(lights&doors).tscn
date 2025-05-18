@@ -1,11 +1,129 @@
-[gd_scene load_steps=2 format=3 uid="uid://ulvkw5aa2k74"]
+[gd_scene load_steps=13 format=3 uid="uid://ulvkw5aa2k74"]
 
 [ext_resource type="PackedScene" uid="uid://cryrhestusvhm" path="res://demo/assets/LTLpre-madeAssets/HouseFurniture(Lights&Doors).gltf" id="1_8cerl"]
+[ext_resource type="Script" path="res://door.gd" id="2_kiku2"]
+
+[sub_resource type="Animation" id="Animation_y0gli"]
+resource_name = "open"
+
+[sub_resource type="Animation" id="Animation_f3m37"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Doorknob_001:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.32109, 4.09766, 1.59833), Vector3(-4.42958, 4.09766, -0.401672)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Doorknob_001:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jyvyb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Doorknob_001:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.32109, 4.09766, 1.59833)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Doorknob_001:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rksd1"]
+_data = {
+"RESET": SubResource("Animation_jyvyb"),
+"close": SubResource("Animation_f3m37"),
+"open": SubResource("Animation_y0gli")
+}
+
+[sub_resource type="Animation" id="Animation_ghc63"]
+resource_name = "open"
+
+[sub_resource type="Animation" id="Animation_kxxyf"]
+resource_name = "close"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yw3js"]
+_data = {
+"close": SubResource("Animation_kxxyf"),
+"open": SubResource("Animation_ghc63")
+}
+
+[sub_resource type="Animation" id="Animation_uss4y"]
+resource_name = "open"
+
+[sub_resource type="Animation" id="Animation_h4t88"]
+resource_name = "close"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_icsoo"]
+_data = {
+"close": SubResource("Animation_h4t88"),
+"open": SubResource("Animation_uss4y")
+}
 
 [node name="HouseFurniture(Lights&Doors)" instance=ExtResource("1_8cerl")]
+
+[node name="Doorknob_001" parent="." index="2" groups=["doors"]]
+transform = Transform3D(6.82991e-09, 0, 0.15625, 0, -0.15625, 0, -0.15625, 0, 6.82991e-09, -2.32109, 4.09766, 1.59833)
+layers = 33
+script = ExtResource("2_kiku2")
+
+[node name="Doorknob_002" parent="." index="4" groups=["doors"]]
+layers = 33
+script = ExtResource("2_kiku2")
+
+[node name="Doorknob_003" parent="." index="6" groups=["doors"]]
+layers = 33
+script = ExtResource("2_kiku2")
 
 [node name="polySurface25_aiStandardSurface1_0" parent="." index="28"]
 transform = Transform3D(-1.2434, -0.128317, 1.90863e-07, 0.128317, -1.2434, -1.05535e-07, 2.00688e-07, -8.53847e-08, 1.25, -24.5873, 13.4116, -0.028)
 
 [node name="polySurface39_aiStandardSurface1_0" parent="." index="29"]
 transform = Transform3D(0.128317, -1.2434, 1.90863e-07, 1.2434, 0.128317, -1.05535e-07, 8.53846e-08, 2.00688e-07, 1.25, -25.0497, 10.6396, -0.00557335)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="30"]
+libraries = {
+"": SubResource("AnimationLibrary_rksd1")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="31"]
+libraries = {
+"": SubResource("AnimationLibrary_yw3js")
+}
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="." index="32"]
+libraries = {
+"": SubResource("AnimationLibrary_icsoo")
+}

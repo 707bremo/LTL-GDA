@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb8hrhe7kh5tl"
+uid="uid://duuvkck8rinch"
 path.s3tc="res://.godot/imported/chair_low-poly_0.png-15d9edf2509c2701a6f47d2e9646029c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "2ecb5406ff645e2119450f69cff69b8f"
 }
 
 [deps]
