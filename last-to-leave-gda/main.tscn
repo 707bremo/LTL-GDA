@@ -40,5 +40,5 @@ mesh = SubResource("PlaneMesh_wc6rj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.630328)
 shape = SubResource("ConcavePolygonShape3D_jukuq")
 
-[node name="Player" parent="." instance=ExtResource("1_pninw")]
+[node name="FPS_Character" parent="." instance=ExtResource("1_pninw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0326869, 0)
