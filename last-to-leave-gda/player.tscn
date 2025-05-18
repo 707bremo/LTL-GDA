@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d3yccfperamvs"]
+[gd_scene load_steps=23 format=3 uid="uid://d3yccfperamvs"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_vbs7i"]
 [ext_resource type="Script" path="res://HUD.gd" id="2_pjb0s"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://bom1ixhp4uq0h" path="res://weapon_manager/M4A1.tres" id="3_4qdo8"]
 [ext_resource type="PackedScene" uid="uid://d0730d1dwc2ta" path="res://addons/desert_droid.glb" id="3_60s6m"]
 [ext_resource type="PackedScene" uid="uid://bj7t3d84erqc3" path="res://MP5 (1).glb" id="3_pb0ow"]
+[ext_resource type="Texture2D" uid="uid://c13mwftsbxf2d" path="res://crosshair 3.png" id="3_yfvsp"]
 [ext_resource type="Resource" uid="uid://clbolgfoypqy2" path="res://weapon_manager/MP5.tres" id="4_vgvpl"]
 
 [sub_resource type="Animation" id="Animation_vq5xd"]
@@ -48,6 +49,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, -3.14159, 0), Vector3(0, -3.14159, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bullet_Point:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.0352017, 0.0487788, 0.120555), Vector3(0.0402858, 0.0241005, -0.879445)]
 }
 
 [sub_resource type="Animation" id="Animation_xc61g"]
@@ -240,6 +253,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0.683366), Vector3(0, 0, -0.0566534)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bullet_Point:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.161775, 0.0241005, 0.200667), Vector3(0.039635, -0.00476646, -0.935624)]
 }
 
 [sub_resource type="Animation" id="Animation_fs032"]
@@ -444,6 +469,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0.683366)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Bullet_Point:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0352017, 0.0487788, 0.120555)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_npqbw"]
 _data = {
@@ -504,6 +541,16 @@ text = "Weapon Stack:
 [node name="WeaponStack" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 
+[node name="Main_Sight" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_yfvsp")
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
+
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00021781, 3.27759, -0.321597)
 
@@ -532,6 +579,10 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_npqbw")
 }
+
+[node name="Bullet_Point" type="Marker3D" parent="Head/Camera3D/Weapon_Manager/FPS_Rig"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0352017, 0.0487788, 0.120555)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
