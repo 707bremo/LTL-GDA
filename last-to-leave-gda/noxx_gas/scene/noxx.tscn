@@ -1,0 +1,46 @@
+[gd_scene load_steps=11 format=3 uid="uid://dhagvvxgyk3ww"]
+
+[ext_resource type="Shader" uid="uid://cdl4pxnxngdjx" path="res://LOD_smoke_shader.tres" id="1_efemo"]
+[ext_resource type="Script" path="res://noxx_gas/scene/noxx_e.gd" id="1_yhguk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dm8i5"]
+radius = 3.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vc2au"]
+render_priority = 0
+shader = ExtResource("1_efemo")
+shader_parameter/ColorParameter = Color(0.543193, 0.695526, 0.94879, 1)
+
+[sub_resource type="Curve" id="Curve_hbmjt"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.245203, 1), 0.0, 0.0, 0, 0, Vector2(0.750533, 1), 0.0, 0.0, 0, 0, Vector2(0.995736, 0.0299281), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_a5wpy"]
+curve = SubResource("Curve_hbmjt")
+
+[sub_resource type="Gradient" id="Gradient_573up"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uax6d"]
+gradient = SubResource("Gradient_573up")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ryejd"]
+gravity = Vector3(0, 0, 0)
+scale_min = 8.0
+scale_max = 20.0
+color_ramp = SubResource("GradientTexture1D_uax6d")
+alpha_curve = SubResource("CurveTexture_a5wpy")
+
+[sub_resource type="QuadMesh" id="QuadMesh_woc72"]
+
+[node name="NOXX" type="Area3D"]
+script = ExtResource("1_yhguk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_dm8i5")
+
+[node name="gas" type="GPUParticles3D" parent="."]
+material_override = SubResource("ShaderMaterial_vc2au")
+process_material = SubResource("ParticleProcessMaterial_ryejd")
+draw_pass_1 = SubResource("QuadMesh_woc72")
+
+[connection signal="body_entered" from="." to="." method="_noxx_damage_to_player"]

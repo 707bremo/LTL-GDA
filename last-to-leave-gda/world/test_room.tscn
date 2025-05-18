@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://UI/HUD/Inventory/inv_interface.gd" id="4_n1lqp"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/equipment_data.gd" id="4_s1re2"]
 [ext_resource type="PackedScene" uid="uid://cfdnj6i52mb6u" path="res://UI/HUD/Inventory/inventory.tscn" id="5_vebsm"]
-[ext_resource type="FontFile" path="res://Esperanto SmallCaps Regular.ttf" id="6_3njpv"]
 [ext_resource type="Resource" uid="uid://utfy5lpqx73l" path="res://UI/HUD/Inventory/item/equippables/motorcycle_helmet.tres" id="6_8mn1c"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/weapon_data.gd" id="6_xmq84"]
 [ext_resource type="PackedScene" uid="uid://012ymk0c663s" path="res://UI/HUD/Inventory/slot.tscn" id="7_ntpok"]
@@ -31,6 +30,7 @@
 [ext_resource type="Resource" uid="uid://d4nkk4jii1jgp" path="res://UI/HUD/Inventory/item/items/canned_tomatoes.tres" id="23_p0wsp"]
 [ext_resource type="Resource" uid="uid://cds81cbksibuu" path="res://UI/HUD/Inventory/item/items/water_bottle.tres" id="24_l7v60"]
 [ext_resource type="Resource" uid="uid://ungidsdli55p" path="res://UI/HUD/Inventory/item/items/cherry_soda.tres" id="25_8b3lk"]
+[ext_resource type="PackedScene" uid="uid://dhagvvxgyk3ww" path="res://noxx_gas/scene/noxx.tscn" id="31_uldwc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5q6bn"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -209,7 +209,7 @@ use_collision = true
 size = Vector3(30, 10, 2)
 
 [node name="test_player" parent="." instance=ExtResource("2_6cywo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36588, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36588, 3.17255)
 inventory_data = ExtResource("3_en235")
 equip_inventory_data = SubResource("Resource_i232q")
 weapon_inventory_data = SubResource("Resource_8scqe")
@@ -253,7 +253,6 @@ offset_left = -90.0
 offset_top = 2.0
 offset_right = -12.0
 offset_bottom = 25.0
-theme_override_fonts/font = ExtResource("6_3njpv")
 theme_override_font_sizes/font_size = 20
 text = "WEIGHT:"
 
@@ -275,7 +274,6 @@ offset_right = 412.0
 offset_bottom = 170.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("6_3njpv")
 theme_override_font_sizes/font_size = 20
 text = "CONTAINER"
 
@@ -309,7 +307,6 @@ offset_right = 1632.0
 offset_bottom = 174.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("6_3njpv")
 theme_override_font_sizes/font_size = 20
 text = "INVENTORY"
 horizontal_alignment = 1
@@ -359,6 +356,11 @@ inventory_data = SubResource("Resource_p83np")
 [node name="Refridgerator" parent="LootSources" instance=ExtResource("22_fvs83")]
 transform = Transform3D(-0.37658, 0, -0.926384, 0, 1, 0, 0.926384, 0, -0.37658, 7.96199, 1, 0)
 inventory_data = SubResource("Resource_v5k2k")
+
+[node name="NOXX" parent="." node_paths=PackedStringArray("player") instance=ExtResource("31_uldwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.43633, -7.69428)
+collision_layer = 2
+player = NodePath("../test_player")
 
 [connection signal="drop_slot_data" from="UI/InvInterface" to="." method="_on_inv_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InvInterface" to="UI/InvInterface" method="_on_gui_input"]

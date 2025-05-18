@@ -4,8 +4,8 @@ extends CharacterBody3D
 @export var equip_inventory_data: EquipInvData
 @export var weapon_inventory_data: WeaponInvData
 
-signal toogle_inventory()
 
+signal toogle_inventory()
 
 
 # speed variables
@@ -88,6 +88,7 @@ var critical_color = Color("RED")
 
 
 func _ready():
+	
 	if hunger_bar:
 		hunger_bar.max_value = max_hunger
 		hunger_bar.value = current_hunger
