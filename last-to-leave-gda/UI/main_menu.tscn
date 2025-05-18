@@ -1207,7 +1207,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 30
-text = "TAB"
+text = "F"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1215,7 +1215,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_tccth")
 theme_override_font_sizes/font_size = 30
-text = "F"
+text = "TAB"
 horizontal_alignment = 1
 vertical_alignment = 1
 

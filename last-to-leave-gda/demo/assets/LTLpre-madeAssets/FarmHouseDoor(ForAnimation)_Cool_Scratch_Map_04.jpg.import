@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3c71le8m0kyu"
+uid="uid://86ltq63h4roq"
 path.s3tc="res://.godot/imported/FarmHouseDoor(ForAnimation)_Cool_Scratch_Map_04.jpg-e259cb3ba14c1010faaa9cb5e9df34f3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "8b842665a85d58755ec5ea5dbcb3ad05"
 }
 
 [deps]

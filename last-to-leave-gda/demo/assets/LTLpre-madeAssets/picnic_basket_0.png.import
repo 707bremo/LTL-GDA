@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgnidecxg7nsx"
+uid="uid://b82hkgdbmfi5c"
 path.s3tc="res://.godot/imported/picnic_basket_0.png-c97f9c0d4d050b7816ac3313779a7fa3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "3506eb2861fa12cb8579f016bd5442f6"
 }
 
 [deps]
