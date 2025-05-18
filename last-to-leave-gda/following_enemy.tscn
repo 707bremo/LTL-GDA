@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cfmbtd4qu7rsy"]
+[gd_scene load_steps=17 format=4 uid="uid://cfmbtd4qu7rsy"]
 
 [ext_resource type="Script" path="res://followingEnemy.gd" id="1_c1t4p"]
 [ext_resource type="Texture2D" uid="uid://c4w74q3s4hm73" path="res://enemy/character_0.png" id="2_4sjrt"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dt3othxlcyhpn" path="res://enemy/character_1.png" id="5_7ounv"]
 [ext_resource type="Texture2D" uid="uid://dud43tcdey4g4" path="res://enemy/character_3.png" id="6_8ch0l"]
 [ext_resource type="Texture2D" uid="uid://dyn2g2ywpf1wt" path="res://enemy/character_9.png" id="7_0vhnp"]
+[ext_resource type="Script" path="res://enemy/enemy_follow.gd" id="11_5jrf6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ieeo1"]
 resource_name = "Ch44_Body"
@@ -71,6 +72,7 @@ blend_shape_mode = 0
 [sub_resource type="BoxMesh" id="BoxMesh_omdi7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_agkym"]
+height = 3.62228
 
 [node name="followingEnemy" type="CharacterBody3D" groups=["enemies"]]
 script = ExtResource("1_c1t4p")
@@ -101,10 +103,13 @@ wait_time = 0.1
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("InitialState")]
 script = ExtResource("3_hfa8c")
-InitialState = NodePath("EnemyWander")
+InitialState = NodePath("EnemyFollow")
 
 [node name="EnemyWander" type="Node" parent="StateMachine"]
 script = ExtResource("4_845m3")
+
+[node name="EnemyFollow" type="Node" parent="StateMachine"]
+script = ExtResource("11_5jrf6")
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]

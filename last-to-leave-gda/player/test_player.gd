@@ -163,7 +163,6 @@ func _process(delta) -> void:
 	
 	if p_health_bar:
 		p_health_bar.value = current_health
-		print(current_health)
 	
 	# Checks if the hunger exceeds boost limit. If the hunger is below 90, drop the health boost.
 	if current_hunger >= 90:

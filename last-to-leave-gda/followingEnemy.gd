@@ -3,6 +3,9 @@ extends CharacterBody3D
 signal attack_player 
 
 @export var WalkSpeed: float = 1.5
+@export var RunSpeed: float = 1.8
+@export var PursuitDistance: float = 5.0
+
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var attack_timer = $AttackTimer  # Ensure this Timer node is added in your scene
@@ -15,31 +18,7 @@ func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
 
 func _physics_process(delta):
-	nav_agent.set_target_position(player.global_position)
-	
-	if nav_agent.is_navigation_finished():
-		return
-	
-	var next_position: Vector3 = nav_agent.get_next_path_position()
-	velocity = global_position.direction_to(next_position) * WalkSpeed
-	
-	player_pos = PlayerManager.player_current_pos
-	if player_pos == null:
-		return
-
-	var distance_to_player = global_transform.origin.distance_to(player_pos)
-
-	if distance_to_player > 5.0:
-		look_at(player_pos, Vector3.UP)
-		update_target_location(player_pos)
-		SPEED = 2.0
-		if not attack_timer.is_stopped():
-			attack_timer.stop()
-	else:
-		SPEED = 0
-		look_at(player_pos, Vector3.UP)
-		if attack_timer.is_stopped():
-			attack_timer.start()
+	move_and_slide()
 
 	var current_location = global_transform.origin
 	var next_location = nav_agent.get_next_path_position()

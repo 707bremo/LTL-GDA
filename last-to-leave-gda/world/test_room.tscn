@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bfdsj5xxm3pmk"]
+[gd_scene load_steps=67 format=3 uid="uid://bfdsj5xxm3pmk"]
 
 [ext_resource type="Script" path="res://world/Main.gd" id="1_4pghp"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="2_6cywo"]
@@ -31,7 +31,6 @@
 [ext_resource type="Resource" uid="uid://d4nkk4jii1jgp" path="res://UI/HUD/Inventory/item/items/canned_tomatoes.tres" id="23_p0wsp"]
 [ext_resource type="Resource" uid="uid://cds81cbksibuu" path="res://UI/HUD/Inventory/item/items/water_bottle.tres" id="24_l7v60"]
 [ext_resource type="Resource" uid="uid://ungidsdli55p" path="res://UI/HUD/Inventory/item/items/cherry_soda.tres" id="25_8b3lk"]
-[ext_resource type="PackedScene" uid="uid://d4mp5gutalf3n" path="res://enemy/enemy.tscn" id="32_t8rrn"]
 [ext_resource type="PackedScene" uid="uid://cfmbtd4qu7rsy" path="res://following_enemy.tscn" id="33_3gat1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5q6bn"]
@@ -207,8 +206,8 @@ inventory_data = ExtResource("3_en235")
 equip_inventory_data = SubResource("Resource_i232q")
 weapon_inventory_data = SubResource("Resource_8scqe")
 
-[node name="test_enemy" parent="." instance=ExtResource("32_t8rrn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30776, 1.50415, -7.66122)
+[node name="followingEnemy" parent="." instance=ExtResource("33_3gat1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7324, 1, -8.71743)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -391,9 +390,6 @@ size = Vector3(30, 10, 2)
 
 [node name="pg1_reset_marker" type="Marker3D" parent="reset_guard_rotations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36572, 1.49449, -21.652)
-
-[node name="followingEnemy" parent="." instance=ExtResource("33_3gat1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7324, 1, -8.71743)
 
 [connection signal="drop_slot_data" from="UI/InvInterface" to="." method="_on_inv_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InvInterface" to="UI/InvInterface" method="_on_gui_input"]
