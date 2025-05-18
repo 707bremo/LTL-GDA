@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://UI/HUD/Inventory/equipment_data.gd" id="7_glpi3"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/weapon_data.gd" id="8_6v7kd"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/inv_interface.gd" id="10_5ww66"]
-[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="11_mnjnj"]
+[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://UI/fonts/Esperanto SmallCaps Regular.ttf" id="11_mnjnj"]
 [ext_resource type="PackedScene" uid="uid://cfdnj6i52mb6u" path="res://UI/HUD/Inventory/inventory.tscn" id="12_doqa1"]
 [ext_resource type="PackedScene" uid="uid://b7y1q8fbk2d1x" path="res://UI/HUD/Inventory/equip_inv.tscn" id="13_nb3bg"]
 [ext_resource type="PackedScene" uid="uid://dajo4o8ibri8a" path="res://UI/HUD/Inventory/weapon_inv.tscn" id="14_eeapl"]
@@ -52,7 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2024.92)
 script = ExtResource("1_eownp")
 
 [node name="test_player" parent="." instance=ExtResource("2_e663m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 329.338, 15.7503, -2006.18)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -124.646, 9.86512, -2006.18)
 inventory_data = SubResource("Resource_1vsbv")
 equip_inventory_data = SubResource("Resource_q17w4")
 weapon_inventory_data = SubResource("Resource_j2sse")
