@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpnei1vsh608u"]
-
-[ext_resource type="PackedScene" uid="uid://bj7t3d84erqc3" path="res://MP5 (1).glb" id="1_1b8ea"]
-
-[node name="MP5" instance=ExtResource("1_1b8ea")]

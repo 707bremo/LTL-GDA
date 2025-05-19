@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2xms0et1d7bl"]
-
-[ext_resource type="PackedScene" uid="uid://cs818nr3tbflc" path="res://uploads-files-3027914-ai_awm_LOD_00.fbx" id="1_380pe"]
-
-[node name="uploads-files-3027914-ai_awm_LOD_00" instance=ExtResource("1_380pe")]

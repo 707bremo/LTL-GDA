@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://daool7umug5ac"]
-
-[ext_resource type="PackedScene" uid="uid://qnnswnan2vjy" path="res://M4A1.glb" id="1_m5w80"]
-
-[node name="M4A1" instance=ExtResource("1_m5w80")]
