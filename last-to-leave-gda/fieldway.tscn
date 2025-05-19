@@ -1,0 +1,108 @@
+[gd_scene load_steps=23 format=3 uid="uid://c1o0dbkn1b7lb"]
+
+[ext_resource type="PackedScene" uid="uid://errvaadejejh" path="res://barn_exterior.tscn" id="1_4jma7"]
+[ext_resource type="PackedScene" uid="uid://bjkde3lwudban" path="res://gazebo.tscn" id="2_txwpt"]
+[ext_resource type="PackedScene" uid="uid://ck6piv6eqal0" path="res://scarecrow.tscn" id="3_4km7q"]
+[ext_resource type="PackedScene" uid="uid://bui2fp7guynif" path="res://pitchfork.tscn" id="4_kgfxs"]
+[ext_resource type="PackedScene" uid="uid://s3p3is8fyvbr" path="res://chopping_axe.tscn" id="5_0uest"]
+[ext_resource type="PackedScene" uid="uid://lxmmlaxitjxd" path="res://fences(long).tscn" id="6_umtog"]
+[ext_resource type="PackedScene" uid="uid://clfebx21ivlal" path="res://fences(medium).tscn" id="7_uqqwb"]
+[ext_resource type="PackedScene" uid="uid://cspotl6id33oh" path="res://windmill.tscn" id="8_x16fb"]
+[ext_resource type="PackedScene" uid="uid://dy8nm1r32lf7b" path="res://farm_house_exterior.tscn" id="9_qty52"]
+[ext_resource type="PackedScene" uid="uid://chg67vgr66gc3" path="res://farm_house_furniture.tscn" id="10_ditsd"]
+[ext_resource type="PackedScene" uid="uid://df5acvla0ckiv" path="res://farm_house_furniture_and_outhouse.tscn" id="11_n8rgc"]
+[ext_resource type="PackedScene" uid="uid://bj2wt6otjsuvy" path="res://silo.tscn" id="12_rjaup"]
+[ext_resource type="PackedScene" uid="uid://cmae7aiydadar" path="res://farm_house_door(for_animation).tscn" id="13_g7yx3"]
+[ext_resource type="PackedScene" uid="uid://br1rcggexkrjq" path="res://barn_door(for_animation).tscn" id="14_incss"]
+[ext_resource type="PackedScene" uid="uid://cnifc1hdwaeas" path="res://barn_doorleft(for_animation).tscn" id="15_7ohxv"]
+[ext_resource type="PackedScene" uid="uid://cbmsij3g2mwe8" path="res://farm_house_outhouse_door(for_animation).tscn" id="16_j44l1"]
+[ext_resource type="PackedScene" uid="uid://c7227ehbpoao7" path="res://farm_house_bedroom_door(for_animation).tscn" id="17_4k50m"]
+[ext_resource type="Shader" path="res://water.gdshader" id="18_j3a6p"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qlunl"]
+noise_type = 2
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fibp8"]
+generate_mipmaps = false
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_qlunl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e6eiq"]
+render_priority = 0
+shader = ExtResource("18_j3a6p")
+shader_parameter/water_color = Color(0.168627, 0.188235, 0.227451, 1)
+shader_parameter/time_scale = 0.25
+shader_parameter/water_normal_noise = SubResource("NoiseTexture2D_fibp8")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_05yb6"]
+
+[node name="Fieldway" type="Node"]
+
+[node name="BarnExterior" parent="." instance=ExtResource("1_4jma7")]
+transform = Transform3D(-0.5, 0, -0.000375227, 0, 0.5, 0, 0.000375227, 0, -0.5, 193.084, 1, -1845.94)
+
+[node name="Sketchfab_Scene4" parent="." instance=ExtResource("2_txwpt")]
+transform = Transform3D(-4.66709, 0, -1.79396, 0, 5, 0, 1.79396, 0, -4.66709, -49.8862, 2.87836, -1734.36)
+
+[node name="Sketchfab_Scene6" parent="." instance=ExtResource("3_4km7q")]
+transform = Transform3D(4.06767, 0, 74.8896, 0, 75, 0, -74.8896, 0, 4.06767, 44.8545, 4.47839, -1800.25)
+
+[node name="Pitchfork" parent="." instance=ExtResource("4_kgfxs")]
+transform = Transform3D(0.010665, 0.0208289, 0.12279, -0.00180232, 0.123252, -0.0207508, -0.124531, -9.31323e-10, 0.0108162, 183.059, 2.25983, -1849.87)
+
+[node name="ChoppingAxe" parent="." instance=ExtResource("5_0uest")]
+transform = Transform3D(-0.173648, 0.984808, -1.73205, 1.96962, 0.347296, 2.26402e-08, 0.300768, -1.70574, -1, 187.496, 1, -1604.39)
+
+[node name="Fences(Long)" parent="." instance=ExtResource("6_umtog")]
+transform = Transform3D(0.000750498, 0, -1, 0, 1, 0, 1, 0, 0.000750498, 240.727, -0.2, -2292.16)
+
+[node name="Fences(Medium)2" parent="." instance=ExtResource("7_uqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.1615, -0.2, -2045.37)
+
+[node name="Fences(Medium)" parent="." instance=ExtResource("7_uqqwb")]
+transform = Transform3D(-1, 0, -0.000750454, 0, 1, 0, 0.000750454, 0, -1, 240.689, -0.2, -1542.86)
+
+[node name="Fences(Medium)" parent="Fences(Medium)" instance=ExtResource("7_uqqwb")]
+transform = Transform3D(-4.3714e-08, 0, -1, 0, 1, 0, 1, 0, -4.3714e-08, 239.434, -0.2, 125)
+
+[node name="Windmill" parent="." instance=ExtResource("8_x16fb")]
+transform = Transform3D(-0.716202, 0, -1.02448, 0, 1.25, 0, 1.02448, 0, -0.716202, 195.769, 1, -1610.41)
+
+[node name="FarmHouseExterior" parent="." instance=ExtResource("9_qty52")]
+transform = Transform3D(0.000562873, 0, -0.75, 0, 0.75, 0, 0.75, 0, 0.000562873, 174.284, 0, -1709.71)
+
+[node name="FarmHouseFurniture" parent="." instance=ExtResource("10_ditsd")]
+transform = Transform3D(0.000562873, 0, -0.75, 0, 0.75, 0, 0.75, 0, 0.000562873, 174.284, 0, -1709.71)
+
+[node name="FarmHouseFurnitureAndOuthouse" parent="." instance=ExtResource("11_n8rgc")]
+transform = Transform3D(0.000562873, 0, -0.75, 0, 0.75, 0, 0.75, 0, 0.000562873, 174.284, 0, -1709.71)
+
+[node name="Silo" parent="." instance=ExtResource("12_rjaup")]
+transform = Transform3D(0.14742, 0, 0.477773, 0, 0.5, 0, -0.477773, 0, 0.14742, 194.727, 1, -1984.99)
+
+[node name="FarmHouseDoor(ForAnimation)" parent="." instance=ExtResource("13_g7yx3")]
+transform = Transform3D(0.000562873, 0, -0.75, 0, 0.75, 0, 0.75, 0, 0.000562873, 174.284, 0, -1709.71)
+
+[node name="FarmHouseDoor(ForAnimation)3" parent="." instance=ExtResource("13_g7yx3")]
+transform = Transform3D(-0.75, 0, -0.000562841, 0, 0.75, 0, 0.000562841, 0, -0.75, 179.244, 0, -1709.46)
+
+[node name="BarnDoor(ForAnimation)" parent="." instance=ExtResource("14_incss")]
+transform = Transform3D(-0.5, 0, -0.000375227, 0, 0.5, 0, 0.000375227, 0, -0.5, 193.084, 1, -1845.94)
+
+[node name="BarnDoorleft(ForAnimation)" parent="." instance=ExtResource("15_7ohxv")]
+transform = Transform3D(-0.5, 0, -0.000375227, 0, 0.5, 0, 0.000375227, 0, -0.5, 193.084, 1, -1845.94)
+
+[node name="FarmHouseOuthouseDoor(ForAnimation)" parent="." instance=ExtResource("16_j44l1")]
+transform = Transform3D(0.000562873, 0, -0.75, 0, 0.75, 0, 0.75, 0, 0.000562873, 174.284, 0, -1709.71)
+
+[node name="FarmHouseBedroomDoor(ForAnimation)" parent="." instance=ExtResource("17_4k50m")]
+transform = Transform3D(0.000562873, 0, -0.75, 0, 0.75, 0, 0.75, 0, 0.000562873, 174.284, 0, -1709.71)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(110, 0, 0, 0, 100, 0, 0, 0, 90, -144.256, 0.75, -1859.45)
+material_override = SubResource("ShaderMaterial_e6eiq")
+transparency = 0.1
+mesh = SubResource("PlaneMesh_05yb6")
+skeleton = NodePath("../..")

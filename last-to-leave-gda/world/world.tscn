@@ -60,6 +60,7 @@ weapon_inventory_data = SubResource("Resource_j2sse")
 [node name="Terrain3D" parent="." instance=ExtResource("1_apgil")]
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Panel" type="Panel" parent="UI"]
 visible = false
