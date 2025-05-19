@@ -3,10 +3,10 @@ extends RayCast3D
 var NearbyBodies : Containers
 
 
-func _on_object_colliding(body):
-	if (body is StaticBody3D and Containers):
+func _on_object_colliding(body: StaticBody3D):
+	if (body is Containers):
 		body.gain_highlight()
 
-func _on_object_avert(body):
-	if self != Containers and body is StaticBody3D:
+func _on_object_avert(body: StaticBody3D):
+	if self != Containers:
 		body.lose_highlight()
