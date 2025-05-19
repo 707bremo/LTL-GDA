@@ -152,10 +152,12 @@ transform = Transform3D(0.0393923, 0.00694593, 5.34524e-10, -2.98023e-10, 4.7683
 
 [node name="Cabinet2" parent="MS_Cabinet_Basic" index="0" instance=ExtResource("5_u8bt2")]
 transform = Transform3D(-40.0749, -5.45915e-06, 1.49889e-20, 0, 0, -70.783, 2.38865e-06, -91.5893, 2.51472e-13, -25.1436, 15.6016, 38.1893)
+visible = true
 inventory_data = SubResource("Resource_2rbfx")
 
 [node name="Cabinet3" parent="MS_Cabinet_Basic" index="1" instance=ExtResource("5_u8bt2")]
 transform = Transform3D(-40.0749, -5.45915e-06, 1.49889e-20, 0, 0, -70.783, 2.38865e-06, -91.5893, 2.51472e-13, 24.1366, 15.6016, 38.1893)
+visible = true
 inventory_data = SubResource("Resource_cr5kn")
 
 [node name="Body_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/Body" index="0"]
@@ -211,17 +213,16 @@ surface_material_override/0 = SubResource("StandardMaterial3D_viuev")
 
 [node name="Cabinet" parent="defaultMaterial_005" index="0" instance=ExtResource("5_u8bt2")]
 transform = Transform3D(2.48535, 0, 0, 0, 3.34089, 0, 0, 0, 2.58195, -0.830673, -3.11453, -1.30037)
+visible = true
 inventory_data = SubResource("Resource_pkfxt")
 
 [node name="Cabinet" parent="defaultMaterial_006" index="0" instance=ExtResource("5_u8bt2")]
 transform = Transform3D(2.48535, 0, 0, 0, 3.34089, 0, 0, 0, 2.58195, -0.830673, -3.11453, 1.11698)
+visible = true
 inventory_data = SubResource("Resource_dmns1")
 
 [node name="defaultMaterial_011" parent="." index="10"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o3wq6")
-
-[node name="Object_6" parent="." index="11"]
-visible = false
 
 [node name="Mesher001_21 - Default_0" parent="." index="12"]
 surface_material_override/0 = SubResource("StandardMaterial3D_hkx5x")
