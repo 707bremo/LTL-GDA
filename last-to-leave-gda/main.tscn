@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1jcg6ppur5uh"]
+[gd_scene load_steps=10 format=3 uid="uid://c1jcg6ppur5uh"]
 
 [ext_resource type="PackedScene" uid="uid://dt4kbpmib3jmd" path="res://weapon_manager/box_1.tscn" id="1_e7uvj"]
 [ext_resource type="PackedScene" uid="uid://d3yccfperamvs" path="res://player.tscn" id="1_pninw"]
+[ext_resource type="PackedScene" uid="uid://daool7umug5ac" path="res://M4A1.tscn" id="3_wmtjg"]
+[ext_resource type="PackedScene" uid="uid://bpnei1vsh608u" path="res://MP5.tscn" id="4_0mnxk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ehsge"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -45,3 +47,11 @@ shape = SubResource("ConcavePolygonShape3D_jukuq")
 
 [node name="FPS_Character" parent="." instance=ExtResource("1_pninw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0326869, 9.17963)
+
+[node name="weapons" type="Node3D" parent="."]
+
+[node name="M4A1" parent="weapons" instance=ExtResource("3_wmtjg")]
+transform = Transform3D(-0.02, 0, -1.74846e-09, 0, 0.02, 0, 1.74846e-09, 0, -0.02, -5.25162, 0.513496, 4.76172)
+
+[node name="MP5" parent="weapons" instance=ExtResource("4_0mnxk")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -4.39263, 0.513496, 4.76172)

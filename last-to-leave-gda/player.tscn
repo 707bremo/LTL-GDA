@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d3yccfperamvs"]
+[gd_scene load_steps=26 format=3 uid="uid://d3yccfperamvs"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_vbs7i"]
 [ext_resource type="Script" path="res://HUD.gd" id="2_pjb0s"]
@@ -9,6 +9,24 @@
 [ext_resource type="PackedScene" uid="uid://bj7t3d84erqc3" path="res://MP5 (1).glb" id="3_pb0ow"]
 [ext_resource type="Texture2D" uid="uid://c13mwftsbxf2d" path="res://crosshair 3.png" id="3_yfvsp"]
 [ext_resource type="Resource" uid="uid://clbolgfoypqy2" path="res://weapon_manager/MP5.tres" id="4_vgvpl"]
+[ext_resource type="Script" path="res://weapon_manager/weapon_resource.gd" id="5_6q52w"]
+
+[sub_resource type="Resource" id="Resource_asmud"]
+script = ExtResource("5_6q52w")
+Weapon_Name = "Shotgun"
+Activate_Anim = "Shotgun Anim"
+Shoot_Anim = "Shotgun Shoot"
+Reload_Anim = "Shotgun Reload"
+Deactivate_Anim = "Shotgun Deactivate"
+Out_Of_Ammo_Anim = "Shotgun OOA"
+Current_Ammo = 5
+Reserve_Ammo = 10
+Magazine = 5
+Max_Ammo = 10
+Auto_Fire = true
+Type = 1
+Weapon_Range = 0
+Damage = 0
 
 [sub_resource type="Animation" id="Animation_vq5xd"]
 resource_name = "M4A1 Activate"
@@ -499,6 +517,9 @@ _data = {
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5bct"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_qbrov"]
+size = Vector3(1.68481, 2.29672, 1.63086)
+
 [node name="FPS_Character" type="CharacterBody3D"]
 script = ExtResource("1_vbs7i")
 
@@ -560,7 +581,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14067, 0)
 [node name="Weapon_Manager" type="Node3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165405, -0.146084, 0.236352)
 script = ExtResource("2_u851o")
-_weapon_resource = Array[Object]([ExtResource("3_4qdo8"), ExtResource("4_vgvpl")])
+_weapon_resource = Array[ExtResource("5_6q52w")]([ExtResource("3_4qdo8"), ExtResource("4_vgvpl"), SubResource("Resource_asmud")])
 Start_Weapons = Array[String](["M4A1", "MP5"])
 
 [node name="FPS_Rig" type="Node3D" parent="Head/Camera3D/Weapon_Manager"]
@@ -591,7 +612,16 @@ shape = SubResource("CapsuleShape3D_m5bct")
 [node name="desert_droid" parent="CollisionShape3D" instance=ExtResource("3_60s6m")]
 transform = Transform3D(-0.99994, 0, -0.0109254, 0, 1, 0, 0.0109254, 0, -0.99994, 0, -0.990703, 0)
 
+[node name="Pick_Up_Detection" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pick_Up_Detection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0662842, 1.26056, 0.058122)
+shape = SubResource("BoxShape3D_qbrov")
+
 [connection signal="Update_Ammo" from="Head/Camera3D/Weapon_Manager" to="CanvasLayer" method="_on_weapon_manager_update_ammo"]
 [connection signal="Update_Weapon_Stack" from="Head/Camera3D/Weapon_Manager" to="CanvasLayer" method="_on_weapon_manager_update_weapon_stack"]
 [connection signal="Weapon_Changed" from="Head/Camera3D/Weapon_Manager" to="CanvasLayer" method="_on_weapon_manager_weapon_changed"]
 [connection signal="animation_finished" from="Head/Camera3D/Weapon_Manager/FPS_Rig/AnimationPlayer" to="Head/Camera3D/Weapon_Manager" method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="Pick_Up_Detection" to="Head/Camera3D/Weapon_Manager" method="_on_pick_up_detection_body_entered"]

@@ -144,3 +144,18 @@ func Hit_Scan_Collision(Collision_Point):
 func Hit_Scan_Damage(Collider):
 	if Collider.is_in_group("Target") and Collider.has_method("Hit_Successful"):
 		Collider.Hit_Successful(Current_Weapon.Damage)
+
+
+func _on_pick_up_detection_body_entered(body):
+	var Weapon_In_Stack = Weapon_Stack.find(body.weapon_name)
+	
+	if Weapon_In_Stack == -1:
+		Weapon_Stack.insert(Weapon_Indicator,body.weapon_name)
+		Weapon_Indicator = 0
+		
+		Weapon_List[body.weapon_name].Current_Ammo = body.current_ammo
+		Weapon_List[body.weapon_name].Reserve_Ammo = body.reserve_ammo
+		
+		emit_signal("Update_Weapon_Stack", Weapon_Stack)
+		exit(body.weapon_name)
+		body.queue_free()
