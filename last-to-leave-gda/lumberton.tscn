@@ -1,0 +1,185 @@
+[gd_scene load_steps=43 format=3 uid="uid://ry5x4uxdj70m"]
+
+[ext_resource type="Shader" path="res://water.gdshader" id="1_lw4hd"]
+[ext_resource type="PackedScene" uid="uid://dx0xrng0tj12c" path="res://demo/assets/models/WarehouseShelves.gltf" id="2_hiowo"]
+[ext_resource type="PackedScene" uid="uid://du4h1dh1iud8d" path="res://demo/assets/LTLpre-madeAssets/WarehouseShelves2.gltf" id="3_ojhkf"]
+[ext_resource type="PackedScene" uid="uid://cm0jkg144347j" path="res://demo/assets/LTLpre-madeAssets/WarehouseShelves3.gltf" id="4_m0dao"]
+[ext_resource type="PackedScene" uid="uid://bk2ebywkr4bwg" path="res://demo/assets/LTLpre-madeAssets/WarehouseShelvesAndToolBox.gltf" id="5_0ychk"]
+[ext_resource type="PackedScene" uid="uid://brrctkbvsdud0" path="res://warehouse_floor.tscn" id="6_sjias"]
+[ext_resource type="PackedScene" uid="uid://cing80yl4q0b3" path="res://warehouse_planks.tscn" id="7_mp6nv"]
+[ext_resource type="PackedScene" uid="uid://bo5x027l3kb8o" path="res://demo/assets/LTLpre-madeAssets/WarehouseRedDoorFrames.gltf" id="8_x18ko"]
+[ext_resource type="PackedScene" uid="uid://b6pkbkg658btl" path="res://demo/assets/LTLpre-madeAssets/WarehouseLining.gltf" id="9_i07yf"]
+[ext_resource type="PackedScene" uid="uid://bnvgdqs5p5vfs" path="res://demo/assets/LTLpre-madeAssets/WarehouseCrate.gltf" id="10_3tfeu"]
+[ext_resource type="PackedScene" uid="uid://bii1jkqvd0ia0" path="res://demo/assets/LTLpre-madeAssets/WarehouseBrokenShelfLegs1.gltf" id="11_ggxj6"]
+[ext_resource type="PackedScene" uid="uid://c3xgbascpk87p" path="res://demo/assets/LTLpre-madeAssets/WarehouseBrokenShelfLegs2.gltf" id="12_it1hw"]
+[ext_resource type="PackedScene" uid="uid://cldne8mvtr05h" path="res://warehouse_frontDoors.tscn" id="13_rr3na"]
+[ext_resource type="PackedScene" uid="uid://c67q6pp85icgt" path="res://tool_shed_2.tscn" id="14_utfpn"]
+[ext_resource type="PackedScene" uid="uid://dxxe5gihy6o6f" path="res://house_furniture(living_room).tscn" id="15_rr37w"]
+[ext_resource type="PackedScene" uid="uid://81uu3xlggkn3" path="res://house_furniture(bathroom&bedroom).tscn" id="16_2fcsr"]
+[ext_resource type="PackedScene" uid="uid://byso3p2vofsgj" path="res://house.tscn" id="17_6vvlh"]
+[ext_resource type="PackedScene" uid="uid://ulvkw5aa2k74" path="res://house_furniture(lights&doors).tscn" id="18_xysc1"]
+[ext_resource type="PackedScene" uid="uid://dkr5ct7rviuh2" path="res://tool_shed_1.tscn" id="19_rxunt"]
+[ext_resource type="PackedScene" uid="uid://blltg1pdhfnf0" path="res://demo/assets/LTLpre-madeAssets/crashed_abandoned_car_-_game_ready.glb" id="20_5natv"]
+[ext_resource type="PackedScene" uid="uid://cair21gxje8vj" path="res://truck.tscn" id="21_1vl50"]
+[ext_resource type="PackedScene" uid="uid://2a1oli73ufas" path="res://burntHouse.tscn" id="22_5pk00"]
+[ext_resource type="PackedScene" uid="uid://bhhhjii4y041" path="res://blueShack.tscn" id="23_d02eb"]
+[ext_resource type="PackedScene" uid="uid://bwt12x4k2iyy5" path="res://oldBlueBed.tscn" id="24_1lqvg"]
+[ext_resource type="PackedScene" uid="uid://buw7kfjhn1704" path="res://locker.tscn" id="25_3eix7"]
+[ext_resource type="PackedScene" uid="uid://wbtt6npr5fp6" path="res://rockingChair.tscn" id="26_u73rq"]
+[ext_resource type="PackedScene" uid="uid://dve40uv2kjrva" path="res://plank_stack.tscn" id="27_pwdaa"]
+[ext_resource type="PackedScene" uid="uid://cge14fp6ten2a" path="res://dirt_pile.tscn" id="28_1fefm"]
+[ext_resource type="PackedScene" uid="uid://j8oohmfiijaf" path="res://shipment_container_red(closed).tscn" id="29_37ia2"]
+[ext_resource type="PackedScene" uid="uid://cvrmn03qp7qec" path="res://shipment_container_gray(closed).tscn" id="30_5y6cb"]
+[ext_resource type="PackedScene" uid="uid://cm4lv0dqc5glg" path="res://shipment_container_blue(closed).tscn" id="31_nh6kh"]
+[ext_resource type="PackedScene" uid="uid://tidehxb6mfao" path="res://shipment_container_blue(open).tscn" id="32_ea55x"]
+[ext_resource type="PackedScene" uid="uid://7yyc5lesfowk" path="res://shipment_container_gray(open).tscn" id="33_bnulg"]
+[ext_resource type="PackedScene" uid="uid://cimf5jilwao3t" path="res://shipment_container_red(open).tscn" id="34_7ayvm"]
+[ext_resource type="PackedScene" uid="uid://bq4wck6lggfkl" path="res://warehouse_door(for_animation).tscn" id="35_sbonx"]
+[ext_resource type="PackedScene" uid="uid://fn0ocq4no5tn" path="res://tool_shed_2_door(for_animation).tscn" id="36_0i0gy"]
+[ext_resource type="PackedScene" uid="uid://xng4hy3uobq3" path="res://tool_shed_1_door(for_animation).tscn" id="37_rkcsi"]
+[ext_resource type="PackedScene" uid="uid://dttq1ehp6gmxr" path="res://house_door(for_animation).tscn" id="38_d8prg"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h3h32"]
+noise_type = 2
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fibp8"]
+generate_mipmaps = false
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_h3h32")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4oxj6"]
+render_priority = 0
+shader = ExtResource("1_lw4hd")
+shader_parameter/water_color = Color(0.168627, 0.188235, 0.227451, 1)
+shader_parameter/time_scale = 0.25
+shader_parameter/water_normal_noise = SubResource("NoiseTexture2D_fibp8")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wuh33"]
+
+[node name="Lumberton" type="Node"]
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(118.755, 0, 0, 0, 125, 0, 0, 0, 100, -138.137, 0.798532, -1836.9)
+material_override = SubResource("ShaderMaterial_4oxj6")
+transparency = 0.1
+mesh = SubResource("PlaneMesh_wuh33")
+skeleton = NodePath("../../Riverview/MeshInstance3D4")
+
+[node name="WarehouseShelves" parent="." instance=ExtResource("2_hiowo")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 52.1325, 7.60822, 2447.23)
+
+[node name="WarehouseShelves2" parent="." instance=ExtResource("3_ojhkf")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 52.1325, 7.60822, 2447.23)
+
+[node name="WarehouseShelves3" parent="." instance=ExtResource("4_m0dao")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 52.1325, 7.60822, 2447.23)
+
+[node name="WarehouseShelvesAndToolBox" parent="." instance=ExtResource("5_0ychk")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 52.1325, 7.60822, 2447.23)
+
+[node name="WarehouseFloor" parent="." instance=ExtResource("6_sjias")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 52.1335, 7.60822, 2447.22)
+
+[node name="WarehousePlanks" parent="." instance=ExtResource("7_mp6nv")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 52.1335, 7.60822, 2447.22)
+
+[node name="WarehouseRedDoorFrames" parent="." instance=ExtResource("8_x18ko")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 52.1335, 7.60822, 2447.22)
+
+[node name="WarehouseLining" parent="." instance=ExtResource("9_i07yf")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 52.1335, 7.60822, 2447.22)
+
+[node name="WarehouseCrate" parent="." instance=ExtResource("10_3tfeu")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 13.6015, 7.60822, 2447.22)
+
+[node name="WarehouseBrokenShelfLegs1" parent="." instance=ExtResource("11_ggxj6")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 52.1335, 7.60822, 2447.22)
+
+[node name="WarehouseBrokenShelfLegs2" parent="." instance=ExtResource("12_it1hw")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 52.1335, 7.60822, 2447.22)
+
+[node name="WarehouseExterior2" parent="." instance=ExtResource("13_rr3na")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 52.1325, 7.60822, 2447.22)
+
+[node name="ToolShed2" parent="." instance=ExtResource("14_utfpn")]
+transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 191.6, 0, 2428.71)
+
+[node name="HouseFurniture(LivingRoom)" parent="." instance=ExtResource("15_rr37w")]
+transform = Transform3D(-0.626568, 0, -0.172951, 0, 0.65, 0, 0.172951, 0, -0.626568, 158.177, 4.00947, 2242.5)
+
+[node name="HouseFurniture(Bathroom&Bedroom)" parent="." instance=ExtResource("16_2fcsr")]
+transform = Transform3D(-0.626568, 0, -0.172951, 0, 0.65, 0, 0.172951, 0, -0.626568, 158.177, 4.00947, 2242.5)
+
+[node name="House" parent="." instance=ExtResource("17_6vvlh")]
+transform = Transform3D(-0.626568, 0, -0.172951, 0, 0.65, 0, 0.172951, 0, -0.626568, 158.177, 4.00947, 2242.5)
+
+[node name="HouseFurniture(Lights&Doors)" parent="." instance=ExtResource("18_xysc1")]
+transform = Transform3D(-0.626568, 0, -0.17295, 0, 0.65, 0, 0.17295, 0, -0.626568, 158.177, 4.00947, 2242.5)
+
+[node name="ToolShed1" parent="." instance=ExtResource("19_rxunt")]
+transform = Transform3D(0.963952, 0, 0.266078, 0, 1, 0, -0.266078, 0, 0.963952, 195.154, 3.78453, 2227.45)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("20_5natv")]
+transform = Transform3D(-1.46164, -1.73308e-09, 0.337068, -0.0302447, 1.49395, -0.131151, -0.335708, -0.134593, -1.45574, -108.928, 0.536355, 2065.46)
+
+[node name="Truck" parent="." instance=ExtResource("21_1vl50")]
+transform = Transform3D(-0.03, 0, -2.62268e-09, 0, 0.03, 0, 2.62268e-09, 0, -0.03, -82.7921, 11.9622, 2372.89)
+
+[node name="Sketchfab_Scene3" parent="." instance=ExtResource("22_5pk00")]
+transform = Transform3D(3.18192, 0, 1.45787, 0, 3.5, 0, -1.45787, 0, 3.18192, -80.8464, 0.504523, 2251.31)
+
+[node name="OldBlueBed" parent="." instance=ExtResource("23_d02eb")]
+transform = Transform3D(-0.0142047, 0, -0.0205724, 0, 0.025, 0, 0.0205724, 0, -0.0142047, 103.623, 3.47959, 2125.01)
+
+[node name="Sketchfab_Scene5" parent="." instance=ExtResource("24_1lqvg")]
+transform = Transform3D(-2.3128, 0, -3.26359, 0, 4, 0, 3.26359, 0, -2.3128, 100.082, 4.41043, 2128.98)
+
+[node name="Locker" parent="." instance=ExtResource("25_3eix7")]
+transform = Transform3D(-1.99333, 0, 1.50885, 0, 2.5, 0, -1.50885, 0, -1.99333, 109.103, 4.81824, 2121.31)
+
+[node name="RockingChair" parent="." instance=ExtResource("26_u73rq")]
+transform = Transform3D(0.239515, 0, 3.49179, 0, 3.5, 0, -3.49179, 0, 0.239515, 102.734, 4.41717, 2121.15)
+
+[node name="PlankStack" parent="." instance=ExtResource("27_pwdaa")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -186.607, 3.97898, 2488.43)
+
+[node name="DirtPile" parent="." instance=ExtResource("28_1fefm")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 80.9615, 1.72222, 2231.38)
+
+[node name="ShipmentContainerRed(Closed)" parent="." instance=ExtResource("29_37ia2")]
+transform = Transform3D(0.841511, 0, 0.54024, 0, 1, 0, -0.54024, 0, 0.841511, -152.805, 0, 2427.67)
+
+[node name="ShipmentContainerGray(Closed)" parent="." instance=ExtResource("30_5y6cb")]
+transform = Transform3D(-0.142629, 0, -0.989776, 0, 1, 0, 0.989776, 0, -0.142629, -207.587, 0, 2400.08)
+
+[node name="ShipmentContainerBlue(Closed)" parent="." instance=ExtResource("31_nh6kh")]
+transform = Transform3D(-0.961856, 0, -0.273556, 0, 1, 0, 0.273556, 0, -0.961856, -135.111, 0, 2359.19)
+
+[node name="ShipmentContainerBlue(Open)" parent="." instance=ExtResource("32_ea55x")]
+transform = Transform3D(0.959314, 0, -0.282341, 0, 1, 0, 0.282341, 0, 0.959314, -123.903, 0, 2505.08)
+
+[node name="ShipmentContainerGray(Open)" parent="." instance=ExtResource("33_bnulg")]
+transform = Transform3D(-0.654741, 0, 0.755853, 0, 1, 0, -0.755853, 0, -0.654741, -87.289, 0, 2435.96)
+
+[node name="ShipmentContainerRed(Open)" parent="." instance=ExtResource("34_7ayvm")]
+transform = Transform3D(0.654741, 0, -0.755853, 0, 1, 0, 0.755853, 0, 0.654741, -206.584, 0, 2398.49)
+
+[node name="WarehouseDoor(ForAnimation)" parent="." instance=ExtResource("35_sbonx")]
+transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 52.1325, 7.60822, 2447.22)
+
+[node name="ToolShed2Door(ForAnimation)" parent="." instance=ExtResource("36_0i0gy")]
+transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 191.6, 0, 2428.71)
+
+[node name="ToolShed1Door(ForAnimation)" parent="." instance=ExtResource("37_rkcsi")]
+transform = Transform3D(0.963952, 0, 0.266078, 0, 1, 0, -0.266078, 0, 0.963952, 195.154, 3.78492, 2227.45)
+
+[node name="HouseDoor(ForAnimation)3" parent="." instance=ExtResource("38_d8prg")]
+transform = Transform3D(0.17295, 0, -0.626568, 0, 0.65, 0, 0.626568, 0, 0.17295, 172.469, 4.03986, 2245.43)
+
+[node name="HouseDoor(ForAnimation)2" parent="." instance=ExtResource("38_d8prg")]
+transform = Transform3D(-0.172951, 0, 0.626568, 0, 0.65, 0, -0.626568, 0, -0.172951, 168.768, 4.04009, 2232.52)
+
+[node name="HouseDoor(ForAnimation)" parent="." instance=ExtResource("38_d8prg")]
+transform = Transform3D(-0.626568, 0, -0.17295, 0, 0.65, 0, 0.17295, 0, -0.626568, 158.177, 4.03986, 2242.5)
