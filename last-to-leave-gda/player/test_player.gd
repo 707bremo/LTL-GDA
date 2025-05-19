@@ -62,6 +62,7 @@ var critical_color = Color("RED")
 @onready var damage_overlay: TextureRect = $DamageOverlay
 @onready var damage_flash_anim: AnimationPlayer = $DamageFlashAnim
 @onready var crystalize_sound: AudioStreamPlayer3D = $CrystalizeSound
+@onready var shiver_sound: AudioStreamPlayer3D = $ShiverSound
 
 func _ready():
 	if hunger_bar:
@@ -268,8 +269,10 @@ func _on_noxx_gas_damage() -> void:
 	damage_flash_anim.play("damage flash")
 	if not crystalize_sound.playing:
 		crystalize_sound.play()
+		shiver_sound.play()
 
 func _on_noxx_left_gas() -> void:
 	damage_flash_anim.play_backwards("damage flash")
 	if crystalize_sound.playing:
 		crystalize_sound.stop()
+		shiver_sound.stop()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cvqooawhyqyqw"]
+[gd_scene load_steps=21 format=3 uid="uid://cvqooawhyqyqw"]
 
 [ext_resource type="Script" path="res://player/test_player.gd" id="1_p76u8"]
 [ext_resource type="PackedScene" uid="uid://dpbjle7jau6df" path="res://UI/HUD/vitals/health_bar.tscn" id="2_0nl34"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dax2ao0bsraq4" path="res://UI/HUD/vitals/stamina_bar.tscn" id="5_tbfnt"]
 [ext_resource type="PackedScene" uid="uid://bxwt77dbpmvd4" path="res://UI/pause_menu.tscn" id="6_v3jdj"]
 [ext_resource type="AudioStream" uid="uid://bcosd6gk1mbg" path="res://noxx_gas/scene/452228__kyles__footsteps-ice-brittle-crunch.wav" id="10_vj2bf"]
+[ext_resource type="AudioStream" uid="uid://ctvusmaknc0ev" path="res://noxx_gas/scene/human_reaction_coldshiver_gasps-60539.wav" id="11_7rvr0"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gsapo"]
 
@@ -196,6 +197,9 @@ libraries = {
 [node name="CrystalizeSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("10_vj2bf")
 volume_db = -12.229
+
+[node name="ShiverSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_7rvr0")
 
 [connection signal="body_entered" from="Head/Camera3D/InteractRay/Area3D" to="Head/Camera3D/InteractRay" method="_on_object_colliding"]
 [connection signal="body_exited" from="Head/Camera3D/InteractRay/Area3D" to="Head/Camera3D/InteractRay" method="_on_object_avert"]
