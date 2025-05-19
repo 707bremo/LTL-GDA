@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://dhagvvxgyk3ww"]
 
-[ext_resource type="Shader" uid="uid://orfiomql357i" path="res://LOD_smoke_shader.tres" id="1_efemo"]
+[ext_resource type="Shader" uid="uid://c5up7c7t5feao" path="res://LOD_smoke_shader.tres" id="1_efemo"]
 [ext_resource type="Script" path="res://noxx_gas/scene/noxx_e.gd" id="1_yhguk"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_rqx41"]
-radius = 10.3305
+[sub_resource type="BoxShape3D" id="BoxShape3D_o7bou"]
+size = Vector3(10, 10, 10)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vc2au"]
 render_priority = 0
@@ -37,7 +37,7 @@ script = ExtResource("1_yhguk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.999963, -0.00855201, 0, 0.00855201, 0.999963, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("SphereShape3D_rqx41")
+shape = SubResource("BoxShape3D_o7bou")
 
 [node name="gas" type="GPUParticles3D" parent="."]
 material_override = SubResource("ShaderMaterial_vc2au")
@@ -46,7 +46,7 @@ draw_pass_1 = SubResource("QuadMesh_woc72")
 
 [node name="gas_damage_timer" type="Timer" parent="."]
 
-[connection signal="body_entered" from="." to="." method="_noxx_damage_to_player"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="." method="_noxx_damage_to_player"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="timeout" from="gas_damage_timer" to="." method="_on_gas_damage_timer_timeout"]

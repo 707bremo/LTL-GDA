@@ -9,7 +9,7 @@ signal toogle_inventory()
 var speed
 const FATIGUED = 3.22
 const WALK_SPEED = 5.0
-const SPRINT_SPEED = 8.0
+const SPRINT_SPEED = 50.0
 const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.004
 
@@ -266,6 +266,7 @@ func check_stamina_regen(delta):
 func _on_noxx_gas_damage() -> void:
 	current_health -= 10
 	print(current_health)
+	print("Player Damaged")
 	damage_flash_anim.play("damage flash")
 	if not crystalize_sound.playing:
 		crystalize_sound.play()

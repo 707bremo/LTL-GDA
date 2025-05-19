@@ -33,6 +33,7 @@ enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 [global_group]
 
 external_inventory="group for any containers or loot sources"
+player=""
 
 [input]
 
