@@ -24,6 +24,7 @@ LoadingScreenFunctions="*res://UI/loading_screen_functions.gd"
 
 window/size/viewport_width=1918
 window/size/viewport_height=1078
+window/stretch/mode="viewport"
 
 [editor_plugins]
 

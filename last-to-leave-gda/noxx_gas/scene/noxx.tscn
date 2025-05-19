@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://dhagvvxgyk3ww"]
 
-[ext_resource type="Shader" uid="uid://cdl4pxnxngdjx" path="res://LOD_smoke_shader.tres" id="1_efemo"]
+[ext_resource type="Shader" uid="uid://orfiomql357i" path="res://LOD_smoke_shader.tres" id="1_efemo"]
 [ext_resource type="Script" path="res://noxx_gas/scene/noxx_e.gd" id="1_yhguk"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_pjvpj"]
-size = Vector3(5, 5, 5)
+[sub_resource type="SphereShape3D" id="SphereShape3D_rqx41"]
+radius = 10.3305
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vc2au"]
 render_priority = 0
@@ -25,8 +25,8 @@ gradient = SubResource("Gradient_573up")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ryejd"]
 gravity = Vector3(0, 0, 0)
-scale_min = 8.0
-scale_max = 20.0
+scale_min = 50.0
+scale_max = 50.0
 color_ramp = SubResource("GradientTexture1D_uax6d")
 alpha_curve = SubResource("CurveTexture_a5wpy")
 
@@ -36,7 +36,8 @@ alpha_curve = SubResource("CurveTexture_a5wpy")
 script = ExtResource("1_yhguk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_pjvpj")
+transform = Transform3D(0.999963, -0.00855201, 0, 0.00855201, 0.999963, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("SphereShape3D_rqx41")
 
 [node name="gas" type="GPUParticles3D" parent="."]
 material_override = SubResource("ShaderMaterial_vc2au")

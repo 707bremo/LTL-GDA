@@ -1,4 +1,4 @@
-extends Node3D
+extends Node
 
 const Pickup = preload("res://UI/HUD/Inventory/item/pickup.tscn")
 
