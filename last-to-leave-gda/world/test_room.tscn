@@ -365,3 +365,4 @@ collision_layer = 2
 [connection signal="gui_input" from="UI/InvInterface" to="UI/InvInterface" method="_on_gui_input"]
 [connection signal="visibility_changed" from="UI/InvInterface" to="UI/InvInterface" method="_on_visibility_changed"]
 [connection signal="body_entered" from="NOXX" to="." method="_on_noxx_body_entered"]
+[connection signal="gas_damage" from="NOXX" to="test_player" method="_on_noxx_gas_damage"]

@@ -46,7 +46,7 @@ draw_pass_1 = SubResource("QuadMesh_woc72")
 [node name="gas_damage_timer" type="Timer" parent="."]
 wait_time = 2.0
 
-[connection signal="body_entered" from="." to="." method="_noxx_damage_to_player"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="." method="_noxx_damage_to_player"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="timeout" from="gas_damage_timer" to="." method="_on_gas_damage_timer_timeout"]
