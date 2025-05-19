@@ -3,8 +3,8 @@
 [ext_resource type="Shader" uid="uid://cdl4pxnxngdjx" path="res://LOD_smoke_shader.tres" id="1_efemo"]
 [ext_resource type="Script" path="res://noxx_gas/scene/noxx_e.gd" id="1_yhguk"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_dm8i5"]
-radius = 3.0
+[sub_resource type="BoxShape3D" id="BoxShape3D_pjvpj"]
+size = Vector3(5, 5, 5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vc2au"]
 render_priority = 0
@@ -36,11 +36,17 @@ alpha_curve = SubResource("CurveTexture_a5wpy")
 script = ExtResource("1_yhguk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_dm8i5")
+shape = SubResource("BoxShape3D_pjvpj")
 
 [node name="gas" type="GPUParticles3D" parent="."]
 material_override = SubResource("ShaderMaterial_vc2au")
 process_material = SubResource("ParticleProcessMaterial_ryejd")
 draw_pass_1 = SubResource("QuadMesh_woc72")
 
+[node name="gas_damage_timer" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="body_entered" from="." to="." method="_noxx_damage_to_player"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="gas_damage_timer" to="." method="_on_gas_damage_timer_timeout"]

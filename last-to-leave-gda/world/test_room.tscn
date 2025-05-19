@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://world/Main.gd" id="1_4pghp"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="2_6cywo"]
-[ext_resource type="Resource" uid="uid://bh01ctte20kgj" path="res://test_inv.tres" id="3_en235"]
+[ext_resource type="Resource" uid="uid://crb7ncbu7g3fb" path="res://test_inv.tres" id="3_en235"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/inv_interface.gd" id="4_n1lqp"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/equipment_data.gd" id="4_s1re2"]
 [ext_resource type="PackedScene" uid="uid://cfdnj6i52mb6u" path="res://UI/HUD/Inventory/inventory.tscn" id="5_vebsm"]
@@ -357,11 +357,11 @@ inventory_data = SubResource("Resource_p83np")
 transform = Transform3D(-0.37658, 0, -0.926384, 0, 1, 0, 0.926384, 0, -0.37658, 7.96199, 1, 0)
 inventory_data = SubResource("Resource_v5k2k")
 
-[node name="NOXX" parent="." node_paths=PackedStringArray("player") instance=ExtResource("31_uldwc")]
+[node name="NOXX" parent="." instance=ExtResource("31_uldwc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.43633, -7.69428)
 collision_layer = 2
-player = NodePath("../test_player")
 
 [connection signal="drop_slot_data" from="UI/InvInterface" to="." method="_on_inv_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InvInterface" to="UI/InvInterface" method="_on_gui_input"]
 [connection signal="visibility_changed" from="UI/InvInterface" to="UI/InvInterface" method="_on_visibility_changed"]
+[connection signal="body_entered" from="NOXX" to="." method="_on_noxx_body_entered"]

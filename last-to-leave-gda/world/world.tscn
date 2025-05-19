@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://UI/HUD/Inventory/equipment_data.gd" id="7_glpi3"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/weapon_data.gd" id="8_6v7kd"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/inv_interface.gd" id="10_5ww66"]
-[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://Esperanto SmallCaps Regular.ttf" id="11_mnjnj"]
+[ext_resource type="FontFile" uid="uid://cmmsfh84jhs03" path="res://UI/fonts/Esperanto SmallCaps Regular.ttf" id="11_mnjnj"]
 [ext_resource type="PackedScene" uid="uid://cfdnj6i52mb6u" path="res://UI/HUD/Inventory/inventory.tscn" id="12_doqa1"]
 [ext_resource type="PackedScene" uid="uid://b7y1q8fbk2d1x" path="res://UI/HUD/Inventory/equip_inv.tscn" id="13_nb3bg"]
 [ext_resource type="PackedScene" uid="uid://dajo4o8ibri8a" path="res://UI/HUD/Inventory/weapon_inv.tscn" id="14_eeapl"]
