@@ -1,11 +1,60 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxxe5gihy6o6f"]
+[gd_scene load_steps=46 format=3 uid="uid://dxxe5gihy6o6f"]
 
 [ext_resource type="PackedScene" uid="uid://bmdb42xia2575" path="res://demo/assets/LTLpre-madeAssets/HouseFurniture(LivingRoom).gltf" id="1_e8afb"]
 [ext_resource type="Texture2D" uid="uid://bb0fpthiuohqj" path="res://demo/assets/models/green_metal_rust_disp_4k.png" id="2_4sx6e"]
+[ext_resource type="PackedScene" uid="uid://cmpadl7eyt37u" path="res://interactable/refridgerator.tscn" id="2_lvk48"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/inventory_data.gd" id="3_pndr0"]
 [ext_resource type="Texture2D" uid="uid://caoyfh52p1rvs" path="res://demo/assets/LTLpre-madeAssets/FarmHouseExterior_Rad_Grungemap_04_Image.jpg" id="3_x302s"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/slot_data.gd" id="4_7ewky"]
 [ext_resource type="Texture2D" uid="uid://b3emds46olbid" path="res://demo/assets/LTLpre-madeAssets/gravelly_sand_diff_4k.jpg" id="4_qviib"]
+[ext_resource type="Resource" uid="uid://cds81cbksibuu" path="res://UI/HUD/Inventory/item/items/water_bottle.tres" id="5_5w3gq"]
 [ext_resource type="Texture2D" uid="uid://biw1a7t8607oa" path="res://demo/assets/LTLpre-madeAssets/ShipmentContainerGray(Closed)_scratches-2.jpg" id="5_akib8"]
+[ext_resource type="PackedScene" uid="uid://cirndjnad781d" path="res://interactable/cabinet.tscn" id="5_u8bt2"]
+[ext_resource type="Resource" uid="uid://ungidsdli55p" path="res://UI/HUD/Inventory/item/items/cherry_soda.tres" id="6_5yr4o"]
 [ext_resource type="Texture2D" uid="uid://c1xie4jv55imc" path="res://demo/assets/LTLpre-madeAssets/FarmHouseExterior_painted_concrete_02_rough_2k.png" id="6_qtras"]
+[ext_resource type="Resource" uid="uid://1vheh4dicsax" path="res://UI/HUD/Inventory/item/items/energy_bar.tres" id="8_au0wn"]
+[ext_resource type="Resource" uid="uid://c8uywm5gome0f" path="res://UI/HUD/Inventory/item/items/salted_crackers.tres" id="11_fplrp"]
+[ext_resource type="Resource" uid="uid://g3ukneeirp16" path="res://UI/HUD/Inventory/item/items/chicken_soup.tres" id="12_auatv"]
+[ext_resource type="Resource" uid="uid://d4nkk4jii1jgp" path="res://UI/HUD/Inventory/item/items/canned_tomatoes.tres" id="13_jcqs0"]
+[ext_resource type="PackedScene" uid="uid://bs7n3g21lutnf" path="res://interactable/luggage_bag.tscn" id="17_0u13o"]
+[ext_resource type="Resource" uid="uid://cfutfyhm6yfja" path="res://UI/HUD/Inventory/item/items/potato_chips.tres" id="18_750b2"]
+
+[sub_resource type="Resource" id="Resource_urnqh"]
+script = ExtResource("4_7ewky")
+item_data = ExtResource("5_5w3gq")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_um1x6"]
+script = ExtResource("4_7ewky")
+item_data = ExtResource("6_5yr4o")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_sblq8"]
+script = ExtResource("4_7ewky")
+item_data = ExtResource("6_5yr4o")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_ccqxl"]
+script = ExtResource("3_pndr0")
+slot_datas = Array[ExtResource("4_7ewky")]([SubResource("Resource_urnqh"), null, null, null, null, null, null, SubResource("Resource_um1x6"), SubResource("Resource_sblq8"), null])
+
+[sub_resource type="Resource" id="Resource_j6rx0"]
+script = ExtResource("4_7ewky")
+item_data = ExtResource("8_au0wn")
+quantity = 5
+
+[sub_resource type="Resource" id="Resource_7i1gq"]
+script = ExtResource("4_7ewky")
+item_data = ExtResource("5_5w3gq")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_2rbfx"]
+script = ExtResource("3_pndr0")
+slot_datas = Array[ExtResource("4_7ewky")]([SubResource("Resource_j6rx0"), SubResource("Resource_7i1gq"), null])
+
+[sub_resource type="Resource" id="Resource_cr5kn"]
+script = ExtResource("3_pndr0")
+slot_datas = Array[ExtResource("4_7ewky")]([null, null, null])
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usdk6"]
 albedo_color = Color(0.377919, 0.377919, 0.377919, 1)
@@ -14,6 +63,44 @@ albedo_texture = ExtResource("2_4sx6e")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_viuev"]
 albedo_color = Color(0.746779, 0.727492, 0.686883, 1)
 albedo_texture = ExtResource("3_x302s")
+
+[sub_resource type="Resource" id="Resource_mmhqe"]
+script = ExtResource("4_7ewky")
+item_data = ExtResource("8_au0wn")
+quantity = 3
+
+[sub_resource type="Resource" id="Resource_ejq3n"]
+script = ExtResource("4_7ewky")
+item_data = ExtResource("11_fplrp")
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_pkfxt"]
+script = ExtResource("3_pndr0")
+slot_datas = Array[ExtResource("4_7ewky")]([SubResource("Resource_mmhqe"), null, null, SubResource("Resource_ejq3n"), null, null, null, null])
+
+[sub_resource type="Resource" id="Resource_qwpwx"]
+script = ExtResource("4_7ewky")
+item_data = ExtResource("12_auatv")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_k4wfe"]
+script = ExtResource("4_7ewky")
+item_data = ExtResource("8_au0wn")
+quantity = 3
+
+[sub_resource type="Resource" id="Resource_nluxh"]
+script = ExtResource("4_7ewky")
+item_data = ExtResource("13_jcqs0")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_o0pft"]
+script = ExtResource("4_7ewky")
+item_data = ExtResource("13_jcqs0")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_dmns1"]
+script = ExtResource("3_pndr0")
+slot_datas = Array[ExtResource("4_7ewky")]([SubResource("Resource_qwpwx"), null, null, SubResource("Resource_k4wfe"), SubResource("Resource_nluxh"), SubResource("Resource_o0pft"), null, null])
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3wq6"]
 albedo_color = Color(0.392709, 0.338115, 0.213295, 1)
@@ -27,14 +114,49 @@ albedo_texture = ExtResource("5_akib8")
 albedo_color = Color(0.701961, 0.580392, 0.396078, 1)
 albedo_texture = ExtResource("6_qtras")
 
+[sub_resource type="Resource" id="Resource_wfmf4"]
+script = ExtResource("4_7ewky")
+item_data = ExtResource("12_auatv")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_uprdc"]
+script = ExtResource("3_pndr0")
+slot_datas = Array[ExtResource("4_7ewky")]([SubResource("Resource_wfmf4"), null, null, null, null])
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_byc4l"]
 albedo_color = Color(0.701961, 0.580392, 0.396078, 1)
 albedo_texture = ExtResource("6_qtras")
 
+[sub_resource type="Resource" id="Resource_jx10f"]
+script = ExtResource("4_7ewky")
+item_data = ExtResource("18_750b2")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_j44qn"]
+script = ExtResource("4_7ewky")
+item_data = ExtResource("18_750b2")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_vjw52"]
+script = ExtResource("3_pndr0")
+slot_datas = Array[ExtResource("4_7ewky")]([null, SubResource("Resource_jx10f"), SubResource("Resource_j44qn"), null, null])
+
 [node name="HouseFurniture(LivingRoom)" instance=ExtResource("1_e8afb")]
+
+[node name="Refridgerator" parent="MS_Fridge" index="0" instance=ExtResource("2_lvk48")]
+transform = Transform3D(63.9456, 0, 0, 0, 19.785, 0, 0, 0, 85.2629, 0, -12.5222, -2.29012)
+inventory_data = SubResource("Resource_ccqxl")
 
 [node name="MS_Carpet" parent="." index="1"]
 transform = Transform3D(0.0393923, 0.00694593, 5.34524e-10, -2.98023e-10, 4.76837e-09, -0.04, -0.00694593, 0.0393923, 4.74768e-09, -10.0478, 0.478596, 0.470517)
+
+[node name="Cabinet2" parent="MS_Cabinet_Basic" index="0" instance=ExtResource("5_u8bt2")]
+transform = Transform3D(-40.0749, -5.45915e-06, 1.49889e-20, 0, 0, -70.783, 2.38865e-06, -91.5893, 2.51472e-13, -25.1436, 15.6016, 38.1893)
+inventory_data = SubResource("Resource_2rbfx")
+
+[node name="Cabinet3" parent="MS_Cabinet_Basic" index="1" instance=ExtResource("5_u8bt2")]
+transform = Transform3D(-40.0749, -5.45915e-06, 1.49889e-20, 0, 0, -70.783, 2.38865e-06, -91.5893, 2.51472e-13, 24.1366, 15.6016, 38.1893)
+inventory_data = SubResource("Resource_cr5kn")
 
 [node name="Body_lambert1_0" parent="Sketchfab_model_011/a88c8e057c4248ddb83de05ba4ce56a3_fbx/RootNode_002/Microwave_Low/Body" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
@@ -87,6 +209,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_usdk6")
 [node name="defaultMaterial_009" parent="." index="7"]
 surface_material_override/0 = SubResource("StandardMaterial3D_viuev")
 
+[node name="Cabinet" parent="defaultMaterial_005" index="0" instance=ExtResource("5_u8bt2")]
+transform = Transform3D(2.48535, 0, 0, 0, 3.34089, 0, 0, 0, 2.58195, -0.830673, -3.11453, -1.30037)
+inventory_data = SubResource("Resource_pkfxt")
+
+[node name="Cabinet" parent="defaultMaterial_006" index="0" instance=ExtResource("5_u8bt2")]
+transform = Transform3D(2.48535, 0, 0, 0, 3.34089, 0, 0, 0, 2.58195, -0.830673, -3.11453, 1.11698)
+inventory_data = SubResource("Resource_dmns1")
+
 [node name="defaultMaterial_011" parent="." index="10"]
 surface_material_override/0 = SubResource("StandardMaterial3D_o3wq6")
 
@@ -99,5 +229,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hkx5x")
 [node name="boxes_1_pallet_and_boxes_0_001" parent="." index="14"]
 surface_material_override/0 = SubResource("StandardMaterial3D_f34wk")
 
+[node name="luggage_bag2" parent="boxes_1_pallet_and_boxes_0_001" index="0" instance=ExtResource("17_0u13o")]
+transform = Transform3D(-0.148211, 0.448736, 2.1277e-07, -0.658188, -0.101046, -6.70996e-07, -4.30085e-07, -1.71234e-07, 0.953547, -0.207568, 0.0255122, 0.00681731)
+inventory_data = SubResource("Resource_uprdc")
+
 [node name="boxes_2_pallet_and_boxes_0" parent="." index="15"]
 surface_material_override/0 = SubResource("StandardMaterial3D_byc4l")
+
+[node name="luggage_bag" parent="boxes_2_pallet_and_boxes_0" index="0" instance=ExtResource("17_0u13o")]
+transform = Transform3D(0.674668, -2.98023e-08, 2.13163e-14, 7.45058e-08, 0.459972, 1.13687e-13, -5.68434e-14, -7.10543e-14, 0.953547, 0.035851, -0.208485, -5.96046e-08)
+inventory_data = SubResource("Resource_vjw52")

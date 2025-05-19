@@ -106,4 +106,4 @@ func _on_return_pressed() -> void:
 		menu_player.play("lobby_opening")
 
 func transfer_to_game():
-	LoadingScreenFunctions.load_screen_to_scene("res://world/test_room.tscn")
+	LoadingScreenFunctions.load_screen_to_scene("res://world/world.tscn")
