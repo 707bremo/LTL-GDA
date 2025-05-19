@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bcywp2upmt7v"]
+[gd_scene load_steps=52 format=3 uid="uid://bcywp2upmt7v"]
 
 [ext_resource type="Shader" path="res://water.gdshader" id="1_t0te6"]
 [ext_resource type="PackedScene" uid="uid://dea2qxxvpqd7m" path="res://demo/assets/models/bl_totem_welcome.tscn" id="2_hhl48"]
@@ -22,6 +22,15 @@
 [ext_resource type="PackedScene" uid="uid://b7h5uopjp1j0x" path="res://picnicBasket.tscn" id="20_tvenf"]
 [ext_resource type="PackedScene" uid="uid://2awgpdswiphq" path="res://demo/assets/LTLpre-madeAssets/picnic_blanket.glb" id="21_a5sl3"]
 [ext_resource type="PackedScene" uid="uid://ua7fnb7gil3o" path="res://rest_stop.tscn" id="22_8h6om"]
+[ext_resource type="PackedScene" uid="uid://cirndjnad781d" path="res://interactable/cabinet.tscn" id="23_m7lk3"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/inventory_data.gd" id="24_04d7q"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/slot_data.gd" id="25_joh2n"]
+[ext_resource type="Resource" uid="uid://1vheh4dicsax" path="res://UI/HUD/Inventory/item/items/energy_bar.tres" id="26_6qr15"]
+[ext_resource type="Resource" uid="uid://g3ukneeirp16" path="res://UI/HUD/Inventory/item/items/chicken_soup.tres" id="27_yfpds"]
+[ext_resource type="Resource" uid="uid://cfutfyhm6yfja" path="res://UI/HUD/Inventory/item/items/potato_chips.tres" id="28_g5ngd"]
+[ext_resource type="Resource" uid="uid://c8uywm5gome0f" path="res://UI/HUD/Inventory/item/items/salted_crackers.tres" id="29_v5wl0"]
+[ext_resource type="Resource" uid="uid://c5nfndoha1o4d" path="res://UI/HUD/Inventory/item/items/canned_corn.tres" id="30_y0s15"]
+[ext_resource type="Resource" uid="uid://bwot2yqefnhhg" path="res://UI/HUD/Inventory/item/items/canned_peaches.tres" id="31_yrmm6"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h3h32"]
 noise_type = 2
@@ -41,6 +50,82 @@ shader_parameter/time_scale = 0.25
 shader_parameter/water_normal_noise = SubResource("NoiseTexture2D_37j0r")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wuh33"]
+
+[sub_resource type="Resource" id="Resource_rgook"]
+script = ExtResource("25_joh2n")
+item_data = ExtResource("26_6qr15")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_rk4we"]
+script = ExtResource("25_joh2n")
+item_data = ExtResource("26_6qr15")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_rku11"]
+script = ExtResource("24_04d7q")
+slot_datas = Array[ExtResource("25_joh2n")]([null, null, SubResource("Resource_rgook"), SubResource("Resource_rk4we"), null, null])
+
+[sub_resource type="Resource" id="Resource_f0sn2"]
+script = ExtResource("25_joh2n")
+item_data = ExtResource("27_yfpds")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_33nxt"]
+script = ExtResource("25_joh2n")
+item_data = ExtResource("28_g5ngd")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_1usbn"]
+script = ExtResource("25_joh2n")
+item_data = ExtResource("29_v5wl0")
+quantity = 3
+
+[sub_resource type="Resource" id="Resource_l7djs"]
+script = ExtResource("24_04d7q")
+slot_datas = Array[ExtResource("25_joh2n")]([SubResource("Resource_f0sn2"), null, null, null, SubResource("Resource_33nxt"), SubResource("Resource_1usbn"), null, null])
+
+[sub_resource type="Resource" id="Resource_eoovh"]
+script = ExtResource("25_joh2n")
+item_data = ExtResource("30_y0s15")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_chgfv"]
+script = ExtResource("25_joh2n")
+item_data = ExtResource("29_v5wl0")
+quantity = 2
+
+[sub_resource type="Resource" id="Resource_wy2ut"]
+script = ExtResource("25_joh2n")
+item_data = ExtResource("31_yrmm6")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_bbu8v"]
+script = ExtResource("25_joh2n")
+item_data = ExtResource("27_yfpds")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_yg6s7"]
+script = ExtResource("24_04d7q")
+slot_datas = Array[ExtResource("25_joh2n")]([null, SubResource("Resource_eoovh"), null, SubResource("Resource_chgfv"), null, SubResource("Resource_wy2ut"), SubResource("Resource_bbu8v"), null, null, null])
+
+[sub_resource type="Resource" id="Resource_cjmsu"]
+script = ExtResource("25_joh2n")
+item_data = ExtResource("27_yfpds")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_4t1wq"]
+script = ExtResource("25_joh2n")
+item_data = ExtResource("26_6qr15")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_iawkk"]
+script = ExtResource("25_joh2n")
+item_data = ExtResource("30_y0s15")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_gouy5"]
+script = ExtResource("24_04d7q")
+slot_datas = Array[ExtResource("25_joh2n")]([null, SubResource("Resource_cjmsu"), null, SubResource("Resource_4t1wq"), null, null, null, null, null, SubResource("Resource_iawkk")])
 
 [node name="Riverview" type="Node"]
 
@@ -120,10 +205,29 @@ transform = Transform3D(1.89145, 0, -0.649948, 0, 2, 0, 0.649948, 0, 1.89145, -1
 transform = Transform3D(0.709292, 0, -0.0974922, 0, 0.75, 0, 0.24373, 0, 0.283717, -184.628, 10.0316, 402.308)
 
 [node name="PicnicBasket" parent="." instance=ExtResource("20_tvenf")]
-transform = Transform3D(0.99875, 0.0499828, 0, -0.0499828, 0.99875, 0, 0, 0, 1, -80.5691, 6.99649, 138.173)
+transform = Transform3D(0.99875, 0.0499828, 0, -0.0499828, 0.99875, 0, 0, 0, 1, -80.5691, 6.56817, 138.173)
 
 [node name="PicnicBlanket" parent="." instance=ExtResource("21_a5sl3")]
 transform = Transform3D(0.99875, 0.0499828, 0, -0.0499828, 0.99875, 0, 0, 0, 1, -84.4862, 6.73084, 140.35)
 
 [node name="RestStop" parent="." instance=ExtResource("22_8h6om")]
 transform = Transform3D(-0.12925, 0, -0.585913, 0, 0.6, 0, 0.585913, 0, -0.12925, -32.0135, 8.55812, 294.126)
+
+[node name="Cabinet" parent="." instance=ExtResource("23_m7lk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.989, 6.25597, 141.139)
+inventory_data = SubResource("Resource_rku11")
+
+[node name="Cabinet2" parent="." instance=ExtResource("23_m7lk3")]
+transform = Transform3D(1.92024, -0.0118927, -0.165645, 0.0567505, 0.327666, -0.0380801, 0.35954, 0.0117971, 0.89069, 184.214, 6.36345, 473.194)
+inventory_data = SubResource("Resource_l7djs")
+
+[node name="Cabinet3" parent="." instance=ExtResource("23_m7lk3")]
+transform = Transform3D(2.33553, 0, 2.57103, 0, 3.47346, 0, -2.57103, 0, 2.33553, 19.6917, -0.679617, 176.088)
+inventory_data = SubResource("Resource_yg6s7")
+
+[node name="Cabinet4" parent="." instance=ExtResource("23_m7lk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.306, 9.67736, 337.719)
+
+[node name="Cabinet5" parent="." instance=ExtResource("23_m7lk3")]
+transform = Transform3D(2.79756, 0, 2.24664, 0, 3.588, 0, -2.24664, 0, 2.79756, 165.253, 4.87607, 226.305)
+inventory_data = SubResource("Resource_gouy5")

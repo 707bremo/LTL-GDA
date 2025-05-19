@@ -1,8 +1,8 @@
-[gd_scene load_steps=64 format=3 uid="uid://bfdsj5xxm3pmk"]
+[gd_scene load_steps=65 format=3 uid="uid://bfdsj5xxm3pmk"]
 
 [ext_resource type="Script" path="res://world/Main.gd" id="1_4pghp"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="2_6cywo"]
-[ext_resource type="Resource" uid="uid://crb7ncbu7g3fb" path="res://test_inv.tres" id="3_en235"]
+[ext_resource type="Resource" uid="uid://bh01ctte20kgj" path="res://test_inv.tres" id="3_en235"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/inv_interface.gd" id="4_n1lqp"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/equipment_data.gd" id="4_s1re2"]
 [ext_resource type="PackedScene" uid="uid://cfdnj6i52mb6u" path="res://UI/HUD/Inventory/inventory.tscn" id="5_vebsm"]

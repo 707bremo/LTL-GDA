@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://ry5x4uxdj70m"]
+[gd_scene load_steps=91 format=3 uid="uid://ry5x4uxdj70m"]
 
 [ext_resource type="Shader" path="res://water.gdshader" id="1_lw4hd"]
 [ext_resource type="PackedScene" uid="uid://dx0xrng0tj12c" path="res://demo/assets/models/WarehouseShelves.gltf" id="2_hiowo"]
@@ -38,6 +38,18 @@
 [ext_resource type="PackedScene" uid="uid://fn0ocq4no5tn" path="res://tool_shed_2_door(for_animation).tscn" id="36_0i0gy"]
 [ext_resource type="PackedScene" uid="uid://xng4hy3uobq3" path="res://tool_shed_1_door(for_animation).tscn" id="37_rkcsi"]
 [ext_resource type="PackedScene" uid="uid://dttq1ehp6gmxr" path="res://house_door(for_animation).tscn" id="38_d8prg"]
+[ext_resource type="PackedScene" uid="uid://cirndjnad781d" path="res://interactable/cabinet.tscn" id="39_7dh7m"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/inventory_data.gd" id="40_e7abk"]
+[ext_resource type="Script" path="res://UI/HUD/Inventory/slot_data.gd" id="41_1q4sv"]
+[ext_resource type="Resource" uid="uid://cfutfyhm6yfja" path="res://UI/HUD/Inventory/item/items/potato_chips.tres" id="42_i4sm0"]
+[ext_resource type="Resource" uid="uid://ungidsdli55p" path="res://UI/HUD/Inventory/item/items/cherry_soda.tres" id="43_1kpqr"]
+[ext_resource type="Resource" uid="uid://1vheh4dicsax" path="res://UI/HUD/Inventory/item/items/energy_bar.tres" id="44_ere6m"]
+[ext_resource type="Resource" uid="uid://c8uywm5gome0f" path="res://UI/HUD/Inventory/item/items/salted_crackers.tres" id="45_aog2a"]
+[ext_resource type="Resource" uid="uid://d4nkk4jii1jgp" path="res://UI/HUD/Inventory/item/items/canned_tomatoes.tres" id="46_pbx3s"]
+[ext_resource type="Resource" uid="uid://bwot2yqefnhhg" path="res://UI/HUD/Inventory/item/items/canned_peaches.tres" id="47_ib2i5"]
+[ext_resource type="Resource" uid="uid://g3ukneeirp16" path="res://UI/HUD/Inventory/item/items/chicken_soup.tres" id="48_744tu"]
+[ext_resource type="Resource" uid="uid://c5nfndoha1o4d" path="res://UI/HUD/Inventory/item/items/canned_corn.tres" id="49_qwxia"]
+[ext_resource type="Resource" uid="uid://cds81cbksibuu" path="res://UI/HUD/Inventory/item/items/water_bottle.tres" id="50_5wqxr"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h3h32"]
 noise_type = 2
@@ -57,6 +69,170 @@ shader_parameter/time_scale = 0.25
 shader_parameter/water_normal_noise = SubResource("NoiseTexture2D_fibp8")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wuh33"]
+
+[sub_resource type="Resource" id="Resource_p5s3u"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("42_i4sm0")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_hp0io"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([null, null, null, SubResource("Resource_p5s3u"), null])
+
+[sub_resource type="Resource" id="Resource_n7r2m"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("43_1kpqr")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_383e2"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([null, null, SubResource("Resource_n7r2m"), null])
+
+[sub_resource type="Resource" id="Resource_itmuj"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("44_ere6m")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_uj818"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([SubResource("Resource_itmuj"), null, null])
+
+[sub_resource type="Resource" id="Resource_tjlym"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("45_aog2a")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_5pc30"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([SubResource("Resource_tjlym"), null])
+
+[sub_resource type="Resource" id="Resource_c1brb"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([null, null])
+
+[sub_resource type="Resource" id="Resource_g8xxj"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("45_aog2a")
+quantity = 2
+
+[sub_resource type="Resource" id="Resource_qxwjl"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([null, SubResource("Resource_g8xxj"), null])
+
+[sub_resource type="Resource" id="Resource_qxcge"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("46_pbx3s")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_uexq0"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([SubResource("Resource_qxcge"), null, null, null])
+
+[sub_resource type="Resource" id="Resource_mkwag"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("47_ib2i5")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_odlqh"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([null, SubResource("Resource_mkwag"), null])
+
+[sub_resource type="Resource" id="Resource_28sfw"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("44_ere6m")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_18kyh"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([SubResource("Resource_28sfw"), null])
+
+[sub_resource type="Resource" id="Resource_trj8w"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([null, null])
+
+[sub_resource type="Resource" id="Resource_dvjo0"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([null, null])
+
+[sub_resource type="Resource" id="Resource_2yqw4"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("44_ere6m")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_6e8ur"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([null, null, SubResource("Resource_2yqw4")])
+
+[sub_resource type="Resource" id="Resource_8u1di"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("45_aog2a")
+quantity = 3
+
+[sub_resource type="Resource" id="Resource_1gf1w"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([SubResource("Resource_8u1di"), null])
+
+[sub_resource type="Resource" id="Resource_vy75u"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("48_744tu")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_00fws"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("49_qwxia")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_8f6wg"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([null, SubResource("Resource_vy75u"), null, SubResource("Resource_00fws"), null])
+
+[sub_resource type="Resource" id="Resource_3n72f"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("46_pbx3s")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_xr3p6"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("48_744tu")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_47ym4"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("42_i4sm0")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_w27x8"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([SubResource("Resource_3n72f"), null, null, null, SubResource("Resource_xr3p6"), SubResource("Resource_47ym4"), null, null])
+
+[sub_resource type="Resource" id="Resource_l8fhe"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("42_i4sm0")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_74qxu"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("47_ib2i5")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_sbe0a"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("48_744tu")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_v5jlw"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("47_ib2i5")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_tunwk"]
+script = ExtResource("41_1q4sv")
+item_data = ExtResource("50_5wqxr")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_vtvt4"]
+script = ExtResource("40_e7abk")
+slot_datas = Array[ExtResource("41_1q4sv")]([SubResource("Resource_l8fhe"), null, null, null, SubResource("Resource_74qxu"), null, SubResource("Resource_sbe0a"), null, SubResource("Resource_v5jlw"), SubResource("Resource_tunwk"), null, null])
 
 [node name="Lumberton" type="Node"]
 
@@ -183,3 +359,70 @@ transform = Transform3D(-0.172951, 0, 0.626568, 0, 0.65, 0, -0.626568, 0, -0.172
 
 [node name="HouseDoor(ForAnimation)" parent="." instance=ExtResource("38_d8prg")]
 transform = Transform3D(2.22666e-08, 0.509401, -0.403746, 0.649999, -2.84124e-08, 0, -1.76483e-08, -0.403746, -0.5094, 162.243, 6.66561, 2241.04)
+
+[node name="Cabinet" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(2.13065, 0, -2.06561, 0, 2.96756, 0, 2.06561, 0, 2.13065, 64.7952, 0, 2457.33)
+inventory_data = SubResource("Resource_hp0io")
+
+[node name="Cabinet2" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(0.840931, 0, -0.781439, 0, 1.28899, 0, 0.772978, 0, 0.850136, 48.0668, 0.998053, 2397.01)
+inventory_data = SubResource("Resource_383e2")
+
+[node name="Cabinet3" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(0.776335, 0, -0.863209, 0, 0.762882, 0, 0.900726, 0, 0.743998, 47.0305, 0.479235, 2398.21)
+inventory_data = SubResource("Resource_uj818")
+
+[node name="Cabinet4" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(0.653422, -3.61524e-05, -0.756994, -0.00174533, 0.199991, -0.00174533, 0.756992, 0.000492307, 0.65342, 47.0195, 1.56368, 2398.11)
+inventory_data = SubResource("Resource_5pc30")
+
+[node name="Cabinet5" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(0.748012, 0, -0.830071, 0, 0.182368, 0, 0.86658, 0, 0.716498, 47.0415, 1.76426, 2398.16)
+
+[node name="Cabinet6" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(0.65342, 0, -0.756995, 0, 0.236848, 0, 0.756995, 0, 0.65342, 47.0054, 1.94346, 2398.1)
+inventory_data = SubResource("Resource_c1brb")
+
+[node name="Cabinet7" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(0.453, 0, -1.9075, 0, 0.183839, 0, 0.523326, 0, 1.65116, 47.6181, 2.29078, 2397.3)
+inventory_data = SubResource("Resource_qxwjl")
+
+[node name="Cabinet8" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(1.00804, 0, 0.7517, 0, 1.34337, 0, -0.588836, 0, 1.28684, 64.0496, 0.630774, 2379.12)
+inventory_data = SubResource("Resource_uexq0")
+
+[node name="Cabinet9" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(0.939458, 0, 0.586218, 0, 1.10735, 0, -0.586218, 0, 0.939458, 64.8254, 0.396888, 2380.62)
+inventory_data = SubResource("Resource_odlqh")
+
+[node name="Cabinet10" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(0.838442, 0, 0.54499, 0, 0.211718, 0, -0.54499, 0, 0.838442, 64.7867, 1.52837, 2380.6)
+inventory_data = SubResource("Resource_18kyh")
+
+[node name="Cabinet11" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(0.855762, 0, 0.51737, 0, 0.132646, 0, -0.51737, 0, 0.855762, 64.8542, 1.77396, 2380.66)
+inventory_data = SubResource("Resource_trj8w")
+
+[node name="Cabinet12" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(0.829164, 0, 0.559005, 0, 0.245313, 0, -0.559005, 0, 0.829164, 64.7643, 1.95038, 2380.58)
+inventory_data = SubResource("Resource_dvjo0")
+
+[node name="Cabinet13" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(0.28493, 0, 1.22327, 0, 0.236267, 0, -0.160458, 0, 2.17219, 64.0216, 2.09372, 2379.93)
+inventory_data = SubResource("Resource_6e8ur")
+
+[node name="Cabinet14" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(0.710156, 0, 0.748076, 0, 0.252711, 0, -0.443651, 0, 1.19745, 64.7625, 2.76993, 2379.51)
+inventory_data = SubResource("Resource_1gf1w")
+
+[node name="Cabinet15" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(0.633259, 0, -0.77394, 0, 1, 0, 0.77394, 0, 0.633259, 172.512, 4.38947, 2250)
+inventory_data = SubResource("Resource_8f6wg")
+
+[node name="Cabinet16" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(0.783184, 0, -0.62179, 0, 3.69935, 0, 0.62179, 0, 0.783184, 108.783, 5.47363, 2120.98)
+inventory_data = SubResource("Resource_w27x8")
+
+[node name="Cabinet17" parent="." instance=ExtResource("39_7dh7m")]
+transform = Transform3D(4.92944, 0, 1.53024, 0, 1.98631, 0, -0.758009, 0, 9.9514, -108.953, 0.586063, 2065.1)
+inventory_data = SubResource("Resource_vtvt4")
