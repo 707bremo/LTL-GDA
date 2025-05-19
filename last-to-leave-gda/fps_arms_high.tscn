@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnqgnoqark0hd"]
+
+[ext_resource type="PackedScene" uid="uid://0mrxjwhmcblh" path="res://weapon_manager/deagle/FpsArmsHigh.fbx" id="1_xgo7o"]
+
+[node name="FpsArmsHigh" instance=ExtResource("1_xgo7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00145698, 0.00556207, -0.00266671)

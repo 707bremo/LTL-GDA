@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://dl315d4lqgvy0"]
+
+[ext_resource type="Script" path="res://weapon_manager/weapon_resource.gd" id="1_mu343"]
+[ext_resource type="PackedScene" uid="uid://cgyu1ket30eod" path="res://weapon_manager/deagle/deagle.glb" id="2_mnigh"]
+
+[resource]
+script = ExtResource("1_mu343")
+view_model = ExtResource("2_mnigh")
+damage = 10

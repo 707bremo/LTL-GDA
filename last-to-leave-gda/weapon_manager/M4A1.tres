@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="weapon_resource" load_steps=2 format=3 uid="uid://bom1ixhp4uq0h"]
+
+[ext_resource type="Script" path="res://weapon_manager/weapon_resource.gd" id="1_4verm"]
+
+[resource]
+script = ExtResource("1_4verm")
+Weapon_Name = "M4A1"
+Activate_Anim = "M4A1 Activate"
+Shoot_Anim = "M4A1 Shoot"
+Reload_Anim = "M4A1 Reload"
+Deactivate_Anim = "M4A1 Deactivate"
+Out_Of_Ammo_Anim = "M4A1 OOA"
+Current_Ammo = 10
+Reserve_Ammo = 10
+Magazine = 10
+Max_Ammo = 20
+Auto_Fire = false
+Type = 1
+Weapon_Range = 2000
+Damage = 1

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="PackedScene" path="res://practices/L6.P2.coins_and_energy_packs/ship_coins_and_energy_packs.tscn" id="1_5x58d"]
+[ext_resource type="Script" path="res://practices/L6.P2.coins_and_energy_packs/ship_coins_and_energy_packs.gd" id="2_fych3"]
+[ext_resource type="PackedScene" path="res://practices/L6.P2.coins_and_energy_packs/coin.tscn" id="3_i047q"]
+[ext_resource type="Script" path="res://practices/L6.P2.coins_and_energy_packs/collectible.gd" id="4_ktsjp"]
+[ext_resource type="PackedScene" path="res://practices/L6.P2.coins_and_energy_packs/energy_pack.tscn" id="5_g11hp"]
+[ext_resource type="PackedScene" path="res://practices/L6.P2.coins_and_energy_packs/background.tscn" id="6_kmksw"]
+
+[node name="CoinsAndEnergyPacks" type="Node2D"]
+
+[node name="Ship" type="Area2D" parent="." instance=ExtResource("1_5x58d")]
+position = Vector2(962, 534)
+script = ExtResource("2_fych3")
+
+[node name="Coin" type="Area2D" parent="." groups=["coin"] instance=ExtResource("3_i047q")]
+position = Vector2(739, 403)
+script = ExtResource("4_ktsjp")
+
+[node name="EnergyPack" type="Area2D" parent="." groups=["energy"] instance=ExtResource("5_g11hp")]
+position = Vector2(749, 651)
+script = ExtResource("4_ktsjp")
+
+[node name="Coin2" type="Area2D" parent="." groups=["coin"] instance=ExtResource("3_i047q")]
+position = Vector2(961, 754)
+script = ExtResource("4_ktsjp")
+
+[node name="EnergyPack2" type="Area2D" parent="." groups=["energy"] instance=ExtResource("5_g11hp")]
+position = Vector2(1155, 616)
+script = ExtResource("4_ktsjp")
+
+[node name="Coin3" type="Area2D" parent="." groups=["coin"] instance=ExtResource("3_i047q")]
+position = Vector2(1164, 383)
+script = ExtResource("4_ktsjp")
+
+[node name="EnergyPack3" type="Area2D" parent="." groups=["energy"] instance=ExtResource("5_g11hp")]
+position = Vector2(962, 262)
+script = ExtResource("4_ktsjp")
+
+[node name="Background" type="Node" parent="." instance=ExtResource("6_kmksw")]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://s7wf03kex3md"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_6kxth"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s3q1h"]
+size = Vector3(0.1, 0.1, 0.522705)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a3ml6"]
+size = Vector3(0.2, 0.2, 1)
+
+[node name="Bullet" type="CharacterBody3D"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0.0102948, 0)
+script = ExtResource("1_6kxth")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00217277)
+shape = SubResource("BoxShape3D_s3q1h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.3, 0, 0, 0, 0.5, 0, 0, -0.00219846)
+mesh = SubResource("BoxMesh_a3ml6")

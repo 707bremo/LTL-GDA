@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="weapon_resource" load_steps=2 format=3 uid="uid://clbolgfoypqy2"]
+
+[ext_resource type="Script" path="res://weapon_manager/weapon_resource.gd" id="1_ociah"]
+
+[resource]
+script = ExtResource("1_ociah")
+Weapon_Name = "MP5"
+Activate_Anim = "MP5 Activate"
+Shoot_Anim = "MP5 Shoot"
+Reload_Anim = "MP5 Reload"
+Deactivate_Anim = "MP5 Deactivate"
+Out_Of_Ammo_Anim = "MP5 OOA "
+Current_Ammo = 30
+Reserve_Ammo = 60
+Magazine = 30
+Max_Ammo = 60
+Auto_Fire = true
+Type = 1
+Weapon_Range = 2000
+Damage = 1

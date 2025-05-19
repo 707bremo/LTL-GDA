@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://djuupgygpn614"]
+
+[ext_resource type="Script" path="res://lessons_reference/02_extended/weapons/fire_spray.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://cbp6piwf7l7to" path="res://common/sounds/laser.wav" id="2_yecoj"]
+
+[node name="FireSpray" type="Node2D" node_paths=PackedStringArray("audio_stream_player")]
+script = ExtResource("1")
+min_range = 400.0
+min_amount = 4
+max_amount = 7
+audio_stream_player = NodePath("Laser")
+random_angle = 0.785398
+max_range = 200.0
+
+[node name="Laser" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_yecoj")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.7
+one_shot = true
