@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://piy7l6qbal3q"]
+[gd_scene load_steps=26 format=3 uid="uid://piy7l6qbal3q"]
 
 [ext_resource type="PackedScene" uid="uid://c83ehswbyetui" path="res://terrain_3d.tscn" id="1_apgil"]
 [ext_resource type="Script" path="res://world/Main.gd" id="1_eownp"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dajo4o8ibri8a" path="res://UI/HUD/Inventory/weapon_inv.tscn" id="14_eeapl"]
 [ext_resource type="PackedScene" uid="uid://012ymk0c663s" path="res://UI/HUD/Inventory/slot.tscn" id="15_m7rcu"]
 [ext_resource type="Texture2D" uid="uid://vyoaqybnkohy" path="res://UI/references/Screenshot 2025-03-01 184534.png" id="16_1nj63"]
+[ext_resource type="PackedScene" uid="uid://dhagvvxgyk3ww" path="res://noxx_gas/scene/noxx.tscn" id="17_awuhy"]
 
 [sub_resource type="Resource" id="Resource_kfprv"]
 script = ExtResource("4_6n5w3")
@@ -52,7 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2024.92)
 script = ExtResource("1_eownp")
 
 [node name="test_player" parent="." instance=ExtResource("2_e663m")]
-transform = Transform3D(1.5, 0, 0, 0, 1.75, 0, 0, 0, 1.5, 164.658, 6.89888, 213.736)
+transform = Transform3D(1.5, 0, 0, 0, 1.75, 0, 0, 0, 1.5, -212.952, 14.2887, 140.132)
 inventory_data = SubResource("Resource_1vsbv")
 equip_inventory_data = SubResource("Resource_q17w4")
 weapon_inventory_data = SubResource("Resource_j2sse")
@@ -178,6 +179,21 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("16_1nj63")
 expand_mode = 3
+
+[node name="NOXX" parent="." instance=ExtResource("17_awuhy")]
+transform = Transform3D(1, 0, 0, 0, 2.64131, 0, 0, 0, 1, 166.983, 8.9626, 223.316)
+
+[node name="NOXX2" parent="." instance=ExtResource("17_awuhy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.5777, 134.157)
+
+[node name="NOXX3" parent="." instance=ExtResource("17_awuhy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146.311, 10.6814, 168.102)
+
+[node name="NOXX4" parent="." instance=ExtResource("17_awuhy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.5352, 7.18125, 268.702)
+
+[node name="NOXX5" parent="." instance=ExtResource("17_awuhy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.94667, 396.991)
 
 [connection signal="gui_input" from="UI/InvInterface" to="UI/InvInterface" method="_on_gui_input"]
 [connection signal="visibility_changed" from="UI/InvInterface" to="UI/InvInterface" method="_on_visibility_changed"]
