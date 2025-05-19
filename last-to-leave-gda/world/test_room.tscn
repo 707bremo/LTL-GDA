@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bfdsj5xxm3pmk"]
+[gd_scene load_steps=64 format=3 uid="uid://bfdsj5xxm3pmk"]
 
 [ext_resource type="Script" path="res://world/Main.gd" id="1_4pghp"]
 [ext_resource type="PackedScene" uid="uid://cvqooawhyqyqw" path="res://player/test_player.tscn" id="2_6cywo"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://UI/HUD/Inventory/inv_interface.gd" id="4_n1lqp"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/equipment_data.gd" id="4_s1re2"]
 [ext_resource type="PackedScene" uid="uid://cfdnj6i52mb6u" path="res://UI/HUD/Inventory/inventory.tscn" id="5_vebsm"]
-[ext_resource type="FontFile" path="res://Esperanto SmallCaps Regular.ttf" id="6_3njpv"]
 [ext_resource type="Resource" uid="uid://utfy5lpqx73l" path="res://UI/HUD/Inventory/item/equippables/motorcycle_helmet.tres" id="6_8mn1c"]
 [ext_resource type="Script" path="res://UI/HUD/Inventory/weapon_data.gd" id="6_xmq84"]
 [ext_resource type="PackedScene" uid="uid://012ymk0c663s" path="res://UI/HUD/Inventory/slot.tscn" id="7_ntpok"]
@@ -253,7 +252,6 @@ offset_left = -90.0
 offset_top = 2.0
 offset_right = -12.0
 offset_bottom = 25.0
-theme_override_fonts/font = ExtResource("6_3njpv")
 theme_override_font_sizes/font_size = 20
 text = "WEIGHT:"
 
@@ -275,7 +273,6 @@ offset_right = 412.0
 offset_bottom = 170.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("6_3njpv")
 theme_override_font_sizes/font_size = 20
 text = "CONTAINER"
 
@@ -309,7 +306,6 @@ offset_right = 1632.0
 offset_bottom = 174.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("6_3njpv")
 theme_override_font_sizes/font_size = 20
 text = "INVENTORY"
 horizontal_alignment = 1
