@@ -40,3 +40,7 @@ func _on_inv_interface_drop_slot_data(slot_data: SlotData) -> void:
 	pick_up.slot_data = slot_data
 	pick_up.position = test_player.get_drop_position()
 	add_child(pick_up)
+
+
+func _on_noxx_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
