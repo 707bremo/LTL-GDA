@@ -295,33 +295,6 @@ _data = {
 "text_scrolling": SubResource("Animation_0dmtu")
 }
 
-[sub_resource type="Animation" id="Animation_pmh8b"]
-resource_name = "cover_move"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("cover:size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(308, 60), Vector2(308, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("cover:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(211, -10), Vector2(211, 20)]
-}
-
 [sub_resource type="Animation" id="Animation_8eail"]
 length = 0.001
 tracks/0/type = "value"
@@ -349,6 +322,33 @@ tracks/1/keys = {
 "values": [Vector2(211, -10)]
 }
 
+[sub_resource type="Animation" id="Animation_pmh8b"]
+resource_name = "cover_move"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cover:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(308, 60), Vector2(308, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cover:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(211, -10), Vector2(211, 20)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_12svk"]
 _data = {
 "RESET": SubResource("Animation_8eail"),
@@ -357,7 +357,7 @@ _data = {
 
 [node name="LoadingScreen" type="CanvasLayer"]
 script = ExtResource("1_ucw4w")
-next_scene_path = "res://main_menu.tscn"
+next_scene_path = "res://world/world.tscn"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

@@ -14,6 +14,7 @@ extends Control
 @onready var selection_bg: ColorRect = $lobby_screen/selection_bg
 @onready var return_button: Button = $return
 @onready var v_stripe: TextureRect = $v_stripe
+@onready var looping_weapons: AnimationPlayer = $lobby_screen/looping_weapons
 
 # screens
 @onready var lobby_screen: Control = $lobby_screen
@@ -65,6 +66,7 @@ func stop_transfer(anim_name: StringName) -> void:
 		siimlogo.visible = false
 		play_button.visible = false
 		v_stripe.visible = false
+		looping_weapons.play("looping_weapons")
 		menu_player.play("lobby_opening")
 
 
@@ -78,7 +80,6 @@ func stop_transfer(anim_name: StringName) -> void:
 		controls_screen.visible = true
 		return_button.visible = true
 		loopers.play("controls_looping")
-
 
 func play_game_pressed():
 	$SoundsNmoozic/main_select.play()
