@@ -6,7 +6,6 @@ extends CharacterBody3D
 
 signal toogle_inventory()
 
-# Speed variables
 var speed
 const FATIGUED = 3.22
 const WALK_SPEED = 5.0
@@ -14,19 +13,15 @@ const SPRINT_SPEED = 8.0
 const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.004
 
-# Bob variables
 const BOB_FREQ = 2.4
 const BOB_AMP = 0.08
 var t_bob = 0.0
 
-# FOV variables
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
-# Gravity
 var gravity = 9.8
 
-# Health
 var armor: int = 30
 var max_health: float = 100.0
 var health: int = 100
@@ -34,7 +29,6 @@ var health_regen_ae: float = 0.5
 var current_health = health
 var health_regen_IN: int = 1
 
-# Stamina
 var max_stamina: float = 100
 var stamina: float = 100
 var stamina_lost: float = 20
@@ -47,18 +41,15 @@ var stamina_timer = 0
 var can_start_timer = true
 var is_sprinting = false
 
-# Hunger
 var max_hunger: float = 100.0
 var current_hunger = max_hunger
 var hunger_lost: float = 0.25
 
-# UI colors
 var stable_color = Color("00ff00")
-var worn_color = Color("GREEN_YELLOW") 
+var worn_color = Color("GREEN_YELLOW")
 var damaged_color = Color("ORANGE")
 var critical_color = Color("RED")
 
-# Node references
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
@@ -68,6 +59,9 @@ var critical_color = Color("RED")
 @onready var stamina_bar_anim: AnimationPlayer = $StaminaBarAnim
 @onready var fatigued_blinker: ColorRect = $FatiguedBlinker
 @onready var hunger_bar: ProgressBar = $HUD/PlayerHealthBar/HungerBar
+@onready var damage_overlay: TextureRect = $DamageOverlay
+@onready var damage_flash_anim: AnimationPlayer = $DamageFlashAnim
+@onready var crystalize_sound: AudioStreamPlayer3D = $CrystalizeSound
 
 func _ready():
 	if hunger_bar:
@@ -84,10 +78,10 @@ func _ready():
 	PlayerManager.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	# ✅ Connect gas damage signal if gas area is in scene tree
-	var gas_area = get_node_or_null("/root/Main/GasArea") # Replace with correct path
+	var gas_area = get_node_or_null("/root/Main/GasArea") # Adjust path as needed
 	if gas_area:
-		gas_area.connect("gas_damage", Callable(self, "gas_damage"))
+		gas_area.connect("gas_damage", Callable(self, "_on_noxx_gas_damage"))
+		gas_area.connect("left_gas", Callable(self, "_on_noxx_left_gas"))
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -133,7 +127,7 @@ func _process(delta):
 		p_health_bar.value = current_health
 
 	if current_hunger >= 90:
-		current_health += health_regen_IN * delta 
+		current_health += health_regen_IN * delta
 	elif current_hunger >= 50:
 		current_health += health_regen_ae * delta
 
@@ -184,7 +178,7 @@ func change_UI_APP():
 
 	var health_stylebox = p_health_bar.get_theme_stylebox("fill")
 	var hunger_stylebox = hunger_bar.get_theme_stylebox("fill")
-	 
+
 	if health_stylebox is StyleBoxFlat:
 		if current_health >= 75:
 			health_stylebox.bg_color = stable_color
@@ -260,7 +254,7 @@ func check_stamina_regen(delta):
 	if speed == FATIGUED and is_sprinting:
 		is_sprinting = false
 
-	if stamina_bar.value == 100: 
+	if stamina_bar.value == 100:
 		can_regen = false
 		stamina_bar.visible = false
 	if can_regen:
@@ -269,5 +263,13 @@ func check_stamina_regen(delta):
 		stamina_timer = 0
 
 func _on_noxx_gas_damage() -> void:
-	current_health = current_health - 10
+	current_health -= 10
 	print(current_health)
+	damage_flash_anim.play("damage flash")
+	if not crystalize_sound.playing:
+		crystalize_sound.play()
+
+func _on_noxx_left_gas() -> void:
+	damage_flash_anim.play_backwards("damage flash")
+	if crystalize_sound.playing:
+		crystalize_sound.stop()
