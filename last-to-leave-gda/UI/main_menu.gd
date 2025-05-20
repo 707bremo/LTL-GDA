@@ -37,6 +37,7 @@ func _ready() -> void:
 
 
 
+
 func _process(delta: float) -> void:
 	
 	
@@ -45,6 +46,7 @@ func _process(delta: float) -> void:
 		is_start_screen = false
 		play_button.emit_signal("pressed")
 		$SoundsNmoozic/main_select.play()
+		play_button.disabled = true
 	
 
 
@@ -82,6 +84,7 @@ func stop_transfer(anim_name: StringName) -> void:
 		loopers.play("controls_looping")
 
 func play_game_pressed():
+	play_game_button.disabled = true
 	$SoundsNmoozic/main_select.play()
 	selection_bg.visible = true
 	menu_player.play("selected")
