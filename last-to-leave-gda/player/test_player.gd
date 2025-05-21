@@ -50,6 +50,8 @@ var worn_color = Color("GREEN_YELLOW")
 var damaged_color = Color("ORANGE")
 var critical_color = Color("RED")
 
+var is_dead = false
+
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
@@ -63,6 +65,10 @@ var critical_color = Color("RED")
 @onready var damage_flash_anim: AnimationPlayer = $DamageFlashAnim
 @onready var crystalize_sound: AudioStreamPlayer3D = $CrystalizeSound
 @onready var shiver_sound: AudioStreamPlayer3D = $ShiverSound
+@onready var death_anim: AnimationPlayer = $DeathAnim
+@onready var death_layer: CanvasLayer = $DeathLayer
+@onready var player_scream: AudioStreamPlayer3D = $PlayerScream
+@onready var death_overlay: ColorRect = $DeathLayer/DeathOverlay
 
 func _ready():
 	if hunger_bar:
@@ -79,7 +85,7 @@ func _ready():
 	PlayerManager.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	var gas_area = get_node_or_null("/root/Main/GasArea") # Adjust path as needed
+	var gas_area = get_node_or_null("/root/Main/GasArea")
 	if gas_area:
 		gas_area.connect("gas_damage", Callable(self, "_on_noxx_gas_damage"))
 		gas_area.connect("left_gas", Callable(self, "_on_noxx_left_gas"))
@@ -97,6 +103,9 @@ func _unhandled_input(event):
 		interact()
 
 func _physics_process(delta):
+	if is_dead:
+		return
+
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
@@ -115,6 +124,9 @@ func _physics_process(delta):
 	stamina_bar.value = stamina
 
 func _process(delta):
+	if is_dead:
+		return
+
 	current_hunger -= hunger_lost * delta
 	current_hunger = clamp(current_hunger, 0, max_hunger)
 
@@ -138,6 +150,9 @@ func _process(delta):
 	check_stamina_regen(delta)
 	check_player_camera(delta)
 	move_and_slide()
+
+	if current_health <= 0:
+		die()
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
@@ -264,16 +279,46 @@ func check_stamina_regen(delta):
 		stamina_timer = 0
 
 func _on_noxx_gas_damage() -> void:
-	current_health -= 10
+	if is_dead:
+		return
+	current_health -= 10.1
 	print(current_health)
 	print("Player Damaged")
 	damage_flash_anim.play("damage flash")
-	if not crystalize_sound.playing:
+	if not crystalize_sound.playing and not is_dead:
 		crystalize_sound.play()
+	if not shiver_sound.playing and not is_dead:
 		shiver_sound.play()
 
 func _on_noxx_left_gas() -> void:
+	if is_dead:
+		return
 	damage_flash_anim.play_backwards("damage flash")
 	if crystalize_sound.playing:
 		crystalize_sound.stop()
+	if shiver_sound.playing:
 		shiver_sound.stop()
+
+func die():
+	if is_dead:
+		return
+	is_dead = true
+	for child in get_tree().get_nodes_in_group("audio"):
+		if child is AudioStreamPlayer or child is AudioStreamPlayer3D:
+			child.stop()
+
+	crystalize_sound.stop()
+	shiver_sound.stop()
+	
+	player_scream.play()
+	death_layer.visible = true
+	death_overlay.visible = true
+	death_anim.play("death_yell")
+	set_process(false)
+	set_physics_process(false)
+
+func _on_death_anim_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "death_yell":
+		crystalize_sound.stop()
+		shiver_sound.stop()
+		death_anim.play("you died")

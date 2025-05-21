@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cvqooawhyqyqw"]
+[gd_scene load_steps=27 format=3 uid="uid://cvqooawhyqyqw"]
 
 [ext_resource type="Script" path="res://player/test_player.gd" id="1_p76u8"]
 [ext_resource type="PackedScene" uid="uid://dpbjle7jau6df" path="res://UI/HUD/vitals/health_bar.tscn" id="2_0nl34"]
@@ -9,8 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://dcpr2jokur15r" path="res://UI/HUD/vitals/hunger_bar.tscn" id="5_pp44l"]
 [ext_resource type="PackedScene" uid="uid://dax2ao0bsraq4" path="res://UI/HUD/vitals/stamina_bar.tscn" id="5_tbfnt"]
 [ext_resource type="PackedScene" uid="uid://bxwt77dbpmvd4" path="res://UI/pause_menu.tscn" id="6_v3jdj"]
+[ext_resource type="FontFile" uid="uid://1c23xkb8xumk" path="res://UI/fonts/JetJaneMono Bold.ttf" id="10_hiqhj"]
 [ext_resource type="AudioStream" uid="uid://bcosd6gk1mbg" path="res://noxx_gas/scene/452228__kyles__footsteps-ice-brittle-crunch.wav" id="10_vj2bf"]
 [ext_resource type="AudioStream" uid="uid://ctvusmaknc0ev" path="res://noxx_gas/scene/human_reaction_coldshiver_gasps-60539.wav" id="11_7rvr0"]
+[ext_resource type="AudioStream" uid="uid://bfsbulyrvsr12" path="res://UI/HUD/Inventory/man-screaming-259682.wav" id="13_l8b5i"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gsapo"]
 
@@ -79,6 +81,120 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_1qujo"),
 "damage flash": SubResource("Animation_6q1ok")
+}
+
+[sub_resource type="Animation" id="Animation_x52en"]
+resource_name = "you died"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathLayer/DeathOverlay:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeathLayer/DeathLabel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.633333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DeathLayer/DeathLabel:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_1y0jf"]
+resource_name = "death_yell"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathLayer/DeathOverlay:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.63333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeathLayer/DeathLabel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wv5cv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathLayer/DeathOverlay:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeathLayer/DeathLabel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DeathLayer/DeathLabel:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jtn1w"]
+_data = {
+"RESET": SubResource("Animation_wv5cv"),
+"death_yell": SubResource("Animation_1y0jf"),
+"you died": SubResource("Animation_x52en")
 }
 
 [node name="test_player" type="CharacterBody3D" groups=["player"]]
@@ -174,6 +290,39 @@ offset_bottom = 10.78
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="DeathLayer" type="CanvasLayer" parent="."]
+
+[node name="DeathOverlay" type="ColorRect" parent="DeathLayer"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="DeathLabel" type="Label" parent="DeathLayer"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -267.0
+offset_top = -61.0
+offset_right = 341.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("10_hiqhj")
+theme_override_font_sizes/font_size = 100
+text = "YOU DIED..."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
 [node name="FatiguedBlinker" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 z_index = -1
@@ -194,6 +343,11 @@ libraries = {
 "": SubResource("AnimationLibrary_ld8hi")
 }
 
+[node name="DeathAnim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jtn1w")
+}
+
 [node name="CrystalizeSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("10_vj2bf")
 volume_db = -12.229
@@ -201,5 +355,9 @@ volume_db = -12.229
 [node name="ShiverSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("11_7rvr0")
 
+[node name="PlayerScream" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("13_l8b5i")
+
 [connection signal="body_entered" from="Head/Camera3D/InteractRay/Area3D" to="Head/Camera3D/InteractRay" method="_on_object_colliding"]
 [connection signal="body_exited" from="Head/Camera3D/InteractRay/Area3D" to="Head/Camera3D/InteractRay" method="_on_object_avert"]
+[connection signal="animation_finished" from="DeathAnim" to="." method="_on_death_anim_animation_finished"]
