@@ -72,8 +72,6 @@ const GAS_DAMAGE_INTERVAL = 2.0
 @onready var death_layer: CanvasLayer = $DeathLayer
 @onready var player_scream: AudioStreamPlayer3D = $PlayerScream
 @onready var death_overlay: ColorRect = $DeathLayer/DeathOverlay
-@onready var death_menu_anim: AnimationPlayer = $DeathMenuAnim
-@onready var death_menu_layer: CanvasLayer = $DeathMenuLayer
 @onready var death_menu_rect: ColorRect = $DeathMenuLayer/DeathMenuRect
 @onready var retry_button: Button = $DeathMenuLayer/VBoxContainer/RetryButton
 @onready var exit_to_menu_button: Button = $DeathMenuLayer/VBoxContainer/ExitToMenuButton
@@ -329,20 +327,21 @@ func die():
 	death_layer.visible = true
 	death_overlay.visible = true
 	death_anim.play("death_yell")
-	set_process(false)
-	set_physics_process(false)
+	#set_process(false)
+	#set_physics_process(false)
 
 func _on_death_anim_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "death_yell":
 		crystalize_sound.stop()
 		shiver_sound.stop()
 		death_anim.play("you died")
+	
+	if anim_name == "you died":
+		print("releasing mouse")
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _on_retry_button_pressed() -> void:
-	pass # change to scene "res://world/test_room.tscn"
+	pass
 
 func _on_exit_to_menu_button_pressed() -> void:
-	pass # change to scene "res://UI/main_menu.tscn"
-
-func _on_death_menu_anim_animation_finished(anim_name: StringName) -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://UI/main_menu.tscn")

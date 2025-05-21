@@ -2020,4 +2020,5 @@ vertical_alignment = 1
 [connection signal="mouse_exited" from="lobby_screen/exit_button" to="lobby_screen" method="_on_exit_button_mouse_exited"]
 [connection signal="pressed" from="lobby_screen/exit_button" to="." method="exit_button_pressed"]
 [connection signal="pressed" from="return" to="." method="_on_return_pressed"]
+[connection signal="finished" from="SoundsNmoozic/MenuMusic" to="." method="_on_menu_music_finished"]
 [connection signal="animation_finished" from="MenuPlayer" to="." method="stop_transfer"]

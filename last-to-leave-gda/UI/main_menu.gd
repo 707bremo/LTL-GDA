@@ -112,3 +112,6 @@ func _on_return_pressed() -> void:
 
 func transfer_to_game():
 	LoadingScreenFunctions.load_screen_to_scene("res://world/world.tscn")
+
+func _on_menu_music_finished() -> void:
+	menu_music.play()
