@@ -59,6 +59,7 @@ equip_inventory_data = SubResource("Resource_q17w4")
 weapon_inventory_data = SubResource("Resource_j2sse")
 
 [node name="Terrain3D" parent="." instance=ExtResource("1_apgil")]
+show_grid = true
 
 [node name="UI" type="CanvasLayer" parent="."]
 

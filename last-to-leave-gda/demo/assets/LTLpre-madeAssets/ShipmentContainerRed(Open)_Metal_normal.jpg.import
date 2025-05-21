@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl0ntu8tyoipn"
+uid="uid://di061jn0xhmtd"
 path.s3tc="res://.godot/imported/ShipmentContainerRed(Open)_Metal_normal.jpg-88b5dba148c6e9c89ebc7b4ead2c60c0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "92693ba653d11388c3d82a6340983b5a"
 }
 
 [deps]

@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://7rteed0gmb6i"]
+[gd_scene load_steps=6 format=3 uid="uid://7rteed0gmb6i"]
+
+[ext_resource type="Script" path="res://random_rain.gd" id="1_ft7a4"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6hj4m"]
 emission_shape = 3
@@ -38,3 +40,4 @@ trail_enabled = true
 trail_lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_6hj4m")
 draw_pass_1 = SubResource("RibbonTrailMesh_gp5mc")
+script = ExtResource("1_ft7a4")
