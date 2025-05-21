@@ -63,6 +63,7 @@ func stop_transfer(anim_name: StringName) -> void:
 	if anim_name == "transfer_to_lobby":
 		lobby_screen.visible = true
 		is_lobby_screen = true
+		is_start_screen = false
 		play_button.disabled = true
 		title.visible = false
 		siimlogo.visible = false
@@ -79,6 +80,7 @@ func stop_transfer(anim_name: StringName) -> void:
 	if anim_name == "selected2":
 		is_control_screen = true
 		is_lobby_screen = false
+		is_start_screen = false
 		controls_screen.visible = true
 		return_button.visible = true
 		loopers.play("controls_looping")
