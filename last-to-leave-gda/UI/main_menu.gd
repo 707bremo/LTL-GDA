@@ -28,7 +28,7 @@ var is_control_screen : bool = false
 
 func _ready() -> void:
 	Input.MOUSE_MODE_VISIBLE
-	is_start_screen = true
+	is_start_screen = false
 	is_lobby_screen = false
 	is_control_screen = false
 	return_button.visible = false
@@ -37,14 +37,15 @@ func _ready() -> void:
 
 
 
+
 func _process(delta: float) -> void:
 	
 	
 # press the enter button to transfer from the start, to the lobby
 	if Input.is_action_just_pressed("ui_accept") and is_start_screen:
-		is_start_screen = false
 		play_button.emit_signal("pressed")
 		$SoundsNmoozic/main_select.play()
+		play_button.disabled = true
 	
 
 
@@ -57,10 +58,12 @@ func stop_transfer(anim_name: StringName) -> void:
 	
 	if anim_name == "main_opening":
 		menu_player.play("main_loops")
+		is_start_screen = true
 	
 	if anim_name == "transfer_to_lobby":
 		lobby_screen.visible = true
 		is_lobby_screen = true
+		is_start_screen = false
 		play_button.disabled = true
 		title.visible = false
 		siimlogo.visible = false
@@ -77,11 +80,13 @@ func stop_transfer(anim_name: StringName) -> void:
 	if anim_name == "selected2":
 		is_control_screen = true
 		is_lobby_screen = false
+		is_start_screen = false
 		controls_screen.visible = true
 		return_button.visible = true
 		loopers.play("controls_looping")
 
 func play_game_pressed():
+	play_game_button.disabled = true
 	$SoundsNmoozic/main_select.play()
 	selection_bg.visible = true
 	menu_player.play("selected")

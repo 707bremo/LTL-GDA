@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bbposk6idlbm"]
+[gd_scene load_steps=42 format=3 uid="uid://bbposk6idlbm"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_x06ck"]
 [ext_resource type="Texture2D" uid="uid://5gsdlqitygcu" path="res://main_menu_gradientUI.tres" id="2_6567b"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dhkal357bayfl" path="res://UI/main_menu_interface/wa2000silhouetteUI.png" id="9_1rl3b"]
 [ext_resource type="AudioStream" uid="uid://8ktisvb65aay" path="res://UI/Sounds/select/scroll_sound.wav" id="9_paqs7"]
 [ext_resource type="AudioStream" uid="uid://be657y3jgn67r" path="res://UI/Sounds/music/main_menu_music.wav" id="10_1j7tr"]
+[ext_resource type="Texture2D" uid="uid://dxbkolr4dfvjx" path="res://UI/main_menu_interface/strawmbrerologo.png" id="13_6ivtj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2v10c"]
 
@@ -766,6 +767,90 @@ tracks/19/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Strawmbrerologo:modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("siimlogo:scale")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.3035, 0.3035)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("siimlogo:position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(702, 446)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("ColorRect:color")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.38268, 0.578183, 0.907984, 1)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("ColorRect:size")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(410, 410)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("ColorRect:position")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(754, 334)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("v_stripe:position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1243, -3)]
+}
 
 [sub_resource type="Animation" id="Animation_ksdv0"]
 resource_name = "lobby_opening"
@@ -814,7 +899,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_g7jry"]
 resource_name = "main_opening"
-length = 3.1
+length = 19.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -822,7 +907,7 @@ tracks/0/path = NodePath("play/buttonBG:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.633333, 1.63333, 2),
+"times": PackedFloat32Array(15.9001, 16.9001, 17.2667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.548963, 0.548963, 0.548963, 1), Color(1, 1, 1, 1), Color(0.54902, 0.54902, 0.54902, 0.466667)]
@@ -834,7 +919,7 @@ tracks/1/path = NodePath("play/buttonBG:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.633334, 1.36667),
+"times": PackedFloat32Array(15.9001, 16.6334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 63), Vector2(1918, 63)]
@@ -846,7 +931,7 @@ tracks/2/path = NodePath("play/buttonFollow:color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.633333),
+"times": PackedFloat32Array(15.9001),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
@@ -858,7 +943,7 @@ tracks/3/path = NodePath("play/buttonFollow:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.633333, 1.23333),
+"times": PackedFloat32Array(15.9001, 16.5001),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 9), Vector2(1918, 9)]
@@ -870,7 +955,7 @@ tracks/4/path = NodePath("play/Label:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1.63333, 2),
+"times": PackedFloat32Array(16.9001, 17.2667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -882,7 +967,7 @@ tracks/5/path = NodePath("play/UiArrowIcon:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(1.63333, 2),
+"times": PackedFloat32Array(16.9001, 17.2667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -894,7 +979,7 @@ tracks/6/path = NodePath("play/select_frame:self_modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(1.63333, 2),
+"times": PackedFloat32Array(16.9001, 17.2667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -906,10 +991,10 @@ tracks/7/path = NodePath("v_stripe:size")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(2, 3.1),
+"times": PackedFloat32Array(17.2667, 18.3667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(393, 1), Vector2(393, 1078)]
+"values": [Vector2(393, 0), Vector2(393, 1078)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -918,7 +1003,7 @@ tracks/8/path = NodePath("title:self_modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(15.2667, 15.7667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -930,10 +1015,94 @@ tracks/9/path = NodePath("siimlogo:self_modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(10.0667, 13.8, 15.2667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Strawmbrerologo:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 4.03333, 6.7, 7.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("siimlogo:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(10.0667, 13.8, 15.2667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.44175, 1.44175), Vector2(1.44175, 1.44175), Vector2(0.3035, 0.3035)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("siimlogo:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(10.0667, 13.8, 15.2667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(954, 540), Vector2(954, 540), Vector2(702, 446)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ColorRect:color")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(9.1, 10.0667, 11.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.384314, 0.576471, 0.909804, 0), Color(0.38268, 0.578183, 0.907984, 1), Color(0, 0, 0, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("ColorRect:size")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(10.0667, 11.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Vector2(410, 410), Vector2(410, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("ColorRect:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(10.0667, 11.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(754, 334), Vector2(754, 744)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("v_stripe:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(17.2667, 18.3667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1243, -3), Vector2(1243, -3)]
 }
 
 [sub_resource type="Animation" id="Animation_k1id0"]
@@ -1146,8 +1315,9 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -675.0
+offset_top = -3.0
 offset_right = -282.0
-offset_bottom = -1077.0
+offset_bottom = -1080.0
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("2_6567b")
@@ -1200,6 +1370,21 @@ texture_filter = 2
 position = Vector2(702, 446)
 scale = Vector2(0.3035, 0.3035)
 texture = ExtResource("3_k8xrf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -205.0
+offset_right = 205.0
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.38268, 0.578183, 0.907984, 1)
 
 [node name="play" type="Button" parent="."]
 layout_mode = 0
@@ -1785,7 +1970,7 @@ bus = &"UI-SFX"
 
 [node name="scroll_select" type="AudioStreamPlayer" parent="SoundsNmoozic"]
 stream = ExtResource("9_paqs7")
-volume_db = 10.0
+volume_db = 6.0
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="SoundsNmoozic"]
 stream = ExtResource("10_1j7tr")
@@ -1796,6 +1981,31 @@ bus = &"Music"
 libraries = {
 "": SubResource("AnimationLibrary_0wlhd")
 }
+
+[node name="Strawmbrerologo" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(951, 536)
+scale = Vector2(1.408, 1.408)
+texture = ExtResource("13_6ivtj")
+
+[node name="title2" type="Label" parent="Strawmbrerologo"]
+self_modulate = Color(0.960784, 0.607843, 0.0705882, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -538.352
+offset_top = -107.955
+offset_right = 37.6483
+offset_bottom = -46.9548
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_w6cdp")
+theme_override_font_sizes/font_size = 50
+text = "STRAWMBRERO STUDIOS"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="play" to="." method="transfer_screen"]
 [connection signal="mouse_entered" from="lobby_screen/play_game" to="lobby_screen" method="_on_play_game_mouse_entered"]
