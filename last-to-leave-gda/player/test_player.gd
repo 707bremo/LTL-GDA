@@ -51,6 +51,9 @@ var damaged_color = Color("ORANGE")
 var critical_color = Color("RED")
 
 var is_dead = false
+var in_gas = false
+var gas_damage_timer = 0.0
+const GAS_DAMAGE_INTERVAL = 2.0
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
@@ -69,6 +72,11 @@ var is_dead = false
 @onready var death_layer: CanvasLayer = $DeathLayer
 @onready var player_scream: AudioStreamPlayer3D = $PlayerScream
 @onready var death_overlay: ColorRect = $DeathLayer/DeathOverlay
+@onready var death_menu_anim: AnimationPlayer = $DeathMenuAnim
+@onready var death_menu_layer: CanvasLayer = $DeathMenuLayer
+@onready var death_menu_rect: ColorRect = $DeathMenuLayer/DeathMenuRect
+@onready var retry_button: Button = $DeathMenuLayer/VBoxContainer/RetryButton
+@onready var exit_to_menu_button: Button = $DeathMenuLayer/VBoxContainer/ExitToMenuButton
 
 func _ready():
 	if hunger_bar:
@@ -145,6 +153,17 @@ func _process(delta):
 		current_health += health_regen_ae * delta
 
 	current_health = clamp(current_health, 0, max_health)
+
+	if in_gas:
+		gas_damage_timer += delta
+		if gas_damage_timer >= GAS_DAMAGE_INTERVAL:
+			current_health -= 10.1
+			gas_damage_timer = 0.0
+			damage_flash_anim.play("damage flash")
+			if not crystalize_sound.playing:
+				crystalize_sound.play()
+			if not shiver_sound.playing:
+				shiver_sound.play()
 
 	change_UI_APP()
 	check_stamina_regen(delta)
@@ -281,18 +300,14 @@ func check_stamina_regen(delta):
 func _on_noxx_gas_damage() -> void:
 	if is_dead:
 		return
-	current_health -= 10.1
-	print(current_health)
-	print("Player Damaged")
-	damage_flash_anim.play("damage flash")
-	if not crystalize_sound.playing and not is_dead:
-		crystalize_sound.play()
-	if not shiver_sound.playing and not is_dead:
-		shiver_sound.play()
+	in_gas = true
+	gas_damage_timer = GAS_DAMAGE_INTERVAL  # triggers instant damage
 
 func _on_noxx_left_gas() -> void:
 	if is_dead:
 		return
+	in_gas = false
+	gas_damage_timer = 0.0
 	damage_flash_anim.play_backwards("damage flash")
 	if crystalize_sound.playing:
 		crystalize_sound.stop()
@@ -309,7 +324,7 @@ func die():
 
 	crystalize_sound.stop()
 	shiver_sound.stop()
-	
+
 	player_scream.play()
 	death_layer.visible = true
 	death_overlay.visible = true
@@ -322,3 +337,12 @@ func _on_death_anim_animation_finished(anim_name: StringName) -> void:
 		crystalize_sound.stop()
 		shiver_sound.stop()
 		death_anim.play("you died")
+
+func _on_retry_button_pressed() -> void:
+	pass # change to scene "res://world/test_room.tscn"
+
+func _on_exit_to_menu_button_pressed() -> void:
+	pass # change to scene "res://UI/main_menu.tscn"
+
+func _on_death_menu_anim_animation_finished(anim_name: StringName) -> void:
+	pass # Replace with function body.
