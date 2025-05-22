@@ -466,7 +466,7 @@ theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_fonts/font = ExtResource("2_8kijo")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_n4345")
-text = "TIPS"
+text = "[000000]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -496,9 +496,10 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_fonts/font = ExtResource("2_8kijo")
 theme_override_font_sizes/font_size = 35
-text = "You'll be hungry on the run.
-Make sure you eat anything
-you can salvage."
+text = "I saw beauty in stillness once. 
+Now I see a graveyard.
+
+- Dr. Gangka"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -508,15 +509,18 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -58.0
+offset_left = -387.0
 offset_top = 72.0
-offset_right = 58.0
-offset_bottom = 118.0
+offset_right = 387.0
+offset_bottom = 295.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_fonts/font = ExtResource("2_8kijo")
 theme_override_font_sizes/font_size = 35
-text = "Don't die..."
+text = "Every failed species resists evolution. 
+You're no different.
+
+- Dr. Torreni"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -534,10 +538,9 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_fonts/font = ExtResource("2_8kijo")
 theme_override_font_sizes/font_size = 35
-text = "Stay out of sight.
-Being spotted by enemies just
-attracts more of them.
-"
+text = "Regret is the final phase of progress.
+
+- Unknown"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -548,19 +551,17 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -329.0
-offset_top = 72.0
+offset_top = 36.0
 offset_right = 329.0
-offset_bottom = 333.0
+offset_bottom = 297.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_fonts/font = ExtResource("2_8kijo")
 theme_override_font_sizes/font_size = 35
-text = "This is all about decision making.
+text = "What you cling to as home, 
+I see as decay.
 
-
-Every choice you make has its
-consequences and benefits.
-Your speed matters."
+- Dr. Torreni"
 horizontal_alignment = 1
 vertical_alignment = 1
 
