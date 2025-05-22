@@ -428,7 +428,6 @@ container_detector = NodePath("../Head/Camera3D/InteractRay")
 
 [node name="floor_detector" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.515806, 0)
-collision_mask = 8
 
 [node name="ground_pos" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.556433, 0)

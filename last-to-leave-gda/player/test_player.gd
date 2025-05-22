@@ -180,7 +180,6 @@ func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
-	return pos
 	
 	var low_pos = BOB_AMP - 0.05
 	

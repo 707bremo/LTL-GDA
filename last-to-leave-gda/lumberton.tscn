@@ -112,7 +112,7 @@ transform = Transform3D(-0.626568, 0, -0.172951, 0, 0.65, 0, 0.172951, 0, -0.626
 [node name="HouseFurniture(Bathroom&Bedroom)" parent="." instance=ExtResource("16_2fcsr")]
 transform = Transform3D(-0.626568, 0, -0.172951, 0, 0.65, 0, 0.172951, 0, -0.626568, 158.177, 4.00947, 2242.5)
 
-[node name="House" parent="." instance=ExtResource("17_6vvlh")]
+[node name="House" parent="." groups=["wood"] instance=ExtResource("17_6vvlh")]
 transform = Transform3D(-0.626568, 0, -0.172951, 0, 0.65, 0, 0.172951, 0, -0.626568, 158.177, 4.00947, 2242.5)
 
 [node name="HouseFurniture(Lights&Doors)" parent="." instance=ExtResource("18_xysc1")]

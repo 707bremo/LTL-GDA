@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://brrctkbvsdud0"]
+[gd_scene load_steps=5 format=3 uid="uid://brrctkbvsdud0"]
 
 [ext_resource type="PackedScene" uid="uid://xqdeloq3barr" path="res://demo/assets/LTLpre-madeAssets/WarehouseFloor.gltf" id="1_4bkcx"]
 [ext_resource type="Texture2D" uid="uid://du5cm1lp53qe4" path="res://demo/assets/LTLpre-madeAssets/rusty_metal_sheet_rough_4k_exr.png" id="2_0b8kv"]
@@ -7,7 +7,19 @@
 albedo_color = Color(0.266575, 0.266575, 0.266575, 1)
 albedo_texture = ExtResource("2_0b8kv")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dxgqj"]
+size = Vector3(5.18372, 1, 5.73354)
+
 [node name="WarehouseFloor" instance=ExtResource("1_4bkcx")]
 
 [node name="Floor" parent="." index="0" groups=["concrete"]]
 surface_material_override/0 = SubResource("StandardMaterial3D_pjdea")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" index="0" groups=["concrete"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02989, 0)
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" index="0"]
+transform = Transform3D(0.999982, 0, 3.05533e-12, 0, 1, 0, -1.29603e-11, 0, 1, -1.16925, 0, -0.0341883)
+shape = SubResource("BoxShape3D_dxgqj")
