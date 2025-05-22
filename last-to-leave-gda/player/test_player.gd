@@ -9,7 +9,7 @@ signal toogle_inventory()
 var speed
 const FATIGUED = 3.22
 const WALK_SPEED = 5.0
-const SPRINT_SPEED = 50.0
+const SPRINT_SPEED = 10.0
 const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.004
 
@@ -345,3 +345,7 @@ func _on_retry_button_pressed() -> void:
 
 func _on_exit_to_menu_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://UI/main_menu.tscn")
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
