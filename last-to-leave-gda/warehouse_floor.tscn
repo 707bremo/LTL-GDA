@@ -9,5 +9,5 @@ albedo_texture = ExtResource("2_0b8kv")
 
 [node name="WarehouseFloor" instance=ExtResource("1_4bkcx")]
 
-[node name="Floor" parent="." index="0"]
+[node name="Floor" parent="." index="0" groups=["concrete"]]
 surface_material_override/0 = SubResource("StandardMaterial3D_pjdea")

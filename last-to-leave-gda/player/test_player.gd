@@ -4,7 +4,11 @@ extends CharacterBody3D
 @export var equip_inventory_data: EquipInvData
 @export var weapon_inventory_data: WeaponInvData
 
+var can_play : bool = true
+
 signal toogle_inventory()
+signal step
+signal opening_container
 
 var speed
 const FATIGUED = 3.22
@@ -106,6 +110,7 @@ func _unhandled_input(event):
 		toogle_inventory.emit()
 
 	if Input.is_action_just_pressed("interact"):
+		emit_signal("opening_container")
 		interact()
 
 func _physics_process(delta):
@@ -176,6 +181,18 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+	
+	var low_pos = BOB_AMP - 0.05
+	
+	if pos.y > -low_pos:
+		can_play = true
+	if pos.y < -low_pos and can_play:
+		can_play = false
+		emit_signal("step")
+	
+	return pos
+	
+	
 
 func interact():
 	if interact_ray.is_colliding():

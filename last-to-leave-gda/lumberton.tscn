@@ -142,28 +142,28 @@ transform = Transform3D(-1.99333, 0, 1.50885, 0, 2.5, 0, -1.50885, 0, -1.99333, 
 [node name="RockingChair" parent="." instance=ExtResource("26_u73rq")]
 transform = Transform3D(0.239515, 0, 3.49179, 0, 3.5, 0, -3.49179, 0, 0.239515, 102.734, 4.41717, 2121.15)
 
-[node name="PlankStack" parent="." instance=ExtResource("27_pwdaa")]
+[node name="PlankStack" parent="." groups=["wood"] instance=ExtResource("27_pwdaa")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -186.607, 3.97898, 2488.43)
 
 [node name="DirtPile" parent="." instance=ExtResource("28_1fefm")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 80.9615, 1.72222, 2231.38)
 
-[node name="ShipmentContainerRed(Closed)" parent="." instance=ExtResource("29_37ia2")]
+[node name="ShipmentContainerRed(Closed)" parent="." groups=["metal"] instance=ExtResource("29_37ia2")]
 transform = Transform3D(0.841511, 0, 0.54024, 0, 1, 0, -0.54024, 0, 0.841511, -152.805, 0, 2427.67)
 
-[node name="ShipmentContainerGray(Closed)" parent="." instance=ExtResource("30_5y6cb")]
+[node name="ShipmentContainerGray(Closed)" parent="." groups=["metal"] instance=ExtResource("30_5y6cb")]
 transform = Transform3D(-0.142629, 0, -0.989776, 0, 1, 0, 0.989776, 0, -0.142629, -207.587, 0, 2400.08)
 
-[node name="ShipmentContainerBlue(Closed)" parent="." instance=ExtResource("31_nh6kh")]
+[node name="ShipmentContainerBlue(Closed)" parent="." groups=["metal"] instance=ExtResource("31_nh6kh")]
 transform = Transform3D(-0.961856, 0, -0.273556, 0, 1, 0, 0.273556, 0, -0.961856, -135.111, 0, 2359.19)
 
-[node name="ShipmentContainerBlue(Open)" parent="." instance=ExtResource("32_ea55x")]
+[node name="ShipmentContainerBlue(Open)" parent="." groups=["metal"] instance=ExtResource("32_ea55x")]
 transform = Transform3D(0.959314, 0, -0.282341, 0, 1, 0, 0.282341, 0, 0.959314, -123.903, 0, 2505.08)
 
-[node name="ShipmentContainerGray(Open)" parent="." instance=ExtResource("33_bnulg")]
+[node name="ShipmentContainerGray(Open)" parent="." groups=["metal"] instance=ExtResource("33_bnulg")]
 transform = Transform3D(-0.654741, 0, 0.755853, 0, 1, 0, -0.755853, 0, -0.654741, -87.289, 0, 2435.96)
 
-[node name="ShipmentContainerRed(Open)" parent="." instance=ExtResource("34_7ayvm")]
+[node name="ShipmentContainerRed(Open)" parent="." groups=["metal"] instance=ExtResource("34_7ayvm")]
 transform = Transform3D(0.654741, 0, -0.755853, 0, 1, 0, 0.755853, 0, 0.654741, -206.584, 0, 2398.49)
 
 [node name="WarehouseDoor(ForAnimation)" parent="." instance=ExtResource("35_sbonx")]

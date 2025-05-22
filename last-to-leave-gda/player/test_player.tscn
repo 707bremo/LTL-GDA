@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cvqooawhyqyqw"]
+[gd_scene load_steps=40 format=3 uid="uid://cvqooawhyqyqw"]
 
 [ext_resource type="Script" path="res://player/test_player.gd" id="1_p76u8"]
 [ext_resource type="PackedScene" uid="uid://dpbjle7jau6df" path="res://UI/HUD/vitals/health_bar.tscn" id="2_0nl34"]
@@ -12,7 +12,14 @@
 [ext_resource type="FontFile" uid="uid://1c23xkb8xumk" path="res://UI/fonts/JetJaneMono Bold.ttf" id="10_hiqhj"]
 [ext_resource type="AudioStream" uid="uid://bcosd6gk1mbg" path="res://noxx_gas/scene/452228__kyles__footsteps-ice-brittle-crunch.wav" id="10_vj2bf"]
 [ext_resource type="AudioStream" uid="uid://ctvusmaknc0ev" path="res://noxx_gas/scene/human_reaction_coldshiver_gasps-60539.wav" id="11_7rvr0"]
+[ext_resource type="Script" path="res://player/footstep_manager.gd" id="11_ppdlo"]
+[ext_resource type="Script" path="res://player/container_sounds.gd" id="11_x84dp"]
+[ext_resource type="AudioStream" uid="uid://dfdaohakfltre" path="res://UI/Sounds/footstep_sound_fx/dirt_walking_sound.mp3" id="12_6qy52"]
 [ext_resource type="AudioStream" uid="uid://bfsbulyrvsr12" path="res://UI/HUD/Inventory/man-screaming-259682.wav" id="13_l8b5i"]
+[ext_resource type="AudioStream" uid="uid://c73kt4w8x2txy" path="res://UI/Sounds/footstep_sound_fx/wood_walking_sound.mp3" id="13_xa68y"]
+[ext_resource type="AudioStream" uid="uid://trecqoj3kbvo" path="res://UI/Sounds/footstep_sound_fx/metal_walking_sound.mp3" id="14_ptsqj"]
+[ext_resource type="AudioStream" uid="uid://v7c3sn53u6xg" path="res://UI/Sounds/container_sounds_fx/250889__thalamus_lab__cabinet-door.mp3" id="15_i0rtq"]
+[ext_resource type="AudioStream" uid="uid://5aj1wijc42c2" path="res://UI/Sounds/footstep_sound_fx/concrete_walking_sound.mp3" id="15_y013p"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gsapo"]
 
@@ -404,6 +411,27 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_f5gxj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qm6vn")
 theme_override_styles/normal = SubResource("StyleBoxFlat_re4a6")
 text = "EXIT TO MAIN MENU"
+
+[node name="FootstepManager" type="Node3D" parent="." node_paths=PackedStringArray("ground_pos", "floor_detector")]
+script = ExtResource("11_ppdlo")
+dirt_footstep_sounds = Array[AudioStreamMP3]([ExtResource("12_6qy52")])
+wood_footstep_sounds = Array[AudioStreamMP3]([ExtResource("13_xa68y")])
+metal_footstep_sounds = Array[AudioStreamMP3]([ExtResource("14_ptsqj")])
+concrete_footstep_sounds = Array[AudioStreamMP3]([ExtResource("15_y013p")])
+ground_pos = NodePath("../ground_pos")
+floor_detector = NodePath("../floor_detector")
+
+[node name="ContainerSounds" type="Node3D" parent="." node_paths=PackedStringArray("container_detector")]
+script = ExtResource("11_x84dp")
+container_sounds = Array[AudioStreamMP3]([ExtResource("15_i0rtq")])
+container_detector = NodePath("../Head/Camera3D/InteractRay")
+
+[node name="floor_detector" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.515806, 0)
+collision_mask = 8
+
+[node name="ground_pos" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.556433, 0)
 
 [node name="FatiguedBlinker" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
