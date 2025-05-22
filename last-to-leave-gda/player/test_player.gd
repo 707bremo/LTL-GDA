@@ -343,8 +343,6 @@ func die():
 	death_layer.visible = true
 	death_overlay.visible = true
 	death_anim.play("death_yell")
-	#set_process(false)
-	#set_physics_process(false)
 
 func _on_death_anim_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "death_yell":

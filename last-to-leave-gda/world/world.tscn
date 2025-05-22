@@ -58,7 +58,7 @@ script = ExtResource("1_eownp")
 
 [node name="test_player" parent="." instance=ExtResource("2_e663m")]
 transform = Transform3D(1.75, 0, 0, 0, 2.1, 0, 0, 0, 1.75, 146.866, 6.35565, 197.487)
-collision_layer = 10
+collision_layer = 11
 collision_mask = 13
 inventory_data = SubResource("Resource_1vsbv")
 equip_inventory_data = SubResource("Resource_q17w4")
