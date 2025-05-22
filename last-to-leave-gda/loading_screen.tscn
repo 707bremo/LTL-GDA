@@ -466,7 +466,7 @@ theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_fonts/font = ExtResource("2_8kijo")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_n4345")
-text = "ADVICE"
+text = "TIPS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
