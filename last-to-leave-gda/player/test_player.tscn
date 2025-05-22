@@ -276,6 +276,7 @@ shape = SubResource("SeparationRayShape3D_nhcc7")
 
 [node name="weapons" parent="Head/Camera3D" instance=ExtResource("3_46w64")]
 transform = Transform3D(0.978148, -0.207912, 0, 0.207912, 0.978148, 0, 0, 0, 1, 0.92, -0.71, -0.89)
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
